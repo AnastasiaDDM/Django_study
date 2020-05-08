@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>{% block page_title %}{% endblock %}
+    </title>
+    <meta name="description" content="{% block page_description %}{% endblock %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fa/css/all.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+    {% block link_extend %}{% endblock %}
+
+  </head>
+  <body class = "fix_width bg-head">
+    <header class = "flex_column header_container_height">
+      <div class="flex_row header-top_container header-top_border flex_space-between">
+        <div class="header_container_mail_phone">
+          <div class="flex_row flex_space-between header_container_m_p_w">
+            <div class="flex_row header_contact_center">
+              <a>
+                <div class="header_i_for_div margin_right_04em disp_none_header">
+                  <i class="far fa-envelope header_i">
+                  </i>
+                </div>
+              </a>
+              <div class = "header_social_mail">
+                <a class = "text-align" title="Почта" href="mailto: example@mail.ru">
+                  example@mail.ru
+                </a>
+              </div>
+            </div>
+            <div class="flex_row header_contact_center">
+              <div class="header_i_for_div margin_right_04em disp_none_header">
+                <i class="fas fa-phone-alt header_i">
+                </i>
+              </div>
+              <div class = "header_social_phone">
+                <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
+                  +7 (901) 123-45-67
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="flex_row flex_space-between header_container_social">
+          <div>
+            <a class ="header_i_tlg" title="Telegram" href="https://vk.com/dmitrievnaa1999">
+              <div class="header_i_for_div ">
+                <i class="fab fa-telegram-plane header_i">
+                </i>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a class ="header_i_vk" title="Vkontakte" href="https://vk.com/dmitrievnaa1999">
+              <div class="header_i_for_div">
+                <i class="fab fa-vk header_i ">
+                </i>
+              </div>   
+            </a>
+          </div>
+          <div>
+            <a class ="header_i_wa" title="WhatsApp " href="https://vk.com/dmitrievnaa1999"> 
+              <div class="header_i_for_div">
+                <i class="fab fa-whatsapp header_i">
+                </i>
+              </div>
+            </a>
+          </div>
+          <div>
+            <a class ="header_i_ig" title="Instagram " href="https://vk.com/dmitrievnaa1999"> 
+              <div class="header_i_for_div">
+                <i class="fab fa-instagram header_i">
+                </i>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class=" header_person">
+          <a  id = "user" href = "personal_data.html" > 
+            <div class="header_i_for_div header_i">
+              <i class="fas fa-user">
+              </i>
+            </div>   
+          </a>
+        </div>
+      </div>
+      <div class="flex_row header-bottom flex_space-between flex_wrap">
+        <div class="header">
+          <div class="flex_row flex_justify-content_flex-start logo margin_bottom_1em width_70">
+            <div class="header-logo">
+              <a href="/main.html">
+                <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+              </a>
+            </div>
+            <div class="header-logo_name">
+              <a class = "link_style_none" href="/main.html">Название сайта
+              </a>
+            </div>
+          </div>
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="menu-icon" for="menu-btn">
+            <span class="navicon">
+            </span>
+          </label>
+          <ul class="menu">
+            <li>
+              <a href="/aboutcompany.html">О&nbsp;компании
+              </a>
+            </li>
+            <li>
+              <a href="/catalog.html">Каталог
+              </a>
+            </li>
+            <li>
+              <a href="/articles.html">Статьи
+              </a>
+            </li>
+            <li>
+              <a href="/reviews.html">Отзывы
+              </a>
+            </li>
+            <li>
+              <a href="/contacts.html">Контакты
+              </a>
+            </li>
+            <li>
+              <a href="/order.html" class ="link_style_col">Заказать
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="flex_row flex_justify-content_flex-start header_disp_none">
+          <div class="header-logo">
+            <a href="/main.html">
+              <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+            </a>
+          </div>
+          <div class="header-logo_name">
+            <a class = "link_style_none" href="/main.html">Название сайта
+            </a>
+          </div>
+        </div>
+        <div class="flex_row header_navbar header_disp_none">
+          <ul>
+            <li>
+              <a  class = "header_navbar_active" title="О компании" href="/aboutcompany.html">О&nbsp;компании
+              </a>
+            </li>
+            <li>
+              <a title="Каталог" href="/catalog.html">Каталог
+              </a>
+            </li>
+            <li>
+              <a title="Статьи" href="/articles.html">Статьи
+              </a>
+            </li>
+            <li>
+              <a title="Отзывы" href="/reviews.html">Отзывы
+              </a>
+            </li>
+            <li>
+              <a title="Контакты" href="/contacts.html">Контакты
+              </a>
+            </li>
+            <li>
+              <a class ="link_style_col" title="заказать" href="/order.html">Заказать
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+      <footer class = "flex_row header_container_height flex_space-between footer_container">
+        <div class="header-logo disp_none_830">
+          <a href="/main.html">
+            <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+          </a>
+        </div>
+        <div class="footer_all-link">
+          <div class="flex_row footer_container_l">
+            <div class="flex_column footer_first-link">
+              <a title="Заказать" href="/catalog.html">Заказать
+              </a>
+              <a title="Доработка" href="/articles.html">Доработка
+              </a>
+              <a title="О нас" href="/aboutcompany.html">О нас
+              </a>
+            </div>
+            <div class="flex_column">
+              <a title="Каталог" href="/catalog.html">Каталог
+              </a>
+              <a title="Статьи" href="/articles.html">Статьи
+              </a>
+              <a title="Отзывы" href="/reviews.html">Отзывы
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex_column footer_cont_m_p_s">
+          <div class="flex_row footer_cont_m_p">
+            <div class="flex_row footer_container_mail">
+              <a>
+                <div class="header_i_for_div margin_right_04em disp_none_992">
+                  <i class="far fa-envelope header_i">
+                  </i>
+                </div>
+              </a>
+              <div class = "header_social_mail">
+                <a class = "text-align" title="Почта" href="mailto: example@mail.ru">
+                  example@mail.ru
+                </a>
+              </div>
+            </div>
+            <div class="flex_row footer_container_phone">
+              <div class="header_i_for_div margin_right_04em disp_none_992">
+                <i class="fas fa-phone-alt header_i">
+                </i>
+              </div>
+              <div class = "header_social_phone">
+                <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
+                  +7 (901) 123-45-67
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex_row footer_container_social">
+            <div>
+              <a class ="header_i_tlg" title="Telegram" href="https://vk.com/dmitrievnaa1999">
+                <div class="header_i_for_div ">
+                  <i class="fab fa-telegram-plane header_i">
+                  </i>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class ="header_i_vk" title="Vkontakte" href="https://vk.com/dmitrievnaa1999">
+                <div class="header_i_for_div">
+                  <i class="fab fa-vk header_i ">
+                  </i>
+                </div>   
+              </a>
+            </div>
+            <div>
+              <a class ="header_i_wa" title="WhatsApp " href="https://vk.com/dmitrievnaa1999"> 
+                <div class="header_i_for_div">
+                  <i class="fab fa-whatsapp header_i">
+                  </i>
+                </div>
+              </a>
+            </div>
+            <div>
+              <a class ="header_i_ig" title="Instagram " href="https://vk.com/dmitrievnaa1999"> 
+                <div class="header_i_for_div">
+                  <i class="fab fa-instagram header_i">
+                  </i>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      </body>
+      <script src="{% static '/js/jquery.js' %}"></script>
+      <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>
+      {% block js_extend %}{% endblock %}
+    </html> 

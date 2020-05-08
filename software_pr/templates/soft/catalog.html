@@ -1,0 +1,565 @@
+
+{% extends 'basic/pattern.html' %}
+{% load static %}
+
+ {% block content %}
+              <section>
+                <h1>Каталог
+                </h1>
+                <ul class="breadcrumb">
+                    <li><a href="main.html">Главная</a></li>
+                    <li>Каталог</li>
+                </ul>
+        
+                <section class="margin_top_2">
+                  <div class="software_container_width"> 
+        
+                    <div class="search_title">Фильтр <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
+                      <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
+                    <div class="flex_row flex_space-between">
+                
+                      <div class="flex_column software_left_column">
+                      <div class="flex_column software_search margin_bottom_2em ">
+                
+                         <fieldset class="fieldset_border_primary" name="fieldset" >
+                            <form name="form_page" action="{% url 'software:catalog' %}">
+                
+                
+                
+                              <div class = "flex_row ">
+                
+                                  
+                                <div class=" slct_div" type="submit" style ="width: 30%;">
+                                  <a   href="javascript: document.location.href ='http://127.0.0.1:8000/softwares/?count={{count}}'" class="slct">По</a>
+                                  <ul class="drop">
+                                    <li><a>1</a></li>
+                                    <li><a>2</a></li>
+                                    <li><a>4</a></li>
+                                    <!-- href="javascript:void(0);" -->
+                                    <li><a>6</a></li>
+                                    <li><a>10</a></li>
+                                    <li><a>12</a></li>
+                                  </ul>
+                                  <input type="hidden" name="count">
+                                </div>
+                
+                
+                                <div class="slct_div" type="submit" style="margin-left: .5em; width: calc(100% - 30% - 10px);">
+                                  <a href="javascript:void(0);" class="slct">Сортировать:</a>
+                                  <ul class="drop">
+                                    <li><a>Все</a></li>
+                                    <li><a>Популярное</a></li>
+                                    <li><a>Новое</a></li>
+                                    <li><a>&#8657 по размеру</a></li>
+                                    <li><a>&#8659 по размеру</a></li>
+                                  </ul>
+                                  <input type="hidden" id="select">
+                                </div>
+                                </div>
+                              
+                                <div class="flex_row flex_space-between margin_top_1em">
+                                  <input class="slct" type="number" name="page" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                                  <div>
+                                    <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
+                                  </div>
+                                </div>
+                
+                          </form>
+                         </fieldset>
+                        <fieldset class="fieldset_border_primary margin_top_2 search_disp_f search_div_fieldset" name="fieldset" >
+                       
+                          <form data-target="form_search">
+                
+                          <div class="flex_column">
+                
+                      
+                
+                
+                            <div class="input_style ">
+                              <input type="text" id="soft_name" name="soft_name" value="{{search_query_name}}" autocomplete="off"><label for="soft_name">Наименование ПО</label>
+                            </div>
+                
+                            <div class="flex_row flex_space-between">
+                                <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
+                                <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
+                            </div>
+                
+                            <fieldset class="fieldset_border_secondary" name="fieldset" >
+                              <legend >Цена</legend>
+                
+                              <ul class="radio_checkbox pos_left">
+                
+                                <li>
+                                    {% if soft_price == "soft_price_free" %}
+                                    <input id="soft_price_free" checked type="radio" name="soft_price" value="soft_price_free">
+                                    <label for="soft_price_free">Бесплатно</label>
+                                    {% else %}
+                                    <input id="soft_price_free" type="radio" name="soft_price" value="soft_price_free">
+                                    <label for="soft_price_free">Бесплатно</label>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if soft_price == "soft_price_paid" %}
+                                    <input id="soft_price_paid" checked type="radio" name="soft_price" value="soft_price_paid" >
+                                    <label for="soft_price_paid">Платно</label>
+                                    {% else %}
+                                    <input id="soft_price_paid" type="radio" name="soft_price" value="soft_price_paid" >
+                                    <label for="soft_price_paid">Платно</label>
+                                    {% endif %}
+                                </li>
+                                <li>
+                                    {% if soft_price == "soft_price_all" %}
+                                    <input id="soft_price_all" checked type="radio" name="soft_price" value="soft_price_all" >
+                                    <label for="soft_price_all">Все</label>
+                                    {% else %}
+                                    <input id="soft_price_all" type="radio" name="soft_price" value="soft_price_all" >
+                                    <label for="soft_price_all">Все</label>
+                                    {% endif %}
+                                </li>
+                                </ul>
+        
+                    <div class=" flex_row flex_space-between">
+                      <div class ="width_45 input_style" >
+                        <input type="text" id="pricefrom" name="soft_pricefrom" autocomplete="off" value="{{soft_pricefrom}}"><label for="pricefrom">Цена от:</label>
+                      </div>
+                      <div class ="width_45 input_style" >
+                        <input type="text" id="priceto" name="soft_priceto" autocomplete="off" value="{{soft_priceto}}"><label for="priceto">Цена до:</label>
+                      </div>            
+                    </div>
+                
+                
+                            </fieldset>
+                
+                            <fieldset class="fieldset_border_secondary" name="fieldset" > 
+                
+                              <ul class="radio_checkbox pos_left">
+                                <li>
+                                    {% if modification %}
+                                    <input id="modification" checked type="checkbox" value="is_modified" name="modification">
+                                    <label for="modification">Возможна доработка</label>
+                                    {% else %}
+                                    <input id="modification" type="checkbox" value="is_modified" name="modification">
+                                    <label for="modification">Возможна доработка</label>
+                                    {% endif %}
+                                </li>
+                              </ul></fieldset>
+                          
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset">
+                            <legend >Вид</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                {% if modification %}
+                                <input id="modification" checked type="checkbox" value="is_modified" name="modification">
+                                <label for="modification">Возможна доработка</label>
+                                {% else %}
+                                <input id="modification" type="checkbox" value="is_modified" name="modification">
+                                <label for="modification">Возможна доработка</label>
+                                {% endif %}
+                                <input id="type_desktop" name="type_desktop" value="checked" type="checkbox">
+                                <label for="type_desktop">Настольное приложение</label>
+                              </li>
+                              <li>
+                                <input id="type_site" name="type_site" value="checked" type="checkbox">
+                                <label for="type_site">Сайт</label>
+                              </li>
+                              <li>
+                                <input id="type_mobile" name="type_mobile" value="checked" type="checkbox">
+                                <label for="type_mobile">Мобильное приложение</label>
+                              </li>
+                            </ul>
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset" >
+                            <legend >Область применения</legend>
+                            <ul class="radio_checkbox pos_left" style="margin-bottom: 0em;">
+
+                                <!-- {% if area_list %} -->
+
+                                <!-- {% for s in area_list %}  for i in range(1, len(sys.argv)): -->
+                                <li>
+                                    <input id="c12" type="checkbox">
+                                    <label for="c12">Образование</label>
+                                  </li>
+                                <!-- {% endfor %} -->
+                                <!-- {% endif %} -->
+
+                              <li>
+                                <input id="c12" type="checkbox">
+                                <label for="c12">Образование</label>
+                              </li>
+                              <li>
+                                <input id="c22" type="checkbox">
+                                <label for="c22">Грузоперевозки</label>
+                              </li>
+                              <li>
+                                <input id="c32" type="checkbox">
+                                <label for="c32">Кафе</label>
+                              </li>
+                            </ul>
+        
+                            <ul class="radio_checkbox pos_left all_areas" style="display: none; margin-top: 0em;">
+                              <li>
+                                <input id="c12" type="checkbox">
+                                <label for="c12">Образование</label>
+                              </li>
+                              <li>
+                                <input id="c22" type="checkbox">
+                                <label for="c22">Грузоперевозки</label>
+                              </li>
+                              <li>
+                                <input id="c32" type="checkbox">
+                                <label for="c32">Кафе</label>
+                              </li>
+                            </ul>
+        
+                            <a class = "link_read-more link_style_border areas_more">еще...</a>
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset" >
+                            <legend >Тип использования</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                <input id="c13" type="checkbox">
+                                <label for="c13">Индивидуальный доступ</label>
+                              </li>
+                              <li>
+                                <input id="c23" type="checkbox">
+                                <label for="c23">Групповой</label>
+                              </li>
+                              <li>
+                                <input id="c33" type="checkbox">
+                                <label for="c33">Сетевой</label>
+                              </li>
+                            </ul>          
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset">
+                            <legend >Размер</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                <input id="c14" type="checkbox">
+                                <label for="c14">Небольшой</label>
+                              </li>
+                              <li>
+                                <input id="c24" type="checkbox">
+                                <label for="c24">Средний</label>
+                              </li>
+                              <li>
+                                <input id="c34" type="checkbox">
+                                <label for="c34">Большой</label>
+                              </li>
+                            </ul>          
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset">
+                            <legend >Ограничение доступа</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                <input id="c15" type="checkbox">
+                                <label for="c15">Разделение ролей</label>
+                              </li>
+                              <li>
+                                <input id="c25" type="checkbox">
+                                <label for="c25">Без ролей</label>
+                              </li>
+                            </ul>        
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset">
+                            <legend >Дополнительные установки</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                <input id="c16" type="checkbox">
+                                <label for="c16">Требуются</label>
+                              </li>
+                              <li>
+                                <input id="c26" type="checkbox">
+                                <label for="c26">Не требуются</label>
+                              </li>
+                            </ul>      
+                          </fieldset>
+                
+                
+                          <fieldset class="fieldset_border_secondary" name="fieldset">
+                            <legend >Установка ПО</legend>
+                            <ul class="radio_checkbox pos_left">
+                              <li>
+                                <input id="c17" type="checkbox">
+                                <label for="c17">Без установки</label>
+                              </li>
+                              <li>
+                                <input id="c27" type="checkbox">
+                                <label for="c27">С установкой</label>
+                              </li>
+                            </ul>   
+                          </fieldset>
+        
+                          </div>
+                  
+                          <div class="flex_row flex_space-between">
+                            <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
+                            <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
+                        </div>
+                        </form>
+                        </fieldset>
+                      </div>
+      
+                      <fieldset class="fieldset_border_primary widget_disp" name="fieldset" >
+                        <legend >Популярные на неделе</legend>
+
+                        <aside class="flex_column">
+        
+                          <div id="widgets_vertical_slider">
+                                  <section class="item">
+                                    <a href="">
+                                      <div class="widget flex_column">
+                                        <div class = "widget_div_title">Автоматизируй образование!</div>
+                                        <div class = "widget_div_img"> 
+                                          <!-- Бокс картинки --> 
+                                          <img  class = "img_width" src="images/code.jpg" alt="Расписание"/>
+                                        </div>
+                                        <div>
+                                          <ul class = "widget_list">
+                                            <li class="widget_marker">Контроль доходов и расходов
+                                            <li class="widget_marker">Мониторинг деятельности компании
+                                          </ul>
+                                        </div>
+                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                                        </button>
+                                      </div>
+                                    </a>
+                                  </section>
+                            <section class="item">
+                              <a href="">
+                                      <div class="widget flex_column">
+                                        <div class = "widget_div_title">Автоматизируй образование!</div>
+                                        <div class = "widget_div_img"> 
+                                          <!-- Бокс картинки --> 
+                                          <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                                        </div>
+                                        <div>
+                                          <ul class = "widget_list">
+                                            <li class="widget_marker">Контроль доходов и расходов
+                                            <li class="widget_marker">Мониторинг деятельности компании
+                                          </ul>
+                                        </div>
+                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                                        </button>
+                                      </div>
+                                    </a>
+                                  </section>
+                            
+                            
+                                  <section class="item">
+                                    <a href="software.html">
+                                      <div class="widget flex_column">
+                                        <div class = "widget_div_title">2Автоматизируй образование!</div>
+                                        <div class = "widget_div_img"> 
+                                          <!-- Бокс картинки --> 
+                                          <img  class = "img_width" src="images/computer.jpg" alt="Расписание"/>
+                                        </div>
+                                        <div>
+                                          <ul class = "widget_list">
+                                            <li class="widget_marker">Контроль доходов и расходов
+                                            <li class="widget_marker">Мониторинг деятельности компании
+                                          </ul>
+                                        </div>
+                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                                        </button>
+                                      </div>
+                                    </a>
+                                  </section>
+                            
+                                    
+                                  <section class="item">
+                                    <a href="software.html">
+                                      <div class="widget flex_column">
+                                        <div class = "widget_div_title">Автоматизируй3 образование!</div>
+                                        <div class = "widget_div_img"> 
+                                          <!-- Бокс картинки --> 
+                                          <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                                        </div>
+                                        <div>
+                                          <ul class = "widget_list">
+                                            <li class="widget_marker">Контроль доходов и расходов
+                                            <li class="widget_marker">Мониторинг деятельности компании
+                                          </ul>
+                                        </div>
+                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                                        </button>
+                                      </div>
+                                    </a>
+                                  </section>
+                            
+                          </div>                      
+                        </aside>
+                      </fieldset>
+                    </div>
+                
+                
+                      <section class="flex_row software_container padding_bottom_2em"> 
+                        <!-- Контейнер для всех карточек --> 
+                        {% if soft_list %}
+
+                        {% for s in soft_list %}
+                          <div class="software_column-2 catalog_card_software"> 
+                            <!-- Бокс одной карточки --> 
+                            <article class="flex_column software_alone_container blue_bg"> 
+                              <!-- Контейнер одной карточки --> 
+                  
+                              <div class = "flex_column width_100"> 
+                        <div>
+                            {% if s.is_free is False %}
+                            <div class = "software_price">{{s.price}} &#8381</div>
+                            {% endif %}
+                                   
+                                <!-- Контейнер названия и типа ПО -->
+                                <div class="software_div_name">
+                        
+                                  <!-- Контейнер названия и типа ПО -->
+                                  <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
+                            </div>
+                          </div>
+                                <span class = "software_type" href="software_page">{{s.get_type|join:", "|default:""}}
+                                </span>
+                              </div>
+                              <div class="flex_row container_img_text">  
+                                <!-- Контейнер картинки и текста --> 
+                                <div class = "flex_column software_container_image_button"> 
+                                  <!-- Контейнер картинки и кнопок -->
+                                  <div class = "software_div_images"> 
+                                    <!-- Бокс картинки --> 
+                                    <a href="{% url 'software:software_page' s.id %}"><img class = "img_width cursor" src="s.soft_image.url"  alt="{{s.name}}"/></a>
+                                  </div>
+                                  <div class="flex_row software_container_button flex_space-between"> 
+                                    <!-- Бокс кнопки покупки и лайка --> 
+                                    <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">
+                                        
+                                        {% if s.price <= 0 %}
+                                        Скачать бесплатно
+                                        {% else %}
+                                        Приобрести
+                                        {% endif %}
+                                        
+                                        
+                                    </button>
+                                    <div >
+                                      <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class = "software_description article_div_text">
+                                  <div style = "padding-bottom: 0.25em">Для: 
+                                    <span href="catalog.html">{{s.get_area|join:", "|default:"Не ограничено"}}
+                                    </span>
+                                  </div>
+                                  <ul class = "software_description_list"style = "list-style: none">
+                                    {{s.description_medium}}
+                                  </ul>
+                                </div>
+                              </div>
+                              <div class = "software_tag">
+                                <span>
+                                   
+                                    {% if tags_dict %}   
+                                    {% if tags_dict %}
+                                    {% for val in tags_dict.values %}
+                                    {% for tag in val %}
+                                    <a href="">#{{tag}}</a>
+                                    {% endfor %}
+                                    
+                                    {% endfor %}
+                                    {% endif %}                              
+                                    {% endif %}                                
+      
+                                </span>
+                              </div>
+                            </article>
+                          </div>
+      
+                        {% endfor %}
+                    
+                      {% else %}
+                        ПО нет
+                      {% endif %}             
+                      </section>
+                    </div>
+                  </div>
+                
+                  {% block pagination %}		
+                  <div class=" flex_column margin_top-bootom_1em">
+        
+                    <div class=" pos_center"><a href="#" class="button_show-more">Показать еще</a></div>
+                    <div class=" flex_row pagination flex_space-between">
+
+                    {% if soft_list.has_previous %}
+                        <a class = "pagination_page_numbers" href="?page={{ soft_list.previous_page_number }}">&laquo;</a>
+                    {% else %}
+                        <a class = "pagination_ellipsis">&laquo;</a>
+                    {% endif %}
+                    {% for pg in soft_list.paginator.page_range %}
+                        {% if soft_list.number == pg %}
+                            <a class = "pagination_page_numbers pagination_page_numbers_active"  href="?page={{ pg }}">{{ pg }}</a>
+                        {% else %}
+                            <a class = "pagination_page_numbers"  href="?page={{ pg }}">{{ pg }}</a>
+                        {% endif %}
+                    {% endfor %}
+                    {% if soft_list.has_next %}
+                        <a class = "pagination_page_numbers" href="?page={{ soft_list.next_page_number }}">&raquo;</a>
+                    {% else %}
+                        <a class = "pagination_ellipsis">&raquo;</a>
+                    {% endif %}
+
+
+                      <!-- <a class = "pagination_page_numbers" href="#">&laquo;</a>
+                      <a class = "pagination_page_numbers" href="#">1</a>
+                      <a class = "pagination_page_numbers pagination_page_numbers_active"  href="#">2</a>
+                      <a class = "pagination_page_numbers" href="#">3</a>
+                      <a class = "pagination_page_numbers" href="#">4</a>
+                      <a class = "pagination_page_numbers" href="#">5</a>
+                      <a class = "pagination_ellipsis" href="#">...</a>
+                      <a class = "pagination_page_numbers" href="#">15</a>
+                      <a class = "pagination_page_numbers" href="#">16</a>
+                      <a class = "pagination_page_numbers" href="#">&raquo;</a> -->
+                    </div>
+                  </div>
+
+              {% endblock %}	
+                 
+                </section>
+
+              </section>
+
+              {% endblock %}	
+
+              {% block js_extend %}
+              <script src="{% static '/js/slick.min.js' %}"></script>
+              <script>
+              jQuery(document).ready(function () {
+                    select_style();
+                    input_filled("input");
+                    search_roll();
+                    areas_more();
+                    form_search_reset();
+
+                    $('#widgets_vertical_slider').slick({
+                      vertical:true,
+                      infinite: true,
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                      speed: 500,
+                      autoplay: true,
+                      autoplaySpeed: 4000,
+                      arrows:true,
+                      prevArrow:'<div class = "pos_center margin_bottom_1em cursor"><i class="fa fa-angle-up widget_arrows" aria-hidden="true"></i></div>',
+                      nextArrow:'<div class = "pos_center margin_top_1em cursor"> <i class="fa fa-angle-down widget_arrows" aria-hidden="true"></i></div>'	
+                    });
+                  })         
+              </script>
+              {% endblock %}

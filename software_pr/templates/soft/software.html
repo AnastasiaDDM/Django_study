@@ -1,0 +1,760 @@
+{% extends 'basic/pattern.html' %}
+
+{% load static %}
+
+<title>{% block page_title %}{{software.name}}{% endblock %}
+
+  {% block link_extend %}
+  <link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
+  {% endblock %}
+
+
+
+ {% block content %}
+
+ {% block content_title %}
+ <h1>{{software.name}}</h1>
+{% endblock %}
+
+{% block breadcrumb %}
+<ul class="breadcrumb">
+  <li>
+    <a href="main.html">Главная
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Каталог
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Настольные приложения
+    </a>
+  </li>
+  <li>{{software.name}}
+  </li>
+</ul> 
+{% endblock %}
+
+ <section>
+  <div class="flex_column  pos_left padding_top_2em padding_bottom_2em" >
+    <div class="flex_row flex_space-between width_100"> 
+      <!--Это контейнер фоток ПО и начала его описания, характеристик-->
+      <div class="flex_column w_50_sm pos_center_sm"> 
+        <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
+
+
+
+            
+
+
+
+
+       
+
+        <div class="flex_row flex_wrap">
+
+
+
+          {% if software_img %}
+          {% for s in software_img %}
+  
+            {% if s.is_main == 'True' %}
+            <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image img_width padding_bottom_2em" src="{{s.photo.url}}" alt=""/></a>
+            {% else %}
+            <div class = "img_margin">
+              <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
+              data-title="Главная страница"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt=""/></a>
+            </div>
+            {% endif %} 
+  
+          {% endfor %}
+      
+        {% else %}
+          Фотографий нет
+        {% endif %} 
+
+
+<!--         
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div>
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div>
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div>
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div>
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div>
+          <div class = "img_margin">
+            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
+            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
+          </div> -->
+        </div>
+
+                {% if software_tag %}
+
+                <fieldset class="fieldset_tags software_tag_first" name="fieldset">
+                    <legend class="pos_center">Подборка
+                    </legend>
+                    <form>
+                      <div class = "fieldset_tags_word">
+                        <span>
+
+
+                    {% for tag in software_tag %}
+                    
+                    <a href="catalog.html">#{{tag.name}}</a>
+
+                    {% endfor %}
+            
+              {% else %}
+                ПО нет
+              {% endif %} 
+
+              </span>
+            </div>        
+          </form>
+        </fieldset>
+
+      </div>
+      <div class="flex_column w_50_sm padding_left_4em_sm padding_top_2em_sm"> 
+        <!--Это контейнер цены, кнопок и описания-->
+        <div class="flex_column"> 
+          <!--Это контейнер цены и кнопок-->
+          <div class = "page_software_price">{{software.price|floatformat |default:""}}  &#8381
+          </div>
+
+          <div class="flex_column padding_bottom_2em w_70_md"> 
+
+            {% if software.modification %}
+
+            <!--Это контейнер кнопок-->
+            <div>
+                <button href="buy.html" class="button_pay width_100 margin_top-bootom_1em">Приобрести
+                </button>
+            </div>
+            <div class="flex_row  flex_space-between">
+                <button class="button_pay button_pay_width_full">Заказать доработку
+                </button>
+                <div>
+                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            {% else %}
+
+            <!--Это контейнер кнопок-->
+            <div class="flex_row  flex_space-between">
+                <button class="button_pay button_pay_width_full">Приобрести
+                </button>
+                <div>
+                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            {% endif %} 
+
+          </div>
+        </div>
+        <div >
+          <div class="">
+            <ul class = "pos_left software_description_list"style = "list-style: none">
+              <li class="software_description_marker">Вид: 
+                <span>{{classif.type|default:"Не задано"}}
+                </span>
+              </li>
+              <li class="software_description_marker">Область: 
+                <span>{{classif.area|default:"Не задано"}}
+                </span>
+              </li>
+              <li class="software_description_marker"> Размер приложения: {{software.size|filesizeformat|default:"Не задано"}}
+              </li>
+              <li class="software_description_marker">Тип использования: 
+                <span>{{classif.type_of_use|default:"Не задано"}}
+                </span>
+              </li>
+              <li class="software_description_marker">Ограничение доступа: 
+                <span>{{classif.access|default:"Не задано"}}
+                </span>
+              </li>
+              <li class="software_description_marker">Дополнительные установки: 
+                <span>{{classif.extra_install|default:"Не задано"}}
+                </span>
+              </li>
+              <li class="software_description_marker">Установка приложение: 
+                <span>{{classif.install|default:"Не задано"}}
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="margin_top-bootom_1em page_software_description">
+            <div>{{list_descr.0}}
+            </div>
+            <div style="display: none;" id="description_text" class="all_text">
+                {{list_descr.1|linebreaks}}
+              
+            </div>  
+          </div>
+          <div class="margin_top-bootom_1em pos_left bt_read_pos_center">
+            <a class="button_reset text_roll" data-target="description_text">Читать полностью
+            </a>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div> 
+    <!--Это контейнер кнопок, которые находятся в контенте-->
+    <div class="flex_row w_50_sm pos_center padding_top_2em padding_bottom_2em">
+      <button href="buy.html" class="button_pay button_pay_width_full ">350 000 000 000₽ Приобрести
+      </button>
+      <div >
+        <i class="fa fa-heart button_like width_30" aria-hidden="true">
+        </i>
+      </div>
+    </div>
+  </div>
+  <div class="margin_top_3em">    
+    <!--Это контейнер похожих ПО-->
+    <div class="pos_center">
+      <h2>Похожие программные продукты
+      </h2>
+    </div>
+    <div class="">
+      <fieldset class="fieldset_tags  w_50_sm_auto pos_center software_tag_second" name="fieldset">
+        <legend>Подборка
+        </legend>
+        <form>
+          <div class = "fieldset_tags_word">
+            <span>
+              <a href="URL">#Платно
+              </a>  
+              <a href="URL">#Доходы
+              </a>  
+              <a href="URL">#ПО ПК
+              </a>  
+              <a href="URL">#Бизнес
+              </a>  
+              <a href="URL">#Кафе
+              </a>  
+              <a href="URL">#Гастропаб
+              </a>                
+              <a href="URL">#Платно
+              </a>  
+              <a href="URL">#Доходы
+              </a>  
+            </span>
+          </div>        
+        </form>
+      </fieldset>
+      <div class="margin_top_3em">
+        <div class="margin_top_3em div_horizontal_soft">
+          <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
+            <div class="flex_row flex_space-between  width_90"  id="same_software">
+ 
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+            <section class="widget_section">
+              <div class="p_1">
+                <a class="link_style_none" href="software.html">
+                <div class="widget flex_column">
+                  <div class = "widget_div_title">Автоматизируй образование!!!
+                  </div>
+                  <div class = "widget_div_img"> 
+                    <!-- Бокс картинки --> 
+                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                  </div>
+                  <div>
+                    <ul class = "widget_list">
+                      <li class="widget_marker">Контроль доходов и расходов
+                      <li class="widget_marker">Мониторинг деятельности компании
+                    </ul>
+                  </div>
+                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                  </button>
+                </div>
+              </a>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+
+        <div class="margin_top-bootom_1em pos_center">
+          <a href="#" class="button_reset ">Посмотреть еще
+          </a>
+        </div> 
+      </div>
+    </div>
+    <div class="margin_top_3em">
+      <div class="pos_center padding_top_2em">
+        <h2>Обсуждения данного продукта
+        </h2>
+      </div>
+      <div class="margin_top_3em">      
+        <!-- Контейнер обсуждений и формы -->
+        <div>      
+          <!-- Контейнер обсуждений -->
+          <div class="discussion flex_column pos_center_for_div" id="dis_1">      
+            <!-- одно обсуждение -->
+            <div class="flex_row">
+              <div class = "reviews_title">Иванов М.Л.
+              </div>
+              <div class = "reviews_date">20.01.2020
+              </div>
+            </div>
+            <div  class="discussion_text">
+              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! 
+              </span>
+              <div>
+                <div class="pos_right_for_div btn_answer" data-target="dis_1">
+                  <a class="button_reset">Ответить
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_1">
+              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
+              </i>Комментарии (10)
+              </a>
+            </div>
+
+
+            <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
+              <!-- комментарии к обсуждению -->
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! 
+                  </span>
+                </div>
+              </div>
+
+               <div class="flex_row flex_space-between margin_top_1em">
+                <div class="search_title btn_rollup"> 
+                  <a class="search_roll-up">Свернуть <i class="fas fa-arrow-up"></i></a>
+                </div>
+
+                <div class=" btn_answer_two" data-target="dis_1">
+                  <a class="button_reset">Ответить
+                  </a>
+                </div>
+               </div>
+
+            </div>
+
+
+
+
+
+          </div>
+          <div class="discussion flex_column pos_center_for_div" id="dis_2">      
+            <!-- одно обсуждение -->
+            <div class="flex_row">
+              <div class = "reviews_title">Иванов М.Л.
+              </div>
+              <div class = "reviews_date">20.01.2020
+              </div>
+            </div>
+            <div  class="discussion_text">
+              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! 
+              </span>
+              <div class="pos_right_for_div btn_answer" data-target="dis_2">
+                <a class="button_reset">Ответить
+                </a>
+              </div>
+            </div>
+            <div class="margin_top_07em comment_roll" data-target="dis_2">
+              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
+              </i>Комментарии (10)
+              </a>
+            </div>
+            <div class ="discussion_comment pos_right" style="display: none;">      
+              <!-- комментарии к обсуждению -->
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!  Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
+                    с каждым выходом нового ПО! 
+                  </span>
+                </div>
+              </div>
+              <div  class="discussion_comment_one flex_column  ">
+                <div class="flex_row">
+                  <div class = "reviews_title">Иванов М.Л.
+                  </div>
+                  <div class = "reviews_date">20.01.2020
+                  </div>
+                </div>
+                <div>
+                  <span>Огромное спасмбо за отзыв! 
+                  </span>
+                </div>
+              </div>
+              <div class="flex_row flex_space-between margin_top_1em">
+                <div class="search_title btn_rollup"> 
+                  <a class="search_roll-up">Свернуть <i class="fas fa-arrow-up"></i></a>
+                </div>
+
+                <div class=" btn_answer_two" data-target="dis_2">
+                  <a class="button_reset">Ответить
+                  </a>
+                </div>
+               </div>
+            </div>
+          </div>
+          <div class="discussion flex_column pos_center_for_div" id="dis_3">      
+            <!-- одно обсуждение -->
+            <div class="flex_row">
+              <div class = "reviews_title">Иванов М.Л.
+              </div>
+              <div class = "reviews_date">20.01.2020
+              </div>
+            </div>
+            <div  class="discussion_text">
+              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                которую предложила, и тогда приложение станет совершенно идеальным 
+                для меня! Спасибо вам! 
+              </span>
+              <div class="pos_right_for_div btn_answer" data-target="dis_3">
+                <a class="button_reset">Ответить
+                </a>
+              </div>
+            </div>
+            <div class="margin_top_07em comment_roll" data-target="dis_3">
+              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
+              </i>Комментарии (0)
+              </a>
+            </div>
+          </div>
+          <div class="pos_center margin_top-bootom_1em">
+            <a href="#" class="button_reset">Показать еще
+            </a>
+          </div>
+        </div>
+        <div class=" flex_column pos_center w_50_sm margin_top_3em">     
+          <!-- Форма комментария Ваше мнение -->
+
+          <h3>Начните свое обсуждение
+          </h3>
+          <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
+            <form>
+              <div class="pos_center w_70_xl">
+                <div class="input_style ">
+                  <input type="text" id="name" autocomplete="off">
+                  <label for="name">Ваше имя
+                  </label>
+                </div>
+                <div class="input_style margin_top_3em">
+                  <input type="text" id="email" required autocomplete="off">
+                  <label for="email">Номер телефона/ эл.почта
+                  </label>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em">
+                    <textarea type="textarea" rows="5" required="required"></textarea>
+                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="pos_сenter">
+                <a href="#" class="button_reset">Оставить комментарий
+                </a>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <div id="pattern_form_answer" style="display: none;">
+      <div class="copy_form_answer" style="display: none;">
+        <div class=" flex_column pos_center margin_top_1em width_100">     
+          <!-- Форма комментария -->
+          <h3>Ответ
+          </h3>
+          <fieldset class=" fieldset_border_primary padding_2em_xs">
+            <form>
+              <div class="pos_center">
+                <div class="flex_row flex_space-between">
+                  <div class="input_style w_45_sm">
+                    <input type="text" id="name" autocomplete="off">
+                    <label for="name">Ваше имя
+                    </label>
+                  </div>
+                  <div class="input_style w_45_sm">
+                    <input type="text" id="phone" required>
+                    <label for="phone">Номер телефона/ эл.почта
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em textarea_height_small">
+                    <textarea type="textarea"></textarea>
+                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    </label>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="flex_row flex_space-between margin_top_3em">
+                <div class="btn_cancel">
+                  <a class="button_reset">Отменить
+                  </a>
+                </div>
+                <div class="">
+                  <a href="#" class="button_reset">Оставить комментарий
+                  </a>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    {% endblock %}	
+
+
+    {% block js_extend %}
+    <script src="{% static '/js/slick.min.js' %}"></script>
+    <script src="{% static '/js/lightbox.min.js' %}"></script>
+    <script>
+        jQuery(document).ready(function () {
+          comments_form_answer();
+          input_filled('input');
+          input_filled('textarea');
+          carousel_soft('same_software');
+          read_more_text_roll();
+        })          
+    </script>
+    {% endblock %}

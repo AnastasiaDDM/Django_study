@@ -1,0 +1,97 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+
+<title>{% block page_title %}Заказать звонок{% endblock %}
+
+
+ {% block content %}
+      <section>
+
+        {% block breadcrumb %}
+<ul class="breadcrumb">
+  <li>
+    <a href="main.html">Главная
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Каталог
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Настольные приложения
+    </a>
+  </li>
+  <li>{{software.name}}
+  </li>
+</ul> 
+{% endblock %}
+
+        <div class="margin_top_2">     
+          <!-- Форма комментария -->
+          <fieldset class="border_fieldset_top">
+            <legend class="pos_center padding_left-right_1em">
+              <h1>Заказать звонок
+              </h1>
+            </legend>
+            <form method="post" action="{% url 'feedback:client_feedback' %}">
+                {% csrf_token %}
+              <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                <div class="input_style">
+                    {% if client != '' %}
+                    <input type="text" id="name" name="name" value="{{ client.name }}" readonly>
+                    {% else %}
+                    <input type="text" id="name" name="name" value="{{ name|default:'' }}">
+                    {% endif %}
+                    <label for="name">Ваше имя</label>
+                </div>
+                <div class="input_style margin_top_3em">
+                  
+                  {% if client != '' %}
+                  <input type="text" id="phone" name="phone" value="{{ client.phone }}" readonly>
+                  {% else %}
+                  <input class="phone" type="text" id="phone" name="phone" value="{{ phone }}" required>
+                  {% endif %}
+                  <label for="phone">Номер телефона</label>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em">
+                    <textarea type="textarea" id="comment" name="comment" rows="5"></textarea>
+                    <label for="comment" class = "textarea_style_label">Опишите свою проблему
+                    </label>
+                  </div>
+                </div>
+                <div>
+                    {% if message %}
+                    <div class="pos_left_for_text">
+                        <i class="fa fa-exclamation order_chat_i margin_right_04em" aria-hidden="true" ></i>
+                        {{message}}
+                      </div>
+                    {% endif %}
+                </div>
+                <div class="flex_row flex_space-between margin_top_3em">
+                  <div class="pos_сenter">
+                    <a href="#" class="button_reset">Отменить
+                    </a>
+                  </div>
+                  <div class="pos_сenter">
+                    <button type="submit" class="button_show-more">Заказать звонок</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </section>
+         {% endblock %}	
+
+
+        {% block js_extend %}
+        <script src="{% static '/js/jquery.maskedinput.min.js' %}"></script>
+        <script>
+            jQuery(document).ready(function () {
+            input_filled('input');
+            input_filled('textarea');
+            phone_mask();
+            })          
+        </script>
+        {% endblock %}

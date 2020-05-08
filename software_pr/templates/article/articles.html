@@ -1,0 +1,252 @@
+
+{% extends 'basic/pattern.html' %}
+{% load static %}
+
+<title>{% block page_title %}Статьи{% endblock %}
+
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
+{% endblock %}
+
+
+ {% block content %}
+              <section>
+                <h1>Статьи
+                </h1>
+                <ul class="breadcrumb">
+                    <li><a href="main.html">Главная</a></li>
+                    <li>Статьи</li>
+                </ul>
+        
+                {% block search %}
+                <div class="article_search_size">
+                    <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
+                      <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
+                    <fieldset class="fieldset_border_primary search_div_fieldset">
+                      <form data-target="form_search">
+                        <div class="flex_row flex_space-between">
+                          <div class="input_style w_45_xs">
+                            <input type="text" name="article_author" id="author" value="{{art_author}}" autocomplete="off">
+                            <label for="author">Автор
+                            </label>
+                          </div>
+                          <div class="input_style w_45_xs">
+                            <input type="text" id="article_name" name="article_name" value="{{search_query_name}}">
+                            <label for="article_name">Название
+                            </label>
+                          </div>
+                        </div>
+                        <div class="flex_row flex_space-between padding_top-bootom_1em ">
+                          <div class="input_style w_45_xs">
+                            <input type="text" id="keyword" autocomplete="off">
+                            <label for="keyword">Ключевые слова
+                            </label>
+                          </div>
+                          <div  class="flex_row flex_space-between w_45_xs" style="margin-top: 1.7em;">
+                            <div class="div_datepic">
+                              <input  type="text" class=" slct_div slct search_datepicker" autocomplete="off" name="article_date_from" value="{{art_date_from}}">
+                            </div> 	
+                            &#8212  
+                            <div class="div_datepic">
+                              <input type="text" class=" slct_div slct search_datepicker" autocomplete="off" name="article_date_to" value="{{art_date_to}}">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="flex_row flex_space-between ">
+                          <div class="margin_top-bootom_1em">
+                            <a data-rel="form_search" class="button_reset">Сбросить
+                            </a>
+                          </div>
+                          <div class="margin_top-bootom_1em" type="submit">
+                            <button class="button_search">Поиск
+                            </button>
+                          </div>  
+                        </div>
+                      </form>
+                    </fieldset>
+                    <fieldset class="fieldset_border_primary margin_top_1em" name="fieldset" >
+                      <form action="" method="get">
+                          <div class = "flex_row ">                  
+                            <div class=" slct_div column-3">
+                              <a href="javascript:void(0);" class="slct">По...</a>
+                              <ul class="drop ">
+                                <li><a>4</a></li>
+                                <li><a>6</a></li>
+                                <li><a>10</a></li>
+                                <li><a>12</a></li>
+                              </ul>
+                              <input class="disp_none" type="submit" name="count" value="">
+                            </div>
+                            <div class="slct_div column-3">
+                              <a href="javascript:void(0);" class="slct">Сортировать:</a>
+                              <ul class="drop">
+                                <li><a>Все</a></li>
+                                <li><a>Популярное</a></li>
+                                <li><a>Новое</a></li>
+                                <li><a>&#8657 по размеру</a></li>
+                                <li><a>&#8659 по размеру</a></li>
+                              </ul>
+                              <input type="hidden" >
+                            </div>
+                            <div class="flex_row column-3">
+                              <input class="slct" type="number" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                              <div class="">
+                                <a type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></a>
+                              </div>
+                            </div>
+                            </div>
+                      </form>
+                     </fieldset>
+                  </div>
+                {% endblock %}
+
+                <div>
+                    <section class="flex_row article_container padding_bottom_2em"> 
+                      <!-- Контейнер для всех карточек --> 
+
+                      {% if art_list %}
+
+                      {% for s in art_list %}
+
+                      <div class="column-2"> 
+                        <!-- Бокс одной карточки --> 
+                        <article class="flex_column software_alone_container blue_bg"> 
+                          <!-- Контейнер одной карточки --> 
+                          <div class = "flex_column width_100"> 
+                            <div class="software_div_name">
+                              <!-- Контейнер названия и типа ПО -->
+                              <a class = "software_name" href="/software.html">{{s.name}}
+                              </a>
+                            </div>
+                            <div class="flex_row article_box_author_date"> 
+                              <!-- Бокс автора и даты --> 
+                              <div>Автор: 
+                                <a class = "link_style_border" name="article_author" href="{% url 'articles:list_article' %}">{{s.author.surname}} {{s.author.name}}
+                                </a>
+                                <!-- <p>url 'articles:list_article' art_author=s.author.id</p> -->
+                              </div>
+                              <div>{{s.date_of_review|date:"j E Y"}}
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex_row container_img_text">  
+                            <!-- Контейнер картинки и текста --> 
+                            <div class = "flex_column software_container_image_button"> 
+                              <!-- Контейнер картинки и кнопок -->
+                              <div class = "software_div_images" > 
+                                <!-- Бокс картинки --> 
+                                <a href="/software.html">
+                                  <img  class = "img_width cursor" src="!{!{s.image.url}}"  alt="{{s.name}}"/>
+                                </a>
+                              </div>
+                            </div>
+                            <div class = "flex_column software_description article_div_text">
+                              <div class = "article_start-of-article">{{s.text}}
+                              </div>
+                              <div class = "article_read-more_text-align">
+                                <a href="#" class="link_read-more link_style_border">
+                                  <span>Читать далее
+                                  </span>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class = "article_tag">
+                            <span>
+                              <a href="URL">#Платно
+                              </a>  
+                              <a href="URL">#Доходы
+                              </a>  
+                              <a href="URL">#ПО ПК
+                              </a>  
+                              <a href="URL">#Бизнес
+                              </a>  
+                              <a href="URL">#Кафе
+                              </a>  
+                              <a href="URL">#Гастропаб
+                              </a>                
+                              <a href="URL">#Платно
+                              </a>  
+                              <a href="URL">#Доходы
+                              </a>  
+                              <a href="URL">#ПО ПК
+                              </a>  
+                              <a href="URL">#Бизнес
+                              </a>  
+                              <a href="URL">#Кафе
+                              </a>  
+                              <a href="URL">#Гастропаб
+                              </a>
+                            </span>
+                          </div>
+                        </article>
+                      </div>
+    
+                      {% endfor %}
+                  
+                    {% else %}
+                      Статей не найдено
+                    {% endif %}        
+
+                    </section>
+                    {% block pagination %}		
+                    <div class=" flex_column margin_top-bootom_1em">
+          
+                      <div class=" pos_center"><a href="#" class="button_show-more">Показать еще</a></div>
+                      <div class=" flex_row pagination flex_space-between">
+  
+                      {% if art_list.has_previous %}
+                          <a class = "pagination_page_numbers" href="?page={{ art_list.previous_page_number }}">&laquo;</a>
+                      {% else %}
+                          <a class = "pagination_ellipsis">&laquo;</a>
+                      {% endif %}
+                      {% for pg in art_list.paginator.page_range %}
+                          {% if art_list.number == pg %}
+                              <a class = "pagination_page_numbers pagination_page_numbers_active"  href="?page={{ pg }}">{{ pg }}</a>
+                          {% else %}
+                              <a class = "pagination_page_numbers"  href="?page={{ pg }}">{{ pg }}</a>
+                          {% endif %}
+                      {% endfor %}
+                      {% if art_list.has_next %}
+                          <a class = "pagination_page_numbers" href="?page={{ art_list.next_page_number }}">&raquo;</a>
+                      {% else %}
+                          <a class = "pagination_ellipsis">&raquo;</a>
+                      {% endif %}
+                      </div>
+                    </div>
+  
+                {% endblock %}	
+                  </div>
+
+              </section>
+
+              {% endblock %}	
+
+              {% block js_extend %}
+              <script src="{% static '/js/slick.min.js' %}"></script>
+              <script src="{% static '/js/datepicker.min.js' %}"></script>
+              <script src="{% static '/js/datepicker.ru.js' %}"></script>
+              <script>
+              jQuery(document).ready(function () {
+                    select_style();
+                    input_filled("input");
+                    search_roll();
+                    areas_more();
+                    datepicker_init();
+                    form_search_reset();
+
+                    $('#widgets_vertical_slider').slick({
+                      vertical:true,
+                      infinite: true,
+                      slidesToShow: 2,
+                      slidesToScroll: 1,
+                      speed: 500,
+                      autoplay: true,
+                      autoplaySpeed: 4000,
+                      arrows:true,
+                      prevArrow:'<div class = "pos_center margin_bottom_1em cursor"><i class="fa fa-angle-up widget_arrows" aria-hidden="true"></i></div>',
+                      nextArrow:'<div class = "pos_center margin_top_1em cursor"> <i class="fa fa-angle-down widget_arrows" aria-hidden="true"></i></div>'	
+                    });
+                  })         
+              </script>
+              {% endblock %}

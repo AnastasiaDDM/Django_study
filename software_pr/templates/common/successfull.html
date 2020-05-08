@@ -1,0 +1,64 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+
+<title>{% block page_title %}Успешно{% endblock %}
+
+
+ {% block content %}
+      <section>
+
+        {% block breadcrumb %}
+<ul class="breadcrumb">
+  <li>
+    <a href="main.html">Главная
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Каталог
+    </a>
+  </li>
+  <li>
+    <a href="catalog.html">Настольные приложения
+    </a>
+  </li>
+  <li>{{software.name}}
+  </li>
+</ul> 
+{% endblock %}
+
+
+        <div class="margin_top_2">     
+          <!-- Форма комментария -->
+          <fieldset class="border_fieldset_top" >
+            <legend class="pos_center padding_left-right_1em">
+              <h1>Успешно
+              </h1>
+            </legend>
+            <form>
+              <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                <div class="pos_left_for_text ">
+                    <div class="pos_center a_big">
+                        {% if message %}
+                        {{message}}
+                        {% endif %}
+                    </div>
+                    <div class="margin_top_3em">
+                        Для удобной работы на нашем сайте предлагаем вам зарегистрироваться
+                    </div>
+                  
+                  <div class="pos_center margin_top_07em">
+                    <a href="#" class="link_read-more link_style_border a_big">
+                      <span>Зарегистрироваться
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div class="margin_top-bootom_1em">
+                  <i class="fa fa-check i_big" aria-hidden="true">
+                  </i>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+        {% endblock %}	
