@@ -6,6 +6,20 @@ from software.models import *
 from django.db.models import Q
 from django.core.paginator import *
 import dbl
+import re
+
+
+from django.template.base import Library
+
+register = Library()
+
+
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
+
+
+    
 
 # Ф-ия составления списка ПО
 def catalog(request):
@@ -17,44 +31,74 @@ def catalog(request):
     soft_pricefrom = request.GET.get('soft_pricefrom', '')
     soft_priceto = request.GET.get('soft_priceto', '')
     modification = request.GET.get('modification', '')
-    type_desktop = request.GET.get('type_desktop', '')
-    type_site = request.GET.get('type_site', '')
-    type_mobile = request.GET.get('type_mobile', '')
-
-    # Фильтрация по цене (бесплатные ПО)
-    if type_desktop != '':
-
-        softwares_desktop = Classification_Value.objects.get(value="Настольное приложение").softwares.all()
-        # soft_list = soft_list.filter(value="Настольное приложение")
-        dbl.log("vvvvvvvvvv")
-        dbl.log(str(softwares_desktop))
-        if softwares_desktop.exists():
-            soft_list = softwares_desktop & soft_list 
-            dbl.log(' ===== '+str(soft_list))
-
-    if type_site != '':
-
-        softwares_site = Classification_Value.objects.get(value="Сайт").softwares.all()
-        # soft_list = soft_list.filter(value="Настольное приложение")
-        dbl.log("vvvvvvvvvv")
-        dbl.log(str(softwares_site))
-        if softwares_site.exists():
-            soft_list = soft_list & softwares_site 
-            dbl.log(' ----- '+str(soft_list))
-
-    if type_mobile != '':
-
-        softwares_mobile = Classification_Value.objects.get(value="Мобильное приложение").softwares.all()
-        # soft_list = soft_list.filter(value="Настольное приложение")
-        dbl.log("vvvvvvvvvv")
-        dbl.log(str(softwares_mobile))
-
-        if softwares_mobile.exists():
-            soft_list = soft_list & softwares_mobile
-            dbl.log(' 00000 '+str(soft_list))
 
 
-    # soft_list = softwares_desktop | softwares_site | softwares_mobile
+
+    classification_dict = {}
+
+    for req in request.GET.items():
+        dbl.log("!!!!!"+ str(req))
+        dbl.log("66666"+ str(req[1]))
+
+        # Проверка валидности значения имени
+        if re.match(r'classification_(\d+)_value_(\d+)', str(req[0])):
+            if str(req[1]) !="" and str(req[1]).isdigit():
+
+                classification_dict[str(req[0])] = str(req[1])
+                dbl.log("aaaa"+ str(req))
+
+
+    cond = Q()
+
+    dbl.log("-----"+ str(classification_dict))
+
+    dbl.log("2222"+ str(classification_dict.values()))
+
+    for cl_val in classification_dict.values():
+
+        dbl.log("nnn  "+ str(cl_val))
+    
+        cond |=Q(classification_value=int(cl_val))
+        dbl.log("//////  "+ str(cond))
+
+
+    soft_list = soft_list.filter(cond)
+    dbl.log("......  "+ str(soft_list))
+
+    # # Фильтрация по цене (бесплатные ПО)
+    # if type_desktop != '':
+
+    #     softwares_desktop = Classification_Value.objects.get(value="Настольное приложение").softwares.all()
+    #     # soft_list = soft_list.filter(value="Настольное приложение")
+    #     dbl.log("vvvvvvvvvv")
+    #     dbl.log(str(softwares_desktop))
+    #     if softwares_desktop.exists():
+    #         soft_list = softwares_desktop & soft_list 
+    #         dbl.log(' ===== '+str(soft_list))
+
+    # if type_site != '':
+
+    #     softwares_site = Classification_Value.objects.get(value="Сайт").softwares.all()
+    #     # soft_list = soft_list.filter(value="Настольное приложение")
+    #     dbl.log("vvvvvvvvvv")
+    #     dbl.log(str(softwares_site))
+    #     if softwares_site.exists():
+    #         soft_list = soft_list & softwares_site 
+    #         dbl.log(' ----- '+str(soft_list))
+
+    # if type_mobile != '':
+
+    #     softwares_mobile = Classification_Value.objects.get(value="Мобильное приложение").softwares.all()
+    #     # soft_list = soft_list.filter(value="Настольное приложение")
+    #     dbl.log("vvvvvvvvvv")
+    #     dbl.log(str(softwares_mobile))
+
+    #     if softwares_mobile.exists():
+    #         soft_list = soft_list & softwares_mobile
+    #         dbl.log(' 00000 '+str(soft_list))
+
+
+    # # soft_list = softwares_desktop | softwares_site | softwares_mobile
 
     soft_list = soft_list.order_by('id').distinct()
 
@@ -129,7 +173,13 @@ def catalog(request):
         tags_dict[soft.id] = soft_tags_list
 
 
-    return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'count':count, 'modification':modification, 'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 'soft_priceto':soft_priceto, 'area_list':area_list, 'tags_dict':tags_dict})
+    # Получение списка всех видов ПО
+    classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
+
+    return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'count':count, 'modification':modification, 
+    'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
+    'soft_priceto':soft_priceto, 'area_list':area_list, 'tags_dict':tags_dict, 'classifications':classifications, 
+    'classification_dict':classification_dict})
 
 
 # Страница одного ПО

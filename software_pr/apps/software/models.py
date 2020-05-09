@@ -246,6 +246,10 @@ class Classification(models.Model):
         verbose_name = 'Классификация'
         verbose_name_plural = 'Классификации'
 
+    # Ф-ия получения списка значений классификации
+    def get_values(self):
+        return Classification_Value.objects.filter(classification__id = self.id, visibility=True).order_by('value')
+
 
 # Область применения: грузоперевозки, ...
 class Classification_Value(models.Model):
@@ -260,6 +264,8 @@ class Classification_Value(models.Model):
     class Meta:
         verbose_name = 'Классификация_значение'
         verbose_name_plural = 'Классификация_значение'
+
+
 
 
 # ПО №2: (Область применения: грузоперевозки)

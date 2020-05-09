@@ -1,261 +1,701 @@
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2s
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  Мужиков
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  Мужиков
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  Мужиковв
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  Мужиков
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  Мужиков
-fffff
-333
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  2
-fffff
-111
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
-Андрей
-Андрей
-2020-05-08 22:51:33.054016
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:53:18.245157
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:54:04.864928
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:55:16.365672
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:55:58.933617
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:56:53.230467
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:57:25.016057
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:58:12.399459
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:58:55.133913
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:59:07.059121
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 22:59:19.604776
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 23:01:33.970861
-Андрей111
-Feedback object (None)
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+-----{'classification_1_value_3': '3', 'classification_1_value_2': '2'}
+2222dict_values(['3', '2'])
+nnn  3
+nnn  2
+@@@@@@@@@@@ <QuerySet []>
+-----{}
+2222dict_values([])
 @@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
 Грузоперевозки
 Кафе
 Автодоставка
-Андрей
-Андрей
-2020-05-08 23:02:57.626280
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-2020-05-08 23:03:47.391748
-Андрей111
-Feedback object (None)
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-Андрей
-change
-Андрей
-2020-05-09 01:37:20.565701
-Андрей111
-Feedback object (None)
-Андрей
-aaaaaa  {}
-fffff  
-fffff
-10000fffff
-1
-пагинация
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+-----{'classification_1_value_2': '2'}
+2222dict_values(['2'])
+nnn  2
+@@@@@@@@@@@ <QuerySet []>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+-----{'classification_1_value_2': '2'}
+2222dict_values(['2'])
+nnn  2
+//////  (AND: ('classification_value', 2))
+@@@@@@@@@@@ <QuerySet []>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+-----{'classification_1_value_2': '2'}
+2222dict_values(['2'])
+nnn  2
+//////  (AND: ('classification_value', 2))
+......  <QuerySet []>
+@@@@@@@@@@@ <QuerySet []>
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_2_value_19': '19', 'classification_3_value_5': '5', 'classification_6_value_17': '17'}
+2222dict_values(['19', '5', '17'])
+nnn  19
+//////  (AND: ('classification_value', 19))
+nnn  5
+//////  (OR: ('classification_value', 19), ('classification_value', 5))
+nnn  17
+//////  (OR: ('classification_value', 19), ('classification_value', 5), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Грузоперевозки>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>]>
+Грузоперевозки
+Кафе
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+-----{'classification_1_value_3': '3'}
+2222dict_values(['3'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+......  <QuerySet [<Software: Кафе>]>
+@@@@@@@@@@@ <QuerySet [<Software: Кафе>]>
+Кафе
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+!!!!!('classification_1_value_3', '3')
+666663
+aaaa('classification_1_value_3', '3')
+!!!!!('classification_1_value_1', '1')
+666661
+aaaa('classification_1_value_1', '1')
+!!!!!('classification_1_value_2', '2')
+666662
+aaaa('classification_1_value_2', '2')
+!!!!!('classification_2_value_19', '19')
+6666619
+aaaa('classification_2_value_19', '19')
+!!!!!('classification_2_value_20', '20')
+6666620
+aaaa('classification_2_value_20', '20')
+!!!!!('classification_3_value_5', '5')
+666665
+aaaa('classification_3_value_5', '5')
+!!!!!('classification_3_value_6', '6')
+666666
+aaaa('classification_3_value_6', '6')
+!!!!!('classification_3_value_7', '7')
+666667
+aaaa('classification_3_value_7', '7')
+!!!!!('classification_4_value_11', '11')
+6666611
+aaaa('classification_4_value_11', '11')
+!!!!!('classification_4_value_10', '10')
+6666610
+aaaa('classification_4_value_10', '10')
+!!!!!('classification_5_value_14', '14')
+6666614
+aaaa('classification_5_value_14', '14')
+!!!!!('classification_5_value_13', '13')
+6666613
+aaaa('classification_5_value_13', '13')
+!!!!!('classification_6_value_16', '16')
+6666616
+aaaa('classification_6_value_16', '16')
+!!!!!('classification_6_value_17', '17')
+6666617
+aaaa('classification_6_value_17', '17')
+-----{'classification_1_value_3': '3', 'classification_1_value_1': '1', 'classification_1_value_2': '2', 'classification_2_value_19': '19', 'classification_2_value_20': '20', 'classification_3_value_5': '5', 'classification_3_value_6': '6', 'classification_3_value_7': '7', 'classification_4_value_11': '11', 'classification_4_value_10': '10', 'classification_5_value_14': '14', 'classification_5_value_13': '13', 'classification_6_value_16': '16', 'classification_6_value_17': '17'}
+2222dict_values(['3', '1', '2', '19', '20', '5', '6', '7', '11', '10', '14', '13', '16', '17'])
+nnn  3
+//////  (AND: ('classification_value', 3))
+nnn  1
+//////  (OR: ('classification_value', 3), ('classification_value', 1))
+nnn  2
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2))
+nnn  19
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19))
+nnn  20
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20))
+nnn  5
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5))
+nnn  6
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6))
+nnn  7
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7))
+nnn  11
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11))
+nnn  10
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10))
+nnn  14
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14))
+nnn  13
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13))
+nnn  16
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16))
+nnn  17
+//////  (OR: ('classification_value', 3), ('classification_value', 1), ('classification_value', 2), ('classification_value', 19), ('classification_value', 20), ('classification_value', 5), ('classification_value', 6), ('classification_value', 7), ('classification_value', 11), ('classification_value', 10), ('classification_value', 14), ('classification_value', 13), ('classification_value', 16), ('classification_value', 17))
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Грузоперевозки>, <Software: Кафе>, <Software: Кафе>, <Software: Кафе>, <Software: Автодоставка>, <Software: Автодоставка>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+!!!!!('soft_name', '')
+66666
+!!!!!('soft_pricefrom', '')
+66666
+!!!!!('soft_priceto', '')
+66666
+-----{}
+2222dict_values([])
+......  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+@@@@@@@@@@@ <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Автодоставка>]>
+Грузоперевозки
+Кафе
+Автодоставка

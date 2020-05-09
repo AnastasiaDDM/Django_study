@@ -65,6 +65,8 @@ def client_feedback(request):
 
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
+
+        # try:
         dbl.log("Андрей")
         form = FeedbackForm(request.POST)
         if form.is_valid():

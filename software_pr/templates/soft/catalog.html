@@ -1,6 +1,8 @@
 
 {% extends 'basic/pattern.html' %}
 {% load static %}
+{% load software_tags %}
+
 
  {% block content %}
               <section>
@@ -143,48 +145,32 @@
                                     {% endif %}
                                 </li>
                               </ul></fieldset>
-                          
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset">
-                            <legend >Вид</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                {% if modification %}
-                                <input id="modification" checked type="checkbox" value="is_modified" name="modification">
-                                <label for="modification">Возможна доработка</label>
+                              {% if classifications %}
+                              {% for cl in classifications %}
+                              <fieldset class="fieldset_border_secondary" name="fieldset">
+                                <legend >{{cl.name}}</legend>
+                                <ul class="radio_checkbox pos_left">
+                                {% for val in cl.get_values %}
+                                {% if classification_dict|get_true_for_dict:val %} 
+                                <!-- Здесь должна быть проверка для выбора этого поля  -->
+                                    <li>
+                                        <input id="classification_{{cl.id}}_value_{{val.id}}" checked name="classification_{{cl.id}}_value_{{val.id}}" value="{{val.id}}" type="checkbox">
+                                        <label for="classification_{{cl.id}}_value_{{val.id}}">{{val.value}}</label>
+                                    </li>
                                 {% else %}
-                                <input id="modification" type="checkbox" value="is_modified" name="modification">
-                                <label for="modification">Возможна доработка</label>
+                                    <li>
+                                        <input id="classification_{{cl.id}}_value_{{val.id}}" name="classification_{{cl.id}}_value_{{val.id}}" value="{{val.id}}" type="checkbox">
+                                        <label for="classification_{{cl.id}}_value_{{val.id}}">{{val.value}}</label>
+                                    </li>
                                 {% endif %}
-                                <input id="type_desktop" name="type_desktop" value="checked" type="checkbox">
-                                <label for="type_desktop">Настольное приложение</label>
-                              </li>
-                              <li>
-                                <input id="type_site" name="type_site" value="checked" type="checkbox">
-                                <label for="type_site">Сайт</label>
-                              </li>
-                              <li>
-                                <input id="type_mobile" name="type_mobile" value="checked" type="checkbox">
-                                <label for="type_mobile">Мобильное приложение</label>
-                              </li>
-                            </ul>
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset" >
-                            <legend >Область применения</legend>
-                            <ul class="radio_checkbox pos_left" style="margin-bottom: 0em;">
+                                {% endfor %}
+                                </ul>
+                              </fieldset>
+                              {% endfor %}
+                                {% endif %}
 
-                                <!-- {% if area_list %} -->
-
-                                <!-- {% for s in area_list %}  for i in range(1, len(sys.argv)): -->
-                                <li>
-                                    <input id="c12" type="checkbox">
-                                    <label for="c12">Образование</label>
-                                  </li>
-                                <!-- {% endfor %} -->
-                                <!-- {% endif %} -->
-
+        
+                            <!-- <ul class="radio_checkbox pos_left all_areas" style="display: none; margin-top: 0em;">
                               <li>
                                 <input id="c12" type="checkbox">
                                 <label for="c12">Образование</label>
@@ -197,108 +183,9 @@
                                 <input id="c32" type="checkbox">
                                 <label for="c32">Кафе</label>
                               </li>
-                            </ul>
-        
-                            <ul class="radio_checkbox pos_left all_areas" style="display: none; margin-top: 0em;">
-                              <li>
-                                <input id="c12" type="checkbox">
-                                <label for="c12">Образование</label>
-                              </li>
-                              <li>
-                                <input id="c22" type="checkbox">
-                                <label for="c22">Грузоперевозки</label>
-                              </li>
-                              <li>
-                                <input id="c32" type="checkbox">
-                                <label for="c32">Кафе</label>
-                              </li>
-                            </ul>
-        
-                            <a class = "link_read-more link_style_border areas_more">еще...</a>
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset" >
-                            <legend >Тип использования</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                <input id="c13" type="checkbox">
-                                <label for="c13">Индивидуальный доступ</label>
-                              </li>
-                              <li>
-                                <input id="c23" type="checkbox">
-                                <label for="c23">Групповой</label>
-                              </li>
-                              <li>
-                                <input id="c33" type="checkbox">
-                                <label for="c33">Сетевой</label>
-                              </li>
-                            </ul>          
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset">
-                            <legend >Размер</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                <input id="c14" type="checkbox">
-                                <label for="c14">Небольшой</label>
-                              </li>
-                              <li>
-                                <input id="c24" type="checkbox">
-                                <label for="c24">Средний</label>
-                              </li>
-                              <li>
-                                <input id="c34" type="checkbox">
-                                <label for="c34">Большой</label>
-                              </li>
-                            </ul>          
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset">
-                            <legend >Ограничение доступа</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                <input id="c15" type="checkbox">
-                                <label for="c15">Разделение ролей</label>
-                              </li>
-                              <li>
-                                <input id="c25" type="checkbox">
-                                <label for="c25">Без ролей</label>
-                              </li>
-                            </ul>        
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset">
-                            <legend >Дополнительные установки</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                <input id="c16" type="checkbox">
-                                <label for="c16">Требуются</label>
-                              </li>
-                              <li>
-                                <input id="c26" type="checkbox">
-                                <label for="c26">Не требуются</label>
-                              </li>
-                            </ul>      
-                          </fieldset>
-                
-                
-                          <fieldset class="fieldset_border_secondary" name="fieldset">
-                            <legend >Установка ПО</legend>
-                            <ul class="radio_checkbox pos_left">
-                              <li>
-                                <input id="c17" type="checkbox">
-                                <label for="c17">Без установки</label>
-                              </li>
-                              <li>
-                                <input id="c27" type="checkbox">
-                                <label for="c27">С установкой</label>
-                              </li>
-                            </ul>   
-                          </fieldset>
+                            </ul> -->
+
+
         
                           </div>
                   
@@ -466,8 +353,12 @@
                               </div>
                               <div class = "software_tag">
                                 <span>
+                                    {% for tag in s.get_tags %}
+                                    <a href="">#{{tag}}</a>
+                                    {% endfor %}
+
                                    
-                                    {% if tags_dict %}   
+                                    <!-- {% if tags_dict %}   
                                     {% if tags_dict %}
                                     {% for val in tags_dict.values %}
                                     {% for tag in val %}
@@ -476,7 +367,7 @@
                                     
                                     {% endfor %}
                                     {% endif %}                              
-                                    {% endif %}                                
+                                    {% endif %} -->
       
                                 </span>
                               </div>
