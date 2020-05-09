@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_soft_db',
         'USER': 'root',
-        'PASSWORD': '0154609nas)Nas',
+        'PASSWORD': '123456',
         'HOST': 'localhost',
         'PORT': '3306',
         }
