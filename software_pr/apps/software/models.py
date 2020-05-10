@@ -132,87 +132,46 @@ class Software(models.Model):
     def get_area(self):
 
         # Хэш классификаций ПО
-        dbl.log(str(self))
         areas = []
-
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value
         software_classifications = Classification_Value.objects.filter(softwares__id = self.id)
         # software_classifications = Software_Classification_Value.objects.filter(software__id = self.id)
 
-
-        
-
-        # # Переменная для составления строки классификаций ПО (Грузоперевозки, перевозки)
-        # str_clas =""
-
         # Дальнейшие действия нужны для составления словаря классификаций данного ПО
         for clas_val in software_classifications:
-
-
-            # Получение одной записи из Classification_Value
-            # clas_val = Classification_Value.objects.get(id = clas.classification_value.id)
-
-
 
             # Получение одной записи из Classification для получения названия классификации
             clas = Classification.objects.get(id = clas_val.classification.id)
 
-
-            # clas = clas_val.filter(classification__name ="Область применения")
-
-
             if clas.name == "Область применения":
 
-
-                
                 areas.append(str(clas_val))
 
-        # dbl.log(str(areas))
-
         return areas   
-
-
     
 
-     # Ф-ия получения списка областей применения
+     # Ф-ия получения списка видов ПО
     def get_type(self):
 
         # Хэш классификаций ПО
-
-        areas = []
+        types = []
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value
         software_classifications = Classification_Value.objects.filter(softwares__id = self.id)
 
-
-        
-
-        # # Переменная для составления строки классификаций ПО (Грузоперевозки, перевозки)
-        # str_clas =""
-
         # Дальнейшие действия нужны для составления словаря классификаций данного ПО
         for clas_val in software_classifications:
-
-
-            # Получение одной записи из Classification_Value
-            # clas_val = Classification_Value.objects.get(id = clas.value.id)
-
-            # dbl.log("0000   "+str(clas_val))
 
 
             # Получение одной записи из Classification для получения названия классификации
             clas = Classification.objects.get(id = clas_val.classification.id)
 
-
-            # clas = clas_val.filter(classification__name ="Область применения")
-
-
             if clas.name == "Вид":
 
-                areas.append(str(clas_val))
+                types.append(str(clas_val))
 
-        return areas   
+        return types   
 
 
 class Addition(models.Model):

@@ -128,12 +128,9 @@
                         <input type="text" id="priceto" name="soft_priceto" autocomplete="off" value="{{soft_priceto}}"><label for="priceto">Цена до:</label>
                       </div>            
                     </div>
-                
-                
                             </fieldset>
                 
-                            <fieldset class="fieldset_border_secondary" name="fieldset" > 
-                
+                            <fieldset class="fieldset_border_secondary" name="fieldset" >                 
                               <ul class="radio_checkbox pos_left">
                                 <li>
                                     {% if modification %}
@@ -144,15 +141,15 @@
                                     <label for="modification">Возможна доработка</label>
                                     {% endif %}
                                 </li>
-                              </ul></fieldset>
-                              {% if classifications %}
-                              {% for cl in classifications %}
-                              <fieldset class="fieldset_border_secondary" name="fieldset">
+                              </ul>
+                            </fieldset>
+                            {% if classifications %}
+                            {% for cl in classifications %}
+                            <fieldset class="fieldset_border_secondary" name="fieldset">
                                 <legend >{{cl.name}}</legend>
                                 <ul class="radio_checkbox pos_left">
                                 {% for val in cl.get_values %}
-                                {% if classification_dict|get_true_for_dict:val %} 
-                                <!-- Здесь должна быть проверка для выбора этого поля  -->
+                                {% if classification_dict|is_identical_for_dict:val %} 
                                     <li>
                                         <input id="classification_{{cl.id}}_value_{{val.id}}" checked name="classification_{{cl.id}}_value_{{val.id}}" value="{{val.id}}" type="checkbox">
                                         <label for="classification_{{cl.id}}_value_{{val.id}}">{{val.value}}</label>
@@ -165,30 +162,10 @@
                                 {% endif %}
                                 {% endfor %}
                                 </ul>
-                              </fieldset>
-                              {% endfor %}
-                                {% endif %}
-
-        
-                            <!-- <ul class="radio_checkbox pos_left all_areas" style="display: none; margin-top: 0em;">
-                              <li>
-                                <input id="c12" type="checkbox">
-                                <label for="c12">Образование</label>
-                              </li>
-                              <li>
-                                <input id="c22" type="checkbox">
-                                <label for="c22">Грузоперевозки</label>
-                              </li>
-                              <li>
-                                <input id="c32" type="checkbox">
-                                <label for="c32">Кафе</label>
-                              </li>
-                            </ul> -->
-
-
-        
+                            </fieldset>
+                            {% endfor %}
+                            {% endif %}
                           </div>
-                  
                           <div class="flex_row flex_space-between">
                             <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
                             <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
@@ -199,7 +176,6 @@
       
                       <fieldset class="fieldset_border_primary widget_disp" name="fieldset" >
                         <legend >Популярные на неделе</legend>
-
                         <aside class="flex_column">
         
                           <div id="widgets_vertical_slider">
@@ -326,15 +302,12 @@
                                   </div>
                                   <div class="flex_row software_container_button flex_space-between"> 
                                     <!-- Бокс кнопки покупки и лайка --> 
-                                    <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">
-                                        
+                                    <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">       
                                         {% if s.price <= 0 %}
                                         Скачать бесплатно
                                         {% else %}
                                         Приобрести
-                                        {% endif %}
-                                        
-                                        
+                                        {% endif %}  
                                     </button>
                                     <div >
                                       <i class="fa fa-heart button_like" aria-hidden="true"></i>

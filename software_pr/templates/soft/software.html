@@ -44,13 +44,6 @@
 
 
 
-            
-
-
-
-
-       
-
         <div class="flex_row flex_wrap">
 
 
@@ -101,32 +94,21 @@
             data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
           </div> -->
         </div>
-
                 {% if software_tag %}
-
                 <fieldset class="fieldset_tags software_tag_first" name="fieldset">
                     <legend class="pos_center">Подборка
                     </legend>
                     <form>
-                      <div class = "fieldset_tags_word">
-                        <span>
-
-
-                    {% for tag in software_tag %}
-                    
-                    <a href="catalog.html">#{{tag.name}}</a>
-
-                    {% endfor %}
-            
-              {% else %}
-                ПО нет
-              {% endif %} 
-
-              </span>
-            </div>        
-          </form>
-        </fieldset>
-
+                        <div class = "fieldset_tags_word">
+                            <span>
+                            {% for tag in software_tag %}
+                                <a href="catalog.html">#{{tag.name}}</a>
+                            {% endfor %}
+                            </span>
+                        </div>        
+                    </form>
+                </fieldset>
+                {% endif %} 
       </div>
       <div class="flex_column w_50_sm padding_left_4em_sm padding_top_2em_sm"> 
         <!--Это контейнер цены, кнопок и описания-->
