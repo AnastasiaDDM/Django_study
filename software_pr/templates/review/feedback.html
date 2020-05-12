@@ -35,7 +35,16 @@
             </legend>
             <form method="post" action="{% url 'feedback:client_feedback' %}">
                 {% csrf_token %}
+                {{ form.as_p }}
               <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                {{ form.content }}
+                {% for field in form %}
+                    <div>
+                        {{ field.errors }}
+                        {{ field.label_tag }} {{ field }}
+                    </div>
+                {% endfor %}
+
                 <div class="input_style">
                     {% if client != '' %}
                     <input type="text" id="name" name="name" value="{{ client.name }}" readonly>

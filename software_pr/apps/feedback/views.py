@@ -8,6 +8,7 @@ from django.db import models
 from feedback.models import *
 from .forms import FeedbackForm
 import re
+from django import forms
 
 from .models import *
 
@@ -66,62 +67,77 @@ def client_feedback(request):
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
 
-        # try:
-        dbl.log("Андрей")
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
+        try:
+            dbl.log("Андрей")
+            form = FeedbackForm(request.POST)
 
-            name = str(request.POST['name'])
-            phone = str(request.POST['phone'])
-
-            new_feedback = form.save(commit=False)
-            
-            if client != '':
-                new_feedback.client = client
-
-            if request.POST['name']:
+            if form.is_valid():
 
                 name = str(request.POST['name'])
+                phone = str(request.POST['phone'])
 
-                # Проверка валидности значения имени
-                if re.match(r'[A-zА-я]+', name):
+                new_feedback = form.save(commit=False)
+                
+                if client != '':
+                    new_feedback.client = client
+
+                if request.POST['name']:
+
+                    name = str(request.POST['name'])
+                    dbl.log("1")
+
+                    # # Проверка валидности значения имени
+                    # if re.match(r'[A-zА-я]+', name):
 
                     new_feedback.name = name
                     dbl.log(str(new_feedback.name))
-                else:
+                    # else:
 
-                    message = "Некорретное имя. Введите имя еще раз или оставьте это поле пустым"
-                    return render(request, 'review/feedback.html', {'client':client, 'phone':phone, 'message':message})
+                        # message = "Некорретное имя. Введите имя еще раз или оставьте это поле пустым"
+                    # return render(request, 'review/feedback.html', {'client':client, 'phone':phone})
 
 
-            dbl.log("Андрей")
+                dbl.log("Андрей")
 
-            if request.POST['phone']:
-                new_feedback.phone = request.POST['phone']
+                if request.POST['phone']:
+                    new_feedback.phone = request.POST['phone']
 
-            if request.POST['comment']:
-                new_feedback.comment = request.POST['comment']
+                if request.POST['comment']:
+                    new_feedback.comment = request.POST['comment']
 
-            new_feedback.date = datetime.datetime.now()
-            dbl.log(str(new_feedback.date))
+                new_feedback.date = datetime.datetime.now()
+                dbl.log(str(new_feedback.date))
 
-            dbl.log("Андрей111")
-            dbl.log(str(new_feedback))
+                dbl.log("Андрей111")
+                dbl.log(str(new_feedback))
 
-            # Сохранение запроса
-            new_feedback.save()
+                # Сохранение запроса
+                new_feedback.save()
 
-            message = "Ваша заявка на звонок принята! Вам перезвонят в ближайшее время"
+                dbl.log("2")
+                # form.add_error(name, "Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
+                dbl.log("3")
+                # form.errors()
+                dbl.log("4")
+                dbl.log("xxxx "+str(form.errors()))
+                message = "Ваша заявка на звонок принята! Вам перезвонят в ближайшее время"
 
-            # return redirect('software:catalog')
-            return render(request, 'common/successfull.html', {'message':message})
+                # return redirect('software:catalog')
+                dbl.log("не ошибка ")
+                return render(request, 'common/successfull.html', {'message':message, 'form': form})
 
-        else:
-            return render(request, 'review/feedback.html', {'client':client})
+            else:
+                dbl.log("Ошибка")
+                return render(request, 'review/feedback.html', {'client':client, 'phone':phone, 'form': form})
+
+        except :
+            pass
 
     else:
+        dbl.log("Пук")
         form = FeedbackForm()
         return render(request, 'review/feedback.html', {'client':client})
         # pass
 
+    dbl.log("упс")
     return render(request, 'review/feedback.html', {'client':client})
