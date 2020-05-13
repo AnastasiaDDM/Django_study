@@ -1,9 +1,16 @@
+# from django import forms
+# from django.core.exceptions import ValidationError
+# from feedback.models import *
+# import re
+# import dbl
+
 from django import forms
 from django.core.exceptions import ValidationError
-from feedback.models import *
 import re
+from feedback.models import Feedback
+# from util.forms import clean_name
 import dbl
-
+import util.forms
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
@@ -22,17 +29,18 @@ class FeedbackForm(forms.ModelForm):
         #     return email
 
     def clean_name(self):
-        # name = self.cleaned_data['name']
-        # dbl.log("ddddddddd !!!!")
-        # dbl.log("dd  "+str(name))
-        # # Проверка валидности значения имени
-        # if re.match(r'[A-zА-я]+', name) is None:
 
-        #     dbl.log("ddddddddd !!!!")
-        #     # self.add_error(name, "Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
+        if self.cleaned_data['name'] is not None:
 
-        #     raise ValidationError("Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
-        dbl.log("1111 !!!!")
-        return apps.util.forms.clean_name(self)
+            dbl.log("1111 !!!!")
+            return util.forms.clean_name(self)
+
+    def clean_phone(self):
+
+        dbl.log("тел")
+        # return clean_name(self)
+
+        # dbl.log("1111 !!!!")
+        return util.forms.clean_phone(self)
 
 

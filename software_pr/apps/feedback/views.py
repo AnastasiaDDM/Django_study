@@ -228,13 +228,12 @@ def client_feedback(request):
     if request.method == "POST":
 
         try:
-            dbl.log("Ошибка 0")
 
+            name = str(request.POST['name'])
+            phone = str(request.POST['phone'])
+            comment = request.POST['comment']
 
             if form.is_valid():
-
-                name = str(request.POST['name'])
-                phone = str(request.POST['phone'])
 
                 new_feedback = form.save(commit=False)
                 
@@ -243,7 +242,7 @@ def client_feedback(request):
 
                 if request.POST['name']:
 
-                    name = str(request.POST['name'])
+                    # name = str(request.POST['name'])
                     dbl.log("1")
 
                     new_feedback.name = name
@@ -252,14 +251,14 @@ def client_feedback(request):
 
                 if request.POST['phone']:
 
-                    phone = request.POST['phone']
-                    new_feedback.phone = request.POST['phone']
+                    # phone = str(request.POST['phone'])
+                    new_feedback.phone = phone
                     dbl.log("11")
 
 
                 if request.POST['comment']:
 
-                    comment = request.POST['comment']
+                    
                     new_feedback.comment = request.POST['comment']
                     dbl.log("111")
 
@@ -273,37 +272,25 @@ def client_feedback(request):
                 # Сохранение запроса
                 new_feedback.save()
 
-                #dbl.log("2")
-                # form.add_error(name, "Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
-               # dbl.log("3")
-                # form.errors()
-                #dbl.log("4")
-                #dbl.log("xxxx "+str(form.errors()))
-                
+                dbl.log(str(name))
+                dbl.log(str(phone))
+                dbl.log("Не ошибка ")
 
                 return redirect('feedback:feedback_success')
-                dbl.log("Не ошибка ")
                 # return redirect('common/successfull.html', {'message':message, 'form': form})
                 # return render(request, 'common/successfull.html', {'message':message, 'form': form})
 
             else:
                 dbl.log("Ошибка 1")
-                #dbl.log(client)
-                #dbl.log(form)
-                #return render(request, 'review/feedback.html', {'client':client, 'phone':phone, 'form': form})
 
         except :
             pass
         dbl.log("Ошибка 2")
-        #return render(request, 'review/feedback.html', {'client':client, 'form': form})
 
     else:
         dbl.log("Ошибка 3")
         form = FeedbackForm()
-        # return render(request, 'review/feedback.html', {'client':client})
-        # pass
 
-    #dbl.log("упс")
     return render(request, 'review/feedback.html', {'client':client, 'phone':phone, 'name':name, 'comment':comment, 'form': form})  # !!!!
 
 

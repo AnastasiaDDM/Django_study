@@ -25,7 +25,6 @@
   </li>
 </ul> 
 {% endblock %}
-
         <div class="margin_top_2">     
           <!-- Форма комментария -->
           <fieldset class="border_fieldset_top">
@@ -33,35 +32,31 @@
               <h1>Заказать звонок
               </h1>
             </legend>
+            {% autoescape on %}
             <form method="post" action="{% url 'feedback:client_feedback' %}" id="feedback_form">
                 {% csrf_token %}
               <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
-
-
                 <div class="input_style">
                     {% if client != '' %}
                     <input type="text" id="name" name="name" value="{{ client.name }}" readonly>
                     {% else %}
                     <input type="text" id="name" name="name" value="{{ name|default:'' }}">
                     {% endif %}
-                    <label for="name">Ваше имя</label>
-                    
+                    <label for="name">Ваше имя</label>   
                 </div>
-
-                
-                
+                <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
                 <div class="input_style margin_top_3em">
-                  
                   {% if client != '' %}
                   <input type="text" id="phone" name="phone" value="{{ client.phone }}" readonly>
                   {% else %}
                   <input class="phone" type="text" id="phone" name="phone" value="{{ phone|default:'' }}" required>
                   {% endif %}
-                  <label for="phone">Номер телефона</label>
+                  <label for="phone">Номер телефона *</label>
                 </div>
+                <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
                 <div>
                   <div class="textarea_style margin_top_3em">
-                    <textarea type="textarea" id="comment" name="comment" rows="5" value="{{ comment|default:'' }}"></textarea>
+                    <textarea type="textarea" id="comment" name="comment" rows="5">{{ comment|default:'' }}</textarea>
                     <label for="comment" class = "textarea_style_label">Опишите свою проблему
                     </label>
                   </div>
@@ -79,34 +74,34 @@
                 </div>
               </div>
             </form>
+            {% endautoescape %}
           </fieldset>
         </div>
       </section>
          {% endblock %}	
 
-         {% block style_extend %}
-         <style>
-            .input_style_error {
-                font-size: 80%;
-                color: #F77A52;
-                vertical-align: middle;
-              }
-    
-            .input_style_error i {
-                font-size: 110%;
-              }
-              
-            .input_style_invalid input {
-                border-bottom: 2px solid #F77A52;
-              }
-    
-            .input_style_valid input {
-                border-bottom: 2px solid rgb(19, 168, 76);
-              }
-          </style>
-         {% endblock %}
+        {% block style_extend %}
+        <style>
+        .input_style_error {
+            font-size: 80%;
+            color: #F77A52;
+            vertical-align: middle;
+            }
 
-         
+        .input_style_error i {
+            font-size: 110%;
+            }
+            
+        .input_style_invalid input {
+            border-bottom: 2px solid #F77A52;
+            }
+
+        .input_style_valid input {
+            border-bottom: 2px solid rgb(19, 168, 76);
+            }
+        </style>
+        {% endblock %}
+
         {% block js_extend %}
         <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
         <script>
@@ -125,7 +120,8 @@
                 },
                 {
                     name:{required: "Введите имя"},
-                    phone:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
+                    // phone:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
+                    phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
                     // email:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
                 }
                 )

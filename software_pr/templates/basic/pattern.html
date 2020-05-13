@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
     <!-- <link rel="stylesheet" href="{% static 'css/style.min.css' %}"> -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fa/css/all.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -269,8 +269,8 @@
         </div>
       </footer>
       </body>
+      {% block style_extend %}{% endblock %}
       <script src="{% static '/js/jquery.js' %}" charset="UTF-8"></script>
       <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>
-      {% block style_extend %}{% endblock %}
       {% block js_extend %}{% endblock %}
     </html> 
