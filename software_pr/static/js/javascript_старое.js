@@ -1,49 +1,73 @@
-  
+// Ф-ия раскрытия списка всех возможных областей (поиск в каталоге)
+function phone_mask() {
+    $(function($){
+        $(".phone").mask("+7 (999) 999-9999");
+     });
+
+    //  $('.phone').click(function(){
+    //     $(this).setCursorPosition(4);  // set position number
+    //   });
+}  
+
+
+$.fn.setCursorPosition = function(pos) {
+  if ($(this).get(0).setSelectionRange) {
+    $(this).get(0).setSelectionRange(pos, pos);
+  } else if ($(this).get(0).createTextRange) {
+    var range = $(this).get(0).createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+  }
+};
 
 // Ф-ия для стилизации селекта (выпадающего списка) 
 function select_style() {
-  $('.slct').click(function(){
-		/* Заносим выпадающий список в переменную */
-		var dropBlock = $(this).parent().find('.drop');
-
-		/* Делаем проверку: Если выпадающий блок скрыт то делаем его видимым*/
-		if( dropBlock.is(':hidden') ) {
-			dropBlock.slideDown();
-
-			/* Выделяем ссылку открывающую select */
-			$(this).addClass('active');
-
-			/* Работаем с событием клика по элементам выпадающего списка */
-			$('.drop').find('li').click(function(){
-
-				/* Заносим в переменную HTML код элемента
-				списка по которому кликнули */
-				var selectResult = $(this).find('a').data('value');
-				var selectResultName = $(this).find('a').html();
-
-				/* Находим наш скрытый инпут и передаем в него
-				значение из переменной selectResult */
-				$(this).parent().parent().find('input').val(selectResult).trigger('change');
-
-				/* Передаем значение переменной selectResult в ссылку которая
-				открывает наш выпадающий список и удаляем активность */
-				$(this).parent().parent().find('.slct').removeClass('active').html(selectResultName);
-
-				/* Скрываем выпадающий блок */
-				dropBlock.slideUp();
-			});
-
-		/* Продолжаем проверку: Если выпадающий блок не скрыт то скрываем его */
-		} 
-		else {
-			$(this).removeClass('active');
-			dropBlock.slideUp();
-		}
-
-		/* Предотвращаем обычное поведение ссылки при клике */
-		return false;
-	});
-}
+	
+    $('.slct').click(function(){
+    
+          /* Заносим выпадающий список в переменную */
+          var dropBlock = $(this).parent().find('.drop');
+  
+          /* Делаем проверку: Если выпадающий блок скрыт то делаем его видимым*/
+          if( dropBlock.is(':hidden') ) {
+              dropBlock.slideDown();
+  
+              /* Выделяем ссылку открывающую select */
+              $(this).addClass('active');
+  
+              /* Работаем с событием клика по элементам выпадающего списка */
+              $('.drop').find('li').click(function(){
+  
+                  /* Заносим в переменную HTML код элемента
+                  списка по которому кликнули */
+                  var selectResult = $(this).find('a').data('value');
+                  var selectResultName = $(this).find('a').html();
+  
+                  /* Находим наш скрытый инпут и передаем в него
+                  значение из переменной selectResult */
+                  $(this).parent().parent().find('input').val(selectResultName).trigger('change');
+  
+                  /* Передаем значение переменной selectResult в ссылку которая
+                  открывает наш выпадающий список и удаляем активность */
+                  $(this).parent().parent().find('.slct').removeClass('active').html(selectResultName);
+  
+                  /* Скрываем выпадающий блок */
+                  dropBlock.slideUp();
+              });
+  
+          /* Продолжаем проверку: Если выпадающий блок не скрыт то скрываем его */
+          } 
+          else {
+              $(this).removeClass('active');
+              dropBlock.slideUp();
+          }
+  
+          /* Предотвращаем обычное поведение ссылки при клике */
+          return false;
+      });
+  }
 
 
 
@@ -310,6 +334,64 @@ function datepicker_init() {
 }
 
 
+
+
+
+//Ф-ия для очистки формы поиска
+function form_search_reset()
+{
+    console.log("ddddd")
+	$("[data-rel='form_search']").click( function () {
+
+        console.log("ddddd")
+		// Получение формы поиска
+        current_form = $(this).parents($("[data-target='form_search']"));
+        console.log(current_form)
+        current_form.find( "input" ).val('').attr("checked", false);
+        input_filled('input');
+        input_filled('textarea');
+
+        // current_form.find( "" ).val('');
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// document.querySelector('button[type="reset"]').addEventListener('click', function (e) {
+// 	e.preventDefault();
+  
+// 	this.parentElement.reset();
+// 	this.parentElement.submit();
+//   })
+
+
+
+// function form_search_reset() {
+// 	$( ".button_reset" ).click(function() {
+// 		var form_search= $(this).parent().parent();
+// 		// form_search.children().val('').removeAttr('checked').removeAttr('selected');
+// 		// form_search.children().reset();
+// 		// $(form_search).each(function(){ 
+// 		// 	this.reset();
+// 		// });
+// 		console.log("ddd");
+
+// 		$('#pricefrom').val(0);
+
+// 		form_search.submit();
+
+//       });
+// }
+
 //  jQuery(document).ready(function () {
 	
 // 	select_style();
@@ -320,29 +402,3 @@ function datepicker_init() {
 // 	comments_form_answer();
 // 	datepicker_init();
 // })
-
-function form_validate(f, rules, messages)
-{
-  f.validate({
-  errorPlacement: function(error, element)
-  {
-    element.parent().after( error);
-  },
-   highlight: function(element, errorClass, validClass)
-  {
-    $(element).parent().removeClass("input_style_valid").addClass("input_style_invalid");
-  },
-  unhighlight: function(element, errorClass, validClass)
-  {
-    $(element).parent().next(".input_style_error").remove();
-    $(element).parent().removeClass("input_style_invalid").addClass("input_style_valid");
-  },
-  errorClass: "pos_left_for_text input_style_error",
-  validClass: "",
-  errorElement: "div",
-  rules: rules,
-  messages: messages
-  });  
-  
-  
-}

@@ -1957,6 +1957,24 @@ legend h1 {
   color: #F77A52;
 }
 
+.input_style_invalid input {
+    border-bottom: 2px solid #F77A52;
+  }
+
+.input_style_valid input {
+    border-bottom: 2px solid rgb(19, 168, 76);
+  }
+
+.input_style_error {
+    font-size: 80%;
+    color: #F77A52;
+    vertical-align: middle;
+  }
+
+.input_style_error i {
+    font-size: 110%;
+  }
+
 ._form {
   width: 100%;
   height: 100%;

@@ -1,23 +1,17 @@
-{% load static %}
 <!DOCTYPE HTML>
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>{% block page_title %}{% endblock %}
+    <title>Заказать звонок
     </title>
-    <meta name="description" content="{% block page_description %}{% endblock %}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'css/style.min.css' %}"> -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/fa/css/all.css' %}">
+    <meta name="description" content="Описание страницы" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fa/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
-    {% block link_extend %}{% endblock %}
-
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
   </head>
-  <body class = "fix_width bg-head">
+  <body class = "fix_width bg-head ">
     <header class = "flex_column header_container_height">
       <div class="flex_row header-top_container header-top_border flex_space-between">
         <div class="header_container_mail_phone">
@@ -96,7 +90,7 @@
           <div class="flex_row flex_justify-content_flex-start logo margin_bottom_1em width_70">
             <div class="header-logo">
               <a href="/main.html">
-                <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+                <img class="logo" href="/main.html" src="icons/logo.png" alt="Название сайта"/>
               </a>
             </div>
             <div class="header-logo_name">
@@ -139,7 +133,7 @@
         <div class="flex_row flex_justify-content_flex-start header_disp_none">
           <div class="header-logo">
             <a href="/main.html">
-              <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+              <img class="logo" href="/main.html" src="icons/logo.png" alt="Название сайта"/>
             </a>
           </div>
           <div class="header-logo_name">
@@ -178,11 +172,62 @@
       </div>
     </header>
     <main>
-      {% block content %}{% endblock %}
+      <section>
+        <h1>Заказать звонок
+        </h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="URL">Главная
+            </a>
+          </li>
+          <li>Заказать звонок
+          </li>
+        </ul>
+        <div class="    margin_top_2">     
+          <!-- Форма комментария -->
+          <fieldset class="border_fieldset_top" >
+            <legend class="pos_center padding_left-right_1em">
+              <h1>Заказать звонок
+              </h1>
+            </legend>
+            <form id="feedback_form">
+              <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                <div class="input_style ">
+                  <input type="text" id="name" name="name" autocomplete="off">
+
+                  <label for="name">Ваше имя</label>
+                </div>
+                <div class="input_style margin_top_3em">
+                  <input type="text" id="email"  name="email" autocomplete="off">
+                  <label for="email">Номер телефона
+                  </label>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em">
+                    <textarea type="textarea" rows="5"></textarea>
+                    <label id = "label" class = "textarea_style_label">Опишите свою проблему
+                    </label>
+                  </div>
+                </div>
+                <div class="flex_row flex_space-between margin_top_3em">
+                  <div class="pos_сenter">
+                    <a href="#" class="button_reset">Отменить
+                    </a>
+                  </div>
+                  <div class="pos_сenter">
+                    <input type=submit class="button_show-more" value ="Заказать звонок">
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </section>
       <footer class = "flex_row header_container_height flex_space-between footer_container">
         <div class="header-logo disp_none_830">
           <a href="/main.html">
-            <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+            <img class="logo" href="/main.html" src="icons/logo.png" alt="Название сайта"/>
           </a>
         </div>
         <div class="footer_all-link">
@@ -269,8 +314,49 @@
         </div>
       </footer>
       </body>
-      <script src="{% static '/js/jquery.js' %}" charset="UTF-8"></script>
-      <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>
-      {% block style_extend %}{% endblock %}
-      {% block js_extend %}{% endblock %}
-    </html> 
+      <script src="js/jquery.js"></script>
+      <script type="text/javascript" src="js/javascript.js" charset="UTF-8"></script>
+	  
+	  <!-- !!! --> 
+      <script type="text/javascript" src="js/jquery.validate.min.js" charset="UTF-8"></script>
+	  <style>
+		.input_style_error {
+			font-size: 80%;
+			color: #F77A52;
+			vertical-align: middle;
+		  }
+
+		.input_style_error i {
+			font-size: 110%;
+		  }
+		  
+		.input_style_invalid input {
+			border-bottom: 2px solid #F77A52;
+		  }
+
+		.input_style_valid input {
+			border-bottom: 2px solid rgb(19, 168, 76);
+		  }
+	  </style>
+      <script>
+        jQuery(document).ready(function () {
+          input_filled('input');
+          input_filled('textarea');
+		  // Список методов валидации
+		  // https://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods
+		  // mobileRU : https://github.com/jquery-validation/jquery-validation/blob/master/src/additional/mobileRU.js
+		  form_validate(
+			$("#feedback_form"), 
+			{	
+				name:{required:true},
+				email:{required:true, mobileRU: true}
+			},
+			{
+				name:{required: "Введите имя"},
+				email:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
+			}
+			)
+        })
+     </script>
+	 <!-- !!! --> 
+    </html>

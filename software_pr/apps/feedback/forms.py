@@ -21,16 +21,18 @@ class FeedbackForm(forms.ModelForm):
         #         raise ValidationError("Email already exists")
         #     return email
 
-        def clean_name(self):
-            name = self.cleaned_data['name']
-            dbl.log("ddddddddd !!!!")
-            # Проверка валидности значения имени
-            if re.match(r'[A-zА-я]+', name) is False:
+    def clean_name(self):
+        # name = self.cleaned_data['name']
+        # dbl.log("ddddddddd !!!!")
+        # dbl.log("dd  "+str(name))
+        # # Проверка валидности значения имени
+        # if re.match(r'[A-zА-я]+', name) is None:
 
-                dbl.log("ddddddddd !!!!")
+        #     dbl.log("ddddddddd !!!!")
+        #     # self.add_error(name, "Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
 
-                raise ValidationError("Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
-
-            return name
+        #     raise ValidationError("Некорретное имя. Введите имя еще раз или оставьте это поле пустым")
+        dbl.log("1111 !!!!")
+        return apps.util.forms.clean_name(self)
 
 
