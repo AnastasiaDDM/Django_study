@@ -131,7 +131,7 @@ class Software(models.Model):
      # Ф-ия получения списка областей применения
     def get_area(self):
 
-        # Хэш классификаций ПО
+        # Массив классификаций ПО
         areas = []
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value

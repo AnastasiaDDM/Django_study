@@ -20,57 +20,32 @@ def client_feedback(request):
 
     client = ''
 
+    # Получение данных из формы в переменную
     form = FeedbackForm(request.POST)
 
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
         try:
+
+            # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
 
-                new_feedback = form.save(commit=False)
-                
-                if client != '':
-                    new_feedback.client = str(request.POST['client'])
-
-                if request.POST['name']:
-
-                    new_feedback.name = str(request.POST['name'])
-                    dbl.log(str(new_feedback.name))
-
-                if request.POST['phone']:
-
-                    new_feedback.phone = str(request.POST['phone'])
-                    dbl.log("11")
-
-
-                if request.POST['comment']:
-
-                    new_feedback.comment = request.POST['comment']
-                    dbl.log("111")
-
-                # Сохранение запроса
-                new_feedback.save()
-
-                dbl.log("Не ошибка ")
-
+                # Сохранение запроса (происходит тогда, когда все поля валидны)
+                form.save()
                 return redirect('feedback:feedback_success')
 
-            else:
-                dbl.log("Ошибка 1")
-
-        except :
+        except Exception as error:
             pass
-        dbl.log("Ошибка 2")
-
-    else:
-        dbl.log("Ошибка 3")
+            dbl.log("Ошибка работы с фидбеком" + str(error))
 
     return render(request, 'review/feedback.html', {'client':client, 'form': form})
-
 
 # Ф-ия отображаения страницы успешного выполнения
 def feedback_success(request):
 
+    # Массив хлебных крошек
+    list_crumb = [['Главная', 'software:catalog'], ['Заказать звонок', 'feedback:client_feedback']]
+
     message = "Ваша заявка на звонок принята! Вам перезвонят в ближайшее время"
 
-    return render(request, 'common/successfull.html', {'message':message})
+    return render(request, 'common/successfull.html', {'message':message, 'list_crumb':list_crumb})

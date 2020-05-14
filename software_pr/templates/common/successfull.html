@@ -6,13 +6,13 @@
       <section>
         {% block breadcrumb %}
         <ul class="breadcrumb">
-        {% breadcrumb_url 'Главная' 'software:catalog' %}
-        {% breadcrumb_url 'Заказать звонок' 'feedback:client_feedback' %}
+        {% for crumb in list_crumb %}
+        {% breadcrumb_url crumb.0 crumb.1  %}
+        {% endfor %}
         {% breadcrumb_url 'Успешно' %}
         </ul>
         {% endblock %}
         <div class="margin_top_2">     
-          <!-- Форма комментария -->
           <fieldset class="border_fieldset_top" >
             <legend class="pos_center padding_left-right_1em">
               <h1>Успешно
@@ -29,7 +29,6 @@
                     <div class="margin_top_3em">
                         Для удобной работы на нашем сайте предлагаем вам зарегистрироваться
                     </div>
-                  
                   <div class="pos_center margin_top_07em">
                     <a href="#" class="link_read-more link_style_border a_big">
                       <span>Зарегистрироваться
