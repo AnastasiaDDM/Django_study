@@ -46,3 +46,4 @@ def is_identical_for_dict(dictionary, value):
 def get_value_for_dict(dictionary, key):
     return dictionary.get(key)
 
+

@@ -122,3 +122,74 @@ def create_crumb(title, url=None):
         crumb = "%s%s" % (crumb, title)
 
     return crumb
+
+
+
+@register.filter(name='comparison_numbers')
+def comparison_numbers(first_num, second_num):
+    if str(first_num).isdigit() and str(second_num).isdigit():
+        if int(first_num) == int(second_num):
+            return True
+
+    return False
+
+
+@register.filter(name='more_than_numbers')
+def more_than_numbers(first_num, second_num):
+    if str(first_num).isdigit() and str(second_num).isdigit():
+        if int(first_num) > int(second_num):
+            return True
+
+    return False
+
+
+@register.filter(name='reverse_for_star')
+def reverse_for_star(num):
+    if str(num).isdigit():
+
+        return 6 - int(num)
+
+    return 0
+
+    
+
+    
+                    #     {% for num_star in rating %}
+
+                    #     {% if num_star|comparison_numbers:form.star.value %} 
+                    #    d- {{num_star}}
+                    #    ss- {{num_star|reverse_for_star}}
+
+
+                    #     <input type="radio" id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
+                    #     <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
+
+                    #     {% else %}
+                    #     буу- {{num_star}}
+                    #     ss- {{num_star|reverse_for_star}}
+
+                    #     <input type="radio" checked id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
+                    #     <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
+
+                    #     {% endif %}
+                    #     {% endfor %}
+
+
+
+
+
+
+
+
+
+
+                        #                     {% for num_star in rating %}
+
+                        # {% if num_star|reverse_for_star|comparison_numbers:form.star.value %} 
+                        # <input type="radio" checked id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
+                        # <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	                        
+                        # {% else %}
+                        # <input type="radio" id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
+                        # <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
+                        # {% endif %}
+                        # {% endfor %}

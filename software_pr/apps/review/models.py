@@ -24,7 +24,7 @@ class Review(models.Model):
     date = models.DateTimeField('Дата', auto_now_add=True, blank=True)
     software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО', null=True, blank=True)
     star = models.IntegerField('Оценка',  default=0, validators=[MinValueValidator(1), MaxValueValidator(5)])
-    date_of_delete = models.DateField('Дата удаления', blank=True, db_index=True)
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
 
     class Meta:

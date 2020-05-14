@@ -18,65 +18,84 @@
               </h1>
             </legend>
             {% autoescape on %}
-            <form method="post" action="{% url 'feedback:client_feedback' %}" id="feedback_form">
+            <form method="post" action="{% url 'review:review_create' %}" id="review_form">
                 {% csrf_token %}
 
                 <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
                     <ul class="radio_checkbox pos_center_for_div">
                       <li>
-                        <input id="r1" type="radio" name="radio" value="1">
-                        <label for="r1">Отзыв о компании
+                        <input id="type_com" type="radio" name="kind" value="com">
+                        <label for="type_com">Отзыв о компании
                         </label>
                       </li>
                       <li>
-                        <input id="r2" type="radio" name="radio" value="2" >
-                        <label for="r2">Отзыв о заказе
+                        <input id="type_ord" type="radio" name="kind" value="ord" >
+                        <label for="type_ord">Отзыв о заказе
                         </label>
                       </li>
                       <li>
-                        <input id="r3" type="radio" name="radio" value="3" >
-                        <label for="r3">Отзыв о продукте
+                        <input id="type_sof" type="radio" name="kind" value="sof" >
+                        <label for="type_sof">Отзыв о продукте
                         </label>
                       </li> 
                     </ul>
                     <div class="input_style">
-                      <input type="text" id="name" autocomplete="off">
-                      <label for="name">Наименование ПО
+                        {{form.software}}
+                      <label for="software">Наименование ПО
                       </label>
                     </div>
                     <div class="flex_row reviews_stars flex_flex-center padding_top-bootom_1em">	
                       <div class="rating-area">
-                        <input type="radio" id="star-5" name="rating" value="5">
-                        <label for="star-5" title="Оценка «5»">
-                        </label>	
-                        <input type="radio" id="star-4" name="rating" value="4">
+                        {% for num_star in rating %}
+                        {% if num_star|comparison_numbers:form.star.value %} 
+                        <input type="radio" checked id="star-{{num_star}}" name="star" value="{{num_star}}">
+                        <label for="star-{{num_star}}" title="Оценка «{{num_star}}»"></label>	                        
+                        {% else %}
+                        <input type="radio" id="star-{{num_star}}" name="star" value="{{num_star}}">
+                        <label for="star-{{num_star}}" title="Оценка «{{num_star}}»"></label>	
+                        {% endif %}
+                        {% endfor %}
+
+                        <!-- <input type="radio" id="star-5" name="star" value="5">
+                        <label for="star-5" title="Оценка «5»"></label>	
+                        <input type="radio" id="star-4" name="star" value="4">
                         <label for="star-4" title="Оценка «4»">
                         </label>    
-                        <input type="radio" id="star-3" name="rating" value="3">
+                        <input type="radio" id="star-3" name="star" value="3">
                         <label for="star-3" title="Оценка «3»">
                         </label>  
-                        <input type="radio" id="star-2" name="rating" value="2">
+                        <input type="radio" id="star-2" name="star" value="2">
                         <label for="star-2" title="Оценка «2»">
                         </label>    
-                        <input type="radio" id="star-1" name="rating" value="1">
+                        <input type="radio" id="star-1" name="star" value="1">
                         <label for="star-1" title="Оценка «1»">
-                        </label>
+                        </label> -->
+                      
                       </div>	
                     </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.star }}</div>
+                    {% endif %}
                     <div class="input_style">
-                      <input type="text" id="fio" autocomplete="off">
-                      <label for="fio">Ваше имя
+                        {{form.name}}
+                      <label for="name">Ваше имя
                       </label>
                     </div>
-                    <!-- <div class="input_style margin_top_3em">
-                      <input type="text" id="email" name="ephone" required autocomplete="off">
-                      <label for="email">Номер телефона/ эл. почта
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
+                    {% endif %}
+                    <div class="input_style margin_top_3em">
+                        {{form.email_phone}}
+                      <label for="ephone">Номер телефона/ эл. почта *
                       </label>
-                    </div> -->
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.email_phone }}</div>
+                    {% endif %}
                     <div>
                       <div class="textarea_style margin_top_3em">
-                        <textarea type="textarea" rows="5" ></textarea>
-                        <label id = "label" class = "textarea_style_label">Отзыв
+                        {{form.content}}
+                        <label for="content" class = "textarea_style_label">Отзыв
                         </label>
                       </div>
                     </div>
@@ -97,61 +116,11 @@
                         </a>
                       </div>
                       <div class="pos_сenter">
-                        <a href="#" class="button_show-more">Отправить
-                        </a>
+                        <button type="submit" class="button_show-more">Отправить
+                        </button>
                       </div>
                     </div>
                   </div>
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-
-
-              <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
-                <div class="input_style">
-                    {% if client != '' %}
-                    {{form.name}}
-                    {% else %}
-                    {{form.name}}
-                    {% endif %}
-                    <label for="name">Ваше имя</label>   
-                </div>
-                {% if form.has_changed %}
-                <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
-                {% endif %}
-                <div class="input_style margin_top_3em">
-                  {% if client != '' %}
-                  {{form.phone}}
-                  {% else %}
-                  {{form.phone}}
-                  {% endif %}
-                  <label for="phone">Номер телефона *</label>
-                </div>
-                {% if form.has_changed %}
-                <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
-                {% endif %}
-                <div>
-                  <div class="textarea_style margin_top_3em">
-                    {{form.comment}}
-                    <label for="comment" class = "textarea_style_label">Опишите свою проблему
-                    </label>
-                  </div>
-                </div>
-                <div>
-                </div>
-                <div class="pos_сenter">
-                    <button type="submit" class="button_show-more">Заказать звонок</button>
-                </div>
-              </div> -->
             </form>
             {% endautoescape %}
           </fieldset>
@@ -167,9 +136,6 @@
             vertical-align: middle;
             }
 
-        .input_style_error i {
-            font-size: 110%;
-            }
             
         .input_style_invalid input {
             border-bottom: 2px solid #F77A52;
@@ -191,12 +157,14 @@
 		  // https://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods
 		  // mobileRU : https://github.com/jquery-validation/jquery-validation/blob/master/src/additional/mobileRU.js
             form_validate(
-                $("#feedback_form"), 
+                $("#review_form"), 
                 {	
+                    star:{required: "Пожалуйста поставьте оценку"},
                     phone:{mobileRU: true}
                 },
                 {
                     name:{required: "Введите имя"},
+                    star:{required: "Пожалуйста поставьте оценку"},
                     phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
                 }
                 )
