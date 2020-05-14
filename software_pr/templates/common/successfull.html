@@ -1,32 +1,16 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
-
+{% load common_tags %}
 <title>{% block page_title %}Успешно{% endblock %}
-
-
  {% block content %}
       <section>
-
         {% block breadcrumb %}
-<ul class="breadcrumb">
-  <li>
-    <a href="main.html">Главная
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Каталог
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Настольные приложения
-    </a>
-  </li>
-  <li>{{software.name}}
-  </li>
-</ul> 
-{% endblock %}
-
-
+        <ul class="breadcrumb">
+        {% breadcrumb_url 'Главная' 'software:catalog' %}
+        {% breadcrumb_url 'Заказать звонок' 'feedback:client_feedback' %}
+        {% breadcrumb_url 'Успешно' %}
+        </ul>
+        {% endblock %}
         <div class="margin_top_2">     
           <!-- Форма комментария -->
           <fieldset class="border_fieldset_top" >

@@ -1,29 +1,14 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
-
+{% load common_tags %}
 <title>{% block page_title %}Заказать звонок{% endblock %}
-
-
  {% block content %}
-      <section>
-
-        {% block breadcrumb %}
+<section>
+{% block breadcrumb %}
 <ul class="breadcrumb">
-  <li>
-    <a href="main.html">Главная
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Каталог
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Настольные приложения
-    </a>
-  </li>
-  <li>{{software.name}}
-  </li>
-</ul> 
+{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Заказать звонок' %}
+</ul>
 {% endblock %}
         <div class="margin_top_2">     
           <!-- Форма комментария -->
@@ -38,39 +23,37 @@
               <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
                 <div class="input_style">
                     {% if client != '' %}
-                    <input type="text" id="name" name="name" value="{{ client.name }}" readonly>
+                    {{form.name}}
                     {% else %}
-                    <input type="text" id="name" name="name" value="{{ name|default:'' }}">
+                    {{form.name}}
                     {% endif %}
                     <label for="name">Ваше имя</label>   
                 </div>
+                {% if form.has_changed %}
                 <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
+                {% endif %}
                 <div class="input_style margin_top_3em">
                   {% if client != '' %}
-                  <input type="text" id="phone" name="phone" value="{{ client.phone }}" readonly>
+                  {{form.phone}}
                   {% else %}
-                  <input class="phone" type="text" id="phone" name="phone" value="{{ phone|default:'' }}" required>
+                  {{form.phone}}
                   {% endif %}
                   <label for="phone">Номер телефона *</label>
                 </div>
+                {% if form.has_changed %}
                 <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
+                {% endif %}
                 <div>
                   <div class="textarea_style margin_top_3em">
-                    <textarea type="textarea" id="comment" name="comment" rows="5">{{ comment|default:'' }}</textarea>
+                    {{form.comment}}
                     <label for="comment" class = "textarea_style_label">Опишите свою проблему
                     </label>
                   </div>
                 </div>
                 <div>
                 </div>
-                <div class="flex_row flex_space-between margin_top_3em">
-                  <div class="pos_сenter">
-                    <a href="#" class="button_reset">Отменить
-                    </a>
-                  </div>
-                  <div class="pos_сenter">
+                <div class="pos_сenter">
                     <button type="submit" class="button_show-more">Заказать звонок</button>
-                  </div>
                 </div>
               </div>
             </form>
@@ -114,15 +97,11 @@
             form_validate(
                 $("#feedback_form"), 
                 {	
-                    name:{required:false},
-                    phone:{required:true, mobileRU: true}
-                    // email:{required:true, mobileRU: true}
+                    phone:{mobileRU: true}
                 },
                 {
                     name:{required: "Введите имя"},
-                    // phone:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
                     phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
-                    // email:{required: "Введите телефон", mobileRU: "В формате +71234567890"}
                 }
                 )
             })          

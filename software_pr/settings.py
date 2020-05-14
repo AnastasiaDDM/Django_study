@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     
     'feedback.apps.FeedbackConfig',
-    # 'reviews.apps.ReviewsConfig',
+    'review.apps.ReviewConfig',
     'user.apps.UserConfig',
     'article.apps.ArticleConfig',
     'software.apps.SoftwareConfig',
@@ -75,6 +75,7 @@ TEMPLATES = [
 
         'libraries':{
             'software_tags': 'software.templatetags.software_tags',
+            'common_tags': 'util.templatetags.common_tags',
 
             }
         },

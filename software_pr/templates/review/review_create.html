@@ -1,0 +1,205 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+<title>{% block page_title %}Написать отзыв{% endblock %}
+ {% block content %}
+<section>
+{% block breadcrumb %}
+<ul class="breadcrumb">
+{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Написать отзыв' %}
+</ul>
+{% endblock %}
+        <div class="margin_top_2">     
+          <!-- Форма комментария -->
+          <fieldset class="border_fieldset_top fieldset_width_p2_p1">
+            <legend class="pos_center padding_left-right_1em">
+              <h1>Написать отзыв
+              </h1>
+            </legend>
+            {% autoescape on %}
+            <form method="post" action="{% url 'feedback:client_feedback' %}" id="feedback_form">
+                {% csrf_token %}
+
+                <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                    <ul class="radio_checkbox pos_center_for_div">
+                      <li>
+                        <input id="r1" type="radio" name="radio" value="1">
+                        <label for="r1">Отзыв о компании
+                        </label>
+                      </li>
+                      <li>
+                        <input id="r2" type="radio" name="radio" value="2" >
+                        <label for="r2">Отзыв о заказе
+                        </label>
+                      </li>
+                      <li>
+                        <input id="r3" type="radio" name="radio" value="3" >
+                        <label for="r3">Отзыв о продукте
+                        </label>
+                      </li> 
+                    </ul>
+                    <div class="input_style">
+                      <input type="text" id="name" autocomplete="off">
+                      <label for="name">Наименование ПО
+                      </label>
+                    </div>
+                    <div class="flex_row reviews_stars flex_flex-center padding_top-bootom_1em">	
+                      <div class="rating-area">
+                        <input type="radio" id="star-5" name="rating" value="5">
+                        <label for="star-5" title="Оценка «5»">
+                        </label>	
+                        <input type="radio" id="star-4" name="rating" value="4">
+                        <label for="star-4" title="Оценка «4»">
+                        </label>    
+                        <input type="radio" id="star-3" name="rating" value="3">
+                        <label for="star-3" title="Оценка «3»">
+                        </label>  
+                        <input type="radio" id="star-2" name="rating" value="2">
+                        <label for="star-2" title="Оценка «2»">
+                        </label>    
+                        <input type="radio" id="star-1" name="rating" value="1">
+                        <label for="star-1" title="Оценка «1»">
+                        </label>
+                      </div>	
+                    </div>
+                    <div class="input_style">
+                      <input type="text" id="fio" autocomplete="off">
+                      <label for="fio">Ваше имя
+                      </label>
+                    </div>
+                    <!-- <div class="input_style margin_top_3em">
+                      <input type="text" id="email" name="ephone" required autocomplete="off">
+                      <label for="email">Номер телефона/ эл. почта
+                      </label>
+                    </div> -->
+                    <div>
+                      <div class="textarea_style margin_top_3em">
+                        <textarea type="textarea" rows="5" ></textarea>
+                        <label id = "label" class = "textarea_style_label">Отзыв
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input__wrapper">
+                      <input name="file" type="file" name="file" id="input__file" class="input input__file " multiple>
+                      <label for="input__file" class="input__file-button">
+                        <span class="input__file-icon-wrapper">
+                          <i class="fa fa-paperclip chat_panel_sticky_clip_i" aria-hidden="true">
+                          </i>
+                        </span>
+                        <span class="input__file-button-text">Выберите файл
+                        </span>
+                      </label>
+                    </div>
+                    <div class="flex_row flex_space-between margin_top_3em">
+                      <div class="pos_сenter">
+                        <a href="#" class="button_reset">Отменить
+                        </a>
+                      </div>
+                      <div class="pos_сenter">
+                        <a href="#" class="button_show-more">Отправить
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+              <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+                <div class="input_style">
+                    {% if client != '' %}
+                    {{form.name}}
+                    {% else %}
+                    {{form.name}}
+                    {% endif %}
+                    <label for="name">Ваше имя</label>   
+                </div>
+                {% if form.has_changed %}
+                <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
+                {% endif %}
+                <div class="input_style margin_top_3em">
+                  {% if client != '' %}
+                  {{form.phone}}
+                  {% else %}
+                  {{form.phone}}
+                  {% endif %}
+                  <label for="phone">Номер телефона *</label>
+                </div>
+                {% if form.has_changed %}
+                <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
+                {% endif %}
+                <div>
+                  <div class="textarea_style margin_top_3em">
+                    {{form.comment}}
+                    <label for="comment" class = "textarea_style_label">Опишите свою проблему
+                    </label>
+                  </div>
+                </div>
+                <div>
+                </div>
+                <div class="pos_сenter">
+                    <button type="submit" class="button_show-more">Заказать звонок</button>
+                </div>
+              </div> -->
+            </form>
+            {% endautoescape %}
+          </fieldset>
+        </div>
+      </section>
+         {% endblock %}	
+
+        {% block style_extend %}
+        <style>
+        .input_style_error {
+            font-size: 80%;
+            color: #F77A52;
+            vertical-align: middle;
+            }
+
+        .input_style_error i {
+            font-size: 110%;
+            }
+            
+        .input_style_invalid input {
+            border-bottom: 2px solid #F77A52;
+            }
+
+        .input_style_valid input {
+            border-bottom: 2px solid rgb(19, 168, 76);
+            }
+        </style>
+        {% endblock %}
+
+        {% block js_extend %}
+        <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
+        <script>
+            jQuery(document).ready(function () {
+            input_filled('input');
+            input_filled('textarea');
+             // Список методов валидации
+		  // https://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods
+		  // mobileRU : https://github.com/jquery-validation/jquery-validation/blob/master/src/additional/mobileRU.js
+            form_validate(
+                $("#feedback_form"), 
+                {	
+                    phone:{mobileRU: true}
+                },
+                {
+                    name:{required: "Введите имя"},
+                    phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
+                }
+                )
+            })          
+        </script>
+        {% endblock %}
