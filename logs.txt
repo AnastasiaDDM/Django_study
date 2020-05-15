@@ -6,15 +6,33 @@ dddddddddd
 <tr><th><label for="ephone">Телефон:</label></th><td><ul class="errorlist"><li>Некорретное значение. Попробуйте еще раз</li></ul><input type="text" name="email_phone" required id="ephone" maxlength="60"></td></tr>
 <tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" maxlength="100" id="name"></td></tr>
 <tr><th><label for="id_star">Оценка:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="radio" name="star" required id="id_star"></td></tr>
-<tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+ПО аааааааа кебебебеб Кафе
+звезда !4
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+ddddd</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="89555555555d@fffffff.dddd" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="4" required id="id_star"></td></tr>
 dddddddddd
 Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
 </textarea></td></tr>
 <tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
 </textarea></td></tr>
-<tr><th><label for="ephone">Телефон:</label></th><td><ul class="errorlist"><li>Некорретное значение. Попробуйте еще раз</li></ul><input type="text" name="email_phone" value="CCC" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><ul class="errorlist"><li>Некорретное значение. Попробуйте еще раз</li></ul><input type="text" name="email_phone" required id="ephone" maxlength="60"></td></tr>
 <tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" maxlength="100" id="name"></td></tr>
 <tr><th><label for="id_star">Оценка:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="radio" name="star" required id="id_star"></td></tr>
+<tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+ПО аааааааа кебебебеб Кафе
+звезда !4
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="89555555555" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="4" required id="id_star"></td></tr>
 <tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
 dddddddddd
 Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
@@ -25,6 +43,52 @@ dddddddddd
 <tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" maxlength="100" id="name"></td></tr>
 <tr><th><label for="id_star">Оценка:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="radio" name="star" required id="id_star"></td></tr>
 <tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+ПО аааааааа кебебебеб Кафе
+звезда !3
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="89555555555" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="3" required id="id_star"></td></tr>
+<tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+звезда !3
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="89555555555" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="3" required id="id_star"></td></tr>
+<tr><th><label for="id_software">ПО:</label></th><td><select name="software" id="id_software">
+  <option value="" selected>---------</option>
+
+  <option value="1">Грузоперевозки</option>
+
+  <option value="2">Кафе</option>
+
+  <option value="3">Автодоставка</option>
+
+</select></td></tr>
+звезда !3
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="89555555555" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="3" required id="id_star"></td></tr>
+<tr><th><label for="id_software">ПО:</label></th><td><select name="software" id="id_software">
+  <option value="" selected>---------</option>
+
+  <option value="1">Грузоперевозки</option>
+
+  <option value="2">Кафе</option>
+
+  <option value="3">Автодоставка</option>
+
+</select></td></tr>
 dddddddddd
 Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
 </textarea></td></tr>
@@ -34,3 +98,31 @@ dddddddddd
 <tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" maxlength="100" id="name"></td></tr>
 <tr><th><label for="id_star">Оценка:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="radio" name="star" required id="id_star"></td></tr>
 <tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+ПО аааааааа кебебебеб Кафе
+звезда !4
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="4" required id="id_star"></td></tr>
+<tr><th><label for="software">ПО:</label></th><td><input type="text" name="software" maxlength="200" id="software"></td></tr>
+звезда !4
+Форма<tr><th><label for="content">Отзыв:</label></th><td><textarea name="content" cols="40" rows="5" id="content">
+</textarea></td></tr>
+<tr><th><label for="comment">Комментарий к отзыву:</label></th><td><textarea name="comment" cols="40" rows="5" id="comment">
+</textarea></td></tr>
+<tr><th><label for="ephone">Телефон:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" required id="ephone" maxlength="60"></td></tr>
+<tr><th><label for="name">Имя:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="100" id="name"></td></tr>
+<tr><th><label for="id_star">Оценка:</label></th><td><input type="radio" name="star" value="4" required id="id_star"></td></tr>
+<tr><th><label for="id_software">ПО:</label></th><td><select name="software" id="id_software">
+  <option value="" selected>---------</option>
+
+  <option value="1">Грузоперевозки</option>
+
+  <option value="2">Кафе</option>
+
+  <option value="3">Автодоставка</option>
+
+</select></td></tr>

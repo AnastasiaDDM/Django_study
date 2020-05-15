@@ -17,7 +17,7 @@ class ReviewForm(forms.ModelForm):
             'email_phone': forms.TextInput(attrs={'required':True, 'id' : 'ephone', 'maxlength' : 25}),
             'content': forms.Textarea(attrs={'rows':5, 'id' : 'content'}),
             'comment': forms.Textarea(attrs={'rows':5, 'id' : 'comment'}),
-            'software': forms.TextInput(attrs={'maxlength' : 200, 'id' : 'software'}),
+            # 'software': forms.TextInput(attrs={'maxlength' : 200, 'id' : 'software'}),
             'star': forms.TextInput(attrs={'required':True,'type':'radio'}),
             # 'kind': forms.TextInput(attrs={'required':True, 'id' : 'phone','type':'tel', 'maxlength' : 25}),
         }

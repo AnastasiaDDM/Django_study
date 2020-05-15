@@ -45,6 +45,61 @@ def review_create(request):
     return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating})
 
 
+
+# Ф-ия создания отзыва
+def review_create_for_software(request, id_soft):
+
+    
+
+    client = ''
+
+    # Получение данных из формы в переменную
+    form = ReviewForm(request.POST)
+    dbl.log("Форма" + str(form))
+
+    # form.software = Software.objects.get(id=id_soft)
+    software = Software.objects.get(id=id_soft)
+    dbl.log("ПО аааааааа кебебебеб " + str(software))
+    # dbl.log("ПО в форме " + str(form.software))
+
+    #  Получение данных из формы и сохранение в бд
+    if request.method == "POST":
+        try:
+
+            # Здесь автоматически проверяются все поля формы методами clean_...
+            if form.is_valid():
+
+                pass
+
+                # new_review = form.save(commit=False)
+                
+                # type_review = form.cleaned_data['kind']
+                # if type_review == 'sof': # Отзыв о ПО
+                #     dbl.log("ffff")
+                #     id_soft = form.cleaned_data['software']
+                #     dbl.log("Ошибка работы с по" + str(id_soft))
+
+
+            form.software = software
+            dbl.log("ПО в форме " + str(form.software))
+
+                # new_review.software = software.id
+                # dbl.log("ПО в форме " + str(new_review.software))
+
+                # Сохранение запроса (происходит тогда, когда все поля валидны)
+                # new_review.save()
+            form.save()
+
+            return redirect('feedback:feedback_success')
+
+        except Exception as error:
+            pass
+            dbl.log("Ошибка работы с отзывом" + str(error))
+
+    rating = [5,4,3,2,1]
+    return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating})
+
+
 # Ф-ия отображаения страницы успешного выполнения
 def feedback_success(request):
 
