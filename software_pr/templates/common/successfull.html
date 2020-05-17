@@ -7,7 +7,11 @@
         {% block breadcrumb %}
         <ul class="breadcrumb">
         {% for crumb in list_crumb %}
-        {% breadcrumb_url crumb.0 crumb.1  %}
+        {% if crumb.2 %}
+        {% breadcrumb_url crumb.0 crumb.1 crumb.2 %}
+        {% else %}
+        {% breadcrumb_url crumb.0 crumb.1 %}
+        {% endif %}
         {% endfor %}
         {% breadcrumb_url 'Успешно' %}
         </ul>

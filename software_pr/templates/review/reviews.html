@@ -1,0 +1,312 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+<title>{% block page_title %}Отзывы{% endblock %}
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
+{% endblock %}
+ {% block content %}
+      <section>
+        <h1>Отзывы
+        </h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="URL">Главная
+            </a>
+          </li>
+          <li>Отзывы
+          </li>
+        </ul>
+        <div class="pos_right_for_div">
+          <a href="{% url 'review:review_create' %}" class="button_show-more">Оставить отзыв
+          </a>
+        </div>
+        <div class="reviews_search_size">
+          <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
+            <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
+          <fieldset class="fieldset_border_primary search_div_fieldset">
+            <form data-target="form_search">
+              <div class="flex_row flex_space-between">
+                <div  class="flex_row flex_space-between margin_bottom_1em w_45_sm">
+                  <div class="div_datepic flex_column">
+                    <div>Дата от: </div>
+                    <input  type="text" class="slct_div slct search_datepicker" name="date_from">
+                  </div>
+                  <div class="div_datepic flex_column">
+                    <div>Дата до: </div>
+                    <input type="text" class="slct_div slct search_datepicker" name="date_to">
+                  </div>
+                </div>
+                <div class="slct_div w_50_sm align_self_end margin_bottom_1em">
+                  <a href="javascript:void(0);" class="slct">Тип продукта:
+                  </a>
+                  <ul class="drop">
+                    <li>
+                      <a data-value="kras">Все
+                      </a>
+                    </li>
+                    <li>
+                      <a data-value="ymn">Сайт
+                      </a>
+                    </li>
+                    <li>
+                      <a data-value="kom">Настольное приложение
+                      </a>
+                    </li>
+                    <li>
+                      <a data-value="scr">Мобильное приложение
+                      </a>
+                    </li>
+                  </ul>
+                  <input type="hidden" id="select">
+                </div>
+              </div>
+              <div class="f_row_lg flex_space-between margin_top_1em margin_bottom_1em">
+                <div class="flex_column padding_bottom_1em">
+                  <div class="">Оценка от: </div>
+                  <div class="flex_row reviews_stars ">	                 
+                    <div class="rating-area" id="from_rating">
+                      <input type="radio" id="from_star-5" name="rating_from" value="5">
+                      <label for="from_star-5" title="Оценка «5»">
+                      </label>	
+                      <input type="radio" id="from_star-4" name="rating_from" value="4">
+                      <label for="from_star-4" title="Оценка «4»">
+                      </label>    
+                      <input type="radio" id="from_star-3" name="rating_from" value="3">
+                      <label for="from_star-3" title="Оценка «3»">
+                      </label>  
+                      <input type="radio" id="from_star-2" name="rating_from" value="2">
+                      <label for="from_star-2" title="Оценка «2»">
+                      </label>    
+                      <input type="radio" id="from_star-1" name="rating_from" value="1">
+                      <label for="from_star-1" title="Оценка «1»">
+                      </label>
+                    </div>	
+                  </div>
+                </div>
+
+                <div class="flex_row reviews_stars">	
+                  <div class="flex_column padding_bottom_1em">
+                    <div class="">Оценка до: </div>
+                    <div class="rating-area" id="to_rating">
+                      <input type="radio" id="star-5" name="rating_to" value="5">
+                      <label for="star-5" title="Оценка «5»">
+                      </label>	
+                      <input type="radio" id="star-4" name="rating_to" value="4">
+                      <label for="star-4" title="Оценка «4»">
+                      </label>    
+                      <input type="radio" id="star-3" name="rating_to" value="3">
+                      <label for="star-3" title="Оценка «3»">
+                      </label>  
+                      <input type="radio" id="star-2" name="rating_to" value="2">
+                      <label for="star-2" title="Оценка «2»">
+                      </label>    
+                      <input type="radio" id="star-1" name="rating_to" value="1">
+                      <label for="star-1" title="Оценка «1»">
+                      </label>
+                    </div>
+                  </div>		
+                </div>
+              </div>
+              <div class="flex_row flex_space-between ">
+                <div class="margin_top-bootom_1em">
+                    <button data-rel="form_search" class="button_reset">Сбросить
+                    </button>
+                </div>
+                <div class="margin_top-bootom_1em" type="submit">
+                    <button class="button_search">Поиск
+                    </button>
+                  </div>  
+              </div>
+            </form>
+          </fieldset>
+          <fieldset class="fieldset_border_primary margin_top_1em" name="fieldset" >
+            <form action="" method="get">
+                <div class = "flex_row ">
+                  <div class=" slct_div column-3">
+                    <a href="javascript:void(0);" class="slct">По</a>
+                    <ul class="drop ">
+                      <li><a>4</a></li>
+                      <li><a>6</a></li>
+                      <li><a>10</a></li>
+                      <li><a>12</a></li>
+                    </ul>
+                    <input type="hidden" id="select">
+                  </div>
+                  <div class="slct_div column-3">
+                    <a href="javascript:void(0);" class="slct">Сортировать:</a>
+                    <ul class="drop">
+                      <li><a>Все</a></li>
+                      <li><a>Популярное</a></li>
+                      <li><a>Новое</a></li>
+                      <li><a>&#8657 по размеру</a></li>
+                      <li><a>&#8659 по размеру</a></li>
+                    </ul>
+                    <input type="hidden" id="select">
+                  </div>
+                  <div class="flex_row column-3">
+                    <input class="slct" type="number" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                    <div class="">
+                      <a type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                  </div>
+            </form>
+           </fieldset>
+        </div>
+        <section class="flex_row article_container padding_bottom_2em padding_top_2em"> 
+          <!-- Контейнер для всех карточек -->
+          
+          
+          {% if review_list %}
+
+                      {% for s in review_list %}
+
+                      <div class="column-2">
+                        <a class="link_style_none" href="review.html">
+                          <div class="flex_row reviews_alone_container">
+                            <div class=" flex_column">
+                              <div class=" flex_row">
+                                <div class="flex_column width_30 review_img_big_disp"> 
+                                  <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
+                                  <img  class = "img_width " src="images/rewiew.jpg" alt="Расписание"/>
+                                  <div class="flex_row  margin_top-bootom_1em" >
+                                    <div class = " chat_img_margin_between">
+                                      <img class = "reviews_img cursor"  src="images/rewiew.jpg" alt="Расписание"/>
+                                    </div>
+                                    <div class = "chat_img_margin_between">
+                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                    </div>
+                                    <div class = "chat_img_margin_between">
+                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                    </div>
+                                    <div class = "chat_img_margin_between">
+                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="flex_row  margin_top-bootom_1em review_img_small_disp" >
+                                  <div class = " chat_img_margin_between">
+                                    <img class = "reviews_img_small cursor"  src="images/rewiew.jpg" alt="Расписание"/>
+                                  </div>
+                                  <div class = " chat_img_margin_between">
+                                    <img class = "reviews_img_small cursor"  src="images/rewiew.jpg" alt="Расписание"/>
+                                  </div>
+                                  <div class = "chat_img_margin_between">
+                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                  </div>
+                                  <div class = "chat_img_margin_between">
+                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                  </div>
+                                  <div class = "chat_img_margin_between">
+                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
+                                  </div>
+                                </div>
+                                <div class="flex_column padding_left_2em_xs w_60_xs">	          
+                                  <div class="flex_row flex_space-between">
+                                    <div class = "reviews_title">Иванов М.Л.
+                                    </div>	
+                                    <div class = "reviews_date">20.01.2020
+                                    </div>	
+                                  </div>	
+                                  <div class="flex_row reviews_stars">	
+                                    <div class="rating-result">
+
+                                        {% for rating in s.star %}
+                                        <span class="active">
+                                        </span>
+                                        {% endfor %}
+<!--                                       	
+                                      <span class="active">
+                                      </span>    
+                                      <span class="active">
+                                      </span>  
+                                      <span class="active">
+                                      </span>   
+                                      <span class="active">
+                                      </span> -->
+                                    </div>		
+                                  </div>  
+                                  <div  class = "reviews_text">       
+                                    <span>Замечательная программа!Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                                      которую предложила, и тогда приложение станет совершенно идеальным 
+                                      для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                                      которую предложила, и тогда приложение станет совершенно идеальным 
+                                      для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
+                                      которую предложила, и тогда приложение станет совершенно идеальным 
+                                      для меня! Спасибо вам! 
+                                    </span>
+                                  </div>	
+                                </div>
+                              </div>
+                              <div  class="flex_column  pos_right">	   
+                                <fieldset class="reviews_adm" name="fieldset" >
+                                  <legend class="pos_center reviews_adm_px">Администратор
+                                  </legend>
+                                  <span>Огромное спасмбо за отзыв!Огромное спасмбо за отзыв!Огромное спасмбо за отзыв!
+                                    Огромное спасмбо за отзыв!Огромное спасмбо за отзыв!Огромное спасмбо за отзыв!
+                                  </span>	
+                                </fieldset>           
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+    
+                      {% endfor %}
+                  
+                    {% else %}
+                      Статей не найдено
+                    {% endif %}        
+
+
+
+
+        </section>
+        <div class=" flex_column margin_top-bootom_1em">
+          <div class=" pos_center">
+            <a href="#" class="button_show-more">Показать еще
+            </a>
+          </div>
+          <div class=" flex_row pagination flex_space-between">
+            <a class = "pagination_page_numbers" href="#">&laquo;
+            </a>
+            <a class = "pagination_page_numbers" href="#">1
+            </a>
+            <a class = "pagination_page_numbers pagination_page_numbers_active"  href="#">2
+            </a>
+            <a class = "pagination_page_numbers" href="#">3
+            </a>
+            <a class = "pagination_page_numbers" href="#">4
+            </a>
+            <a class = "pagination_page_numbers" href="#">5
+            </a>
+            <a class = "pagination_ellipsis" href="#">...
+            </a>
+            <a class = "pagination_page_numbers" href="#">15
+            </a>
+            <a class = "pagination_page_numbers" href="#">16
+            </a>
+            <a class = "pagination_page_numbers" href="#">&raquo;
+            </a>
+          </div>
+        </div>
+        <div class="pos_right_for_div">
+          <a href="#" class="button_show-more">Оставить отзыв
+          </a>
+        </div>
+      </section>
+    {% endblock %}	
+    {% block js_extend %}
+    <script src="{% static '/js/datepicker.min.js' %}"></script>
+    <script src="{% static '/js/datepicker.ru.js' %}"></script>
+    <script>
+    jQuery(document).ready(function () {
+      select_style();
+      search_roll();
+      datepicker_init();
+      form_search_reset();
+    })         
+    </script>
+    {% endblock %}
+

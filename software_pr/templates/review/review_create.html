@@ -4,12 +4,18 @@
 <title>{% block page_title %}Написать отзыв{% endblock %}
  {% block content %}
 <section>
-{% block breadcrumb %}
-<ul class="breadcrumb">
-{% breadcrumb_url 'Главная' 'software:catalog' %}
-{% breadcrumb_url 'Написать отзыв' %}
-</ul>
-{% endblock %}
+    {% block breadcrumb %}
+    <ul class="breadcrumb">
+    {% for crumb in list_crumb %}
+    {% if crumb.2 %}
+    {% breadcrumb_url crumb.0 crumb.1 crumb.2 %}
+    {% else %}
+    {% breadcrumb_url crumb.0 crumb.1 %}
+    {% endif %}
+    {% endfor %}
+    {% breadcrumb_url 'Написать отзыв' %}
+    </ul>
+    {% endblock %}
         <div class="margin_top_2">     
           <!-- Форма комментария -->
           <fieldset class="border_fieldset_top fieldset_width_p2_p1">
@@ -18,11 +24,11 @@
               </h1>
             </legend>
             {% autoescape on %}
-            <form method="post" action="{% url 'review:review_create' %}" id="review_form">
+            <form method="post"  id="review_form">
                 {% csrf_token %}
 
                 <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
-                    <ul class="radio_checkbox pos_center_for_div">
+                    <!-- <ul class="radio_checkbox pos_center_for_div">
                       <li>
                         <input id="type_com" type="radio" name="kind" value="com">
                         <label for="type_com">Отзыв о компании
@@ -38,12 +44,7 @@
                         <label for="type_sof">Отзыв о продукте
                         </label>
                       </li> 
-                    </ul>
-                    <div class="input_style">
-                        
-                      <label for="software111">Наименование ПО
-                      </label>
-                    </div>
+                    </ul> -->
                     <div class="flex_row reviews_stars flex_flex-center padding_top-bootom_1em">	
                       <div class="rating-area">
                         {% for num_star in rating %}
