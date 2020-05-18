@@ -2,8 +2,7 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
-
-
+<title>{% block page_title %}Каталог{% endblock %}
  {% block content %}
               <section>
                 <h1>Каталог
@@ -32,7 +31,7 @@
                 
                                   
                                 <div class=" slct_div" type="submit" style ="width: 30%;">
-                                  <a   href="javascript: document.location.href ='http://127.0.0.1:8000/softwares/?count={{count}}'" class="slct">По</a>
+                                  <a href="http://127.0.0.1:8000/softwares/?count={{count}}" class="slct">По</a>
                                   <ul class="drop">
                                     <li><a>1</a></li>
                                     <li><a>2</a></li>

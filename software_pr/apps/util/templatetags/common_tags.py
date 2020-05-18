@@ -137,7 +137,7 @@ def comparison_numbers(first_num, second_num):
 @register.filter(name='more_than_numbers')
 def more_than_numbers(first_num, second_num):
     if str(first_num).isdigit() and str(second_num).isdigit():
-        if int(first_num) > int(second_num):
+        if int(first_num) >= int(second_num):
             return True
 
     return False

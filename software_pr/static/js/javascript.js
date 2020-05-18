@@ -310,6 +310,21 @@ function datepicker_init() {
 }
 
 
+//Ф-ия для очистки формы поиска
+function form_search_reset()
+{
+	$("[data-rel='form_search']").click( function () {
+
+		// Получение формы поиска
+        current_form = $(this).parents($("[data-target='form_search']"));
+        current_form.find( "input" ).val('').attr("checked", false);
+        input_filled('input');
+        input_filled('textarea');
+    });
+}
+
+
+
 //  jQuery(document).ready(function () {
 	
 // 	select_style();
