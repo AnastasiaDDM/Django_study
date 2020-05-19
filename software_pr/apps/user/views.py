@@ -1,3 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.models import Group
+from clients.models import Client
 
-# Create your views here.
+from django.contrib.auth import authenticate
