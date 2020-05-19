@@ -20,6 +20,8 @@ list_crumb_for_software = []
 def list_review(request):
     review_list = Review.objects.all().filter(date_of_delete=None, visibility=True)
 
+    # Получение данных из формы в переменную
+    # form = Search_ReviewForm(request.GET)
     # Получение пременных из формы поиска
     rating_to = request.GET.get('rating_to', '')
     rating_from = request.GET.get('rating_from', '')
@@ -106,7 +108,7 @@ def review_create(request):
     form = ReviewForm(request.POST)
     dbl.log("Форма" + str(form))
 
-    global list_crumb_for_software
+    # global list_crumb_for_software
     list_crumb_for_software = [['Главная', 'software:catalog'], ['Отзывы', 'review:list_review']]
 
     #  Получение данных из формы и сохранение в бд
@@ -115,14 +117,6 @@ def review_create(request):
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
-
-                
-                # type_review = form.cleaned_data['kind']
-                # if type_review == 'sof': # Отзыв о ПО
-                #     dbl.log("ffff")
-                #     id_soft = form.cleaned_data['software']
-                #     dbl.log("Ошибка работы с по" + str(id_soft))
-                #     form.software = Software.objects.get(id=id_soft)
 
                 # Сохранение запроса (происходит тогда, когда все поля валидны)
                 form.save()
@@ -144,15 +138,12 @@ def review_create_for_software(request, id_soft):
 
     # Получение данных из формы в переменную
     form = ReviewForm(request.POST)
-    dbl.log("Форма" + str(form))
 
-    # form.software = Software.objects.get(id=id_soft)
     software = Software.objects.get(id=id_soft)
     dbl.log("ПО аааааааа кебебебеб " + str(software))
-    # dbl.log("ПО в форме " + str(form.software))
 
 
-    global list_crumb_for_software
+    # global list_crumb_for_software
     # list_crumb_for_software = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id],
     # ['Написать отзыв', 'review:review_create_for_software',software.id]]
 
@@ -166,94 +157,47 @@ def review_create_for_software(request, id_soft):
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
-
-                dbl.log("Ошибка работы с по" )
-
-                # new_review = form.save(commit=False)
-                
-                
-                # if type_review == 'sof': # Отзыв о ПО
-                #     dbl.log("ffff")
-                #     id_soft = form.cleaned_data['software']
-                #     dbl.log("Ошибка работы с по" + str(id_soft))
+                pass
 
             new_review.name = form.cleaned_data['name']
             new_review.email_phone = form.cleaned_data['email_phone']
             new_review.content = form.cleaned_data['content']
             new_review.star = form.cleaned_data['star']
             new_review.software = software
-            # dbl.log("ПО в форме " + str(form.software))
 
-                # new_review.software = software.id
-                # dbl.log("ПО в форме " + str(new_review.software))
-
-                # Сохранение запроса (происходит тогда, когда все поля валидны)
-                # new_review.save()
+            # Сохранение запроса (происходит тогда, когда все поля валидны)
             new_review.save()
 
-            # return redirect('review:review_success')
             return redirect('review:review_success', type='software', id= software.id)
 
         except Exception as error:
             pass
             dbl.log("Ошибка работы с отзывом" + str(error))
 
-
-    
-
     rating = [5,4,3,2,1]
     return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating, 'list_crumb':list_crumb_for_software})
-
-
-# # Ф-ия отображаения страницы успешного выполнения
-# def review_success(request):
-
-#     global list_crumb_for_software
-
-#      # Массив хлебных крошек
-#     list_crumb = list_crumb_for_software
-
-#     dbl.log("строка крошек" + str(list_crumb_for_software))
-
-#     if len(list_crumb_for_software) >2:
-
-#         dbl.log("строка бе бебебебеб" )
-        
-#         soft_raw = list_crumb_for_software[2]
-
-#         if len(soft_raw) == 3:
-#             soft_id = soft_raw[2]
-#             # list_crumb.append(['Написать отзыв', 'review:review_create_for_software', soft_id])
-#             list_crumb.append(['Написать отзыв', 'review:review_create_for_software', soft_id])
-#     else:
-#         list_crumb.append(['Написать отзыв', 'review:review_create'])
-
-
-#     dbl.log("новая строка крошек" + str(list_crumb))
-#     # dbl.log("строка крошек" + str(list_crumb_for_software.append(['Написать отзыв', 'review:review_create_for_software'])))
-
-#     message = "Спасибо за отзыв!"
-
-#     return render(request, 'common/successfull.html', {'message':message, 'list_crumb':list_crumb})
-
 
 
 # Ф-ия отображаения страницы успешного выполнения
 def review_success(request, type='', id = 0):
 
-    global list_crumb_for_software
-
      # Массив хлебных крошек
-    # list_crumb = []
-    list_crumb = list_crumb_for_software
+    list_crumb = []
 
     if len(type)>0 and id>0:
 
         if type == 'software':
-            list_crumb.append(['Написать отзыв', 'software:review_create_for_software', id])
+
+            software = Software.objects.get(id=id)
+
+            list_crumb = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'],
+             [software.name,'software:software_page', id], ['Написать отзыв', 'software:review_create_for_software', id]]
+
+            # list_crumb.append(['Написать отзыв', 'software:review_create_for_software', id])
 
     else:
-        list_crumb.append(['Написать отзыв', 'review:review_create'])
+        list_crumb = [['Главная', 'software:catalog'], ['Отзывы', 'review:list_review'], ['Написать отзыв', 'review:review_create']]
+        # list_crumb.append(['Написать отзыв', 'review:review_create'])
 
     message = "Спасибо за отзыв!"
 

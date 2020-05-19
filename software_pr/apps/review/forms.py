@@ -46,3 +46,10 @@ class ReviewForm(forms.ModelForm):
         return star
 
 
+
+# class Search_ReviewForm(forms.ModelForm):
+#     class Meta:
+#         # Описание используемой модели и полей на форме, а также их атрибутов
+#         model = Review
+#         fields = ['rating_from', 'rating_to', 'date_from', 'date_to', 'review_type']
+

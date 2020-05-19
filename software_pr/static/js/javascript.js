@@ -2,6 +2,7 @@
 
 // Ф-ия для стилизации селекта (выпадающего списка) 
 function select_style() {
+    
   $('.slct').click(function(){
 		/* Заносим выпадающий список в переменную */
 		var dropBlock = $(this).parent().find('.drop');
@@ -42,7 +43,22 @@ function select_style() {
 
 		/* Предотвращаем обычное поведение ссылки при клике */
 		return false;
-	});
+    });
+    
+    $('.slct').each(function(){
+        if ($(this).parent().find('input').val().length > 0)
+        {
+            selectBox = this;
+            find = $(this).parent().find('input').val();
+            $(this).parent().find('.drop li a').each(function()
+            {
+                if ($(this).data('value') == find)
+                {
+                    $(selectBox).html($(this).html());
+                }
+            })
+        }
+    });
 }
 
 
