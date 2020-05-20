@@ -2,7 +2,7 @@
 
 // Ф-ия для стилизации селекта (выпадающего списка) 
 function select_style() {
-    
+
   $('.slct').click(function(){
 		/* Заносим выпадающий список в переменную */
 		var dropBlock = $(this).parent().find('.drop');
@@ -15,7 +15,7 @@ function select_style() {
 			$(this).addClass('active');
 
 			/* Работаем с событием клика по элементам выпадающего списка */
-			$('.drop').find('li').click(function(){
+			$(dropBlock).find('li').click(function(){
 
 				/* Заносим в переменную HTML код элемента
 				списка по которому кликнули */

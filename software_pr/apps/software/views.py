@@ -104,19 +104,28 @@ def catalog(request):
 
     # Хэш классификаций ПО
     tags_dict = {}
+    photo_dict = {}
 
     for soft in soft_list:
 
         soft_tags_list = soft.get_tags()
 
+        soft_photo = soft.get_main_photo()
+
         # Добавляем ключ и значение в словарь
         tags_dict[soft.id] = soft_tags_list
+
+        if soft_photo is not None:
+            # dbl.log("колво "+str(count(soft_photo)))
+            # if count(soft_photo) >1:
+            for s in soft_photo:
+                photo_dict[soft.id] = s
 
 
     # Получение списка всех видов ПО
     classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
 
-    return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'count':count, 'modification':modification, 
+    return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
     'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
     'classification_dict':classification_dict})

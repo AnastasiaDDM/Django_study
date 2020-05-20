@@ -24,18 +24,15 @@ def clean_phone(self):
 def clean_email_phone(self):
     ephone = self.cleaned_data['email_phone']
     # Проверка валидности значения номера телефона
-
-    # dbl.log(str(re.match(r'^\+?\s?[78]\s?[-\(]?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{2}\s?-?\s?\d{2}$', str(ephone)) is None))
-    # dbl.log(str(re.match(r'^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$', str(ephone)) is None))
     if (re.match(r'^\+?\s?[78]\s?[-\(]?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{2}\s?-?\s?\d{2}$', str(ephone)) is None) and (re.match(r'^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$', str(ephone)) is None):
         dbl.log(str('dddddddddd'))
         raise ValidationError("Некорретное значение. Попробуйте еще раз")
 
-    return ephone
 
-        # def clean_phone(self):
-        #     email = self.cleaned_data['phone']
-        #     if User.objects.filter(email=email).exists():
-        #         raise ValidationError("Email already exists")
-        #     return email
-    
+def clean_date(date):
+
+    # if re.match(r'^\d{1,2}\.\d{2}\.\d{4}$', str(date_from)) is None:
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', str(date)) is None:
+        raise ValidationError("Неверный тип даты")
+
+    return date

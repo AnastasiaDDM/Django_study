@@ -30,15 +30,15 @@
                 <div  class="flex_row flex_space-between margin_bottom_1em w_45_sm">
                   <div class="div_datepic flex_column">
                     <div>Дата от: </div>
-                    <input  type="text" class="slct_div slct search_datepicker" name="date_from" autocomplete="off" value="{{date_from}}">
+                    <input  type="text" class="slct_div slct search_datepicker" name="date_from" autocomplete="off" value="{{form.date_from.value|default:''}}">
                   </div>
                   <div class="div_datepic flex_column">
                     <div>Дата до: </div>
-                    <input type="text" class="slct_div slct search_datepicker" name="date_to" autocomplete="off" value="{{date_to}}">
+                    <input type="text" class="slct_div slct search_datepicker" name="date_to" autocomplete="off" value="{{form.date_to.value|default:''}}">
                   </div>
                 </div>
                 <div class="slct_div w_50_sm align_self_end margin_bottom_1em">
-                  <a href="javascript:void(0);" class="slct">Все работает!!!!
+                  <a href="javascript:void(0);" class="slct">Дополнительные возможности...
                   </a>
                   <ul class="drop">
                     <li>
@@ -54,16 +54,19 @@
                       </a>
                     </li>
                   </ul>
-                  <input type="hidden" name="review_type" value="{{review_type}}">
+                  <input type="hidden" name="review_type" value="{{form.review_type.value}}">
                 </div>
               </div>
+              {% if form.has_changed %}
+              <div class="pos_left_for_text input_style_error">{{ form.errors.date_from }}</div>
+              {% endif %}
               <div class="f_row_lg flex_space-between margin_top_1em margin_bottom_1em">
                 <div class="flex_column padding_bottom_1em">
                   <div class="">Оценка от: </div>
                   <div class="flex_row reviews_stars">	                 
                     <div class="rating-area" id="from_rating">
                         {% for num_star in rating reversed %}
-                        {% if num_star|comparison_numbers:rating_from %} 
+                        {% if num_star|comparison_numbers:form.rating_from.value %} 
                         <input type="radio" checked id="from_star-{{num_star}}" name="rating_from" value="{{num_star}}">
                         <label for="from_star-{{num_star}}" title="Оценка «{{num_star}}»"></label>	                        
                         {% else %}
@@ -79,7 +82,7 @@
                     <div class="">Оценка до: </div>
                     <div class="rating-area" id="to_rating">
                         {% for num_star in rating reversed %}
-                        {% if num_star|comparison_numbers:rating_to %} 
+                        {% if num_star|comparison_numbers:form.rating_to.value %} 
                         <input type="radio" checked id="to_star-{{num_star}}" name="rating_to" value="{{num_star}}">
                         <label for="to_star-{{num_star}}" title="Оценка «{{num_star}}»"></label>	                        
                         {% else %}
@@ -140,11 +143,9 @@
         <section class="flex_row article_container padding_bottom_2em padding_top_2em"> 
           <!-- Контейнер для всех карточек -->
           {% if review_list %}
-
                       {% for s in review_list %}
-
                       <div class="column-2">
-                        <a class="link_style_none" href="review.html">
+                        <a class="link_style_none" href="{% url 'review:review_page' s.id %}">
                           <div class="flex_row reviews_alone_container">
                             <div class=" flex_column">
                               <div class=" flex_row">

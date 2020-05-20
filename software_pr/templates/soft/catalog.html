@@ -297,7 +297,13 @@
                                   <!-- Контейнер картинки и кнопок -->
                                   <div class = "software_div_images"> 
                                     <!-- Бокс картинки --> 
-                                    <a href="{% url 'software:software_page' s.id %}"><img class = "img_width cursor" src="s.soft_image.url"  alt="{{s.name}}"/></a>
+                                    {% if photo_dict %}
+                                    {% with photo=photo_dict|get_value_for_dict:s.id %}
+                                        {% if photo %}
+                                        <a href="{% url 'software:software_page' s.id %}"><img class = "img_width cursor" src="{{photo.photo.url}}"  alt="{{s.name}}"/></a>
+                                        {% endif %}
+                                    {% endwith %}
+                                    {% endif %}
                                   </div>
                                   <div class="flex_row software_container_button flex_space-between"> 
                                     <!-- Бокс кнопки покупки и лайка --> 

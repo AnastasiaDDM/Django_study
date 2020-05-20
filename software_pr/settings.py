@@ -141,6 +141,9 @@ USE_TZ = True
 # DATE_FORMAT = 'j E Y'
 # DATE_INPUT_FORMATS = ['%d.%m.%Y']
 
+LOGIN_REDIRECT_URL = "software:catalog" 
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 

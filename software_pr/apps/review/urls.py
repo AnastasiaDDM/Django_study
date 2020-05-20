@@ -10,4 +10,5 @@ urlpatterns = [
     # path('review_create/', views.review_create_for_software, name = 'review_create_for_software'),
     path('new/success/', views.review_success, name = 'review_success'),
     path('new/success/<str:type>/<int:id>', views.review_success, name = 'review_success'),
+    path('<int:id>/', views.review_page, name = 'review_page'),
 ]

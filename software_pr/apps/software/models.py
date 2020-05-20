@@ -33,6 +33,22 @@ class Software(models.Model):
         return software_img
 
 
+    # Ф-ия получения главного фото ПО для каталога
+    def get_main_photo(self):
+        try:
+
+            main_img = Addition.objects.filter(software__id = self.id, date_of_delete=None, is_main=True)[:1]
+
+            if not main_img:
+
+                main_img = Addition.objects.filter(software__id = self.id, date_of_delete=None)[:1]
+
+        except:
+
+            return None
+
+        return main_img
+
     # Ф-ия получения списка тегов 
     def get_tags(self):
 
@@ -182,7 +198,7 @@ class Addition(models.Model):
     photo = models.ImageField('Фото', upload_to="soft/")
     is_main = models.BooleanField('Тип (true - главная)', default=False)
     # date_of_create = models.DateField('Дата создания', auto_now_add=True, blank=True)      
-    date_of_delete = models.DateField('Дата удаления', blank=True, db_index=True)
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
 
     def __str__(self):
         return self.name

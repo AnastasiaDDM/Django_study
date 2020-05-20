@@ -30,3 +30,25 @@ class Review(models.Model):
     class Meta:
         verbose_name = 'Отзыв'
         verbose_name_plural = 'Отзывы'
+
+    # Ф-ия получения списка приложений
+    def get_addition(self):
+
+        # Получаем список приложений данного отзыва
+        list_img = Review_Addition.objects.filter(review__id = self.id, date_of_delete=None)
+        return list_img
+
+
+class Review_Addition(models.Model):
+    review = models.ForeignKey(Review, on_delete = models.PROTECT, verbose_name='Отзыв')
+    name = models.CharField('Название', max_length = 50, null=True)
+    size = models.BooleanField('Тип (true - большая картинка)', default=True)
+    photo = models.ImageField('Фото', upload_to="review/")     
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Приложение'
+        verbose_name_plural = 'Приложения'

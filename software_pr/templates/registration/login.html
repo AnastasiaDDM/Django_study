@@ -1,0 +1,80 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+<title>{% block page_title %}Заказать звонок{% endblock %}
+ {% block content %}
+<section>
+{% block breadcrumb %}
+<ul class="breadcrumb">
+{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Заказать звонок' %}
+</ul>
+{% endblock %}
+        <div class="margin_top_2">     
+          <fieldset class=" padding_2em  border_fieldset_top" >
+            <legend class="pos_center padding_left-right_1em">
+              <h1>Вход
+              </h1>
+            </legend>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+              <div class = "w_50_sm_70_md pos_center margin_top_2" class="pos_center">
+                <div class="input_style ">
+                  <input type="text" id="email" required autocomplete>
+                  <label for="email">Номер телефона/ эл. почта
+                  </label>
+                </div>
+                <div class="input_style margin_top_3em">
+                  <input  id="pass_old" type="password" required autocomplete="off">
+                  <label for="pass_old">Пароль
+                  </label>
+                </div>
+                <div class = "margin_top_1em">
+                  <a href="#" class="link_read-more link_style_border">
+                    <span>Забыли пароль?
+                    </span>
+                  </a>
+                </div>
+                <div class = "margin_top_1em">Нет учетной записи? 
+                  <a href="#" class="link_read-more link_style_border">
+                    <span>Зарегистрироваться
+                    </span>
+                  </a>
+                </div>
+                <div class="flex_row flex_space-between margin_top_4em">
+                  <div class="pos_сenter">
+                    <a href="#" class="button_reset">Отменить
+                    </a>
+                  </div>
+                  <div class="pos_сenter">
+                    <button type="submit" class="button_show-more">Войти
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </section>
+      {% endblock %}
+      {% block js_extend %}
+        <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
+        <script>
+            jQuery(document).ready(function () {
+            input_filled('input');
+            input_filled('textarea');
+
+            form_validate(
+                $("#feedback_form"), 
+                {	
+                    phone:{mobileRU: true}
+                },
+                {
+                    name:{required: "Введите имя"},
+                    phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
+                }
+                )
+            })          
+        </script>
+        {% endblock %}	
