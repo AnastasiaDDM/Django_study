@@ -1,36 +1,331 @@
-колво <QuerySet [<Addition: Бизнес >]>
-колво <QuerySet [<Addition: Бизнес >]>
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet []>
-колво <QuerySet []>
-ввв {1: <Addition: Применение>, 2: <Addition: Бизнес >}
-дваааааа Применение
-ввв {1: <Addition: Применение>, 2: <Addition: Бизнес >}
-дваааааа Бизнес 
-ввв {1: <Addition: Применение>, 2: <Addition: Бизнес >}
-дваааааа None
-колво <QuerySet []>
-колво <QuerySet []>
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
-колво <QuerySet [<Addition: Бизнес >]>
-ввв {2: <Addition: Бизнес >}
-дваааааа Бизнес 
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="123" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555123
+авт вход
+авт  номер 89555555555123
+авт Эавввльавлтввтаоватватвососчс
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None89555555555123
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="122" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555122
+авт вход
+авт  номер 89555555555122
+авт Эавввльавлтввтаоватватвососчс
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+89555555555122
+
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555111
+авт вход
+авт  номер 89555555555111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+89555555555111
+
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555111
+авт вход
+авт  номер 89555555555111
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+авт хороший пароль
+вью юзер 
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555550" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="1111" maxlength="50" required id="id_password"></td></tr>
+вью  895555555501111
+авт вход
+авт  номер 895555555501111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555550
+проверочка  89555555550
+емайл 2 89555555550
+895555555501111
+
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555550" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555550111
+авт вход
+авт  номер 89555555550111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555550
+проверочка  89555555550
+емайл 2 89555555550
+89555555550111
+
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555550" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555550111
+авт вход
+авт  номер 89555555550111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555550
+проверочка  89555555550
+емайл 2 89555555550
+None89555555550111
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555550" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555550111
+авт вход
+авт  номер 89555555550111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555550
+проверочка  89555555550
+емайл 2 89555555550
+None89555555550111
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555556" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555556111111
+авт вход
+авт  номер 89555555556111111
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555556
+проверочка  89555555556
+емайл 2 89555555556
+None89555555556111111
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555d@fffffff.dddd" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="234" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555d@fffffff.dddd234
+авт вход
+авт  номер 89555555555d@fffffff.dddd234
+авт ошибочка в поиске
+вью юзер None
+емайл 89555555555d@fffffff.dddd
+проверочка  89555555555d@fffffff.dddd
+емайл 2 89555555555d@fffffff.dddd
+89555555555d@fffffff.ddddNone234
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="3334" maxlength="50" required id="id_password"></td></tr>
+вью  895555555553334
+авт вход
+авт  номер 895555555553334
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None895555555553334
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="111" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555111
+авт вход
+авт  номер 89555555555111
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+авт хороший пароль
+вью юзер 
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="55443" maxlength="50" required id="id_password"></td></tr>
+вью  8955555555555443
+авт вход
+авт  номер 8955555555555443
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None8955555555555443
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="cc" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555cc
+авт вход
+авт  номер 89555555555cc
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None89555555555cc
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="11" maxlength="50" required id="id_password"></td></tr>
+вью  8955555555511
+авт вход
+авт  номер 8955555555511
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None8955555555511
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ss" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ss
+авт вход
+авт  номер 89555555555ss
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ddd" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ddd
+авт вход
+авт  номер 89555555555ddd
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="3333" maxlength="50" required id="id_password"></td></tr>
+вью  895555555553333
+авт вход
+авт  номер 895555555553333
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="344erw" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555344erw
+авт вход
+авт  номер 89555555555344erw
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89041482222" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="12345" maxlength="50" required id="id_password"></td></tr>
+вью  8904148222212345
+авт вход
+авт  номер 8904148222212345
+авт ошибочка в поиске
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89041482222" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="text" name="password" maxlength="50" required id="id_password"></td></tr>
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89041482222" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="12345" maxlength="50" required id="id_password"></td></tr>
+вью  8904148222212345
+авт вход
+авт  номер 8904148222212345
+авт ошибочка в поиске
+вью юзер None
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89041482222" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="12345" maxlength="50" required id="id_password"></td></tr>
+вью  8904148222212345
+авт вход
+авт  номер 8904148222212345
+авт ошибочка в поиске
+вью юзер None
+емайл 89041482222
+проверочка  89041482222
+емайл 2 89041482222
+None8904148222212345
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="fff" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555fff
+авт вход
+авт  номер 89555555555fff
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None89555555555fff
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="fff" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555fff
+авт вход
+авт  номер 89555555555fff
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None89555555555fff
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ddd" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ddd
+авт вход
+авт  номер 89555555555ddd
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+None89555555555ddd
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ddd" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ddd
+авт вход
+авт  номер 89555555555ddd
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+манагер None89555555555ddd
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ddd" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ddd
+авт вход
+авт  номер 89555555555ddd
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+манагер None89555555555ddd
+клин
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ааа" maxlength="50" required id="id_password"></td></tr>
+вью  89555555555ааа
+авт вход
+авт  номер 89555555555ааа
+авт Эавввльавлтввтаоватватвососчс
+авт юзер 
+вью юзер None
+емайл 89555555555
+проверочка  89555555555
+емайл 2 89555555555
+манагер None89555555555ааа

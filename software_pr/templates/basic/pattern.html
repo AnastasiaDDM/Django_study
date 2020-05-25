@@ -80,8 +80,13 @@
             </a>
           </div>
         </div>
-        <div class=" header_person">
-          <a  id = "user" href = "personal_data.html" > 
+        <div class=" header_person flex_row">
+            {% if request.user.is_authenticated %}
+            <a id = "user" href="{% url 'user:Logout' %}" >Выйти</a>
+            {% else %}
+            <a id = "user" href="{% url 'user:Login' %}" >Войти </a> / <a id = "user" href="{% url 'user:Registration' %}" > Регистрация</a>
+            {% endif %}          
+          <a id = "user" href = "personal_data.html" > 
             <div class="header_i_for_div header_i">
               <i class="fas fa-user">
               </i>

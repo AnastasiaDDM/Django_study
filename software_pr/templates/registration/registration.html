@@ -1,35 +1,39 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Заказать звонок{% endblock %}
+<title>{% block page_title %}Регистрация{% endblock %}
  {% block content %}
 <section>
 {% block breadcrumb %}
 <ul class="breadcrumb">
 {% breadcrumb_url 'Главная' 'software:catalog' %}
-{% breadcrumb_url 'Заказать звонок' %}
+{% breadcrumb_url 'Регистрация' %}
 </ul>
 {% endblock %}
         <div class="margin_top_2">     
           <fieldset class=" padding_2em  border_fieldset_top" >
             <legend class="pos_center padding_left-right_1em">
-              <h1>Вход
+              <h1>Регистрация
               </h1>
             </legend>
             <form method="post">
                 {% csrf_token %}
+
               <div class = "w_50_sm_70_md pos_center margin_top_2" class="pos_center">
                 <div class="input_style ">
                     {{form.email_phone}}
                   <label for="email_phone">Номер телефона/ эл. почта
                   </label>
                 </div>
-                {% if form.has_changed %}
-                <div class="pos_left_for_text input_style_error">{{ form.errors.email_phone }}</div>
-                {% endif %}
+                <div class="padding_top-bootom_1em">Мы отправим вам код подтверждения на указанный вами источник. Теперь это ваш пароль для входа. Поменять его можно в личном кабинете. 
+                </div>
+                <div class="pos_сenter">
+                  <a href="#" class="button_delicate">Получить код в SMS или на почту
+                  </a>
+                </div>
                 <div class="input_style margin_top_3em">
-                    {{form.password}}
-                  <label for="pass_old">Пароль
+                  <input  id="pass_old" type="password"  autocomplete="off" name="password">
+                  <label for="pass_old">Код подтверждения
                   </label>
                 </div>
                 {% if form.has_changed %}
@@ -37,13 +41,13 @@
                 {% endif %}
                 <div class = "margin_top_1em">
                   <a href="#" class="link_read-more link_style_border">
-                    <span>Забыли пароль?
+                    <span>Отправить код повторно
                     </span>
                   </a>
                 </div>
-                <div class = "margin_top_1em">Нет учетной записи? 
+                <div class = "margin_top_1em">Уже зарегистрированы?
                   <a href="#" class="link_read-more link_style_border">
-                    <span>Зарегистрироваться
+                    <span>Войти
                     </span>
                   </a>
                 </div>

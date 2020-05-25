@@ -95,7 +95,7 @@ DATABASES = {
     # }
         'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test_soft_db',
+        'NAME': 'new_db',
         'USER': 'root',
         'PASSWORD': '123456',
         'HOST': 'localhost',
@@ -103,9 +103,15 @@ DATABASES = {
         }
 }
 
-
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'user.authentication.Email_PhoneAuthBackend',  # to be able to login with email, described next
+]
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'user.CustomUser'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {

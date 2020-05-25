@@ -1,10 +1,10 @@
 from django.db import models
 from user.models import *
-from .models import User
+from .models import CustomUser
 from django.conf import settings
 
 class Article(models.Model):
-    author = models.ForeignKey(User, on_delete = models.PROTECT, verbose_name='Автор', null=True, blank=True)
+    author = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Автор', null=True, blank=True)
     name = models.CharField('Название статьи', max_length = 200)
     text = models.TextField('Текст')
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)

@@ -21,12 +21,23 @@ def clean_phone(self):
 
     return phone
 
+def clean_email(self):
+    email = self.cleaned_data['email']
+    # Проверка валидности значения номера телефона
+    if re.match(r'^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$', str(email)) is None:
+        raise ValidationError("Некорретный адрес электронной почты. Попробуйте еще раз")
+
+    return email
+
 def clean_email_phone(self):
     ephone = self.cleaned_data['email_phone']
+    dbl.log(str('клин'))
     # Проверка валидности значения номера телефона
     if (re.match(r'^\+?\s?[78]\s?[-\(]?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{2}\s?-?\s?\d{2}$', str(ephone)) is None) and (re.match(r'^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$', str(ephone)) is None):
-        dbl.log(str('dddddddddd'))
+        dbl.log(str('данные ошибочны!!'))
         raise ValidationError("Некорретное значение. Попробуйте еще раз")
+
+    return ephone
 
 
 def clean_date(date):
