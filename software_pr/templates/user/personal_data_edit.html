@@ -1,0 +1,172 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load software_tags %}
+<title>{% block page_title %}Личный кабинет{% endblock %}
+{% block menu_extend %}
+<div class="flex_row second_menu margin_bottom_1em header_disp_none">
+    <ul class="pos_center">
+      <li>
+        <a href="/order.html">Мои&nbsp;заказы
+        </a>
+      </li>
+      <li>
+        <a href="/articles.html">Мои&nbsp;загрузки
+        </a>
+      </li>
+      <li>
+        <a href="/reviews.html">Избранное
+        </a>
+      </li>
+      <li>
+        <a class = "header_navbar_active" href="/aboutcompany.html">Мои&nbsp;данные
+        </a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+ {% block content %}
+ {% if request.user.is_authenticated %}
+ <section>
+    <h1>Мои данные
+    </h1>
+    <ul class="breadcrumb">
+      <li>
+        <a href="URL">Главная
+        </a>
+      </li>
+      <li>
+        <a href="URL">Личный кабинет
+        </a>
+      </li>
+      <li>
+        <a href="URL">Мои данные
+        </a>
+      </li>
+      <li>Редактирование
+      </li>
+    </ul>
+    <div>
+      <div class=" w_70_sm pos_center_for_div  margin_top_3em">
+        <div class="  pos_center_for_div person_acc">
+          <div class="pos_center w_70_sm"  >
+            <div class="input_style">
+              <input type="text" id="name" required autocomplete="off" value="{{request.user.surname|default:""}}">
+              <label for="name"
+                     >Фамилия
+              </label>
+            </div>
+            <div class="input_style">
+                <input type="text" id="name" required autocomplete="off" value="{{request.user.name|default:""}}">
+                <label for="name"
+                       >Имя
+                </label>
+              </div>
+              <div class="input_style">
+                <input type="text" id="name" required autocomplete="off" value="{{request.user.patronymic|default:""}}">
+                <label for="name"
+                       >Отчество
+                </label>
+              </div>
+            <div class="input_style">
+              <input type="text" id="phone_1" required autocomplete="off" value="{{request.user.phone|default:''}}">
+              <label for="phone_1"
+                     >Телефон
+              </label>
+            </div>
+            <div class="input_style">
+              <input type="text" id="phone_2" autocomplete="off" value="{{request.user.phone_second|default:''}}">
+              <label for="phone_2"
+                     >Запасной телефон
+              </label>
+            </div>
+            <div class="input_style">
+              <input type="text" id="email" autocomplete="off" value="{{request.user.email|default:''}}">
+              <label for="email"
+                     >Электронная почта
+              </label>
+            </div>
+            <div class="input_style">
+              <input type="text" id="soc" autocomplete="off" value="https://vk.com/dmitrievnaa1999">
+              <label for="soc"
+                     >Социальные сети
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="radio_checkbox pos_center_for_div w_70_sm margin_bottom_1em margin_top_2">
+          <li>
+            <input id="c" type="checkbox">
+            <label for="c">Подписаться на рассылку новинок по электронной почте</label>
+          </li>
+        </div>
+      </div>
+      <div class="pos_center_for_div padding_bottom_2em padding_top_2em">
+        <div class="pos_center password_roll">
+          <a class="button_search">
+            Сменить пароль
+          </a>
+        </div>
+      </div>
+      <fieldset class="w_50_sm_70_md_90 padding_2em_xs pos_center fieldset_form_password password" style="display: none;">
+        <form>
+          <div class="pos_center w_70_xl">
+            <div class="input_style ">
+              <input  id="pass_old" type="password" required autocomplete="off">
+              <label for="pass_old">Старый пароль
+              </label>
+            </div>
+            <div class="input_style margin_top_3em">
+              <input  id="pass_new" type="password" required autocomplete="off">
+              <label for="pass_new">Новый пароль
+              </label>
+            </div>
+            <div class="input_style margin_top_3em">
+              <input  id="pass_sec_new" type="password" required autocomplete="off">
+              <label for="pass_sec_new">Повторите пароль
+              </label>
+            </div>
+          </div>
+          <div class="flex_row w_70_sm_auto flex_space-between margin_top_3em pos_center">
+            <div class="pos_сenter password_cancel">
+              <a class="button_delicate">Отменить
+              </a>
+            </div>
+            <div class="pos_сenter">
+              <a href="#" class="button_delicate">Изменить пароль
+              </a>
+            </div>
+          </div>
+        </form>
+      </fieldset>
+      <div class="flex_row flex_space-around margin_top_3em">
+        <div class="pos_сenter">
+          <a href="#" class="button_reset">Отменить
+          </a>
+        </div>
+        <div class="pos_сenter">
+          <a href="#" class="button_show-more">Сохранить
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+      {% endblock %}
+      {% block js_extend %}
+      <script src="{% static '/js/slick.min.js' %}"></script>
+      <script>
+      jQuery(document).ready(function () {
+            input_filled("input");
+            $( ".password_roll" ).click(function() {
+            $( ".password" ).slideToggle( "slow", function() {
+            });
+            });
+            $( ".password_cancel" ).click(function() {
+
+            $( ".password" ).slideToggle( "slow", function() {
+            });
+            });
+          })         
+      </script>
+      {% endblock %}	
+                 

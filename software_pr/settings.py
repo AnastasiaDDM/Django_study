@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    
+    'personal_data.apps.PersonalDataConfig',
     'feedback.apps.FeedbackConfig',
     'review.apps.ReviewConfig',
     'user.apps.UserConfig',

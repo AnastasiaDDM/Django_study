@@ -3,7 +3,9 @@ from django.contrib.auth.models import Group
 # from clients.models import Client
 from django.contrib.auth.models import User
 from user.models import CustomUser
-# from user.managers import create_user
+# from user.managers import CustomUserManager
+from user.authentication import get_user_by_email_phone
+# from user.authentication import *
 import dbl
 import re
 
@@ -38,39 +40,31 @@ def Registration(request):
                 # user.set_password(password)
 
                 password = form.cleaned_data.get('password')
-                dbl.log('вью  '+str(email)+str(password))
-                user = authenticate(email_or_phone=email, password=password)
-                dbl.log('вью юзер '+str(user))
+                # dbl.log('вью  '+str(email)+str(password))
+                # user = CustomUserManager().get_user_by_email_phone(email_or_phone=email)
+                user = get_user_by_email_phone(email_or_phone=email)
+                # dbl.log('вью юзер '+str(user))
                 # is_email_bool=False
 
                 # Пользователя с такими данными нет, значит можно регистрировать
-                if user is None:
+                if user is None or str(user) is None:
                     # new_user = CustomUser()
                     email_phone = form.cleaned_data['email_phone']
-                    dbl.log('емайл '+str(email_phone))
+                    # dbl.log('емайл '+str(email_phone))
                     is_email_bool = is_email(email_phone = email_phone)
-                    dbl.log('емайл 2 '+str(email_phone))
+                    # dbl.log('емайл 2 '+str(email_phone))
 
                     if is_email_bool:
-                        # new_user.email = email_phone
+
                         # Сохранение запроса (происходит тогда, когда все поля валидны)
                         new_user = CustomUser.objects.create_user(email=email_phone, phone=None, password=password)
                     else:
-                        # new_user.phone = email_phone
+
                         # Сохранение запроса (происходит тогда, когда все поля валидны)
                         new_user = CustomUser.objects.create_user(email=None, phone=email_phone, password=password)
 
                     login(request, new_user, backend='user.authentication.Email_PhoneAuthBackend')
-                    # return redirect('software:catalog')
 
-                    # new_user.password = password
-
-                    # # Сохранение запроса (происходит тогда, когда все поля валидны)
-                    # user = CustomUser.objects.create_user(email=None, phone=None, password=None)
-                    # new_user.save()
-                    # if user.is_active:
-                    #     dbl.log('вью юзер активный'+str(user)+str())
-                    #     login(request, user)
                     return redirect('software:catalog')
                 else:
                     message ='Пользователь с такими данными уже есть'

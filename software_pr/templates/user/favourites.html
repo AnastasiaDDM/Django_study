@@ -1,0 +1,241 @@
+
+      <section>
+        <h1>Избранное
+        </h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="URL">Главная
+            </a>
+          </li>
+          <li>
+            <a href="URL">Личный кабинет
+            </a>
+          </li>
+          <li>Избранное
+          </li>
+        </ul>
+        <section class="margin_top_3em"> 
+          <div class="software_container_all-width software_container pos_center_for_div">
+            <div class="pos_left">
+              <a href="#" class="button_search">Очистить все
+              </a>
+            </div>
+          </div>
+          <!-- Контейнер для всех карточек --> 
+
+          <div  class="flex_row pos_center article_container software_container_all-width padding_bottom_2em margin_top_2">
+
+
+            <!-- Контейнер для всех карточек --> 
+            {% if soft_list %}
+
+            {% for s in soft_list %}
+                <div class="column-2 review_card_software"> 
+                    <div class = "pos_right_for_div"> Дата добавления: 20.01.2020
+                    </div>	
+                    <article class="flex_column software_alone_container "> 
+                    <!-- Контейнер одной карточки --> 
+                    <div class = "flex_column width_100"> 
+            <div>
+                {% if s.is_free is False %}
+                <div class = "software_price">{{s.price}} &#8381</div>
+                {% endif %}
+                        
+                    <!-- Контейнер названия и типа ПО -->
+                    <div class="software_div_name">
+            
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
+                </div>
+                </div>
+                    <span class = "software_type" href="software_page">{{s.get_type|join:", "|default:""}}
+                    </span>
+                    </div>
+                    <div class="flex_row container_img_text">  
+                    <!-- Контейнер картинки и текста --> 
+                    <div class = "flex_column software_container_image_button"> 
+                        <!-- Контейнер картинки и кнопок -->
+                        <div class = "software_div_images"> 
+                        <!-- Бокс картинки --> 
+                        {% if photo_dict %}
+                        {% with photo=photo_dict|get_value_for_dict:s.id %}
+                            {% if photo %}
+                            <a href="{% url 'software:software_page' s.id %}"><img class = "img_width cursor" src="{{photo.photo.url}}"  alt="{{s.name}}"/></a>
+                            {% endif %}
+                        {% endwith %}
+                        {% endif %}
+                        </div>
+                        <div class="flex_row software_container_button flex_space-between"> 
+                        <!-- Бокс кнопки покупки и лайка --> 
+                        <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">       
+                            {% if s.price <= 0 %}
+                            Скачать бесплатно
+                            {% else %}
+                            Приобрести
+                            {% endif %}  
+                        </button>
+                        <div >
+                            <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                        </div>
+                        </div>
+                    </div>
+                    <div class = "software_description article_div_text">
+                        <div style = "padding-bottom: 0.25em">Для: 
+                        <span href="catalog.html">{{s.get_area|join:", "|default:"Не ограничено"}}
+                        </span>
+                        </div>
+                        <ul class = "software_description_list"style = "list-style: none">
+                        {{s.description_medium}}
+                        </ul>
+                    </div>
+                    </div>
+                    <div class = "software_tag">
+                    <span>
+                        {% for tag in s.get_tags %}
+                        <a href="">#{{tag}}</a>
+                        {% endfor %}
+
+                        
+                        <!-- {% if tags_dict %}   
+                        {% if tags_dict %}
+                        {% for val in tags_dict.values %}
+                        {% for tag in val %}
+                        <a href="">#{{tag}}</a>
+                        {% endfor %}
+                        
+                        {% endfor %}
+                        {% endif %}                              
+                        {% endif %} -->
+
+                    </span>
+                    </div>
+                </article>
+                </div>
+
+            {% endfor %}
+        
+            {% else %}
+            ПО нет
+            {% endif %}   
+
+
+
+
+
+
+            <div class="column-2 review_card_software"> 
+              <!-- Бокс одной карточки --> 
+              <div class = "pos_right_for_div"> Дата добавления: 20.01.2020
+              </div>	
+              <article class="flex_column software_alone_container "> 
+                <!-- Контейнер одной карточки --> 
+                <div class = "flex_column width_100"> 
+                  <div class="software_div_name">
+                    <div class = "software_price disp_none">
+                    </div>
+                    <!-- Контейнер названия и типа ПО -->
+                    <a class = "software_name" href="/software.html">Автоматизированное кафе для доставки кофе на дом и в офис
+                    </a>
+                  </div>
+                  <a class = "software_type" href="URL">Настольное приложение
+                  </a>
+                </div>
+                <div class="flex_row container_img_text">  
+                  <!-- Контейнер картинки и текста --> 
+                  <div class = "flex_column software_container_image_button"> 
+                    <!-- Контейнер картинки и кнопок -->
+                    <div class = "software_div_images" > 
+                      <!-- Бокс картинки --> 
+                      <a href="/software.html">
+                        <img  class = "img_width cursor" src="images/cafe.jpg"  alt="Расписание"/>
+                      </a>
+                    </div>
+                    <div class="flex_row software_container_button flex_space-between"> 
+                      <!-- Бокс кнопки покупки и лайка --> 
+                      <button class="software_button-pay_style software_button-pay_style_width">Скачать 
+                      </button>
+                      <div >
+                        <i class="fa fa-heart button_like" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class = "software_description article_div_text">
+                    <div style = "padding-bottom: 0.25em">Для: 
+                      <a href="URL">Кафе
+                      </a>
+                    </div>
+                    <ul class = "software_description_list"style = "list-style: none">
+                      <li class="software_description_marker">Контроль доходов и расходов
+                      <li class="software_description_marker">Контроль  количества продуктов и запасов
+                      <li class="software_description_marker">Мониторинг деятельности компании
+                      <li class="software_description_marker">Контроль деятельности работников
+                      <li class="software_description_marker">И многое другое...
+                    </ul>
+                  </div>
+                </div>
+                <div class = "software_tag">
+                  <span>
+                    <a href="URL">#Платно
+                    </a>  
+                    <a href="URL">#Доходы
+                    </a>  
+                    <a href="URL">#ПО ПК
+                    </a>  
+                    <a href="URL">#Бизнес
+                    </a>  
+                    <a href="URL">#Кафе
+                    </a>  
+                    <a href="URL">#Гастропаб
+                    </a>                
+                    <a href="URL">#Платно
+                    </a>  
+                    <a href="URL">#Доходы
+                    </a>  
+                    <a href="URL">#ПО ПК
+                    </a>  
+                    <a href="URL">#Бизнес
+                    </a>  
+                    <a href="URL">#Кафе
+                    </a>  
+                    <a href="URL">#Гастропаб
+                    </a>
+                  </span>
+                </div>
+              </article>
+            </div>
+
+
+            </section>
+        </section>
+        <div class=" flex_column margin_top-bootom_1em">
+          <div class=" pos_center">
+            <a href="#" class="button_show-more">Показать еще
+            </a>
+          </div>
+          <div class=" flex_row pagination flex_space-between">
+            <a class = "pagination_page_numbers" href="#">&laquo;
+            </a>
+            <a class = "pagination_page_numbers" href="#">1
+            </a>
+            <a class = "pagination_page_numbers pagination_page_numbers_active"  href="#">2
+            </a>
+            <a class = "pagination_page_numbers" href="#">3
+            </a>
+            <a class = "pagination_page_numbers" href="#">4
+            </a>
+            <a class = "pagination_page_numbers" href="#">5
+            </a>
+            <a class = "pagination_page_numbers" href="#">6
+            </a>
+            <a class = "pagination_ellipsis" href="#">...
+            </a>
+            <a class = "pagination_page_numbers" href="#">15
+            </a>
+            <a class = "pagination_page_numbers" href="#">16
+            </a>
+            <a class = "pagination_page_numbers" href="#">&raquo;
+            </a>
+          </div>
+        </div>
+        </div>

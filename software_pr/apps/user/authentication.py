@@ -31,3 +31,19 @@ class Email_PhoneAuthBackend:
             return CustomUser.objects.get(pk=user_id)
         except :
             return None
+
+    # @staticmethod
+    # def get_user_by_email_phone(self, email_or_phone):
+    #     try:
+    #         return CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
+    #     except :
+    #         return None
+
+  
+def get_user_by_email_phone(email_or_phone):
+    try:
+        dbl.log('манагер юзер ')
+        dbl.log('манагер юзер '+str(CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))))
+        return CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
+    except :
+        return None

@@ -1,5 +1,7 @@
 from django.contrib.auth.base_user import BaseUserManager
+# from user.models import CustomUser
 import dbl
+from django.db.models import Q
 
 
 class CustomUserManager(BaseUserManager):
@@ -50,23 +52,11 @@ class CustomUserManager(BaseUserManager):
 
         return self._create_user(email, password, **extra_fields)
 
-
-
-
-
-# def _create_user(self, email=None, phone=None, password=None, **extra_fields):
-
-#     # if not email:
-#     #     raise ValueError('Введите email')
-#     email = self.normalize_email(email)
-#     user = self.model(email=email, **extra_fields)
-#     user.set_password(password)
-#     user.save()
-#     return user
-
-
-# def create_user(self, email=None, phone=None, password=None, **extra_fields):
-#     extra_fields.setdefault('is_superuser', False)
-#     return self._create_user(email=email, phone=phone, password=password, **extra_fields)
-
-
+  
+# def get_user_by_email_phone(email_or_phone):
+#     try:
+#         dbl.log('манагер юзер ')
+#         dbl.log('манагер юзер '+str(CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))))
+#         return CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
+#     except :
+#         return None

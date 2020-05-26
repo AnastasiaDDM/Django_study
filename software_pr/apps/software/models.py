@@ -190,6 +190,15 @@ class Software(models.Model):
         return types   
 
 
+    # Ф-ия проверки является ли данное ПО избранным у конкретного клиента
+    def is_favourite(self, client):
+        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
+        try:
+            return Favourite.objects.filter(software=self.id, client=client )
+        except:
+            return None
+
+
 class Addition(models.Model):
     software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
     name = models.CharField('Название', max_length = 50, null=True)
@@ -285,3 +294,28 @@ class Tag(models.Model):
 #     class Meta:
 #         verbose_name = 'Приложение_тег'
 #         verbose_name_plural = 'Приложения_теги'
+
+
+
+
+# Избранные - ПО №2: (клиент)
+class Favourite(models.Model):
+    software = models.ForeignKey(Software, on_delete = models.CASCADE, verbose_name='ПО')
+    client = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Клиент')
+    date_joined = models.DateTimeField('Дата создания', auto_now_add=True)
+
+    # def __str__(self):
+    #     return self.tag
+
+    class Meta:
+        verbose_name = 'Избранное'
+        verbose_name_plural = 'Избранные'
+
+    # Ф-ия получения списка избранных по клиенту
+    def get_favourites_by_user(self):
+        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
+        return Software.objects.filter(favourite__client=self.id)
+
+
+        
+

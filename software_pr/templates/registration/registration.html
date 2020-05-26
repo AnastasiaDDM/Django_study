@@ -25,6 +25,9 @@
                   <label for="email_phone">Номер телефона/ эл. почта
                   </label>
                 </div>
+                {% if form.has_changed %}
+                <div class="pos_left_for_text input_style_error">{{ form.errors.email_phone }}</div>
+                {% endif %}
                 <div class="padding_top-bootom_1em">Мы отправим вам код подтверждения на указанный вами источник. Теперь это ваш пароль для входа. Поменять его можно в личном кабинете. 
                 </div>
                 <div class="pos_сenter">
@@ -32,10 +35,13 @@
                   </a>
                 </div>
                 <div class="input_style margin_top_3em">
-                  <input  id="pass_old" type="password"  autocomplete="off" name="password">
-                  <label for="pass_old">Код подтверждения
+                  <input  id="password" type="password"  autocomplete="off" name="password">
+                  <label for="password">Код подтверждения
                   </label>
                 </div>
+                {% if form.has_changed %}
+                <div class="pos_left_for_text input_style_error">{{ form.errors.password }}</div>
+                {% endif %}
                 {% if form.has_changed %}
                 <div class="pos_left_for_text input_style_error margin_top_1em">{{ message }}</div>
                 {% endif %}

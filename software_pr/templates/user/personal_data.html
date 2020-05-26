@@ -1,0 +1,77 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load software_tags %}
+<title>{% block page_title %}Личный кабинет{% endblock %}
+{% block menu_extend %}
+<div class="flex_row second_menu margin_bottom_1em header_disp_none">
+    <ul class="pos_center">
+      <li>
+        <a href="/order.html">Мои&nbsp;заказы
+        </a>
+      </li>
+      <li>
+        <a href="/articles.html">Мои&nbsp;загрузки
+        </a>
+      </li>
+      <li>
+        <a href="/reviews.html">Избранное
+        </a>
+      </li>
+      <li>
+        <a class = "header_navbar_active" href="/aboutcompany.html">Мои&nbsp;данные
+        </a>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+ {% block content %}
+    <section>
+        <h1>Мои данные
+        </h1>
+        <ul class="breadcrumb">
+            <li><a href="URL">Главная</a></li>
+            <li><a href="URL">Личный кабинет</a></li>
+            <li>Мои данные</li>
+        </ul>
+        {% if request.user.is_authenticated %}
+        <div>
+            <div class="w_pers_data pos_center_for_div person_acc margin_top_3em">
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">ФИО:</div>
+                    <div class="w_pers_data_one_val">{{request.user.surname|default:""}} {{request.user.name|default:""}} {{request.user.patronymic|default:""}}</div>
+                </div>
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">Номер телефона:</div>
+                    <div class="w_pers_data_one_val"><a id = "phone" class = "text-align" href = "tel:{{request.user.phone|default:''}}">
+                        {{request.user.phone|default:""}}</a></div>
+                </div>
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">Запасной номер:</div>
+                    <div class="w_pers_data_one_val"><a id = "phone" class = "text-align" href = "tel:{{request.user.phone_second|default:''}}">
+                        {{request.user.phone_second|default:""}}</a></div>
+                </div>
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">Электронная почта:</div>
+                    <div class="w_pers_data_one_val"><a class = "text-align" href="mailto: {{request.user.email|default:''}}">
+                    {{request.user.email|default:""}}</a></div>
+                </div>
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">Социальные сети:</div>
+                    <div class="w_pers_data_one_val"><a href="https://vk.com/dmitrievnaa1999">
+                    https://vk.com/dmitrievnaa1999</a></div>
+                </div>
+                <div class="flex_row">
+                    <div class="w_pers_data_one margin_right_2em">Дата рождения:</div>
+                    <div class="w_pers_data_one_val">{{request.user.date_of_birth|default:""}}</div>
+                </div>
+            </div>
+            <div class="pos_center_for_div padding_bottom_2em padding_top_2em">
+                <div class="pos_center"><a href="{% url 'user:personal_data_edit' %}" class="button_search">
+                <i class="fa fa-pen-nib button_with_icon_i" aria-hidden="true"></i>
+                Изменить</a></div>
+            </div>
+        </div>
+    {% endif %}
+    </section>
+      {% endblock %}	
+                 

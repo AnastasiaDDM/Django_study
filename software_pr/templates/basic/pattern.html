@@ -83,15 +83,22 @@
         <div class=" header_person flex_row">
             {% if request.user.is_authenticated %}
             <a id = "user" href="{% url 'user:Logout' %}" >Выйти</a>
+            <a id = "user" href = "{% url 'user:personal_data' %}" > 
+                <div class="header_i_for_div header_i">
+                  <i class="fas fa-user">
+                  </i>
+                </div>   
+              </a>
             {% else %}
             <a id = "user" href="{% url 'user:Login' %}" >Войти </a> / <a id = "user" href="{% url 'user:Registration' %}" > Регистрация</a>
+            <a id = "user" href = "{% url 'user:Login' %}" > 
+                <div class="header_i_for_div header_i">
+                  <i class="fas fa-user">
+                  </i>
+                </div>   
+              </a>
             {% endif %}          
-          <a id = "user" href = "personal_data.html" > 
-            <div class="header_i_for_div header_i">
-              <i class="fas fa-user">
-              </i>
-            </div>   
-          </a>
+
         </div>
       </div>
       <div class="flex_row header-bottom flex_space-between flex_wrap">
@@ -180,6 +187,7 @@
         </div>
       </div>
     </header>
+    {% block menu_extend %}{% endblock %}
     <main>
       {% block content %}{% endblock %}
       <footer class = "flex_row header_container_height flex_space-between footer_container">
@@ -277,3 +285,7 @@
       <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>
       {% block js_extend %}{% endblock %}
     </html> 
+
+
+
+    
