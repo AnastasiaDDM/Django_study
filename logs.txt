@@ -1,113 +1,370 @@
+dddddddd
 ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
 
 ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+2020-05-13
+aaa
+2020-05-13
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Ой ойой</li></ul><input type="text" name="date_of_birth" value="13.05.2020" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+2019-09-02
+aaa
+2019-09-02
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Ой ойой</li></ul><input type="text" name="date_of_birth" value="02.09.2019" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+2019-09-02
+aaa
+2019-09-02
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Кажется выбрана нереальная дата рождения, просим вас поменять значение на реальное</li></ul><input type="text" name="date_of_birth" value="02.09.2019" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+2019-09-02
+aaa
+2019-09-02
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Кажется выбрана нереальная дата рождения, просим вас поменять значение на реальное</li></ul><input type="text" name="date_of_birth" value="02.09.2019" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+44
+aaa
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><ul class="errorlist"><li>Некорретная фамилия. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="surname" value="44" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+44
+aaa
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><ul class="errorlist"><li>Некорретная фамилия. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="surname" value="44" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+2
+aaa
+rrr
+
+rrr
+1
+aaa
+ndmitrievnaa@mail.ru
+aaa
+rrr
+2020-05-12
+aaa
+2020-05-12
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><ul class="errorlist"><li>Некорретное имя. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="name" value="2" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><ul class="errorlist"><li>Некорретное отчество. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="patronymic" value="1" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Кажется выбрана нереальная дата рождения, просим вас поменять значение на реальное</li></ul><input type="text" name="date_of_birth" value="12.05.2020" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+2
+aaa
+rrr
+
+rrr
+1
+aaa
+ndmitrievnaa@mail.ru
+aaa
+rrr
+89016686070
+aaa
+rrr
+2020-05-12
+aaa
+2020-05-12
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><ul class="errorlist"><li>Некорретное имя. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="name" value="2" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><ul class="errorlist"><li>Некорретное отчество. Введите имя еще раз или оставьте это поле пустым</li></ul><input type="text" name="patronymic" value="1" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><ul class="errorlist"><li>Кажется выбрана нереальная дата рождения, просим вас поменять значение на реальное</li></ul><input type="text" name="date_of_birth" value="12.05.2020" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+rrr
+89016686070f
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><ul class="errorlist"><li>Некорретный номер телефона. Попробуйте еще раз</li></ul><input type="text" name="phone" value="89016686070f" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+aaa
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><ul class="errorlist"><li>Некорретный номер телефона. Попробуйте еще раз</li></ul><input type="text" name="phone" value="89016686070f" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><ul class="errorlist"><li>Некорретный номер телефона. Попробуйте еще раз</li></ul><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+aaa
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><ul class="errorlist"><li>Некорретный номер телефона. Попробуйте еще раз</li></ul><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><input type="text" name="phone_second" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>
+dddddddd
+ndmitrievnaa@mail.ru
+dddddddd
+rrr
+
+rrr
+
+rrr
+
+ndmitrievnaa@mail.ru
+aaa
+aaa
+aaa
+rrr
+1998-05-23
+aaa
+1998-05-23
+2010-05-31
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_surname">Surname:</label></th><td><input type="text" name="surname" maxlength="250" id="id_surname"></td></tr>
+<tr><th><label for="id_patronymic">Patronymic:</label></th><td><input type="text" name="patronymic" maxlength="250" id="id_patronymic"></td></tr>
+<tr><th><label for="id_email">Email:</label></th><td><input type="text" name="email" value="ndmitrievnaa@mail.ru" maxlength="250" id="id_email"></td></tr>
+<tr><th><label for="id_phone">Phone:</label></th><td><input type="text" name="phone" value="89016686070" maxlength="250" id="id_phone"></td></tr>
+<tr><th><label for="id_phone_second">Phone second:</label></th><td><ul class="errorlist"><li>Некорретный номер телефона. Попробуйте еще раз</li></ul><input type="text" name="phone_second" value="g" maxlength="250" id="id_phone_second"></td></tr>
+<tr><th><label for="id_social">Social:</label></th><td><input type="text" name="social" value="https://vk.com/musicalprincezzz" maxlength="900" id="id_social"></td></tr>
+<tr><th><label for="id_date_of_birth">Date of birth:</label></th><td><input type="text" name="date_of_birth" value="23.05.1998" id="id_date_of_birth"></td></tr>

@@ -67,6 +67,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     phone_second = models.CharField('Запасной телефон', max_length = 20, null=True, blank=True)
     date_joined = models.DateTimeField('Дата создания', auto_now_add=True)
     date_of_birth = models.DateField('Дата рождения', null=True, blank=True)
+    social = models.CharField('Социальные сети', max_length = 400, null=True, blank=True)
+    comment = models.CharField('Комментарий', max_length = 900, null=True, blank=True)
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     is_active = models.BooleanField('Активность', default=True)
     is_staff = models.BooleanField('Админ', default=False)

@@ -2,6 +2,9 @@
 {% load static %}
 {% load software_tags %}
 <title>{% block page_title %}Личный кабинет{% endblock %}
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
+{% endblock %}
 {% block menu_extend %}
 <div class="flex_row second_menu margin_bottom_1em header_disp_none">
     <ul class="pos_center">
@@ -46,123 +49,152 @@
       </li>
     </ul>
     <div>
-      <div class=" w_70_sm pos_center_for_div  margin_top_3em">
-        <div class="  pos_center_for_div person_acc">
-          <div class="pos_center w_70_sm"  >
-            <div class="input_style">
-              <input type="text" id="name" required autocomplete="off" value="{{request.user.surname|default:""}}">
-              <label for="name"
-                     >Фамилия
-              </label>
+        {% autoescape on %}
+        <form method="post" action="{% url 'user:personal_data_edit' %}" >
+            {% csrf_token %}
+            <div class=" w_70_sm pos_center_for_div  margin_top_3em">
+                {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors }}</div>
+                {% endif %}
+                <div class="  pos_center_for_div person_acc">
+                <div class="pos_center w_70_sm">
+                    <div class="input_style">
+                    <input type="text" id="surname" name="surname" autocomplete="off" value="{{request.user.surname|default:""}}">
+                    <label for="surname">Фамилия
+                    </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.surname }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                        <input type="text" id="name" name="name" autocomplete="off" value="{{request.user.name|default:""}}">
+                        <label for="name">Имя
+                        </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                        <input type="text" id="patronymic" name="patronymic" autocomplete="off" value="{{request.user.patronymic|default:""}}">
+                        <label for="patronymic">Отчество
+                        </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.patronymic }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                    <input type="text" id="phone" name="phone" autocomplete="off" value="{{request.user.phone|default:''}}">
+                    <label for="phone">Телефон
+                    </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                    <input type="text" id="phone_second" name="phone_second" autocomplete="off" value="{{request.user.phone_second|default:''}}">
+                    <label for="phone_second">Запасной телефон
+                    </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.phone_second }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                    <input type="text" id="email" name="email" autocomplete="off" value="{{request.user.email|default:''}}">
+                    <label for="email">Электронная почта
+                    </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.email }}</div>
+                    {% endif %}
+                    <div class="input_style">
+                    <input type="text" id="social" name="social" autocomplete="off" value="{{request.user.social|default:''}}">
+                    <label for="social">Социальные сети
+                    </label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.social }}</div>
+                    {% endif %}
+                    <div class="div_datepic margin_top_2">
+                        <input  type="text" id="date_of_birth" class="slct_div slct search_datepicker" autocomplete="off" name="date_of_birth" value="{{request.user.date_of_birth|default:''|date:'d.m.Y'}}">
+                        <label for="date_of_birth">Дата рождения
+                        </label>
+                    </div> 	
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.date_of_birth }}</div>
+                    {% endif %}
+                </div>
+                </div>
+                <div class="radio_checkbox pos_center_for_div w_70_sm margin_bottom_1em margin_top_2">
+                <li>
+                    <input id="c" type="checkbox">
+                    <label for="c">Подписаться на рассылку новинок по электронной почте</label>
+                </li>
+                </div>
             </div>
-            <div class="input_style">
-                <input type="text" id="name" required autocomplete="off" value="{{request.user.name|default:""}}">
-                <label for="name"
-                       >Имя
-                </label>
-              </div>
-              <div class="input_style">
-                <input type="text" id="name" required autocomplete="off" value="{{request.user.patronymic|default:""}}">
-                <label for="name"
-                       >Отчество
-                </label>
-              </div>
-            <div class="input_style">
-              <input type="text" id="phone_1" required autocomplete="off" value="{{request.user.phone|default:''}}">
-              <label for="phone_1"
-                     >Телефон
-              </label>
+            <div class="pos_center_for_div padding_bottom_2em padding_top_2em">
+                <div class="pos_center password_roll">
+                <a class="button_search">
+                    Сменить пароль
+                </a>
+                </div>
             </div>
-            <div class="input_style">
-              <input type="text" id="phone_2" autocomplete="off" value="{{request.user.phone_second|default:''}}">
-              <label for="phone_2"
-                     >Запасной телефон
-              </label>
+            <fieldset class="w_50_sm_70_md_90 padding_2em_xs pos_center fieldset_form_password password" style="display: none;">
+                <div class="pos_center w_70_xl">
+                    <div class="input_style ">
+                    <input  id="pass_old" type="password"  autocomplete="off">
+                    <label for="pass_old">Старый пароль
+                    </label>
+                    </div>
+                    <div class="input_style margin_top_3em">
+                    <input  id="pass_new" type="password"  autocomplete="off">
+                    <label for="pass_new">Новый пароль
+                    </label>
+                    </div>
+                    <div class="input_style margin_top_3em">
+                    <input  id="pass_sec_new" type="password"  autocomplete="off">
+                    <label for="pass_sec_new">Повторите пароль
+                    </label>
+                    </div>
+                </div>
+                <div class="flex_row w_70_sm_auto flex_space-between margin_top_3em pos_center">
+                    <div class="pos_сenter password_cancel">
+                    <a class="button_delicate">Отменить
+                    </a>
+                    </div>
+                    <div class="pos_сenter">
+                    <a href="#" class="button_delicate">Изменить пароль
+                    </a>
+                    </div>
+                </div>
+            </fieldset>
+            <div class="flex_row flex_space-around margin_top_3em">
+                <div class="pos_сenter">
+                <a href="{% url 'user:personal_data' %}" class="button_reset">Отменить
+                </a>
+                </div>
+                <div class="pos_сenter">
+                    <button type="submit" class="button_show-more">Сохранить</button>
+                </div>
             </div>
-            <div class="input_style">
-              <input type="text" id="email" autocomplete="off" value="{{request.user.email|default:''}}">
-              <label for="email"
-                     >Электронная почта
-              </label>
-            </div>
-            <div class="input_style">
-              <input type="text" id="soc" autocomplete="off" value="https://vk.com/dmitrievnaa1999">
-              <label for="soc"
-                     >Социальные сети
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="radio_checkbox pos_center_for_div w_70_sm margin_bottom_1em margin_top_2">
-          <li>
-            <input id="c" type="checkbox">
-            <label for="c">Подписаться на рассылку новинок по электронной почте</label>
-          </li>
-        </div>
-      </div>
-      <div class="pos_center_for_div padding_bottom_2em padding_top_2em">
-        <div class="pos_center password_roll">
-          <a class="button_search">
-            Сменить пароль
-          </a>
-        </div>
-      </div>
-      <fieldset class="w_50_sm_70_md_90 padding_2em_xs pos_center fieldset_form_password password" style="display: none;">
-        <form>
-          <div class="pos_center w_70_xl">
-            <div class="input_style ">
-              <input  id="pass_old" type="password" required autocomplete="off">
-              <label for="pass_old">Старый пароль
-              </label>
-            </div>
-            <div class="input_style margin_top_3em">
-              <input  id="pass_new" type="password" required autocomplete="off">
-              <label for="pass_new">Новый пароль
-              </label>
-            </div>
-            <div class="input_style margin_top_3em">
-              <input  id="pass_sec_new" type="password" required autocomplete="off">
-              <label for="pass_sec_new">Повторите пароль
-              </label>
-            </div>
-          </div>
-          <div class="flex_row w_70_sm_auto flex_space-between margin_top_3em pos_center">
-            <div class="pos_сenter password_cancel">
-              <a class="button_delicate">Отменить
-              </a>
-            </div>
-            <div class="pos_сenter">
-              <a href="#" class="button_delicate">Изменить пароль
-              </a>
-            </div>
-          </div>
         </form>
-      </fieldset>
-      <div class="flex_row flex_space-around margin_top_3em">
-        <div class="pos_сenter">
-          <a href="#" class="button_reset">Отменить
-          </a>
-        </div>
-        <div class="pos_сenter">
-          <a href="#" class="button_show-more">Сохранить
-          </a>
-        </div>
-      </div>
+        {% endautoescape %}
     </div>
   </section>
   {% endif %}
       {% endblock %}
       {% block js_extend %}
       <script src="{% static '/js/slick.min.js' %}"></script>
+      <script src="{% static '/js/datepicker.min.js' %}"></script>
+      <script src="{% static '/js/datepicker.ru.js' %}"></script>
       <script>
       jQuery(document).ready(function () {
             input_filled("input");
+            datepicker_init();
             $( ".password_roll" ).click(function() {
             $( ".password" ).slideToggle( "slow", function() {
             });
             });
             $( ".password_cancel" ).click(function() {
-
             $( ".password" ).slideToggle( "slow", function() {
             });
             });

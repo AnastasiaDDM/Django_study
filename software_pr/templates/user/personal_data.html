@@ -57,12 +57,12 @@
                 </div>
                 <div class="flex_row">
                     <div class="w_pers_data_one margin_right_2em">Социальные сети:</div>
-                    <div class="w_pers_data_one_val"><a href="https://vk.com/dmitrievnaa1999">
-                    https://vk.com/dmitrievnaa1999</a></div>
+                    <div class="w_pers_data_one_val"><a href="{{request.user.social|default:''}}">
+                        {{request.user.social|default:""}}</a></div>
                 </div>
                 <div class="flex_row">
                     <div class="w_pers_data_one margin_right_2em">Дата рождения:</div>
-                    <div class="w_pers_data_one_val">{{request.user.date_of_birth|default:""}}</div>
+                    <div class="w_pers_data_one_val">{{request.user.date_of_birth|default:""|date:"j E Y"}}</div>
                 </div>
             </div>
             <div class="pos_center_for_div padding_bottom_2em padding_top_2em">
