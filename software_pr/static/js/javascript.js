@@ -377,3 +377,42 @@ function form_validate(f, rules, messages)
   
   
 }
+
+
+
+// Ф-ия для избранного
+function favourite()
+{
+	$("[data-target='favourite']").click( function () {
+
+        // // Получение формы поиска
+        var id = $(this).data("id");
+        var url = $(this).data("url");
+
+        console.log("qqqqqqqqqqqqqqq")
+        console.log($(this).find( "i" ))
+        tag_i = $(this).find( "i" )
+
+        $.get( url + id)
+            .done(function( data ) {
+                
+                console.log(data)
+
+                if (data.result == true) {
+                    $(tag_i).removeClass("button_like").addClass("button_like_true");
+                }
+                else {
+                    $(tag_i).removeClass("button_like_true").addClass("button_like");
+                }
+            })
+            .fail(function() {
+                // alert( "error" );
+              })
+              .always(function() {
+                // alert( "finished" );
+              });
+    });
+}
+
+
+

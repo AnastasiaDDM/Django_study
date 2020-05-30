@@ -1,6 +1,6 @@
 #editor.detectIndentation#
 from django.shortcuts import render, redirect
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.db import models
 from software.models import *
 from django.db.models import Q
@@ -8,6 +8,7 @@ from django.core.paginator import *
 import dbl
 import re
 from user.models import CustomUser
+import json
 
 
 
@@ -326,6 +327,7 @@ def add_favourite(request, software_id):
     try:
         
         if request.user.is_authenticated:
+            dbl.log("fff")
 
             client = request.user
             software = Software.objects.get( id = int(software_id) )
@@ -333,13 +335,34 @@ def add_favourite(request, software_id):
             fav = software.is_favourite(client)
 
             if fav:
+                dbl.log("dddd")
                 
                 fav.delete()
+
+                data = {
+                    'status': 'success',
+                    'result': False
+                }
                 
             else:
+                dbl.log("aaaa")
                 Favourite.objects.create(client=client, software=software)
 
-            return redirect('software:catalog')
+                # data = {
+                # status:"success",
+                # data: {result: true}
+                # }
+
+
+                data = {
+                    'status': 'success',
+                    'result': True
+                }
+                dbl.log(str(data))
+                dbl.log(str(json.dumps(data)))
+
+            # return redirect('software:catalog')
+            return HttpResponse(json.dumps(data), content_type='application/json')
         else:
             pass
 

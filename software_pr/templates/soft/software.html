@@ -1,7 +1,6 @@
 {% extends 'basic/pattern.html' %}
-
 {% load static %}
-
+{% load software_tags %}
 <title>{% block page_title %}{{software.name}}{% endblock %}
 
   {% block link_extend %}
@@ -18,7 +17,7 @@
 
 {% block breadcrumb %}
 <ul class="breadcrumb">
-  <li>
+  <li> 
     <a href="main.html">Главная
     </a>
   </li>
@@ -130,23 +129,39 @@
                 <button class="button_pay button_pay_width_full">Заказать доработку
                 </button>
                 <div>
-                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                {% if request.user.is_authenticated %}
+                {% with favourite=software|is_favourite:request.user %}
+
+                    {% if favourite %}
+                    <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                    {% endif %}
+                {% endwith %}
+                {% endif %}  
                 </div>
             </div>
-
             {% else %}
-
             <!--Это контейнер кнопок-->
             <div class="flex_row  flex_space-between">
                 <button class="button_pay button_pay_width_full">Скачать бесплатно
                 </button>
                 <div>
-                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                    <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{software.id}}">
+                    {% if request.user.is_authenticated %}
+                    {% with favourite=software|is_favourite:request.user %}
+
+                        {% if favourite %}
+                        <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
+                        {% else %}
+                        <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                        {% endif %}
+                    {% endwith %}
+                    {% endif %}  
+                    </div>
                 </div>
             </div>
-
             {% endif %} 
-
           </div>
         </div>
         <div >
@@ -737,6 +752,7 @@
           input_filled('textarea');
           carousel_soft('same_software');
           read_more_text_roll();
+          favourite();
         })          
     </script>
     {% endblock %}

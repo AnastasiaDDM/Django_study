@@ -5,24 +5,24 @@
 {% block menu_extend %}
 <div class="flex_row second_menu margin_bottom_1em header_disp_none">
     <ul class="pos_center">
-      <li>
-        <a href="/order.html">Мои&nbsp;заказы
+        <li>
+        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;заказы
         </a>
-      </li>
-      <li>
-        <a href="/articles.html">Мои&nbsp;загрузки
+        </li>
+        <li>
+        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;загрузки
         </a>
-      </li>
-      <li>
-        <a href="/reviews.html">Избранное
+        </li>
+        <li>
+        <a href="{% url 'user:favourites' %}">Избранное
         </a>
-      </li>
-      <li>
-        <a class = "header_navbar_active" href="/aboutcompany.html">Мои&nbsp;данные
+        </li>
+        <li>
+        <a class = "header_navbar_active" href="{% url 'user:personal_data' %}">Мои&nbsp;данные
         </a>
-      </li>
+        </li>
     </ul>
-  </div>
+    </div>
 {% endblock %}
  {% block content %}
     <section>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="flex_row">
                     <div class="w_pers_data_one margin_right_2em">Социальные сети:</div>
-                    <div class="w_pers_data_one_val"><a href="{{request.user.social|default:''}}">
+                    <div class="w_pers_data_one_val" style="word-wrap: break-word;"><a href="{{request.user.social|default:''}}">
                         {{request.user.social|default:""}}</a></div>
                 </div>
                 <div class="flex_row">

@@ -1,5 +1,4 @@
-{% load static %}
-<!DOCTYPE HTML>
+{% load static %}<!DOCTYPE HTML>
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
@@ -12,8 +11,7 @@
     <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fa/css/all.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    {% block link_extend %}{% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">{% block link_extend %}{% endblock %}
   </head>
   <body class = "fix_width bg-head">
     <header class = "flex_column header_container_height">
@@ -80,25 +78,21 @@
             </a>
           </div>
         </div>
-        <div class=" header_person flex_row">
-            {% if request.user.is_authenticated %}
+        <div class=" header_person flex_row">{% if request.user.is_authenticated %}
             <a id = "user" href="{% url 'user:Logout' %}" >Выйти</a>
-            <a id = "user" href = "{% url 'user:personal_data' %}" > 
+            <a id = "user" href = "{% url 'user:personal_data' %}"> 
                 <div class="header_i_for_div header_i">
-                  <i class="fas fa-user">
-                  </i>
+                    <i class="fas fa-user">
+                    </i>
                 </div>   
-              </a>
-            {% else %}
+            </a>{% else %}
             <a id = "user" href="{% url 'user:Login' %}" >Войти </a> / <a id = "user" href="{% url 'user:Registration' %}" > Регистрация</a>
             <a id = "user" href = "{% url 'user:Login' %}" > 
                 <div class="header_i_for_div header_i">
                   <i class="fas fa-user">
                   </i>
                 </div>   
-              </a>
-            {% endif %}          
-
+            </a>{% endif %}          
         </div>
       </div>
       <div class="flex_row header-bottom flex_space-between flex_wrap">
@@ -125,15 +119,15 @@
               </a>
             </li>
             <li>
-              <a href="/catalog.html">Каталог
+              <a href="{% url 'software:catalog' %}">Каталог
               </a>
             </li>
             <li>
-              <a href="/articles.html">Статьи
+              <a href="{% url 'articles:list_article' %}">Статьи
               </a>
             </li>
             <li>
-              <a href="/reviews.html">Отзывы
+              <a href="{% url 'review:list_review' %}">Отзывы
               </a>
             </li>
             <li>
@@ -164,15 +158,15 @@
               </a>
             </li>
             <li>
-              <a title="Каталог" href="/catalog.html">Каталог
+              <a title="Каталог" href="{% url 'software:catalog' %}">Каталог
               </a>
             </li>
             <li>
-              <a title="Статьи" href="/articles.html">Статьи
+              <a title="Статьи" href="{% url 'articles:list_article' %}">Статьи
               </a>
             </li>
             <li>
-              <a title="Отзывы" href="/reviews.html">Отзывы
+              <a title="Отзывы" href="{% url 'review:list_review' %}">Отзывы
               </a>
             </li>
             <li>
@@ -186,10 +180,8 @@
           </ul>
         </div>
       </div>
-    </header>
-    {% block menu_extend %}{% endblock %}
-    <main>
-      {% block content %}{% endblock %}
+    </header>{% block menu_extend %}{% endblock %}
+    <main>{% block content %}{% endblock %}
       <footer class = "flex_row header_container_height flex_space-between footer_container">
         <div class="header-logo disp_none_830">
           <a href="/main.html">
@@ -279,11 +271,9 @@
           </div>
         </div>
       </footer>
-      </body>
-      {% block style_extend %}{% endblock %}
+      </body>{% block style_extend %}{% endblock %}
       <script src="{% static '/js/jquery.js' %}" charset="UTF-8"></script>
-      <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>
-      {% block js_extend %}{% endblock %}
+      <script type="text/javascript" src="{% static '/js/javascript.js' %}" charset="UTF-8"></script>{% block js_extend %}{% endblock %}
     </html> 
 
 

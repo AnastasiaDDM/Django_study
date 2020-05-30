@@ -1,6 +1,6 @@
 from django.db import models
 from user.models import *
-from .models import CustomUser
+from user.models import CustomUser
 from django.conf import settings
 
 class Article(models.Model):

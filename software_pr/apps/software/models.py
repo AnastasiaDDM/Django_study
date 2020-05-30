@@ -4,6 +4,7 @@ from django.core.validators import MinValueValidator
 from PIL import Image
 from article.models import Article
 import dbl
+from user.models import CustomUser
 
 
 class Software(models.Model):
@@ -199,6 +200,13 @@ class Software(models.Model):
             return None
 
 
+    @staticmethod
+    # Ф-ия получения списка избранных по клиенту
+    def get_favourites_by_user(client):
+        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
+        return Software.objects.filter(favourite__client=client.id)
+
+
 class Addition(models.Model):
     software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
     name = models.CharField('Название', max_length = 50, null=True)
@@ -221,7 +229,7 @@ class Addition(models.Model):
 class Classification(models.Model):
     name = models.CharField('Название', max_length = 50)
     visibility = models.BooleanField('Видимость на сайте', default=True)
-    date_of_delete = models.DateField('Дата удаления', blank=True)
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -269,11 +277,11 @@ class Classification_Value(models.Model):
 # Теги ПО и статей 
 class Tag(models.Model):
     name = models.CharField('Название', max_length = 50, null=True)
-    description = models.TextField('Описание', blank=True)
+    description = models.TextField('Описание', null=True, blank=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
-    date_of_delete = models.DateField('Дата удаления', blank=True)
-    softwares = models.ManyToManyField(Software)
-    articles = models.ManyToManyField(Article)
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True)
+    softwares = models.ManyToManyField(Software, null=True, blank=True)
+    articles = models.ManyToManyField(Article, null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -300,21 +308,21 @@ class Tag(models.Model):
 
 # Избранные - ПО №2: (клиент)
 class Favourite(models.Model):
-    software = models.ForeignKey(Software, on_delete = models.CASCADE, verbose_name='ПО')
-    client = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, verbose_name='Клиент')
+    software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
+    client = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, verbose_name='Клиент')
     date_joined = models.DateTimeField('Дата создания', auto_now_add=True)
-
-    # def __str__(self):
-    #     return self.tag
 
     class Meta:
         verbose_name = 'Избранное'
         verbose_name_plural = 'Избранные'
 
-    # Ф-ия получения списка избранных по клиенту
-    def get_favourites_by_user(self):
+    @staticmethod
+    # Ф-ия получения списка избранных в промежуточной таблице по клиенту
+    def get_favourites_by_user(client):
         # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
-        return Software.objects.filter(favourite__client=self.id)
+        return Favourite.objects.filter(client=client.id)
+
+
 
 
         

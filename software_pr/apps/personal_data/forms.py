@@ -18,6 +18,7 @@ class PersonalForm(forms.Form):
     phone_second = forms.CharField(max_length = 250, required=False)
     social = forms.CharField(max_length = 900, required=False)
     date_of_birth = forms.DateField(required=False)
+    mailing = forms.BooleanField(required=False)
 
 
 

@@ -280,10 +280,8 @@
                             {% if s.is_free is False %}
                             <div class = "software_price">{{s.price}} &#8381</div>
                             {% endif %}
-                                   
                                 <!-- Контейнер названия и типа ПО -->
                                 <div class="software_div_name">
-                        
                                   <!-- Контейнер названия и типа ПО -->
                                   <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
                             </div>
@@ -314,8 +312,18 @@
                                         Приобрести
                                         {% endif %}  
                                     </button>
-                                    <div >
-                                        <a href="{% url 'software:add_favourite' s.id %}"><i class="fa fa-heart button_like" aria-hidden="true"></i></a>
+                                    <div>
+                                        <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">
+                                        {% if request.user.is_authenticated %}
+                                        {% with favourite=s|is_favourite:request.user %}
+                                            {% if favourite %}
+                                            <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
+                                            {% else %}
+                                            <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                                            {% endif %}
+                                        {% endwith %}
+                                        {% endif %}  
+                                        </div>
                                     </div>
                                   </div>
                                 </div>
@@ -416,6 +424,7 @@
                     search_roll();
                     areas_more();
                     form_search_reset();
+                    favourite();
 
                     $('#widgets_vertical_slider').slick({
                       vertical:true,

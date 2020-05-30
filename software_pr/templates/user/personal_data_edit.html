@@ -9,19 +9,19 @@
 <div class="flex_row second_menu margin_bottom_1em header_disp_none">
     <ul class="pos_center">
       <li>
-        <a href="/order.html">Мои&nbsp;заказы
+        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;заказы
         </a>
       </li>
       <li>
-        <a href="/articles.html">Мои&nbsp;загрузки
+        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;загрузки
         </a>
       </li>
       <li>
-        <a href="/reviews.html">Избранное
+        <a href="{% url 'user:favourites' %}">Избранное
         </a>
       </li>
       <li>
-        <a class = "header_navbar_active" href="/aboutcompany.html">Мои&nbsp;данные
+        <a class = "header_navbar_active" href="{% url 'user:personal_data' %}">Мои&nbsp;данные
         </a>
       </li>
     </ul>
@@ -126,8 +126,12 @@
                 </div>
                 <div class="radio_checkbox pos_center_for_div w_70_sm margin_bottom_1em margin_top_2">
                 <li>
-                    <input id="c" type="checkbox">
-                    <label for="c">Подписаться на рассылку новинок по электронной почте</label>
+                    {% if request.user.mailing %}
+                    <input id="mailing" type="checkbox" name="mailing" checked>
+                    {% else %}
+                    <input id="mailing" type="checkbox" name="mailing">
+                    {% endif %}
+                    <label for="mailing">Подписаться на рассылку новинок по электронной почте</label>
                 </li>
                 </div>
             </div>
