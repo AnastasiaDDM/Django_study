@@ -1,0 +1,25 @@
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]

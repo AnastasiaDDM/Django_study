@@ -11,25 +11,17 @@
                     <li><a href="main.html">Главная</a></li>
                     <li>Каталог</li>
                 </ul>
-        
                 <section class="margin_top_2">
                   <div class="software_container_width"> 
-        
                     <div class="search_title">Фильтр <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
                       <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
                     <div class="flex_row flex_space-between">
-                
                       <div class="flex_column software_left_column">
                       <div class="flex_column software_search margin_bottom_2em ">
-                
+                        {% autoescape on %}
                          <fieldset class="fieldset_border_primary" name="fieldset" >
                             <form name="form_page" action="{% url 'software:catalog' %}">
-                
-                
-                
                               <div class = "flex_row ">
-                
-                                  
                                 <div class=" slct_div" type="submit" style ="width: 30%;">
                                   <a href="http://127.0.0.1:8000/softwares/?count={{count}}" class="slct">По</a>
                                   <ul class="drop">
@@ -42,9 +34,7 @@
                                     <li><a>12</a></li>
                                   </ul>
                                   <input type="hidden" name="count">
-                                </div>
-                
-                
+                                </div>             
                                 <div class="slct_div" type="submit" style="margin-left: .5em; width: calc(100% - 30% - 10px);">
                                   <a href="javascript:void(0);" class="slct">Сортировать:</a>
                                   <ul class="drop">
@@ -57,34 +47,24 @@
                                   <input type="hidden" id="select">
                                 </div>
                                 </div>
-                              
                                 <div class="flex_row flex_space-between margin_top_1em">
                                   <input class="slct" type="number" name="page" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
                                   <div>
                                     <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                                   </div>
                                 </div>
-                
                           </form>
                          </fieldset>
                         <fieldset class="fieldset_border_primary margin_top_2 search_disp_f search_div_fieldset" name="fieldset" >
-                       
-                          <form data-target="form_search">
-                
+                          <form data-target="form_search">         
                           <div class="flex_column">
-                
-                      
-                
-                
                             <div class="input_style ">
                               <input type="text" id="soft_name" name="soft_name" value="{{search_query_name}}" autocomplete="off"><label for="soft_name">Наименование ПО</label>
                             </div>
-                
                             <div class="flex_row flex_space-between">
                                 <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
                                 <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
                             </div>
-                
                             <fieldset class="fieldset_border_secondary" name="fieldset" >
                               <legend >Цена</legend>
                 
@@ -171,6 +151,7 @@
                         </div>
                         </form>
                         </fieldset>
+                        {% endautoescape %}
                       </div>
       
                       <fieldset class="fieldset_border_primary widget_disp" name="fieldset" >

@@ -22,6 +22,8 @@
                 <div class="article_search_size">
                     <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
                       <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
+                    {% autoescape on %}
+                    {% csrf_token %}
                     <fieldset class="fieldset_border_primary search_div_fieldset">
                       <form data-target="form_search">
                         <div class="flex_row flex_space-between">
@@ -97,6 +99,7 @@
                             </div>
                       </form>
                      </fieldset>
+                     {% endautoescape %}
                   </div>
                 {% endblock %}
 

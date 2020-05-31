@@ -24,7 +24,8 @@
         <div class="reviews_search_size">
           <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
             <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
-          <fieldset class="fieldset_border_primary search_div_fieldset">
+            {% autoescape on %}
+            <fieldset class="fieldset_border_primary search_div_fieldset">
             <form data-target="form_search">
               <div class="flex_row flex_space-between">
                 <div  class="flex_row flex_space-between margin_bottom_1em w_45_sm">
@@ -139,6 +140,7 @@
                   </div>
             </form>
            </fieldset>
+           {% endautoescape %}
         </div>
         <section class="flex_row article_container padding_bottom_2em padding_top_2em"> 
           <!-- Контейнер для всех карточек -->

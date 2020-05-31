@@ -16,9 +16,9 @@
               <h1>Регистрация
               </h1>
             </legend>
+            {% autoescape on %}
             <form method="post">
-                {% csrf_token %}
-
+            {% csrf_token %}
               <div class = "w_50_sm_70_md pos_center margin_top_2" class="pos_center">
                 <div class="input_style ">
                     {{form.email_phone}}
@@ -69,6 +69,7 @@
                 </div>
               </div>
             </form>
+            {% endautoescape %}
           </fieldset>
         </div>
       </section>

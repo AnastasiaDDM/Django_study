@@ -30,6 +30,7 @@ urlpatterns = [
     path('reviews/', include('review.urls')),
     path('feedback/', include('feedback.urls')),
     path('user/', include('user.urls')),
+    path('discussions/', include('discussion.urls')),
 ]
 
 

@@ -3,6 +3,7 @@ from django.template import loader, Node, Variable
 from django.utils.encoding import smart_str
 from django.template.defaulttags import url
 from django.template import VariableDoesNotExist
+import dbl
 
 register = template.Library()
 
@@ -151,45 +152,13 @@ def reverse_for_star(num):
 
     return 0
 
-    
 
-    
-                    #     {% for num_star in rating %}
+@register.filter(name='get_value_in_dict')
+def get_value_in_dict(dictionary, key):
+    dbl.log("ввв "+str(dictionary))
+    dbl.log("дваааааа "+str(dictionary.get(key)))
+    try:
+        return dictionary.get(key)
 
-                    #     {% if num_star|comparison_numbers:form.star.value %} 
-                    #    d- {{num_star}}
-                    #    ss- {{num_star|reverse_for_star}}
-
-
-                    #     <input type="radio" id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
-                    #     <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
-
-                    #     {% else %}
-                    #     буу- {{num_star}}
-                    #     ss- {{num_star|reverse_for_star}}
-
-                    #     <input type="radio" checked id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
-                    #     <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
-
-                    #     {% endif %}
-                    #     {% endfor %}
-
-
-
-
-
-
-
-
-
-
-                        #                     {% for num_star in rating %}
-
-                        # {% if num_star|reverse_for_star|comparison_numbers:form.star.value %} 
-                        # <input type="radio" checked id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
-                        # <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	                        
-                        # {% else %}
-                        # <input type="radio" id="star-{{num_star|reverse_for_star}}" name="star" value="{{num_star|reverse_for_star}}">
-                        # <label for="star-{{num_star|reverse_for_star}}" title="Оценка «{{num_star|reverse_for_star}}»"></label>	
-                        # {% endif %}
-                        # {% endfor %}
+    except:
+        return None

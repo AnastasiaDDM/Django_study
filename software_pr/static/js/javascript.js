@@ -147,21 +147,6 @@ function areas_more() {
 }
  
 
-// Ф-ия сворачивания формы ответа и отображение кнопки ответа
-function comments_form_answer_hide() {
-	$(".btn_cancel").click(function() {
-
-		// Скрытие текущей формы ответа
-		$(this).parents(".copy_form_answer").hide(500 , function () { 
-			$(this).parents(".copy_form_answer").detach();
-		});
-
-		// Показ всех кнопок Ответить
-		$(".btn_answer").show(500);
-		$(".btn_answer_two").show(500);
-	});
-}
-
 
 function read_more_text_roll() {
 	$( ".text_roll" ).click(function() {
@@ -259,6 +244,20 @@ function comments_form_answer() {
 	  });
 }
 
+// Ф-ия сворачивания формы ответа и отображение кнопки ответа
+function comments_form_answer_hide() {
+	$(".btn_cancel").click(function() {
+
+		// Скрытие текущей формы ответа
+		$(this).parents(".copy_form_answer").hide(500 , function () { 
+			$(this).parents(".copy_form_answer").detach();
+		});
+
+		// Показ всех кнопок Ответить
+		$(".btn_answer").show(500);
+		$(".btn_answer_two").show(500);
+	});
+}
 
 
 

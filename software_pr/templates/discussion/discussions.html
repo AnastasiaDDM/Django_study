@@ -1,0 +1,404 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+<title>{% block page_title %}Обсуждения{% endblock %}
+  {% block content %}
+  <section>
+    <h1>Обсуждения ПО
+    </h1>
+    <ul class="breadcrumb">
+      <li>
+        <a href="URL">Главная
+        </a>
+      </li>
+      <li>
+        <a href="URL">Каталог
+        </a>
+      </li>
+      <li>
+        <a href="URL">Грузоперевозки
+        </a>
+      </li>
+      <li>Обсуждения
+      </li>
+    </ul>
+    <div class="flex_row flex_space-between">
+      <div>
+        <h2>Интересен продукт, о котором создано обсуждение?
+        </h2> 
+      </div>
+    </div>
+    <div class="reviews_soft_full">Посмотри его прямо сейчас: 
+      <a href="/software.html" class="link_style_col_bor margin_left_05em">
+        Автоматизированное кафе
+      </a>
+    </div>
+    <div class="padding_top_2em">
+      <div class="margin_top_3em">      
+        <!-- Контейнер обсуждений и формы -->
+        <div>      
+        <!-- Контейнер обсуждений -->
+        {% if discussion_list %}
+        {{discussion_list.0.content}}
+        {% for disc in discussion_list %}
+        {{disc.content}}
+          <div class="discussion flex_column pos_center_for_div" id="dis_{{disc.id}}">      
+            <!-- одно обсуждение -->
+            <div class="flex_row">
+              <div class = "reviews_title">{% if disc.client %}{{disc.client.name}}
+                {% else %}{{disc.name|default:"Неизвестный"}}
+                {% endif %}
+              </div>
+              <div class = "reviews_date">{{disc.date|date:"j E Y"}}
+              </div>
+            </div>
+            <div  class="discussion_text">
+              <span>{{disc.content}}
+              </span>
+              <div>
+                <div class="pos_right_for_div btn_answer" data-target="dis_1">
+                  <a class="button_reset">Ответить
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% if comments_dict %}
+            {% with comments=comments_dict|get_value_in_dict:disc.id %}
+            <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_{{disc.id}}">
+              <a class="link_style_border">
+                <i class="far fa-comments discussion_icon_com" aria-hidden="true">
+                </i>Комментарии ({{comments|length}})
+              </a>
+            </div> 
+            <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
+              <!-- комментарии к обсуждению -->
+                  {% if comments %}
+                  {% for comment in comments %}
+                  <div  class="discussion_comment_one flex_column">
+                    <div class="flex_row">
+                      <div class = "reviews_title">{% if comment.client %}{{comment.client.name}}
+                        {% else %}{{comment.name|default:"Неизвестный"}}
+                        {% endif %}
+                      </div>
+                      <div class = "reviews_date">{{comment.date|date:"j E Y"}}
+                      </div>
+                    </div>
+                    <div>
+                      <span>{{comment.content}}
+                      </span>
+                    </div>
+                  </div>
+                  {% endfor %}
+                  {% endif %}
+              {% endwith %}
+              <div class="flex_row flex_space-between margin_top_1em">
+                <div class="search_title btn_rollup"> 
+                  <a class="search_roll-up">Свернуть 
+                    <i class="fas fa-arrow-up">
+                    </i>
+                  </a>
+                </div>
+                <div class=" btn_answer_two" data-target="dis_1">
+                  <a class="button_reset">Ответить
+                  </a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+
+
+
+
+          </div>
+
+
+          {% endfor %}        
+          {% else %}
+            ПО нет
+          {% endif %} 
+
+
+
+
+
+
+
+
+
+          <div class="pos_center margin_top-bootom_1em">
+            <a href="#" class="button_reset">Показать еще
+            </a>
+          </div>
+        </div>
+        <div class=" flex_column pos_center w_50_sm margin_top_3em">     
+          <!-- Форма комментария Ваше мнение -->
+          <h3>Начните свое обсуждение
+          </h3>
+          <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
+            <form>
+              <div class="pos_center w_70_xl">
+                <div class="input_style ">
+                  <input type="text" id="name" autocomplete="off">
+                  <label for="name">Ваше имя
+                  </label>
+                </div>
+                <div class="input_style margin_top_3em">
+                  <input type="text" id="email" required autocomplete="off">
+                  <label for="email">Номер телефона/ эл.почта
+                  </label>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em">
+                    <textarea type="textarea" rows="5" required="required">
+                    </textarea>
+                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="pos_сenter">
+                <a href="#" class="button_reset">Оставить комментарий
+                </a>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="padding_top_4em">    
+      <!--Это контейнер похожих ПО-->
+      <div class="pos_center ">
+        <h2>Похожие программные продукты
+        </h2>
+      </div>
+      <div class="">
+        <fieldset class="fieldset_tags  width_50 pos_center" name="fieldset">
+          <legend>Облако тегов
+          </legend>
+          <form>
+            <div class = "fieldset_tags_word">
+              <span>
+                <a href="URL">#Платно
+                </a>  
+                <a href="URL">#Доходы
+                </a>  
+                <a href="URL">#ПО ПК
+                </a>  
+                <a href="URL">#Бизнес
+                </a>  
+                <a href="URL">#Кафе
+                </a>  
+                <a href="URL">#Гастропаб
+                </a>                
+                <a href="URL">#Платно
+                </a>  
+                <a href="URL">#Доходы
+                </a>  
+              </span>
+            </div>        
+          </form>
+        </fieldset>
+        <div class="margin_top_3em div_horizontal_soft">
+          <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
+            <div class="flex_row flex_space-between  width_90"  id="same_software">
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+              <section class="widget_section">
+                <div class="p_1">
+                  <a class="link_style_none" href="software.html">
+                    <div class="widget flex_column">
+                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      </div>
+                      <div class = "widget_div_img"> 
+                        <!-- Бокс картинки --> 
+                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
+                      </div>
+                      <div>
+                        <ul class = "widget_list">
+                          <li class="widget_marker">Контроль доходов и расходов
+                          <li class="widget_marker">Мониторинг деятельности компании
+                        </ul>
+                      </div>
+                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
+                      </button>
+                    </div>
+                  </a>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="margin_top-bootom_1em pos_center">
+            <a href="#" class="button_reset ">Посмотреть еще
+            </a>
+          </div> 
+        </div>
+      </div>
+      </section>
+
+    <div id="pattern_form_answer" style="display: none;">
+      <div class="copy_form_answer" style="display: none;">
+        <div class=" flex_column pos_center margin_top_1em width_100">     
+          <!-- Форма комментария -->
+          <h3>Ответ
+          </h3>
+          <fieldset class=" fieldset_border_primary padding_2em_xs">
+            <form>
+              <div class="pos_center">
+                <div class="flex_row flex_space-between">
+                  <div class="input_style w_45_sm">
+                    <input type="text" id="name" autocomplete="off">
+                    <label for="name">Ваше имя
+                    </label>
+                  </div>
+                  <div class="input_style w_45_sm">
+                    <input type="text" id="phone" required>
+                    <label for="phone">Номер телефона/ эл.почта
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="textarea_style margin_top_3em textarea_height_small">
+                    <textarea type="textarea">
+                    </textarea>
+                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="flex_row flex_space-between margin_top_3em">
+                <div class="btn_cancel">
+                  <a class="button_reset">Отменить
+                  </a>
+                </div>
+                <div class="">
+                  <a href="#" class="button_reset">Оставить комментарий
+                  </a>
+                </div>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    {% endblock %}	
+    {% block js_extend %}
+    <script src="{% static '/js/slick.min.js' %}"></script>
+    <!-- <script src="{% static '/js/datepicker.ru.js' %}"></script> -->
+    <script>
+    jQuery(document).ready(function () {
+        input_filled('input');
+        input_filled('textarea');
+        comments_form_answer();
+        carousel_soft('same_software');
+    })         
+    </script>
+    {% endblock %}
+
