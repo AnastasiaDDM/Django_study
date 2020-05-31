@@ -23,3 +23,1695 @@ ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>],
 дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
 ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
 дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+1
+ dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+диск 1
+аа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+ooo 1
+дваааааа [<Comment: Comment object (6)>]
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+1
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+диск 1
+дваааааа [<Comment: Comment object (6)>]
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+1
+2
+<QuerySet [<Comment: Comment object (4)>, <Comment: Comment object (6)>, <Comment: Comment object (3)>]>
+диск 1
+ooo Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Приложение станет совершенно идеальным для меня! Спасибо вам!
+ooo 1
+ooo 2
+ooo 1
+диск 2
+ooo Замечательная программа! Не могу нарадоваться! Жду доработки, которую предложила, и тогда приложение станет совершенно идеальным для меня!
+ooo 1
+ooo 2
+ooo 1
+{1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дададада [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+дададада [<Comment: Comment object (6)>]
+ddd dict_values([[<Comment: Comment object (4)>, <Comment: Comment object (3)>], [<Comment: Comment object (6)>]])
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
+ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
+дваааааа [<Comment: Comment object (6)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+ввв {1: <Addition: Грузоперевозки>, 2: <Addition: Кафе>}
+дваааааа Грузоперевозки
+ndmitrievnaa@mail.ru
+ввв {1: <Addition: Грузоперевозки>, 2: <Addition: Кафе>}
+дваааааа Кафе
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+3
+�в {3: [<Comment: Comment object (5)>]}
+<QuerySet [<Comment: Comment object (5)>]>
+5)>]
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+3
+�аааааа [<Comment: Comment object (5)>]
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+3
+<QuerySet [<Comment: Comment object (5)>]>
+диск 3
+ooo Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас с каждым выходом нового ПО!
+ooo 3
+{3: [<Comment: Comment object (5)>]}
+дададада [<Comment: Comment object (5)>]
+ddd dict_values([[<Comment: Comment object (5)>]])
+ввв {3: [<Comment: Comment object (5)>]}
+дваааааа [<Comment: Comment object (5)>]
+str(ar)
+[]
+ndmitrievnaa@mail.ru
+str(ar)
+[]
+ndmitrievnaa@mail.ru

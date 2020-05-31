@@ -6,22 +6,14 @@
   <section>
     <h1>Обсуждения ПО
     </h1>
+    {% block breadcrumb %}
     <ul class="breadcrumb">
-      <li>
-        <a href="URL">Главная
-        </a>
-      </li>
-      <li>
-        <a href="URL">Каталог
-        </a>
-      </li>
-      <li>
-        <a href="URL">Грузоперевозки
-        </a>
-      </li>
-      <li>Обсуждения
-      </li>
+    {% breadcrumb_url 'Главная' 'software:catalog' %}
+    {% breadcrumb_url 'Каталог' 'software:catalog' %}
+    {% breadcrumb_url software.name 'software:software_page' software.id %}
+    {% breadcrumb_url 'Обсуждения' %}
     </ul>
+    {% endblock %}
     <div class="flex_row flex_space-between">
       <div>
         <h2>Интересен продукт, о котором создано обсуждение?
@@ -29,8 +21,8 @@
       </div>
     </div>
     <div class="reviews_soft_full">Посмотри его прямо сейчас: 
-      <a href="/software.html" class="link_style_col_bor margin_left_05em">
-        Автоматизированное кафе
+      <a href="{% url 'software:software_page' software.id %}" class="link_style_col_bor margin_left_05em">
+        {{software.name}}
       </a>
     </div>
     <div class="padding_top_2em">
@@ -39,9 +31,7 @@
         <div>      
         <!-- Контейнер обсуждений -->
         {% if discussion_list %}
-        {{discussion_list.0.content}}
         {% for disc in discussion_list %}
-        {{disc.content}}
           <div class="discussion flex_column pos_center_for_div" id="dis_{{disc.id}}">      
             <!-- одно обсуждение -->
             <div class="flex_row">
@@ -53,7 +43,7 @@
               </div>
             </div>
             <div  class="discussion_text">
-              <span>{{disc.content}}
+              <span>{{disc.content|linebreaks}}
               </span>
               <div>
                 <div class="pos_right_for_div btn_answer" data-target="dis_1">
@@ -84,7 +74,7 @@
                       </div>
                     </div>
                     <div>
-                      <span>{{comment.content}}
+                      <span>{{comment.content|linebreaks}}
                       </span>
                     </div>
                   </div>
