@@ -408,59 +408,106 @@ function favourite()
     });
 }
 
-console.log('фуууус 22');
-
 
 
 // Ф-ия для избранного
-function disc()
+function append_discussion()
 {
-    console.log('фуууус 33');
-$( "#form_discussion" ).submit(function( event ) {
-    console.log('фуууус 44');
-    alert( "Handler for .submit() called." );
-    console.log('eeee');
-    event.preventDefault();
+    $( "#form_discussion" ).submit(function( event ) {
+        console.log('фуууус 44');
+        console.log('eeee');
+        event.preventDefault();
 
-    // Получение формы поиска
-    var id = $(this).data("id");
-    var type = $(this).data("type");
-    var url = $(this).data("url");
-    console.log('fdfffffff');
+        // Получение формы поиска
+        // var id = $(this).data("id");
+        // var type = $(this).data("type");
+        // var url = $(this).data("url");
+        console.log('fdfffffff');
 
-    // url:  'discussion:discussion_create',
-    // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
-    // dataType: "json",
+        // url:  'discussion:discussion_create',
+        // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
+        // dataType: "json",
 
-    // prepare Options Object 
-    var options = { 
-        type: 'POST',
-        url:  url+id+"/"+type, 
+        // prepare Options Object 
+        var options = { 
+            // type: 'POST',
+            // url:  url+id+"/"+type, 
 
-        success:    function(data) { 
-            console.log('в отправлке');
-            alert('Thanks for your comment!'); 
-            console.log(data);
-            
-        } 
-    }; 
+            success:    function(data) { 
+                console.log('в отправлке');
+                console.log(data);
 
-    console.log(options);
-    
-    console.log('до отправки ');
-    // pass options to ajaxForm 
-    $('#form_discussion').ajaxForm(options);
+                // Вставка обсуждения
+                $('#container_discussions').append(data.result);    
+            } 
+        }; 
 
-    console.log('после отправки ');
+        console.log(options);
+        
+        console.log('до отправки ');
+        // pass options to ajaxForm 
+        $('#form_discussion').ajaxSubmit(options);
 
-    //   // Put the results in a div
-    // posting.done(function( data ) {
-    //     var content = $( data ).find( "#content" );
-    //     $( "#result" ).empty().append( content );
-    // });
+        console.log('после отправки ');
+
+        //   // Put the results in a div
+        // posting.done(function( data ) {
+        //     var content = $( data ).find( "#content" );
+        //     $( "#result" ).empty().append( content );
+        // });
 
 
-  });
+    });
+
+    $( "[data-comment='submit_comment']" ).submit(function( event ) {
+
+        var id = $(this).parent().parent().parent().parent().data("rel");
+        console.log('фуууус 44'+id);
+        console.log('eeee');
+        event.preventDefault();
+
+        // Получение формы поиска
+        // var id = $(this).data("id");
+        // var type = $(this).data("type");
+        // var url = $(this).data("url");
+        console.log('fdfffffff');
+
+        // url:  'discussion:discussion_create',
+        // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
+        // dataType: "json",
+
+        // prepare Options Object 
+        var options = { 
+            // type: 'POST',
+            url:  "discussions/"+type, 
+
+            success:    function(data) { 
+                console.log('в отправлке');
+                console.log(data);
+
+                // Вставка обсуждения
+                $('#container_discussions').append(data.result);    
+            } 
+        }; 
+
+        console.log(options);
+        
+        console.log('до отправки ');
+        // pass options to ajaxForm 
+        $('#form_discussion').ajaxSubmit(options);
+
+        console.log('после отправки ');
+
+        //   // Put the results in a div
+        // posting.done(function( data ) {
+        //     var content = $( data ).find( "#content" );
+        //     $( "#result" ).empty().append( content );
+        // });
+
+
+    });
+
+
 }
 
 

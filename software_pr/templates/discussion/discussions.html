@@ -28,106 +28,100 @@
     <div class="padding_top_2em">
       <div class="margin_top_3em">      
         <!-- Контейнер обсуждений и формы -->
-        <div>      
-        <!-- Контейнер обсуждений -->
-        {% if discussion_list %}
-        {% for disc in discussion_list %}
-          <div class="discussion flex_column pos_center_for_div" id="dis_{{disc.id}}">      
-            <!-- одно обсуждение -->
-            <div class="flex_row">
-              <div class = "reviews_title">{% if disc.client %}{{disc.client.name}}
-                {% else %}{{disc.name|default:"Неизвестный"}}
-                {% endif %}
-              </div>
-              <div class = "reviews_date">{{disc.date|date:"j E Y"}}
-              </div>
-            </div>
-            <div  class="discussion_text">
-              <span>{{disc.content|linebreaks}}
-              </span>
-              <div>
-                <div class="pos_right_for_div btn_answer" data-target="dis_1">
-                  <a class="button_reset">Ответить
-                  </a>
-                </div>
-              </div>
-            </div>
-            {% if comments_dict %}
-            {% with comments=comments_dict|get_value_in_dict:disc.id %}
-            <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_{{disc.id}}">
-              <a class="link_style_border">
-                <i class="far fa-comments discussion_icon_com" aria-hidden="true">
-                </i>Комментарии ({{comments|length}})
-              </a>
-            </div> 
-            <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
-              <!-- комментарии к обсуждению -->
-                  {% if comments %}
-                  {% for comment in comments %}
-                  <div  class="discussion_comment_one flex_column">
+        <div>
+            <div id="container_discussions">        
+                <!-- Контейнер обсуждений -->
+                {% if discussion_list %}
+                {% for disc in discussion_list %}
+                <div class="discussion flex_column pos_center_for_div" id="dis_{{disc.id}}">      
+                    <!-- одно обсуждение -->
                     <div class="flex_row">
-                      <div class = "reviews_title">{% if comment.client %}{{comment.client.name}}
-                        {% else %}{{comment.name|default:"Неизвестный"}}
+                    <div class = "reviews_title">{% if disc.client %}{{disc.client.name}}
+                        {% else %}{{disc.name|default:"Неизвестный"}}
                         {% endif %}
-                      </div>
-                      <div class = "reviews_date">{{comment.date|date:"j E Y"}}
-                      </div>
                     </div>
-                    <div>
-                      <span>{{comment.content|linebreaks}}
-                      </span>
+                    <div class = "reviews_date">{{disc.date|date:"j E Y"}}
                     </div>
-                  </div>
-                  {% endfor %}
-                  <div class="flex_row flex_space-between margin_top_1em">
-                    <div class="search_title btn_rollup"> 
-                      <a class="search_roll-up">Свернуть 
-                        <i class="fas fa-arrow-up">
-                        </i>
-                      </a>
                     </div>
-                    <div class=" btn_answer_two" data-target="dis_1">
-                      <a class="button_reset">Ответить
-                      </a>
+                    <div  class="discussion_text">
+                        <span>{{disc.content|linebreaks}}
+                        </span>
+                        <div data-rel="{{disc.id}}">
+                            <div class="pos_right_for_div btn_answer">
+                                <a class="button_reset">Ответить
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  {% endif %}
-              {% endwith %}
-            </div>
+                    {% if comments_dict %}
+                    {% with comments=comments_dict|get_value_in_dict:disc.id %}
+                    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_{{disc.id}}">
+                    <a class="link_style_border">
+                        <i class="far fa-comments discussion_icon_com" aria-hidden="true">
+                        </i>Комментарии ({{comments|length}})
+                    </a>
+                    </div> 
+                    <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
+                    <!-- комментарии к обсуждению -->
+                        {% if comments %}
+                        {% for comment in comments %}
+                        <div  class="discussion_comment_one flex_column">
+                            <div class="flex_row">
+                            <div class = "reviews_title">{% if comment.client %}{{comment.client.name}}
+                                {% else %}{{comment.name|default:"Неизвестный"}}
+                                {% endif %}
+                            </div>
+                            <div class = "reviews_date">{{comment.date|date:"j E Y"}}
+                            </div>
+                            </div>
+                            <div>
+                            <span>{{comment.content|linebreaks}}
+                            </span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="flex_row flex_space-between margin_top_1em">
+                            <div class="search_title btn_rollup"> 
+                            <a class="search_roll-up">Свернуть 
+                                <i class="fas fa-arrow-up">
+                                </i>
+                            </a>
+                            </div>
+                            <div class=" btn_answer_two" data-target="dis_1">
+                            <a class="button_reset">Ответить
+                            </a>
+                            </div>
+                        </div>
+                        {% endif %}
+                    {% endwith %}
+                    </div>
+                    {% endif %}
+
+
+
+
+                </div>
+
+            {% endfor %}        
+            {% else %}
+                ПО нет
             {% endif %}
-
-
-
-
-          </div>
-
-
-          {% endfor %}        
-          {% else %}
-            ПО нет
-          {% endif %} 
-
-
-
-
-
-
-
-
-
-          <div class="pos_center margin_top-bootom_1em">
-            <a href="#" class="button_reset">Показать еще
-            </a>
-          </div>
+            </div> 
+            <div class="pos_center margin_top-bootom_1em">
+                <a href="#" class="button_reset">Показать еще
+                </a>
+            </div>
         </div>
+
+
         <div class=" flex_column pos_center w_50_sm margin_top_3em">     
           <!-- Форма комментария Ваше мнение -->
           <h3>Начните свое обсуждение
           </h3>
           <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
             {% autoescape on %}
-            <!-- <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' 'softwares' software.id 'new_discusion' %}"> -->
-                <form method="post" id="form_discussion" data-url="discussions/softwares/"  data-id="{{software.id}}" data-type="new_discusion">
+            <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' 'softwares' software.id 'new_discusion' %}">
+                <!-- <form method="post" id="form_discussion" data-url="discussions/softwares/"  data-id="{{software.id}}" data-type="new_discusion"> -->
                 {% csrf_token %}
               <div class="pos_center w_70_xl">
                 <div class="input_style ">
@@ -373,7 +367,7 @@
                   </a>
                 </div>
                 <div class="">
-                    <button type="submit" class="button_show-more">Ответить
+                    <button type="submit" class="button_show-more" data-comment="submit_comment">Ответить
                     </button>
                 </div>
               </div>
@@ -393,7 +387,7 @@
         input_filled('textarea');
         comments_form_answer();
         carousel_soft('same_software');
-        disc();
+        append_discussion();
     })         
     </script>
     {% endblock %}

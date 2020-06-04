@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.template.loader import render_to_string
 from django.db import models
 from discussion.models import *
 import dbl
@@ -131,15 +132,21 @@ def discussion_create(request, base='', id = 0, type1=''):
                         # Сохранение запроса (происходит тогда, когда все поля валидны)
                         new_disc.save()
 
-                        data['result'] = '<div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_{{disc.id}}"><a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true"></i>Комментарии ({{comments|length}})</a></div> '
+                        result = render_to_string('discussion/pattern_form_discussion.html', {'disc':new_disc})
+
+                        dbl.log("результат  " + str(result))
+
+                        data['result'] = result
 
             # return redirect('discussion:discussions', {'softwares', software.id} )
 
-            # return render(request, 'discussion/discussions.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
+            # return render(request, 'discussion/pattern_form_discussion.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
     # 'software':software})
 
             # rating = [5,4,3,2,1]
             # return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating})
+
+            dbl.log("дата  " + str(data))
 
             return HttpResponse(json.dumps(data), content_type='application/json')
 
