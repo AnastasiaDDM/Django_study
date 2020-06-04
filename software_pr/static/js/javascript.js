@@ -168,80 +168,121 @@ function read_more_text_roll() {
 // Ф-ия прорисовки формы ответа в обсуждениях и показ комментариев
 function comments_form_answer() {
 
-	$(".btn_answer" ).click( function () {
+    $(".btn_answer" ).click( function () {
+      // Показ всех кнопок Ответить
+        $(".btn_answer").show(500);
+        
+        // Скрытие текущей нажатой кнопки Отвтеить 
+        $(this).hide(500);
+        var elem = this;
+        var target = $("[data-rel='single_form_answer']");
+    
+            if (target.length ) {
+                // Скрытие всех форм ответа и уничтожение
+                target.hide(500, function () {
+                    target.detach();
+                    comments_form_answer_show_1(elem)
+                });
+            }
+            else
+            {
+                comments_form_answer_show_1(elem)
+            }
+    
+    });
+    
+    $( ".btn_answer_two" ).click(function () {
 
-		// Показ всех кнопок Ответить
-		$(".btn_answer").show(500);
-		
-		// Скрытие текущей нажатой кнопки Отвтеить 
-		$(this).hide(500);
+        // Показ всех кнопок Ответить
+        $(".btn_answer_two").show(500);
 
-		// Скрытие всех форм ответа и уничтожение
-		$("[data-rel='single_form_answer']").hide(500, function () { 
-			$("[data-rel='single_form_answer']").detach();
-		});
-  
-		// Копирование шаблона формы ответа
-		var form = $( "#pattern_form_answer").html();
-  
-		// Вставка формы ответа
-		$(this).parent().append( $(form) );
-  
-		// Добавление атрибута, по которому потом будет удаляться эта форма
-		$($(this).siblings(".copy_form_answer").attr( "data-rel", "single_form_answer" ));
-  
-		// Показ формы
-		$("[data-rel='single_form_answer']").show(500);
-  
-		comments_form_answer_hide();
-		input_filled('input');
-		input_filled('textarea');
-	  });
-  
-	  $( ".btn_answer_two" ).click(function () {
-  
-	      // Показ всех кнопок Ответить
-		  $(".btn_answer_two").show(500);
+        // Скрытие текущей нажатой кнопки Отвтеить 
+        $(this).hide(500);
+            var elem = this;
+            var target = $("[data-rel='single_form_answer']");
 
-		  // Скрытие текущей нажатой кнопки Отвтеить 
-		  $(this).hide(500);
-  
-		  // Скрытие всех форм ответа и уничтожение
-		  $("[data-rel='single_form_answer']").hide(500);
-		  $("[data-rel='single_form_answer']").detach();
-  
-		  // Копирование шаблона формы ответа
-		  var form = $( "#pattern_form_answer").html(); 
-  
-		  // Вставка формы ответа
-		  $(this).parents(".discussion").append( $(form) );
+            if (target.length ) {
+              // Скрытие всех форм ответа и уничтожение
+                target.hide(500, function () {
+                    target.detach();
+                    comments_form_answer_show_2(elem)
+                });
+            }
+            else
+            {
+                comments_form_answer_show_2(elem)
+            }
 
-  		  // Добавление атрибута, по которому потом будет удаляться эта форма
-		  $($( ".discussion" ).children( ".copy_form_answer" ).attr( "data-rel", "single_form_answer" ));
-  
-		  // Показ формы
-		  $("[data-rel='single_form_answer']").show(500);
-  
-		  comments_form_answer_hide();
-		  input_filled('input');
-          input_filled('textarea');
-	  });
-  
-	  // Нажатие кнопки просмотра комментариев 
-	  $( ".comment_roll" ).click(function() {
-  
-		var com_data = $(this).data("target");
-  
-		// Разворот/сворачивание комментариев
-		$( "#"+com_data+" .discussion_comment" ).slideToggle( "slow" );
-	  });
-  
-	  // Нажатие кнопки сворачивания комментариев 
-	  $( ".btn_rollup" ).click(function() {
-		
-		// Разворот/сворачивание комметнариев
-		$( this ).parents(".discussion_comment").slideToggle( "slow" );
-	  });
+    });
+    
+    // Нажатие кнопки просмотра комментариев 
+    $( ".comment_roll" ).click(function() {
+    
+    var com_data = $(this).data("target");
+    
+    // Разворот/сворачивание комментариев
+    $( "#"+com_data+" .discussion_comment" ).slideToggle( "slow" );
+    });
+    
+    // Нажатие кнопки сворачивания комментариев 
+    $( ".btn_rollup" ).click(function() {
+    
+    // Разворот/сворачивание комметнариев
+    $( this ).parents(".discussion_comment").slideToggle( "slow" );
+    });
+}
+
+function comments_form_answer_show_2(elem)
+{
+    // Копирование шаблона формы ответа
+    var form = $( "#pattern_form_answer").html();
+
+    // Вставка формы ответа
+    $(elem).parents(".discussion").append( $(form) );
+
+        // Добавление атрибута, по которому потом будет удаляться эта форма
+    // $( ".discussion" ).children( ".copy_form_answer" ).attr( "data-rel", "single_form_answer" );
+
+    var single_form_answer = $( ".discussion" ).children( ".copy_form_answer" )
+    single_form_answer.attr( "data-rel", "single_form_answer" );
+
+    var id = $(this).data("rel");
+
+    single_form_answer.find("form").attr( "data-comment", "form_comment" );
+    single_form_answer.find("[name='id_discussion']").val(id);
+
+    // Показ формы
+    $("[data-rel='single_form_answer']").show(500);
+
+    comments_form_answer_hide();
+    input_filled('input');
+    input_filled('textarea');
+}
+
+function comments_form_answer_show_1(elem)
+{
+    // Копирование шаблона формы ответа
+    var form = $( "#pattern_form_answer").html();
+
+    // Вставка формы ответа
+    $(elem).parent().append( $(form) );
+
+    // Добавление атрибута, по которому потом будет удаляться эта форма
+    // $(elem).siblings(".copy_form_answer").attr( "data-rel", "single_form_answer" );
+    var single_form_answer = $(elem).siblings(".copy_form_answer")
+    single_form_answer.attr( "data-rel", "single_form_answer" );
+
+    var id = $(elem).data("rel");
+
+    single_form_answer.find("form").attr( "data-comment", "form_comment" );
+    single_form_answer.find("[name='id_discussion']").val(id);
+
+    // Показ формы
+    $("[data-rel='single_form_answer']").show(500);
+
+    comments_form_answer_hide();
+    input_filled('input');
+    input_filled('textarea');
 }
 
 // Ф-ия сворачивания формы ответа и отображение кнопки ответа
@@ -258,9 +299,6 @@ function comments_form_answer_hide() {
 		$(".btn_answer_two").show(500);
 	});
 }
-
-
-
 
 
 // Ф-ия управления виджетами, каруселями ПО
@@ -414,79 +452,51 @@ function favourite()
 function append_discussion()
 {
     $( "#form_discussion" ).submit(function( event ) {
-        console.log('фуууус 44');
-        console.log('eeee');
+
         event.preventDefault();
 
-        // Получение формы поиска
-        // var id = $(this).data("id");
-        // var type = $(this).data("type");
-        // var url = $(this).data("url");
-        console.log('fdfffffff');
-
-        // url:  'discussion:discussion_create',
-        // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
-        // dataType: "json",
-
-        // prepare Options Object 
         var options = { 
-            // type: 'POST',
-            // url:  url+id+"/"+type, 
-
             success:    function(data) { 
-                console.log('в отправлке');
-                console.log(data);
-
                 // Вставка обсуждения
                 $('#container_discussions').append(data.result);    
             } 
         }; 
 
-        console.log(options);
-        
-        console.log('до отправки ');
-        // pass options to ajaxForm 
         $('#form_discussion').ajaxSubmit(options);
-
-        console.log('после отправки ');
-
-        //   // Put the results in a div
-        // posting.done(function( data ) {
-        //     var content = $( data ).find( "#content" );
-        //     $( "#result" ).empty().append( content );
-        // });
-
+        $('#form_discussion').resetForm();
 
     });
 
-    $( "[data-comment='submit_comment']" ).submit(function( event ) {
+    console.log('dddddddddddd');
+    $( "[data-comment='form_comment']" ).submit(function( event ) {
 
-        var id = $(this).parent().parent().parent().parent().data("rel");
-        console.log('фуууус 44'+id);
-        console.log('eeee');
         event.preventDefault();
+        alert( "error" );
 
-        // Получение формы поиска
-        // var id = $(this).data("id");
-        // var type = $(this).data("type");
-        // var url = $(this).data("url");
+        // var container = $( this ).parents(".discussion").find("data-comment='container_comment'");
+
         console.log('fdfffffff');
+        // console.log(container);
 
         // url:  'discussion:discussion_create',
         // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
         // dataType: "json",
 
-        // prepare Options Object 
         var options = { 
             // type: 'POST',
-            url:  "discussions/"+type, 
+            // url:  "discussions/"+id+"/new_comment", 
 
             success:    function(data) { 
                 console.log('в отправлке');
                 console.log(data);
+                alert( "error" );
 
+                var data_new = JSON.parse(data.result);
+                console.log(data_new);
+                
+                // $('#container_discussions').append(data_new.result); 
                 // Вставка обсуждения
-                $('#container_discussions').append(data.result);    
+                // container.append(data.result);    
             } 
         }; 
 
@@ -494,7 +504,7 @@ function append_discussion()
         
         console.log('до отправки ');
         // pass options to ajaxForm 
-        $('#form_discussion').ajaxSubmit(options);
+        $("[data-comment='form_comment']").ajaxSubmit(options);
 
         console.log('после отправки ');
 

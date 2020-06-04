@@ -13,6 +13,8 @@ class Discussion_CommentForm(forms.Form):
     name = forms.CharField(max_length = 250, required=False)
     email_phone = forms.CharField(max_length = 250)
     content = forms.CharField()
+    id_software = forms.CharField(required=False)
+    id_discussion = forms.CharField(required=False)
 
 
     #  Ф-ии проверки валидности полей

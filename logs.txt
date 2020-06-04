@@ -1,60 +1,34 @@
 v[v[[v[v[v
 клин
 Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-дата  {'status': 'success', 'result': <HttpResponse status_code=200, "text/html; charset=utf-8">}
-Ошибка работы с отзывомObject of type HttpResponse is not JSON serializable
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="cdfdавсукпумм" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+        
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>cdfdавсукпумм</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n        \n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>cdfdавсукпумм</p>\n    </span>\n    </div>\n</div>'}
 v[v[[v[v[v
 клин
 Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555d@fffffff.dddd" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ааааааааааааааааааааа настяяя ааадпд" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" value="1" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" id="id_id_discussion"></td></tr>
 аааааа Discussion object (None)
-дата  {'status': 'success', 'result': '<HttpResponse status_code=200, "text/html; charset=utf-8">'}
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-дата  {'status': 'success', 'result': "<method-wrapper '__str__' of HttpResponse object at 0x00000207C7E32688>"}
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-дата  {'status': 'success'}
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-Ошибка работы с отзывомjoin() argument must be str or bytes, not 'WSGIRequest'
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-Ошибка работы с отзывомjoin() argument must be str or bytes, not 'WSGIRequest'
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-Ошибка работы с отзывомjoin() argument must be str or bytes, not 'WSGIRequest'
-v[v[[v[v[v
-клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="fddggfddddd" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-результат  <div class="discussion flex_column pos_center_for_div" id="dis_21">      
+результат  <div class="discussion flex_column pos_center_for_div" id="dis_27">      
     <!-- одно обсуждение -->
     <div class="flex_row">
       <div class = "reviews_title">Анастасия
@@ -64,7 +38,7 @@ v[v[[v[v[v
       </div>
     </div>
     <div  class="discussion_text">
-      <span><p>fddggfddddd</p>
+      <span><p>ааааааааааааааааааааа настяяя ааадпд</p>
       </span>
       <div>
         <div class="pos_right_for_div btn_answer" data-target="dis_1">
@@ -73,651 +47,389 @@ v[v[[v[v[v
         </div>
       </div>
     </div>
-    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_21">
+    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_27">
       <a class="link_style_border">
         <i class="far fa-comments discussion_icon_com" aria-hidden="true">
         </i>Комментарии (0)
       </a>
     </div> 
   </div>
-дата  {'status': 'success', 'result': '<div class="discussion flex_column pos_center_for_div" id="dis_21">      \n    <!-- одно обсуждение -->\n    <div class="flex_row">\n      <div class = "reviews_title">Анастасия\n        \n      </div>\n      <div class = "reviews_date">4 июня 2020\n      </div>\n    </div>\n    <div  class="discussion_text">\n      <span><p>fddggfddddd</p>\n      </span>\n      <div>\n        <div class="pos_right_for_div btn_answer" data-target="dis_1">\n          <a class="button_reset">Ответить\n          </a>\n        </div>\n      </div>\n    </div>\n    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_21">\n      <a class="link_style_border">\n        <i class="far fa-comments discussion_icon_com" aria-hidden="true">\n        </i>Комментарии (0)\n      </a>\n    </div> \n  </div>'}
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 13: [], 14: [], 15: [], 16: [], 17: [], 18: [], 19: [], 20: [], 21: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>]}
-дваааааа [<Comment: Comment object (6)>]
+дата  {'status': 'success', 'result': '<div class="discussion flex_column pos_center_for_div" id="dis_27">      \n    <!-- одно обсуждение -->\n    <div class="flex_row">\n      <div class = "reviews_title">Анастасия\n        \n      </div>\n      <div class = "reviews_date">4 июня 2020\n      </div>\n    </div>\n    <div  class="discussion_text">\n      <span><p>ааааааааааааааааааааа настяяя ааадпд</p>\n      </span>\n      <div>\n        <div class="pos_right_for_div btn_answer" data-target="dis_1">\n          <a class="button_reset">Ответить\n          </a>\n        </div>\n      </div>\n    </div>\n    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_27">\n      <a class="link_style_border">\n        <i class="far fa-comments discussion_icon_com" aria-hidden="true">\n        </i>Комментарии (0)\n      </a>\n    </div> \n  </div>'}
 v[v[[v[v[v
 клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Петр" maxlength="250" id="id_name"></td></tr>
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
 <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="Спасибо, классно!" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-результат  <div class="discussion flex_column pos_center_for_div" id="dis_22">      
-    <!-- одно обсуждение -->
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
     <div class="flex_row">
-      <div class = "reviews_title">Петр
+    <div class = "reviews_title">Анастасия
         
-      </div>
-      <div class = "reviews_date">4 июня 2020
-      </div>
     </div>
-    <div  class="discussion_text">
-      <span><p>Спасибо, классно!</p>
-      </span>
-      <div>
-        <div class="pos_right_for_div btn_answer" data-target="dis_1">
-          <a class="button_reset">Ответить
-          </a>
-        </div>
-      </div>
+    <div class = "reviews_date">4 июня 2020
     </div>
-    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_22">
-      <a class="link_style_border">
-        <i class="far fa-comments discussion_icon_com" aria-hidden="true">
-        </i>Комментарии (0)
-      </a>
-    </div> 
-  </div>
-дата  {'status': 'success', 'result': '<div class="discussion flex_column pos_center_for_div" id="dis_22">      \n    <!-- одно обсуждение -->\n    <div class="flex_row">\n      <div class = "reviews_title">Петр\n        \n      </div>\n      <div class = "reviews_date">4 июня 2020\n      </div>\n    </div>\n    <div  class="discussion_text">\n      <span><p>Спасибо, классно!</p>\n      </span>\n      <div>\n        <div class="pos_right_for_div btn_answer" data-target="dis_1">\n          <a class="button_reset">Ответить\n          </a>\n        </div>\n      </div>\n    </div>\n    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_22">\n      <a class="link_style_border">\n        <i class="far fa-comments discussion_icon_com" aria-hidden="true">\n        </i>Комментарии (0)\n      </a>\n    </div> \n  </div>'}
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: []}
-дваааааа []
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n        \n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
 v[v[[v[v[v
 клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Иван" maxlength="250" id="id_name"></td></tr>
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ггггггггггггггггг" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="25" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ггггггггггггггггг</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ггггггггггггггггг</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
 <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="Круто!" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-результат  <div class="discussion flex_column pos_center_for_div" id="dis_23">      
-    <!-- одно обсуждение -->
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="кк" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
     <div class="flex_row">
-      <div class = "reviews_title">Иван
-        
-      </div>
-      <div class = "reviews_date">4 июня 2020
-      </div>
+    <div class = "reviews_title">Анастасия
     </div>
-    <div  class="discussion_text">
-      <span><p>Круто!</p>
-      </span>
-      <div>
-        <div class="pos_right_for_div btn_answer" data-target="dis_1">
-          <a class="button_reset">Ответить
-          </a>
-        </div>
-      </div>
+    <div class = "reviews_date">4 июня 2020
     </div>
-    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_23">
-      <a class="link_style_border">
-        <i class="far fa-comments discussion_icon_com" aria-hidden="true">
-        </i>Комментарии (0)
-      </a>
-    </div> 
-  </div>
-дата  {'status': 'success', 'result': '<div class="discussion flex_column pos_center_for_div" id="dis_23">      \n    <!-- одно обсуждение -->\n    <div class="flex_row">\n      <div class = "reviews_title">Иван\n        \n      </div>\n      <div class = "reviews_date">4 июня 2020\n      </div>\n    </div>\n    <div  class="discussion_text">\n      <span><p>Круто!</p>\n      </span>\n      <div>\n        <div class="pos_right_for_div btn_answer" data-target="dis_1">\n          <a class="button_reset">Ответить\n          </a>\n        </div>\n      </div>\n    </div>\n    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_23">\n      <a class="link_style_border">\n        <i class="far fa-comments discussion_icon_com" aria-hidden="true">\n        </i>Комментарии (0)\n      </a>\n    </div> \n  </div>'}
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: []}
-дваааааа []
+    </div>
+    <div>
+    <span><p>кк</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>кк</p>\n    </span>\n    </div>\n</div>'}
 v[v[[v[v[v
 клин
-Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Иван" maxlength="250" id="id_name"></td></tr>
-<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
-<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="Привет, круто!" required id="id_content"></td></tr>
-аааааа Discussion object (None)
-результат  <div class="discussion flex_column pos_center_for_div" id="dis_24">      
-    <!-- одно обсуждение -->
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="qqqqqq" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
     <div class="flex_row">
-      <div class = "reviews_title">Иван
-        
-      </div>
-      <div class = "reviews_date">4 июня 2020
-      </div>
+    <div class = "reviews_title">Анастасия
     </div>
-    <div  class="discussion_text">
-      <span><p>Привет, круто!</p>
-      </span>
-      <div>
-        <div class="pos_right_for_div btn_answer" data-target="dis_1">
-          <a class="button_reset">Ответить
-          </a>
-        </div>
-      </div>
+    <div class = "reviews_date">4 июня 2020
     </div>
-    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_24">
-      <a class="link_style_border">
-        <i class="far fa-comments discussion_icon_com" aria-hidden="true">
-        </i>Комментарии (0)
-      </a>
-    </div> 
-  </div>
-дата  {'status': 'success', 'result': '<div class="discussion flex_column pos_center_for_div" id="dis_24">      \n    <!-- одно обсуждение -->\n    <div class="flex_row">\n      <div class = "reviews_title">Иван\n        \n      </div>\n      <div class = "reviews_date">4 июня 2020\n      </div>\n    </div>\n    <div  class="discussion_text">\n      <span><p>Привет, круто!</p>\n      </span>\n      <div>\n        <div class="pos_right_for_div btn_answer" data-target="dis_1">\n          <a class="button_reset">Ответить\n          </a>\n        </div>\n      </div>\n    </div>\n    <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_24">\n      <a class="link_style_border">\n        <i class="far fa-comments discussion_icon_com" aria-hidden="true">\n        </i>Комментарии (0)\n      </a>\n    </div> \n  </div>'}
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (4)>, <Comment: Comment object (3)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа [<Comment: Comment object (6)>]
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
-ввв {1: [<Comment: Comment object (4)>, <Comment: Comment object (3)>], 2: [<Comment: Comment object (6)>], 22: [], 23: [], 24: []}
-дваааааа []
+    </div>
+    <div>
+    <span><p>qqqqqq</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>qqqqqq</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ggg" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ggg</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ggg</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="jjjjj" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555550" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="jjjj" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" id="id_id_discussion"></td></tr>
+аааааа Discussion object (None)
+результат  
+дата  {'status': 'success', 'result': ''}
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ыыыыы" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ыыыыы</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ыыыыы</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ggggg" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ggggg</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ggggg</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ggggg" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ggggg</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ggggg</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="ggggg" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>ggggg</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>ggggg</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="dddddd" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>dddddd</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>dddddd</p>\n    </span>\n    </div>\n</div>'}
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="dddddd" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>dddddd</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>dddddd</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="89555555555" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="dddddd" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>dddddd</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>dddddd</p>\n    </span>\n    </div>\n</div>'}
+v[v[[v[v[v
+клин
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" value="Анастасия" maxlength="250" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="fdddd@mal.ff" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" value="dddd" required id="id_content"></td></tr>
+<tr><th><label for="id_id_software">Id software:</label></th><td><input type="text" name="id_software" id="id_id_software"></td></tr>
+<tr><th><label for="id_id_discussion">Id discussion:</label></th><td><input type="text" name="id_discussion" value="27" id="id_id_discussion"></td></tr>
+аааааа Comment object (None)
+результат  <div  class="discussion_comment_one flex_column">
+    <div class="flex_row">
+    <div class = "reviews_title">Анастасия
+    </div>
+    <div class = "reviews_date">4 июня 2020
+    </div>
+    </div>
+    <div>
+    <span><p>dddd</p>
+    </span>
+    </div>
+</div>
+дата  {'status': 'success', 'result': '<div  class="discussion_comment_one flex_column">\n    <div class="flex_row">\n    <div class = "reviews_title">Анастасия\n    </div>\n    <div class = "reviews_date">4 июня 2020\n    </div>\n    </div>\n    <div>\n    <span><p>dddd</p>\n    </span>\n    </div>\n</div>'}

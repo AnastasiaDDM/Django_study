@@ -76,7 +76,7 @@ def discussions(request, type='', id = 0):
 
 
 # Ф-ия создания обсуждения
-def discussion_create(request, base='', id = 0, type1=''):
+def discussion_create(request):
 
     dbl.log("v[v[[v[v[v")
 
@@ -96,47 +96,53 @@ def discussion_create(request, base='', id = 0, type1=''):
     if request.method == "POST":
         try:
 
-            if len(base)>0 and id>0 and len(type1)>0:
+            id_software = form.cleaned_data['id_software']
+            id_discussion = form.cleaned_data['id_discussion']
+            
+            data = { 'status': 'success' }
 
-                if base == 'softwares' or base == 'discussions':
+            new_disc = Discussion()
 
-                    new_disc = Discussion()
+            if id_software:
 
-                    if type1 == 'new_comment':
+                software = Software.objects.get( id = id_software )
+                new_disc.software = software
 
-                        new_disc = Comment()
+            if id_discussion:
 
-                    if base == 'softwares':
-
-                        software = Software.objects.get( id = id )
-                        new_disc.software = software
-
-                    if base == 'discussions':
-
-                        discussion = Discussion.objects.get( id = id )
-                        new_disc.discussion = discussion
+                new_disc = Comment()
+                discussion = Discussion.objects.get( id = id_discussion )
+                new_disc.discussion = discussion
 
 
-                    data = { 'status': 'success' }    
 
-                    # Здесь автоматически проверяются все поля формы методами clean_...
-                    if form.is_valid():
+            # Здесь автоматически проверяются все поля формы методами clean_...
+            if form.is_valid():
 
-                        # Заполнение полей модели
-                        new_disc.name = form.cleaned_data['name']
-                        new_disc.email_phone = form.cleaned_data['email_phone'] 
-                        new_disc.content = form.cleaned_data['content']
-                        
-                        dbl.log("аааааа " + str(new_disc))
+                # Заполнение полей модели
+                new_disc.name = form.cleaned_data['name']
+                new_disc.email_phone = form.cleaned_data['email_phone'] 
+                new_disc.content = form.cleaned_data['content']
+                
+                dbl.log("аааааа " + str(new_disc))
 
-                        # Сохранение запроса (происходит тогда, когда все поля валидны)
-                        new_disc.save()
+                # Сохранение запроса (происходит тогда, когда все поля валидны)
+                new_disc.save()
 
-                        result = render_to_string('discussion/pattern_form_discussion.html', {'disc':new_disc})
+                result=''
 
-                        dbl.log("результат  " + str(result))
+                if id_software:
 
-                        data['result'] = result
+                    result = render_to_string('discussion/pattern_form_discussion.html', {'disc':new_disc})
+
+                
+                if id_discussion:
+
+                    result = render_to_string('discussion/pattern_form_comment.html', {'comment':new_disc})
+
+                dbl.log("результат  " + str(result))
+
+                data['result'] = result
 
             # return redirect('discussion:discussions', {'softwares', software.id} )
 
@@ -148,6 +154,7 @@ def discussion_create(request, base='', id = 0, type1=''):
 
             dbl.log("дата  " + str(data))
 
+            # return HttpResponse(json.dumps(data), content_type='application/json', charset='utf-8')
             return HttpResponse(json.dumps(data), content_type='application/json')
 
         except Exception as error:

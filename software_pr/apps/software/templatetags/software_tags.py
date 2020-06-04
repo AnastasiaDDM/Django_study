@@ -44,8 +44,6 @@ def is_identical_for_dict(dictionary, value):
 
 @register.filter(name='get_value_for_dict')
 def get_value_for_dict(dictionary, key):
-    dbl.log("ввв "+str(dictionary))
-    dbl.log("дваааааа "+str(dictionary.get(key)))
     try:
         return dictionary.get(key)
 

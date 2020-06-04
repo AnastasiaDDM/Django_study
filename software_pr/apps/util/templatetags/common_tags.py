@@ -155,8 +155,6 @@ def reverse_for_star(num):
 
 @register.filter(name='get_value_in_dict')
 def get_value_in_dict(dictionary, key):
-    dbl.log("ввв "+str(dictionary))
-    dbl.log("дваааааа "+str(dictionary.get(key)))
     try:
         return dictionary.get(key)
 
