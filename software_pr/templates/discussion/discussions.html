@@ -79,20 +79,20 @@
                     </div>
                   </div>
                   {% endfor %}
+                  <div class="flex_row flex_space-between margin_top_1em">
+                    <div class="search_title btn_rollup"> 
+                      <a class="search_roll-up">Свернуть 
+                        <i class="fas fa-arrow-up">
+                        </i>
+                      </a>
+                    </div>
+                    <div class=" btn_answer_two" data-target="dis_1">
+                      <a class="button_reset">Ответить
+                      </a>
+                    </div>
+                  </div>
                   {% endif %}
               {% endwith %}
-              <div class="flex_row flex_space-between margin_top_1em">
-                <div class="search_title btn_rollup"> 
-                  <a class="search_roll-up">Свернуть 
-                    <i class="fas fa-arrow-up">
-                    </i>
-                  </a>
-                </div>
-                <div class=" btn_answer_two" data-target="dis_1">
-                  <a class="button_reset">Ответить
-                  </a>
-                </div>
-              </div>
             </div>
             {% endif %}
 
@@ -125,32 +125,35 @@
           <h3>Начните свое обсуждение
           </h3>
           <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
-            <form>
+            {% autoescape on %}
+            <!-- <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' 'softwares' software.id 'new_discusion' %}"> -->
+                <form method="post" id="form_discussion" data-url="discussions/softwares/"  data-id="{{software.id}}" data-type="new_discusion">
+                {% csrf_token %}
               <div class="pos_center w_70_xl">
                 <div class="input_style ">
-                  <input type="text" id="name" autocomplete="off">
+                  <input type="text" id="name" name="name">
                   <label for="name">Ваше имя
                   </label>
                 </div>
                 <div class="input_style margin_top_3em">
-                  <input type="text" id="email" required autocomplete="off">
-                  <label for="email">Номер телефона/ эл.почта
+                  <input type="text" id="email_phone" name="email_phone" required>
+                  <label for="email_phone">Номер телефона/ эл.почта
                   </label>
                 </div>
                 <div>
                   <div class="textarea_style margin_top_3em">
-                    <textarea type="textarea" rows="5" required="required">
-                    </textarea>
-                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    <textarea type="textarea" rows="5" name="content" id="content" required="required"></textarea>
+                    <label id = "content" class = "textarea_style_label">Ваш комментарий
                     </label>
                   </div>
                 </div>
               </div>
               <div class="pos_сenter">
-                <a href="#" class="button_reset">Оставить комментарий
-                </a>
+                <button type="submit" class="button_show-more">Добавить обсуждение
+                </button>
               </div>
             </form>
+            {% endautoescape %}
           </fieldset>
         </div>
       </div>
@@ -340,25 +343,26 @@
           <h3>Ответ
           </h3>
           <fieldset class=" fieldset_border_primary padding_2em_xs">
-            <form>
+            {% autoescape on %}
+            <form method="post" id="" action="{% url 'discussion:discussion_create' 'discussions' software.id 'new_comment' %}">
+                {% csrf_token %}
               <div class="pos_center">
                 <div class="flex_row flex_space-between">
                   <div class="input_style w_45_sm">
-                    <input type="text" id="name" autocomplete="off">
-                    <label for="name">Ваше имя
+                    <input type="text" id="comment_name" name="name">
+                    <label for="comment_name">Ваше имя
                     </label>
                   </div>
                   <div class="input_style w_45_sm">
-                    <input type="text" id="phone" required>
-                    <label for="phone">Номер телефона/ эл.почта
+                    <input type="text"  id="comment_email_phone" name="email_phone" required>
+                    <label for="comment_email_phone">Номер телефона/ эл.почта
                     </label>
                   </div>
                 </div>
                 <div>
                   <div class="textarea_style margin_top_3em textarea_height_small">
-                    <textarea type="textarea">
-                    </textarea>
-                    <label id = "label" class = "textarea_style_label">Ваш комментарий
+                    <textarea type="textarea" name="content" id="comment_content" required="required"></textarea>
+                    <label id = "comment_content" class = "textarea_style_label">Ваш комментарий
                     </label>
                   </div>
                 </div>
@@ -369,11 +373,12 @@
                   </a>
                 </div>
                 <div class="">
-                  <a href="#" class="button_reset">Оставить комментарий
-                  </a>
+                    <button type="submit" class="button_show-more">Ответить
+                    </button>
                 </div>
               </div>
             </form>
+            {% endautoescape %}
           </fieldset>
         </div>
       </div>
@@ -388,6 +393,7 @@
         input_filled('textarea');
         comments_form_answer();
         carousel_soft('same_software');
+        disc();
     })         
     </script>
     {% endblock %}

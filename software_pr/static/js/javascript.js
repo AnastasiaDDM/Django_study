@@ -384,18 +384,13 @@ function favourite()
 {
 	$("[data-target='favourite']").click( function () {
 
-        // // Получение формы поиска
+        // Получение формы поиска
         var id = $(this).data("id");
         var url = $(this).data("url");
-
-        console.log("qqqqqqqqqqqqqqq")
-        console.log($(this).find( "i" ))
         tag_i = $(this).find( "i" )
 
         $.get( url + id)
             .done(function( data ) {
-                
-                console.log(data)
 
                 if (data.result == true) {
                     $(tag_i).removeClass("button_like").addClass("button_like_true");
@@ -413,5 +408,59 @@ function favourite()
     });
 }
 
+console.log('фуууус 22');
+
+
+
+// Ф-ия для избранного
+function disc()
+{
+    console.log('фуууус 33');
+$( "#form_discussion" ).submit(function( event ) {
+    console.log('фуууус 44');
+    alert( "Handler for .submit() called." );
+    console.log('eeee');
+    event.preventDefault();
+
+    // Получение формы поиска
+    var id = $(this).data("id");
+    var type = $(this).data("type");
+    var url = $(this).data("url");
+    console.log('fdfffffff');
+
+    // url:  'discussion:discussion_create',
+    // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
+    // dataType: "json",
+
+    // prepare Options Object 
+    var options = { 
+        type: 'POST',
+        url:  url+id+"/"+type, 
+
+        success:    function(data) { 
+            console.log('в отправлке');
+            alert('Thanks for your comment!'); 
+            console.log(data);
+            
+        } 
+    }; 
+
+    console.log(options);
+    
+    console.log('до отправки ');
+    // pass options to ajaxForm 
+    $('#form_discussion').ajaxForm(options);
+
+    console.log('после отправки ');
+
+    //   // Put the results in a div
+    // posting.done(function( data ) {
+    //     var content = $( data ).find( "#content" );
+    //     $( "#result" ).empty().append( content );
+    // });
+
+
+  });
+}
 
 

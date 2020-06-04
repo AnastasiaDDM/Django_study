@@ -8,6 +8,7 @@ app_name = 'discussion'
 urlpatterns = [
 
     path('<str:type>/<int:id>', views.discussions, name = 'discussions'),
+    path('<str:base>/<int:id>/<str:type1>', views.discussion_create, name = 'discussion_create'),
     # path('', views.list_review, name = 'list_review'),
     # path('new/', views.review_create, name = 'review_create'),
     # # path('review_create/', views.review_create_for_software, name = 'review_create_for_software'),

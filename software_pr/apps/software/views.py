@@ -194,7 +194,6 @@ def add_favourite(request, software_id):
     try:
         
         if request.user.is_authenticated:
-            dbl.log("fff")
 
             client = request.user
             software = Software.objects.get( id = int(software_id) )
@@ -204,14 +203,12 @@ def add_favourite(request, software_id):
             fav = software.is_favourite(client)
 
             if fav:
-                dbl.log("dddd")
                 
                 fav.delete()
 
                 data['result'] = False  
                 
             else:
-                dbl.log("aaaa")
                 Favourite.objects.create(client=client, software=software)
 
                 data['result'] = True
