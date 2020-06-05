@@ -2,15 +2,18 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
+{% load common_tags %}
 <title>{% block page_title %}Каталог{% endblock %}
  {% block content %}
               <section>
                 <h1>Каталог
                 </h1>
+                {% block breadcrumb %}
                 <ul class="breadcrumb">
-                    <li><a href="main.html">Главная</a></li>
-                    <li>Каталог</li>
+                {% breadcrumb_url 'Главная' 'software:catalog' %}
+                {% breadcrumb_url 'Каталог' %}
                 </ul>
+                {% endblock %}
                 <section class="margin_top_2">
                   <div class="software_container_width"> 
                     <div class="search_title">Фильтр <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>

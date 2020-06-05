@@ -1,6 +1,7 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
+{% load common_tags %}
 <title>{% block page_title %}{{software.name}}{% endblock %}
 
   {% block link_extend %}
@@ -14,24 +15,13 @@
  {% block content_title %}
  <h1>{{software.name}}</h1>
 {% endblock %}
-
 {% block breadcrumb %}
 <ul class="breadcrumb">
-  <li> 
-    <a href="main.html">Главная
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Каталог
-    </a>
-  </li>
-  <li>
-    <a href="catalog.html">Настольные приложения
-    </a>
-  </li>
-  <li>{{software.name}}
-  </li>
-</ul> 
+{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Каталог' 'software:catalog' %}
+{% breadcrumb_url 'Настольное приложенте -- НЕ СДЕЛАНО' 'software:catalog' %}
+{% breadcrumb_url software.name %}
+</ul>
 {% endblock %}
 
  <section>
@@ -40,74 +30,38 @@
       <!--Это контейнер фоток ПО и начала его описания, характеристик-->
       <div class="flex_column w_50_sm pos_center_sm"> 
         <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
-
-
-
         <div class="flex_row flex_wrap">
-
-
-
           {% if software_img %}
           {% for s in software_img %}
-  
             {% if s.is_main == 'True' %}
             <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image img_width padding_bottom_2em" src="{{s.photo.url}}" alt=""/></a>
+            data-title="{{s.name}}"><img class="example-image img_width padding_bottom_2em" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
             {% else %}
             <div class = "img_margin">
               <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
-              data-title="Главная страница"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt=""/></a>
+              data-title="{{s.name}}"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
             </div>
             {% endif %} 
-  
           {% endfor %}
-      
         {% else %}
           Фотографий нет
         {% endif %} 
-
-
-<!--         
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div>
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div>
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div>
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div>
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div>
-          <div class = "img_margin">
-            <a class="example-image-link" href="{% static 'images/soft/cafe.jpg' %}" data-lightbox="example-set" 
-            data-title="Главная страница"><img class="example-image max_width_10em_img" src="{% static 'images/soft/cafe.jpg' %}" alt=""/></a>
-          </div> -->
         </div>
-                {% if software_tag %}
-                <fieldset class="fieldset_tags software_tag_first" name="fieldset">
-                    <legend class="pos_center">Подборка
-                    </legend>
-                    <form>
-                        <div class = "fieldset_tags_word">
-                            <span>
-                            {% for tag in software_tag %}
-                                <a href="catalog.html">#{{tag.name}}</a>
-                            {% endfor %}
-                            </span>
-                        </div>        
-                    </form>
-                </fieldset>
-                {% endif %} 
+            {% if software_tag %}
+            <fieldset class="fieldset_tags software_tag_first">
+                <legend class="pos_center">Теги
+                </legend>
+                <form>
+                    <div class = "fieldset_tags_word">
+                        <span>
+                        {% for tag in software_tag %}
+                            <a href="catalog.html">#{{tag.name}}</a>
+                        {% endfor %}
+                        </span>
+                    </div>        
+                </form>
+            </fieldset>
+            {% endif %} 
       </div>
       <div class="flex_column w_50_sm padding_left_4em_sm padding_top_2em_sm"> 
         <!--Это контейнер цены, кнопок и описания-->
@@ -228,178 +182,22 @@
       <h2>Похожие программные продукты
       </h2>
     </div>
-    <div class="">
-      <fieldset class="fieldset_tags  w_50_sm_auto pos_center software_tag_second" name="fieldset">
-        <legend>Подборка
+    <div>
+      {% if software_tag %}
+      <fieldset class="fieldset_tags  w_50_sm_auto pos_center software_tag_second">
+        <legend class="pos_center">Теги
         </legend>
-        <form>
-          <div class = "fieldset_tags_word">
+        <div class = "fieldset_tags_word">
             <span>
-              <a href="URL">#Платно
-              </a>  
-              <a href="URL">#Доходы
-              </a>  
-              <a href="URL">#ПО ПК
-              </a>  
-              <a href="URL">#Бизнес
-              </a>  
-              <a href="URL">#Кафе
-              </a>  
-              <a href="URL">#Гастропаб
-              </a>                
-              <a href="URL">#Платно
-              </a>  
-              <a href="URL">#Доходы
-              </a>  
+            {% for tag in software_tag %}
+                <a href="catalog.html">#{{tag.name}}</a>
+            {% endfor %}
             </span>
-          </div>        
-        </form>
+        </div>        
       </fieldset>
-      <div class="margin_top_3em">
-        <div class="margin_top_3em div_horizontal_soft">
-          <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
-            <div class="flex_row flex_space-between  width_90"  id="same_software">
- 
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-            <section class="widget_section">
-              <div class="p_1">
-                <a class="link_style_none" href="software.html">
-                <div class="widget flex_column">
-                  <div class = "widget_div_title">Автоматизируй образование!!!
-                  </div>
-                  <div class = "widget_div_img"> 
-                    <!-- Бокс картинки --> 
-                    <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                  </div>
-                  <div>
-                    <ul class = "widget_list">
-                      <li class="widget_marker">Контроль доходов и расходов
-                      <li class="widget_marker">Мониторинг деятельности компании
-                    </ul>
-                  </div>
-                  <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                  </button>
-                </div>
-              </a>
-              </div>
-            </section>
-          </div>
-        </div>
-      </div>
-
-        <div class="margin_top-bootom_1em pos_center">
-          <a href="#" class="button_reset ">Посмотреть еще
-          </a>
-        </div> 
+      {% endif %} 
+      <div class="margin_top_3em"> 
+        {{similar_block}}
       </div>
     </div>
     <div class="margin_top_3em">

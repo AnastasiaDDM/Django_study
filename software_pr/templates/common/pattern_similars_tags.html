@@ -1,0 +1,7 @@
+{% if similar_tags_list %}
+<div class = "fieldset_tags_word">
+    <span>{% for tag in similar_tags_list %}
+        <a href="URL">#{{tag.name}}
+        </a>{% endfor %}
+    </span>
+</div>{% endif %}

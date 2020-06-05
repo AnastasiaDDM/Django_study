@@ -14,7 +14,7 @@ class Software(models.Model):
     is_free = models.BooleanField('Бесплатно/Платно', default=True, db_index=True)
     description = models.TextField('Описание')
     description_medium = models.TextField('Среднее описание', max_length = 400)
-    description_small = models.TextField('Короткое описание', max_length = 50)
+    description_small = models.TextField('Короткое описание', max_length = 150)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
     modification = models.BooleanField('Возможность доработки', default=True)
     size = models.FloatField('Размер', blank=True, validators=[MinValueValidator(0)], null=True)
@@ -230,6 +230,36 @@ class Software(models.Model):
             software_list.append(p)
         
         return software_list
+
+
+    # Ф-ия получения облака тегов для ПО
+    def get_similars_tags(self):
+        software_id = int(self.id)
+
+        tag_list = []
+
+        dbl.log("айди " + str(software_id))
+
+        tag_raw = Tag.objects.raw('''select distinct tags.*
+                                        from new_db.software_tag tags
+                                        inner join new_db.software_tag_softwares st on st.tag_id = tags.id 
+                                        and st.software_id in 
+                                        (select softwares.id
+                                        from new_db.software_software softwares
+                                        inner join new_db.software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from new_db.software_tag_softwares where software_id = %s))
+                                        group by tags.name
+                                        order by tags.name''', [software_id] )
+
+        for p in tag_raw:
+
+            dbl.log(".t  " + str(p))
+            tag_list.append(p)
+        
+        return tag_list
+
+
 
 
 class Addition(models.Model):

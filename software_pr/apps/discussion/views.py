@@ -6,9 +6,14 @@ import dbl
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 from .forms import Discussion_CommentForm
 import json
+from util.views import render_similars, render_similars_tags
 
 # Обсуждения 
 def discussions(request, type='', id = 0):
+
+    similar_list = []
+    discussion_list = []
+    similar_block = ""
 
     try:
 
@@ -44,8 +49,14 @@ def discussions(request, type='', id = 0):
                     # Добавляем ключ и значение в словарь
                     comments_dict[discussion.id] = list_comment_for_one_disc
 
-                similar_list = software.get_similars()
-                dbl.log('ров  '+str(similar_list))
+                # Второстепенные объекты - похожие ПО
+                similar_block = render_similars(software)
+                similar_tags_block = render_similars_tags(software)
+
+
+            
+            return render(request, 'discussion/discussions.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
+            'software':software, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block})
 
 
     except Exception as error:
@@ -55,8 +66,9 @@ def discussions(request, type='', id = 0):
     # except:
     #     raise Http404("Такого обсуждения нет, попробуйте позже")
 
-    return render(request, 'discussion/discussions.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
-    'software':software, 'similar_list':similar_list})
+    # return render(request, 'discussion/discussions.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
+    # 'software':software, 'similar_list':similar_list})
+    raise Http404("Такого обсуждения нет, попробуйте позже")
 
 
 

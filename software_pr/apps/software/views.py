@@ -9,6 +9,7 @@ import dbl
 import re
 from user.models import CustomUser
 import json
+from util.views import render_similars, render_similars_tags
 
 
 
@@ -156,35 +157,19 @@ def software_page(request, id):
 
          # Получаем список классификаций данного ПО
         classif = software.get_classifications()
-        # dbl.log(str(classif))
 
-        dbl.log("str(ar)")
         ar = software.get_area()
-        dbl.log(str(ar))
 
-            #   СТАРОЕ РЕШЕНИЕ
-            # dbl.log(str(clas.get(classification_value__classification__name)))
-
-            # if clas.get(classification_value__classification__name) == "Область применения" :
-
-            #     classif["area"] = clas.get(classification_value__value)
-            #     break
-
-            # elif clas.get(classification_value__classification__name) == "Вид" :
-
-            #     classif["type"] = clas.get(classification_value__value)
-            #     break
-
-            # elif clas.get(classification_value__classification__name) == "Тип использования" :
-
-            #     classif["type_of_use"] = clas.get(classification_value__value)
-            #     break
+        # Второстепенные объекты - похожие ПО
+        similar_block = render_similars(software)
+        similar_tags_block = render_similars_tags(software)
 
 
     except:
         raise Http404("ПО не найдено")
 
-    return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'classif':classif, 'list_descr':list_descr, 'software_tag':software_tag})
+    return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'classif':classif,
+    'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block})
 
 
 

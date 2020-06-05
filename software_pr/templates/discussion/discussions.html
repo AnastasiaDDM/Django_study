@@ -161,69 +161,12 @@
         </h2>
       </div>
       <div class="">
-        <fieldset class="fieldset_tags  width_50 pos_center" name="fieldset">
-          <legend>Облако тегов
-          </legend>
-          <form>
-            <div class = "fieldset_tags_word">
-              <span>
-                <a href="URL">#Платно
-                </a>  
-                <a href="URL">#Доходы
-                </a>  
-                <a href="URL">#ПО ПК
-                </a>  
-                <a href="URL">#Бизнес
-                </a>  
-                <a href="URL">#Кафе
-                </a>  
-                <a href="URL">#Гастропаб
-                </a>                
-                <a href="URL">#Платно
-                </a>  
-                <a href="URL">#Доходы
-                </a>  
-              </span>
-            </div>        
-          </form>
+        <fieldset class="fieldset_tags width_50 pos_center">
+            <legend>Облако тегов
+            </legend>
+        {{similar_tags_block}}
         </fieldset>
-        {% if similar_list %}
-        <div class="margin_top_3em div_horizontal_soft">
-          <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
-            <div class="flex_row flex_space-between  width_90"  id="same_software">
-                {% for soft in similar_list %}
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">{{soft.name_small}}
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
-              {% endfor %}
-
-            </div>
-          </div>
-          <div class="margin_top-bootom_1em pos_center">
-            <a href="#" class="button_reset ">Посмотреть еще
-            </a>
-          </div> 
-        </div>
-        {% endif %}
+        {{similar_block}}
       </div>
       </section>
 

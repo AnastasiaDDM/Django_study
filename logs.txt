@@ -1,108 +1,375 @@
-Ошибка работы 1
-Ошибка работы <traceback object at 0x000001B40B221408>
-Ошибка работы 1
-Ошибка работы 'int' object is not iterable
-айди 1
-Ошибка работы not enough arguments for format string
-айди 1
-Ошибка работы not enough arguments for format string
-айди 1
-Ошибка работы not enough arguments for format string
-айди 1
-Ошибка работы not enough arguments for format string
-айди 1
-ров  <RawQuerySet:  select softwares.*
-                                        from software_software softwares
-                                        inner join software_tag_softwares st on st.software_id = softwares.id 
-                                        and st.tag_id in 
-                                        (select tag_id from software_tag_softwares where software_id = 1) 
-                                        where softwares.id != 1
-                                        group by softwares.id
-                                        order by count(st.id) desc >
-айди 1
-ров  <RawQuerySet:  select softwares.*
-                                        from software_software softwares
-                                        inner join software_tag_softwares st on st.software_id = softwares.id 
-                                        and st.tag_id in 
-                                        (select tag_id from software_tag_softwares where software_id = 1) 
-                                        where softwares.id != 1
-                                        group by softwares.id
-                                        order by count(st.id) desc >
-айди 1
-Ошибка работы not enough arguments for format string
-айди 1
-ров  <RawQuerySet:  select softwares.*
-                                        from software_software softwares
-                                        inner join software_tag_softwares st on st.software_id = softwares.id 
-                                        and st.tag_id in 
-                                        (select tag_id from software_tag_softwares where software_id = 1) 
-                                        where softwares.id != 1
-                                        group by softwares.id
-                                        order by count(st.id) desc >
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  None
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  <RawQuerySet: select softwares.*
-                                        from software_software softwares
-                                        inner join software_tag_softwares st on st.software_id = softwares.id 
-                                        and st.tag_id in 
-                                        (select tag_id from software_tag_softwares where software_id = 1) 
-                                        where softwares.id != 1
-                                        group by softwares.id
-                                        order by count(st.id) desc >
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+      <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+      </div>        
+  </fieldset>
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+    <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+    </div>        
+</fieldset>
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+    <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+    </div>        
+</fieldset>
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+    <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+    </div>        
+</fieldset>
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+    <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+    </div>        
+</fieldset>
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
+результат  
+<fieldset class="fieldset_tags  width_50 pos_center">
+    <legend>Облако тегов
+    </legend>
+    <div class = "fieldset_tags_word">
+        <span>
+            <a href="URL">#Бизнес
+            </a>
+            <a href="URL">#Кафе
+            </a>
+            <a href="URL">#Перевозки
+            </a>
+            <a href="URL">#Платно
+            </a>
+        </span>
+    </div>        
+</fieldset>
+str(ar)
+[]
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
 .t  Образование
-ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 1
+.t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
+.t  Образование
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 1
+.t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
+.t  Образование
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 1
+.t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
+.t  Образование
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 1
+.t  Кафе
+.t  Поликлиника
+.t  Цветочная лавка
+.t  Образование
+айди 1
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 4
+.t  Грузоперевозки
+.t  Образование
+.t  Кафе
+.t  Цветочная лавка
+айди 4
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 5
+.t  Грузоперевозки
+.t  Кафе
+.t  Поликлиника
+айди 5
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+айди 5
+.t  Грузоперевозки
+.t  Кафе
+.t  Поликлиника
+айди 5
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+айди 5
+.t  Грузоперевозки
+.t  Кафе
+.t  Поликлиника
+айди 5
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+айди 5
+.t  Грузоперевозки
+.t  Кафе
+.t  Поликлиника
+айди 5
+.t  Бизнес
+.t  Кафе
+.t  Перевозки
+.t  Платно
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
