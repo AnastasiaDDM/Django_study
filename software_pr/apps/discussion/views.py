@@ -81,10 +81,11 @@ def discussion_create(request):
     dbl.log("v[v[[v[v[v")
 
     client = ''
+    exist_comments = False # Флаг о наличии комментариев у обсуждения, для выобра шаблона для вставки комментария
 
     # Получение данных из формы в переменную
     form = Discussion_CommentForm(request.POST)
-    dbl.log("Форма" + str(form))
+    #dbl.log("Форма" + str(form))
 
 
     # param = request.POST.get('time')
@@ -96,28 +97,33 @@ def discussion_create(request):
     if request.method == "POST":
         try:
 
-            id_software = form.cleaned_data['id_software']
-            id_discussion = form.cleaned_data['id_discussion']
-            
-            data = { 'status': 'success' }
-
-            new_disc = Discussion()
-
-            if id_software:
-
-                software = Software.objects.get( id = id_software )
-                new_disc.software = software
-
-            if id_discussion:
-
-                new_disc = Comment()
-                discussion = Discussion.objects.get( id = id_discussion )
-                new_disc.discussion = discussion
-
-
+            data = {'status': 'error'} # !!! Данные по умолчанию
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
+
+                id_software = form.cleaned_data['id_software']  # !!! cleaned_data создаются только после вызова is_valid, нет смысла раньше их брать
+                id_discussion = form.cleaned_data['id_discussion']
+                dbl.log(id_software)
+                dbl.log(id_discussion)
+
+
+                new_disc = Discussion()
+
+                if id_software:
+                    software = Software.objects.get(id=id_software)
+                    new_disc.software = software
+
+                if id_discussion:
+                    new_disc = Comment()
+                    discussion = Discussion.objects.get(id=id_discussion)
+                    new_disc.discussion = discussion
+
+                    comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion=discussion).order_by('date')
+
+                    if len(comment_list) >0:
+
+                        exist_comments = True # Установка флага о наличии комментариев
 
                 # Заполнение полей модели
                 new_disc.name = form.cleaned_data['name']
@@ -137,12 +143,24 @@ def discussion_create(request):
 
                 
                 if id_discussion:
+                    
+                    if exist_comments == False:
 
-                    result = render_to_string('discussion/pattern_form_comment.html', {'comment':new_disc})
+                        result = render_to_string('discussion/pattern_form_comment_with_button.html', {'comment':new_disc})
+
+                    if exist_comments == True:
+
+                        result = render_to_string('discussion/pattern_form_comment.html', {'comment':new_disc})
 
                 dbl.log("результат  " + str(result))
-
+                data['status'] = 'success' # !!! Толкьо если все данные есть - можно говорить, что успешно
                 data['result'] = result
+            else: # !!! Если ошибка, то отправляем ошибочные данные
+                # !!! Быстро и некрасиво добавляем ошибки в ответ. Желательно для этого сделать отдельную функцию, так как тебе в нескольких местах придется этот код повторять
+                data['error_text'] = '' # !!!!
+                for v in form.errors.values(): # !!!!
+                    data['error_text'] += v[0] + "<br>" # !!!!
+                data['status'] = 'error' # !!!!
 
             # return redirect('discussion:discussions', {'softwares', software.id} )
 

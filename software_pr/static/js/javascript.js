@@ -168,8 +168,13 @@ function read_more_text_roll() {
 // Ф-ия прорисовки формы ответа в обсуждениях и показ комментариев
 function comments_form_answer() {
 
-    $(".btn_answer" ).click( function () {
-      // Показ всех кнопок Ответить
+    // Удаляем обработчики событий определенных ранее
+    $( ".btn_answer" ).off();
+    $( ".btn_answer_two" ).off();
+
+    $( ".btn_answer" ).click( function () {
+	
+		// Показ всех кнопок Ответить
         $(".btn_answer").show(500);
         
         // Скрытие текущей нажатой кнопки Отвтеить 
@@ -177,17 +182,17 @@ function comments_form_answer() {
         var elem = this;
         var target = $("[data-rel='single_form_answer']");
     
-            if (target.length ) {
-                // Скрытие всех форм ответа и уничтожение
-                target.hide(500, function () {
-                    target.detach();
-                    comments_form_answer_show_1(elem)
-                });
-            }
-            else
-            {
-                comments_form_answer_show_1(elem)
-            }
+		if (target.length ) {
+			// Скрытие всех форм ответа и уничтожение
+			target.hide(500, function () {
+				target.detach();
+				comments_form_answer_show_1(elem)
+			});
+		}
+		else
+		{
+			comments_form_answer_show_1(elem)
+		}
     
     });
     
@@ -198,39 +203,51 @@ function comments_form_answer() {
 
         // Скрытие текущей нажатой кнопки Отвтеить 
         $(this).hide(500);
-            var elem = this;
-            var target = $("[data-rel='single_form_answer']");
+		var elem = this;
+		var target = $("[data-rel='single_form_answer']");
 
-            if (target.length ) {
-              // Скрытие всех форм ответа и уничтожение
-                target.hide(500, function () {
-                    target.detach();
-                    comments_form_answer_show_2(elem)
-                });
-            }
-            else
-            {
-                comments_form_answer_show_2(elem)
-            }
+		if (target.length ) {
+			// Скрытие всех форм ответа и уничтожение
+			target.hide(500, function () {
+				target.detach();
+				comments_form_answer_show_2(elem)
+			});
+		}
+		else
+		{
+			comments_form_answer_show_2(elem)
+		}
 
     });
+
+    comment_roll();
     
+}
+
+// Ф-ия разворота/сворачивания комментариев
+function comment_roll()
+{
+    // Удаляем обработчики событий определенных ранее
+    $( ".comment_roll" ).off();
+    $( ".btn_rollup" ).off();
+
     // Нажатие кнопки просмотра комментариев 
     $( ".comment_roll" ).click(function() {
-    
-    var com_data = $(this).data("target");
-    
-    // Разворот/сворачивание комментариев
-    $( "#"+com_data+" .discussion_comment" ).slideToggle( "slow" );
+
+        var com_data = $(this).data("target");
+        
+        // Разворот/сворачивание комментариев
+        $( "#"+com_data+" .discussion_comment" ).slideToggle( "slow" );
     });
     
     // Нажатие кнопки сворачивания комментариев 
     $( ".btn_rollup" ).click(function() {
     
-    // Разворот/сворачивание комметнариев
-    $( this ).parents(".discussion_comment").slideToggle( "slow" );
+        // Разворот/сворачивание комметнариев
+        $( this ).parents(".discussion_comment").slideToggle( "slow" );
     });
 }
+
 
 function comments_form_answer_show_2(elem)
 {
@@ -240,23 +257,23 @@ function comments_form_answer_show_2(elem)
     // Вставка формы ответа
     $(elem).parents(".discussion").append( $(form) );
 
-        // Добавление атрибута, по которому потом будет удаляться эта форма
-    // $( ".discussion" ).children( ".copy_form_answer" ).attr( "data-rel", "single_form_answer" );
-
+	// Добавление атрибута, по которому потом будет удаляться эта форма
     var single_form_answer = $( ".discussion" ).children( ".copy_form_answer" )
     single_form_answer.attr( "data-rel", "single_form_answer" );
 
-    var id = $(this).data("rel");
-
+	// Берем ID дискуссии в начале блока этой дискуссии в виде dis_1 и проставляем в скрытое поле
+	var id = $(elem).parents(".discussion").attr('id').split('_')[1];  
     single_form_answer.find("form").attr( "data-comment", "form_comment" );
     single_form_answer.find("[name='id_discussion']").val(id);
 
     // Показ формы
     $("[data-rel='single_form_answer']").show(500);
 
+	// Инициализация необохдимых ф-ий для новых объектов
     comments_form_answer_hide();
     input_filled('input');
     input_filled('textarea');
+    append_comment(); // Для привязки события submit
 }
 
 function comments_form_answer_show_1(elem)
@@ -268,36 +285,43 @@ function comments_form_answer_show_1(elem)
     $(elem).parent().append( $(form) );
 
     // Добавление атрибута, по которому потом будет удаляться эта форма
-    // $(elem).siblings(".copy_form_answer").attr( "data-rel", "single_form_answer" );
     var single_form_answer = $(elem).siblings(".copy_form_answer")
     single_form_answer.attr( "data-rel", "single_form_answer" );
 
-    var id = $(elem).data("rel");
-
+    // Берем ID дискуссии в начале блока этой дискуссии в виде dis_1 и проставляем в скрытое поле
+    var id = $(elem).parents(".discussion").attr('id').split('_')[1]; 
     single_form_answer.find("form").attr( "data-comment", "form_comment" );
     single_form_answer.find("[name='id_discussion']").val(id);
 
     // Показ формы
     $("[data-rel='single_form_answer']").show(500);
 
+	// Инициализация необохдимых ф-ий для новых объектов
     comments_form_answer_hide();
     input_filled('input');
     input_filled('textarea');
+    append_comment(); // Для привязки события submit
 }
 
 // Ф-ия сворачивания формы ответа и отображение кнопки ответа
-function comments_form_answer_hide() {
+function comments_form_answer_hide() 
+{
 	$(".btn_cancel").click(function() {
+		comments_form_answer_hide_action($(this).parents(".copy_form_answer"))
+	});
+}
 
+// Вспомогательная ф-ия для сворачивания форм
+function comments_form_answer_hide_action(elem) 
+{ 
 		// Скрытие текущей формы ответа
-		$(this).parents(".copy_form_answer").hide(500 , function () { 
+		elem.hide(500 , function () {
 			$(this).parents(".copy_form_answer").detach();
 		});
 
 		// Показ всех кнопок Ответить
 		$(".btn_answer").show(500);
 		$(".btn_answer_two").show(500);
-	});
 }
 
 
@@ -416,7 +440,6 @@ function form_validate(f, rules, messages)
 }
 
 
-
 // Ф-ия для избранного
 function favourite()
 {
@@ -447,10 +470,13 @@ function favourite()
 }
 
 
-
-// Ф-ия для избранного
+// Ф-ия для отправки формы обсуждения
 function append_discussion()
 {
+	// Удаляем обработчики событий определенных ранее
+    $( "#form_discussion" ).off();
+
+    // Форма добавления обсуждения
     $( "#form_discussion" ).submit(function( event ) {
 
         event.preventDefault();
@@ -458,66 +484,88 @@ function append_discussion()
         var options = { 
             success:    function(data) { 
                 // Вставка обсуждения
-                $('#container_discussions').append(data.result);    
+                if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
+                {
+                    $('#container_discussions').append(data.result);  // Ошибки нет, добавляем обсуждение
+                    comments_form_answer();;                  
+                }
+
             } 
         }; 
 
         $('#form_discussion').ajaxSubmit(options);
         $('#form_discussion').resetForm();
+        input_filled('input');
+        input_filled('textarea');
 
     });
-
-    console.log('dddddddddddd');
-    $( "[data-comment='form_comment']" ).submit(function( event ) {
-
-        event.preventDefault();
-        alert( "error" );
-
-        // var container = $( this ).parents(".discussion").find("data-comment='container_comment'");
-
-        console.log('fdfffffff');
-        // console.log(container);
-
-        // url:  'discussion:discussion_create',
-        // data: { 'base': 'softwares', 'id': '1', 'type': 'new_discusion' },
-        // dataType: "json",
-
-        var options = { 
-            // type: 'POST',
-            // url:  "discussions/"+id+"/new_comment", 
-
-            success:    function(data) { 
-                console.log('в отправлке');
-                console.log(data);
-                alert( "error" );
-
-                var data_new = JSON.parse(data.result);
-                console.log(data_new);
-                
-                // $('#container_discussions').append(data_new.result); 
-                // Вставка обсуждения
-                // container.append(data.result);    
-            } 
-        }; 
-
-        console.log(options);
-        
-        console.log('до отправки ');
-        // pass options to ajaxForm 
-        $("[data-comment='form_comment']").ajaxSubmit(options);
-
-        console.log('после отправки ');
-
-        //   // Put the results in a div
-        // posting.done(function( data ) {
-        //     var content = $( data ).find( "#content" );
-        //     $( "#result" ).empty().append( content );
-        // });
-
-
-    });
-
 
 }
 
 
+// Ф-ия для отправки формы комментария
+function append_comment()
+{
+    	// Удаляем обработчики событий определенных ранее
+        $( "[data-comment='form_comment']" ).off();
+
+        // Форма добавления комментария
+        $( "[data-comment='form_comment']" ).submit(function( event ) {
+
+            event.preventDefault();
+            var elem = this;
+            var container_discussion = $( elem ).parents(".discussion");
+
+            // Элемент, в конец которого будет добавлен блок ответа
+            var container = $( container_discussion ).find("[data-comment=container_comment]");
+
+            if (!container.length) // Нет ранее добавленных комментариев
+            {
+                // Элемент, в конец которого будет добавлен блок ответа
+                container = $( container_discussion ).find(".discussion_comment");
+            }
+
+            var options = { 
+        
+                success:    function(data) { 
+    
+                    if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
+                    {
+                        container.append(data.result); // Ошибки нет, добавляем комментарий
+                        $(elem).resetForm(); // Сбрасываем форму
+    
+                        comment_count_change(container_discussion);
+                        input_filled('input');
+                        input_filled('textarea')
+                        comments_form_answer_hide_action($(elem)); // Закрываем форму
+                        comments_form_answer();                    
+                    }
+                } 
+            }; 
+
+            // Отправка ajaxForm 
+            $(this).ajaxSubmit(options);
+
+        });
+}
+
+
+// Ф-ия приверки не пришел ли ошибочный ответ - если ошибка - выводим на экран
+function is_error(data) 
+{
+    if (data.status == 'error')
+    {
+        alert(data.error_text); // Лучше потом сделать какое-то нормальное диалоговое окно
+        return true
+    }
+    return false;
+}
+
+
+// Ф-ия увеличивающая количество комментариев 
+function comment_count_change(container_discussion) 
+{
+    var comment_count_elem = $(container_discussion).find("[data-rel=comment_count]");
+    var new_count = parseInt(comment_count_elem.html()) + 1;
+    comment_count_elem.html(new_count)
+}
