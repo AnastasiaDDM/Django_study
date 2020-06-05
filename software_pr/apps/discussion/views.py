@@ -78,47 +78,40 @@ def discussions(request, type='', id = 0):
 # Ф-ия создания обсуждения
 def discussion_create(request):
 
-    dbl.log("v[v[[v[v[v")
-
     client = ''
-    exist_comments = False # Флаг о наличии комментариев у обсуждения, для выобра шаблона для вставки комментария
+    exist_comments = False # Флаг о наличии комментариев у обсуждения, для выбора шаблона для вставки комментария
+    result='' # Переменная шаблона ответа
 
     # Получение данных из формы в переменную
     form = Discussion_CommentForm(request.POST)
-    #dbl.log("Форма" + str(form))
-
-
-    # param = request.POST.get('time')
-
-    # global list_crumb_for_software
-    # list_crumb_for_software = [['Главная', 'software:catalog'], ['Отзывы', 'review:list_review']]
 
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
         try:
 
-            data = {'status': 'error'} # !!! Данные по умолчанию
+            # Данные по умолчанию - код ответа
+            data = {'status': 'error'}
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
 
-                id_software = form.cleaned_data['id_software']  # !!! cleaned_data создаются только после вызова is_valid, нет смысла раньше их брать
+                id_software = form.cleaned_data['id_software']
                 id_discussion = form.cleaned_data['id_discussion']
-                dbl.log(id_software)
-                dbl.log(id_discussion)
-
 
                 new_disc = Discussion()
 
+                # Добавление обсуждения
                 if id_software:
                     software = Software.objects.get(id=id_software)
                     new_disc.software = software
 
+                # Добавление комментария
                 if id_discussion:
                     new_disc = Comment()
                     discussion = Discussion.objects.get(id=id_discussion)
                     new_disc.discussion = discussion
 
+                    # Получение списка комментариев к данному обсуждению (для выбора шаблона ответа)
                     comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion=discussion).order_by('date')
 
                     if len(comment_list) >0:
@@ -129,19 +122,14 @@ def discussion_create(request):
                 new_disc.name = form.cleaned_data['name']
                 new_disc.email_phone = form.cleaned_data['email_phone'] 
                 new_disc.content = form.cleaned_data['content']
-                
-                dbl.log("аааааа " + str(new_disc))
 
                 # Сохранение запроса (происходит тогда, когда все поля валидны)
                 new_disc.save()
-
-                result=''
 
                 if id_software:
 
                     result = render_to_string('discussion/pattern_form_discussion.html', {'disc':new_disc})
 
-                
                 if id_discussion:
                     
                     if exist_comments == False:
@@ -152,8 +140,7 @@ def discussion_create(request):
 
                         result = render_to_string('discussion/pattern_form_comment.html', {'comment':new_disc})
 
-                dbl.log("результат  " + str(result))
-                data['status'] = 'success' # !!! Толкьо если все данные есть - можно говорить, что успешно
+                data['status'] = 'success' 
                 data['result'] = result
             else: # !!! Если ошибка, то отправляем ошибочные данные
                 # !!! Быстро и некрасиво добавляем ошибки в ответ. Желательно для этого сделать отдельную функцию, так как тебе в нескольких местах придется этот код повторять
@@ -162,25 +149,13 @@ def discussion_create(request):
                     data['error_text'] += v[0] + "<br>" # !!!!
                 data['status'] = 'error' # !!!!
 
-            # return redirect('discussion:discussions', {'softwares', software.id} )
-
-            # return render(request, 'discussion/pattern_form_discussion.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
-    # 'software':software})
-
-            # rating = [5,4,3,2,1]
-            # return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating})
-
-            dbl.log("дата  " + str(data))
-
-            # return HttpResponse(json.dumps(data), content_type='application/json', charset='utf-8')
             return HttpResponse(json.dumps(data), content_type='application/json')
 
         except Exception as error:
             pass
-            dbl.log("Ошибка работы с отзывом" + str(error))
+            dbl.log("Ошибка работы " + str(error))
 
-    rating = [5,4,3,2,1]
-    return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating})
+    return redirect('software:catalog')
 
 
 
