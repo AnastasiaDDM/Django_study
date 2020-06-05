@@ -187,14 +187,16 @@
             </div>        
           </form>
         </fieldset>
+        {% if similar_list %}
         <div class="margin_top_3em div_horizontal_soft">
           <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
             <div class="flex_row flex_space-between  width_90"  id="same_software">
+                {% for soft in similar_list %}
               <section class="widget_section">
                 <div class="p_1">
                   <a class="link_style_none" href="software.html">
                     <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
+                      <div class = "widget_div_title">{{soft.name_small}}
                       </div>
                       <div class = "widget_div_img"> 
                         <!-- Бокс картинки --> 
@@ -212,116 +214,8 @@
                   </a>
                 </div>
               </section>
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
-              <section class="widget_section">
-                <div class="p_1">
-                  <a class="link_style_none" href="software.html">
-                    <div class="widget flex_column">
-                      <div class = "widget_div_title">Автоматизируй образование!!!
-                      </div>
-                      <div class = "widget_div_img"> 
-                        <!-- Бокс картинки --> 
-                        <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                      </div>
-                      <div>
-                        <ul class = "widget_list">
-                          <li class="widget_marker">Контроль доходов и расходов
-                          <li class="widget_marker">Мониторинг деятельности компании
-                        </ul>
-                      </div>
-                      <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                      </button>
-                    </div>
-                  </a>
-                </div>
-              </section>
+              {% endfor %}
+
             </div>
           </div>
           <div class="margin_top-bootom_1em pos_center">
@@ -329,6 +223,7 @@
             </a>
           </div> 
         </div>
+        {% endif %}
       </div>
       </section>
 

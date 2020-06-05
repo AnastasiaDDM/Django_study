@@ -9,6 +9,7 @@ from user.models import CustomUser
 
 class Software(models.Model):
     name = models.CharField('Наименование ПО', max_length = 200)
+    name_small = models.CharField('Мини-Наименование ПО', max_length = 50, blank=True, null=True)
     price = models.FloatField('Цена', blank=True, validators=[MinValueValidator(0)])
     is_free = models.BooleanField('Бесплатно/Платно', default=True, db_index=True)
     description = models.TextField('Описание')
@@ -142,10 +143,7 @@ class Software(models.Model):
         return classif   
 
 
-
-
-
-     # Ф-ия получения списка областей применения
+    # Ф-ия получения списка областей применения
     def get_area(self):
 
         # Массив классификаций ПО
@@ -168,7 +166,7 @@ class Software(models.Model):
         return areas   
     
 
-     # Ф-ия получения списка видов ПО
+    # Ф-ия получения списка видов ПО
     def get_type(self):
 
         # Хэш классификаций ПО
@@ -205,6 +203,33 @@ class Software(models.Model):
     def get_favourites_by_user(client):
         # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
         return Software.objects.filter(favourite__client=client.id)
+
+    
+    
+    
+    # Ф-ия получения списка похожих ПО
+    def get_similars(self):
+        software_id = int(self.id)
+
+        software_list = []
+
+        dbl.log("айди " + str(software_id))
+
+        soft_raw = Software.objects.raw('''select softwares.*
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from software_tag_softwares where software_id = %s) 
+                                        where softwares.id != %s
+                                        group by softwares.id
+                                        order by count(st.id) desc ''', [software_id, software_id] )
+
+        for p in soft_raw:
+
+            dbl.log(".t  " + str(p))
+            software_list.append(p)
+        
+        return software_list
 
 
 class Addition(models.Model):

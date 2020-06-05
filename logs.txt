@@ -1,0 +1,108 @@
+Ошибка работы 1
+Ошибка работы <traceback object at 0x000001B40B221408>
+Ошибка работы 1
+Ошибка работы 'int' object is not iterable
+айди 1
+Ошибка работы not enough arguments for format string
+айди 1
+Ошибка работы not enough arguments for format string
+айди 1
+Ошибка работы not enough arguments for format string
+айди 1
+Ошибка работы not enough arguments for format string
+айди 1
+ров  <RawQuerySet:  select softwares.*
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from software_tag_softwares where software_id = 1) 
+                                        where softwares.id != 1
+                                        group by softwares.id
+                                        order by count(st.id) desc >
+айди 1
+ров  <RawQuerySet:  select softwares.*
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from software_tag_softwares where software_id = 1) 
+                                        where softwares.id != 1
+                                        group by softwares.id
+                                        order by count(st.id) desc >
+айди 1
+Ошибка работы not enough arguments for format string
+айди 1
+ров  <RawQuerySet:  select softwares.*
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from software_tag_softwares where software_id = 1) 
+                                        where softwares.id != 1
+                                        group by softwares.id
+                                        order by count(st.id) desc >
+айди 1
+.t  Кафе
+.t  Образование
+ров  None
+айди 1
+.t  Кафе
+.t  Образование
+ров  <RawQuerySet: select softwares.*
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
+                                        and st.tag_id in 
+                                        (select tag_id from software_tag_softwares where software_id = 1) 
+                                        where softwares.id != 1
+                                        group by softwares.id
+                                        order by count(st.id) desc >
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
+айди 1
+.t  Кафе
+.t  Образование
+ров  [<Software: Кафе>, <Software: Образование>]
