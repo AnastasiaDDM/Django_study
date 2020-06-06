@@ -1,203 +1,92 @@
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-      <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-      </div>        
-  </fieldset>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-    <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-    </div>        
-</fieldset>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-    <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-    </div>        
-</fieldset>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-    <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-    </div>        
-</fieldset>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-    <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-    </div>        
-</fieldset>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ров  [<Tag: Бизнес>, <Tag: Кафе>, <Tag: Перевозки>, <Tag: Платно>]
-результат  
-<fieldset class="fieldset_tags  width_50 pos_center">
-    <legend>Облако тегов
-    </legend>
-    <div class = "fieldset_tags_word">
-        <span>
-            <a href="URL">#Бизнес
-            </a>
-            <a href="URL">#Кафе
-            </a>
-            <a href="URL">#Перевозки
-            </a>
-            <a href="URL">#Платно
-            </a>
-        </span>
-    </div>        
-</fieldset>
-str(ar)
-[]
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
 ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+ndmitrievnaa@mail.ru
+<QuerySet [<Order: Order object (1)>]>
+ndmitrievnaa@mail.ru
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+ndmitrievnaa@mail.ru
+айди 2
+.t  Грузоперевозки
 .t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
+айди 2
 .t  Бизнес
 .t  Кафе
 .t  Перевозки
@@ -206,7 +95,6 @@ ndmitrievnaa@mail.ru
 айди 1
 .t  Кафе
 .t  Поликлиника
-.t  Цветочная лавка
 .t  Образование
 айди 1
 .t  Бизнес
@@ -214,100 +102,10 @@ ndmitrievnaa@mail.ru
 .t  Перевозки
 .t  Платно
 ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
+айди 3
+.t  Грузоперевозки
 .t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Цветочная лавка
-.t  Образование
-айди 1
+айди 3
 .t  Бизнес
 .t  Кафе
 .t  Перевозки
@@ -317,7 +115,6 @@ ndmitrievnaa@mail.ru
 .t  Грузоперевозки
 .t  Образование
 .t  Кафе
-.t  Цветочная лавка
 айди 4
 .t  Бизнес
 .t  Кафе
@@ -325,51 +122,78 @@ ndmitrievnaa@mail.ru
 .t  Платно
 ndmitrievnaa@mail.ru
 айди 5
-.t  Грузоперевозки
-.t  Кафе
-.t  Поликлиника
 айди 5
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
+.t  Цветы
 ndmitrievnaa@mail.ru
-айди 5
-.t  Грузоперевозки
-.t  Кафе
-.t  Поликлиника
-айди 5
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-айди 5
-.t  Грузоперевозки
-.t  Кафе
-.t  Поликлиника
-айди 5
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-айди 5
-.t  Грузоперевозки
-.t  Кафе
-.t  Поликлиника
-айди 5
-.t  Бизнес
-.t  Кафе
-.t  Перевозки
-.t  Платно
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
-ndmitrievnaa@mail.ru
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>
+<QuerySet [<Order: Order object (1)>]>

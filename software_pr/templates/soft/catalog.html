@@ -1,4 +1,3 @@
-
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
@@ -290,7 +289,7 @@
                                   <div class="flex_row software_container_button flex_space-between"> 
                                     <!-- Бокс кнопки покупки и лайка --> 
                                     <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">       
-                                        {% if s.price <= 0 %}
+                                        {% if s.price <= 0 or s.is_free %}
                                         Скачать бесплатно
                                         {% else %}
                                         Приобрести
@@ -326,19 +325,6 @@
                                     {% for tag in s.get_tags %}
                                     <a href="">#{{tag}}</a>
                                     {% endfor %}
-
-                                   
-                                    <!-- {% if tags_dict %}   
-                                    {% if tags_dict %}
-                                    {% for val in tags_dict.values %}
-                                    {% for tag in val %}
-                                    <a href="">#{{tag}}</a>
-                                    {% endfor %}
-                                    
-                                    {% endfor %}
-                                    {% endif %}                              
-                                    {% endif %} -->
-      
                                 </span>
                               </div>
                             </article>

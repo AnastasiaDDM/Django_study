@@ -1,45 +1,20 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
+{% load common_tags %}
 <title>{% block page_title %}Избранное{% endblock %}
-  {% block menu_extend %}
-  <div class="flex_row second_menu margin_bottom_1em header_disp_none">
-    <ul class="pos_center">
-      <li>
-        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;заказы
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'user:personal_data_edit' %}">Мои&nbsp;загрузки
-        </a>
-      </li>
-      <li>
-        <a class = "header_navbar_active" href="{% url 'user:favourites' %}">Избранное
-        </a>
-      </li>
-      <li>
-        <a href="{% url 'user:personal_data' %}">Мои&nbsp;данные
-        </a>
-      </li>
-    </ul>
-  </div>
-  {% endblock %}
-  {% block content %}
+{% block content %}
+{% include "common/pattern_lk_menu.html" %}
   <section>
     <h1>Избранное
     </h1>
+    {% block breadcrumb %}
     <ul class="breadcrumb">
-      <li>
-        <a href="URL">Главная
-        </a>
-      </li>
-      <li>
-        <a href="URL">Личный кабинет
-        </a>
-      </li>
-      <li>Избранное
-      </li>
+    {% breadcrumb_url 'Главная' 'software:catalog' %}
+    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+    {% breadcrumb_url 'Избранное' %}
     </ul>
+    {% endblock %}
     <section class="margin_top_3em"> 
       {% if request.user.is_authenticated %}
       {% if favourites %}
@@ -94,10 +69,10 @@
                   <!-- Бокс кнопки покупки и лайка --> 
                   <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">       
                     {% if s.price <= 0 %}
-                       Скачать бесплатно
-                       {% else %}
-                       Приобрести
-                       {% endif %}  
+                    Скачать бесплатно
+                    {% else %}
+                    Приобрести
+                    {% endif %}  
                        </button>
                     <div>
                       <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">

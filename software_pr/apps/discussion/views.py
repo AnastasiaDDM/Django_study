@@ -6,14 +6,17 @@ import dbl
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 from .forms import Discussion_CommentForm
 import json
-from util.views import render_similars, render_similars_tags
+from util.views import render_similars, render_similars_tags, render_discussion_comment
 
 # Обсуждения 
 def discussions(request, type='', id = 0):
 
     similar_list = []
     discussion_list = []
+    discussion_comment_block = ""
     similar_block = ""
+    similar_tags_block = ""
+    software = Software()
 
     try:
 
@@ -23,39 +26,40 @@ def discussions(request, type='', id = 0):
 
                 software = Software.objects.get( id = id )
 
-                list_disc_id = []
+                # list_disc_id = []
 
-                # Хэш комментариев к обсуждениям 
-                comments_dict = {}
+                # # Хэш комментариев к обсуждениям 
+                # comments_dict = {}
 
-                discussion_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=id).order_by('date')
+                # discussion_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=id).order_by('date')
 
-                for d in discussion_list:
+                # for d in discussion_list:
 
-                    list_disc_id.append(d.id)
+                #     list_disc_id.append(d.id)
 
-                comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion__in=list_disc_id).order_by('date')
+                # comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion__in=list_disc_id).order_by('date')
                 
-                for discussion in discussion_list:
+                # for discussion in discussion_list:
 
-                    list_comment_for_one_disc = []
+                #     list_comment_for_one_disc = []
 
-                    for comment in comment_list:
+                #     for comment in comment_list:
                         
-                        if comment.discussion == discussion:
+                #         if comment.discussion == discussion:
 
-                            list_comment_for_one_disc.append(comment)
+                #             list_comment_for_one_disc.append(comment)
 
-                    # Добавляем ключ и значение в словарь
-                    comments_dict[discussion.id] = list_comment_for_one_disc
+                #     # Добавляем ключ и значение в словарь
+                #     comments_dict[discussion.id] = list_comment_for_one_disc
+
+                discussion_comment_block = render_discussion_comment(software, limit=0)
+                dbl.log("комментарии блок  " + str(discussion_comment_block))
 
                 # Второстепенные объекты - похожие ПО
                 similar_block = render_similars(software)
                 similar_tags_block = render_similars_tags(software)
 
-
-            
-            return render(request, 'discussion/discussions.html', {'discussion_list':discussion_list, 'comments_dict':comments_dict,
+            return render(request, 'discussion/discussions.html', {'discussion_comment_block':discussion_comment_block,
             'software':software, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block})
 
 

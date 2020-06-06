@@ -487,7 +487,7 @@ function append_discussion()
                 if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
                 {
                     $('#container_discussions').append(data.result);  // Ошибки нет, добавляем обсуждение
-                    comments_form_answer();;                  
+                    comments_form_answer();                 
                 }
 
             } 

@@ -1,0 +1,763 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load tz %}
+{% load software_tags %}
+{% load common_tags %}
+<title>{% block page_title %}Мои заказы{% endblock %}
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
+{% endblock %}
+{% block content %}
+{% include "common/pattern_lk_menu.html" %}
+      <section>
+        <h1>Мои заказы
+        </h1>
+        {% block breadcrumb %}
+        <ul class="breadcrumb">
+        {% breadcrumb_url 'Главная' 'software:catalog' %}
+        {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+        {% breadcrumb_url 'Мои заказы' %}
+        </ul>
+        {% endblock %}
+        {{orders}}
+        <section class="margin_top_3em"> 
+          <div class="order_search_size">
+            <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
+              <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
+            <fieldset class="fieldset_border_primary search_div_fieldset">
+              <form data-target="form_search">
+                <div class="flex_row width_100 flex_space-between margin_top_1em">
+                  <div class="slct_div find_column-3 " id="div_date_select">
+                    <a href="javascript:void(0);" id="date_type_select_a" class="slct">Выберите по какой дате искать:
+                    </a>
+                    <ul class="drop">
+					  <li>
+                        <a data-value="date_type_select_not_selected">Выберите по какой дате искать:
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="date_type_buy">По дате заказа
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="date_type_start">По дате начала
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="date_type_end">По дате завершения
+                        </a>
+                      </li>
+                    </ul>
+                    <input type="hidden" id="date_type_select" name="date_type"  value="date_type_select_not_selected">
+                  </div>
+                  <div  class="find_column-3">
+                    <div  class="flex_row flex_space-between">
+                      <div class="div_datepic">
+                        <input id="datefrom_input" name="date_from" disabled type="text" class=" slct_div slct search_datepicker" autocomplete="off">
+                      </div> 	
+                      &#8212  
+                      <div class="div_datepic">
+                        <input id="dateto_input" name="date_to" disabled type="text" class=" slct_div slct search_datepicker" autocomplete="off">
+                      </div>
+                   </div>
+                  </div>
+                  <div class="slct_div find_column-3">
+                    <a href="javascript:void(0);" class="slct">Месяц
+                    </a>
+                    <ul class="drop">
+                      <li>
+                        <a data-value="0">Не выбрано
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="1">Январь
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="2">Февраль
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="3">Март
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="4">Апрель
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="5">Май
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="6">Июнь
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="7">Июль
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="8">Август
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="9">Сентябрь
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="10">Октябрь
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="11">Ноябрь
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="12">Декабрь
+                        </a>
+                      </li>
+                    </ul>
+                    <input type="hidden" name="month">
+                  </div>
+                </div>
+                <div class="flex_row width_100 flex_space-between padding_top_2em">
+                  <div class="slct_div find_column-3 ">
+                    <a href="javascript:void(0);" class="slct">Состояние заказа:
+                    </a>
+                    <ul class="drop">
+                      <li>
+                        <a data-value="status_order_all">Все
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="status_order_completed">Завершенные
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="status_order_developing">В разработке
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="status_order_unpaid">Неоплаченные
+                        </a>
+                      </li>
+                    </ul>
+                    <input type="hidden" name="status_order">
+                  </div>
+                  <div class="slct_div find_column-3 ">
+                    <a href="javascript:void(0);" class="slct">Тип заказа:
+                    </a>
+                    <ul class="drop">
+                      <li>
+                        <a data-value="type_order_all">Все
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_order_org">Оригинальная разработка
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_order_mod">Доработка
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_order_buy">Купленные ПО
+                        </a>
+                      </li>
+                    </ul>
+                    <input type="hidden" name="type_order">
+                  </div>
+                  <div class="slct_div find_column-3 ">
+                    <a href="javascript:void(0);" class="slct">Вид ПО:
+                    </a>
+                    <ul class="drop">
+                      <li>
+                        <a data-value="type_soft_all">Все
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_soft_desc">Настольное приложение
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_soft_site">Сайт
+                        </a>
+                      </li>
+                      <li>
+                        <a data-value="type_soft_mobile">Мобильное приложение
+                        </a>
+                      </li>
+                    </ul>
+                    <input type="hidden" name="type_soft">
+                  </div>
+                </div>
+                <div class="flex_row  width_100 flex_space-between padding_top_2em margin_bottom_1em">
+                  <div class="input_style find_column-3">
+                    <input type="text" style="margin-top: 0em;" id="number" name="number" autocomplete="off">
+                    <label for="number">Номер заказа
+                    </label>
+                  </div>
+                  <div class="input_style find_column-3">
+                    <input type="text" style="margin-top: 0em;" id="name" name="name">
+                    <label for="name">Наименование заказа 
+                    </label>
+                  </div> 
+                  <ul class="radio_checkbox find_column-3" style="margin-top: 0.3em;">
+                    <li style="margin: auto 0em;">
+                      <input id="unread_messages" type="checkbox" name="unread_messages">
+                      <label for="unread_messages" >Непрочитанные в чате
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex_row flex_space-between ">
+                  <div class="margin_top-bootom_1em">
+                    <button data-rel="form_search" class="button_reset">Сбросить
+                    </button>
+                  </div>
+                  <div class="margin_top-bootom_1em">
+                    <button type="submit" class="button_search">Поиск</button>
+                  </div>  
+                </div>
+              </form>
+            </fieldset>
+
+
+            <fieldset class="fieldset_border_primary margin_top_1em" name="fieldset" >
+              <form>
+    
+    
+    
+                  <div class = "flex_row ">
+    
+                      
+                    <div class=" slct_div column-3">
+                      <a href="javascript:void(0);" class="slct">По</a>
+                      <ul class="drop ">
+                        <li><a>4</a></li>
+                        <li><a>6</a></li>
+                        <li><a>10</a></li>
+                        <li><a>12</a></li>
+                      </ul>
+                      <input type="hidden" id="select">
+                    </div>
+    
+    
+                    <div class="slct_div column-3">
+                      <a href="javascript:void(0);" class="slct">Сортировать:</a>
+                      <ul class="drop">
+                        <li><a>Все</a></li>
+                        <li><a>Популярное</a></li>
+                        <li><a>Новое</a></li>
+                        <li><a>&#8657 по размеру</a></li>
+                        <li><a>&#8659 по размеру</a></li>
+                      </ul>
+                      <input type="hidden" id="select">
+                    </div>
+
+
+                    <div class="flex_row column-3">
+                      <input class="slct" type="number" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                      <div class="">
+                        <a type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></a>
+                      </div>
+                    </div>
+
+
+                    </div>
+                  
+    
+              </form>
+             </fieldset>
+
+
+          </div>
+
+
+          
+          <div class="flex_row main_block_bg padding_top-bootom_1em flex_flex-start" style="line-height: 2em;">
+            <div class="flex_row">
+              <div class=" pos_right order_card_type_state_small">
+                <i class="fas fa-cart-plus orders_legend_i" title="Купленное ПО" aria-hidden="true">
+                </i>
+              </div>
+              <div class="orders_legend_text">&#8212 Купленные ПО
+              </div>  
+            </div>
+            <div class="flex_row">
+              <div class=" pos_right order_card_type_state_small">
+                <i class="fas fa-pencil-alt orders_legend_i" title="Доработка ПО" aria-hidden="true">
+                </i>
+              </div>
+              <div class="orders_legend_text">&#8212 Доработка ПО
+              </div>  
+            </div>
+            <div class="flex_row">
+              <div class=" pos_right order_card_type_state_small">
+                <i class="fa fa-magic orders_legend_i" title="Оригинальная разработка" aria-hidden="true">
+                </i>
+              </div>
+              <div class="orders_legend_text">&#8212 Оригинальная разработка
+              </div>  
+            </div>
+          </div>
+          <!-- Контейнер для всех карточек --> 
+          <div  class="flex_row pos_center article_container padding_bottom_2em margin_top_2">
+
+            {% if request.user.is_authenticated %}
+            {% if orders %}
+            {% for order in orders %}
+
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №{{order.id}}
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        {% if order.kind == 'buy' %}
+                        <i class="fas fa-cart-plus order_type_i" title="Покупка ПО" aria-hidden="true">
+                        </i>
+                        {% elif order.kind == 'org' %}
+                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
+                        </i>
+                        {% else %}
+                        <i class="fas fa-pencil-alt order_type_i" title="Доработка ПО" aria-hidden="true">
+                        </i>
+                        {% endif %}  
+
+                      </div>
+                    </div>   
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        {% if order.name %}
+                        <a class = "orders_text_big" href="URL">{{order.name}}
+                        </a>
+                        {% else %}
+                        <a class = "orders_text_big" href="URL">{{order.software.name}}
+                        </a>
+                        {% endif %}
+                        
+                      </div>
+                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      </div>
+                      <div class="float_right w_55_xs">
+                        <div  class="order_state_dev">В разработке
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 5 000 &#8381
+                              </div>
+                              <div>Осталось: 95 000 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: {% localtime on %}{{order.date|default:"-"|date:"d.m.Y H:i"}}{% endlocaltime %}
+                          </div>
+                          <div>Дата покупки: {% localtime on %}{{order.starting_date|default:"-"|date:"d.m.Y"}}{% endlocaltime %}
+                          </div>
+                          <div>Дата завершения: {% localtime on %}{{order.ending_date|default:"-"|date:"d.m.Y"}}{% endlocaltime %}
+                          </div>
+                          <div>Скидка: {{order.discount|floatformat|add:'%'|default:"-"}}
+                          </div>
+                          <div>Лицензия: {% localtime on %}{{order.ending_date|default:"Не ограничена"|date:"d.m.Y"}}{% endlocaltime %}
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div>
+              Заказов пока нет, хотите добавить? Заходите в  
+              <a class="text_bold" href="{% url 'software:catalog' %}">Каталог
+              </a>
+            </div>
+            {% endif %}  
+            {% endif %}
+
+
+
+
+
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №25
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        <i class="fas fa-pencil-alt order_type_i" title="Оригинальная разработка" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div> 
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        <!-- <div class = "software_price">350 000 000 р</div> -->
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
+                        </a>
+                      </div>
+                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      </div>
+                      <div class="float_right w_55_xs">
+                        <div  class="order_state_pay">Оплачено
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 100 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 100 000 &#8381
+                              </div>
+                              <div>Осталось: 0 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: 10.12.2019 11:45
+                          </div>
+                          <div>Дата покупки: -
+                          </div>
+                          <div>Дата завершения: 10.06.2020
+                          </div>
+                          <div>Скидка: 30%
+                          </div>
+                          <div>Лицензия: Не ограничена
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №25
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        <i class="fas fa-cart-plus order_type_i" title="Купленное ПО" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div> 
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        <!-- <div class = "software_price">350 000 000 р</div> -->
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
+                        </a>
+                      </div>
+                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      </div>
+                      <div class="float_right w_55_xs">
+                        <div  class="order_state_not_pay">Не оплачено
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 150 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 0 &#8381
+                              </div>
+                              <div>Осталось: 150 000 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: 10.12.2019 11:45
+                          </div>
+                          <div>Дата покупки: -
+                          </div>
+                          <div>Дата завершения: 10.06.2020
+                          </div>
+                          <div>Скидка: 30%
+                          </div>
+                          <div>Лицензия: Не ограничена
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №25
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div> 
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
+                        </a>
+                      </div>
+                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      </div>
+                      <div class="float_right w_55_xs">
+                        <div  class="order_state_dev">В разработке
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 5 000 &#8381
+                              </div>
+                              <div>Осталось: 95 000 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: 10.12.2019 11:45
+                          </div>
+                          <div>Дата покупки: -
+                          </div>
+                          <div>Дата завершения: 10.06.2020
+                          </div>
+                          <div>Скидка: 30%
+                          </div>
+                          <div>Лицензия: Не ограничена
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №25
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div> 
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        <!-- <div class = "software_price">350 000 000 р</div> -->
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
+                        </a>
+                      </div>
+                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      </div>
+                      <div class="float_right width_55">
+                        <div  class="order_state_dev">В разработке
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 5 000 &#8381
+                              </div>
+                              <div>Осталось: 95 000 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: 10.12.2019 11:45
+                          </div>
+                          <div>Дата покупки: -
+                          </div>
+                          <div>Дата завершения: 10.06.2020
+                          </div>
+                          <div>Скидка: 30%
+                          </div>
+                          <div>Лицензия: Не ограничена
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+            <div class="column-2"> 
+              <!-- Бокс одной карточки --> 
+              <article class="flex_column  "> 
+                <!-- Контейнер одной карточки --> 
+                <fieldset class=" order_card margin_top_2" name="fieldset">
+                  <legend>Заказ №25
+                  </legend>
+                  <form>
+                    <div class="float_right ml_mb">
+                      <div class="order_type_i pos_right order_card_type_state_small">
+                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div> 
+                    <div class = "pos_left_for_text "> 
+                      <div class="order_div_name margin_bottom_1em">
+                        <!-- <div class = "software_price">350 000 000 р</div> -->
+                        <!-- Контейнер названия и типа ПО -->
+                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
+                        </a>
+                      </div>
+                      <div class = "orders_text_small" href="URL">Сайт
+                      </div>
+                      <div class="float_right width_55">
+                        <div  class="order_state_dev">В разработке
+                        </div>
+                        <div class="">
+                          <div class = "flex_row flex_space-between">
+                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
+                            </div>
+                            <div class="orders_text_small">
+                              <div>Внесено: 5 000 &#8381
+                              </div>
+                              <div>Осталось: 95 000 &#8381
+                              </div>
+                            </div>
+                          </div>
+                          <button class="button_pay margin_top_1em img_width">Оплатить
+                          </button>
+                        </div> 
+                      </div>    
+                      <div class="margin_top_07em">
+                        <div class="orders_text_medium">
+                          <div>Дата заказа: 10.12.2019 11:45
+                          </div>
+                          <div>Дата покупки: -
+                          </div>
+                          <div>Дата завершения: 10.06.2020
+                          </div>
+                          <div>Скидка: 30%
+                          </div>
+                          <div>Лицензия: Не ограничена
+                          </div>
+                        </div>
+                      </div>
+                      <div class=" cursor">
+                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
+                        </a>
+                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
+                        </i>
+                      </div>
+                    </div>
+                  </form>
+                </fieldset>
+              </article>
+            </div>
+          </div>
+        </section>
+      </section>
+    {% endblock %}
+    {% block js_extend %}
+    <script src="{% static '/js/datepicker.min.js' %}">
+    </script>
+    <script src="{% static '/js/datepicker.ru.js' %}">
+    </script>
+    <script>
+    jQuery(document).ready(function () {
+        datepicker_init();
+        input_filled();
+        search_roll();
+        select_style();
+        form_search_reset();
+        $("#date_type_select").change(function(){
+
+            if ($(this).val() == "date_type_select_not_selected") {
+            $("#datefrom_input").attr("disabled", true); 
+            $("#dateto_input").attr("disabled", true); 
+            }
+            else {
+            $("#datefrom_input").attr("disabled", false); 
+            $("#dateto_input").attr("disabled", false); 
+            }	  
+        });
+    })         
+    </script>
+    {% endblock %}

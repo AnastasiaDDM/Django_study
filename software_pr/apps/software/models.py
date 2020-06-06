@@ -205,8 +205,6 @@ class Software(models.Model):
         return Software.objects.filter(favourite__client=client.id)
 
     
-    
-    
     # Ф-ия получения списка похожих ПО
     def get_similars(self):
         software_id = int(self.id)

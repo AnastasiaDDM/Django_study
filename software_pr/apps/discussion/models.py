@@ -29,7 +29,7 @@ class Discussion(models.Model):
 class Comment(models.Model):
 
     discussion = models.ForeignKey(Discussion, on_delete = models.PROTECT, verbose_name='Обсуждение', related_name='discussion')
-    client = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Клиент', null=True, blank=True, related_name='client')
+    client = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Клиент', null=True, blank=True, related_name='comment_client')
     name = models.CharField('Имя', max_length = 100, null=True, blank=True)
     email_phone = models.CharField('Телефон', max_length = 60, null=True, blank=True)
     content = models.TextField('Обсуждение')

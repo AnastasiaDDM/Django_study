@@ -9,11 +9,7 @@ import dbl
 import re
 from user.models import CustomUser
 import json
-from util.views import render_similars, render_similars_tags
-
-
-
-    
+from util.views import render_similars, render_similars_tags, render_discussion_comment
 
 # Ф-ия составления списка ПО
 def catalog(request):
@@ -163,13 +159,19 @@ def software_page(request, id):
         # Второстепенные объекты - похожие ПО
         similar_block = render_similars(software)
         similar_tags_block = render_similars_tags(software)
+        discussion_comment_block = render_discussion_comment(software, limit=5)
 
 
-    except:
-        raise Http404("ПО не найдено")
+    # except:
+    #     raise Http404("ПО не найдено")
+
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
 
     return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'classif':classif,
-    'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block})
+    'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
+    'discussion_comment_block':discussion_comment_block})
 
 
 

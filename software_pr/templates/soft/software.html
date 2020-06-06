@@ -67,16 +67,21 @@
         <!--Это контейнер цены, кнопок и описания-->
         <div class="flex_column"> 
           <!--Это контейнер цены и кнопок-->
-          <div class = "page_software_price">{{software.price|floatformat |default:""}}  &#8381
-          </div>
-
+            {% if software.is_free is False %}
+            <div class = "page_software_price">
+            {{software.price|floatformat|add:'&#8381'|default:""}}  
+            </div>
+            {% endif %}
           <div class="flex_column padding_bottom_2em w_70_md"> 
-
             {% if software.modification %}
-
             <!--Это контейнер кнопок-->
             <div>
-                <button href="buy.html" class="button_pay width_100 margin_top-bootom_1em">Приобрести
+                <button href="buy.html" class="button_pay width_100 margin_top-bootom_1em">
+                {% if software.price <= 0 or software.is_free %}
+                Скачать бесплатно
+                {% else %}
+                Приобрести
+                {% endif %}  
                 </button>
             </div>
             <div class="flex_row  flex_space-between">
@@ -85,7 +90,6 @@
                 <div>
                 {% if request.user.is_authenticated %}
                 {% with favourite=software|is_favourite:request.user %}
-
                     {% if favourite %}
                     <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
                     {% else %}
@@ -104,7 +108,6 @@
                     <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{software.id}}">
                     {% if request.user.is_authenticated %}
                     {% with favourite=software|is_favourite:request.user %}
-
                         {% if favourite %}
                         <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
                         {% else %}
@@ -154,7 +157,6 @@
             </div>
             <div style="display: none;" id="description_text" class="all_text">
                 {{list_descr.1|linebreaks}}
-              
             </div>  
           </div>
           <div class="margin_top-bootom_1em pos_left bt_read_pos_center">
@@ -168,7 +170,12 @@
   <div> 
     <!--Это контейнер кнопок, которые находятся в контенте-->
     <div class="flex_row w_50_sm pos_center padding_top_2em padding_bottom_2em">
-      <button href="buy.html" class="button_pay button_pay_width_full ">350 000 000 000₽ Приобрести
+      <button href="buy.html" class="button_pay button_pay_width_full ">
+        {% if software.price <= 0 or software.is_free %}
+        Скачать бесплатно
+        {% else %}
+        {{software.price|floatformat |default:""}}  &#8381 Приобрести
+        {% endif %}
       </button>
       <div >
         <i class="fa fa-heart button_like width_30" aria-hidden="true">
@@ -205,290 +212,7 @@
         <h2>Обсуждения данного продукта
         </h2>
       </div>
-      <div class="margin_top_3em">      
-        <!-- Контейнер обсуждений и формы -->
-        <div>      
-          <!-- Контейнер обсуждений -->
-          <div class="discussion flex_column pos_center_for_div" id="dis_1">      
-            <!-- одно обсуждение -->
-            <div class="flex_row">
-              <div class = "reviews_title">Иванов М.Л.
-              </div>
-              <div class = "reviews_date">20.01.2020
-              </div>
-            </div>
-            <div  class="discussion_text">
-              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! 
-              </span>
-              <div>
-                <div class="pos_right_for_div btn_answer" data-target="dis_1">
-                  <a class="button_reset">Ответить
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_1">
-              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
-              </i>Комментарии (10)
-              </a>
-            </div>
-
-
-            <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
-              <!-- комментарии к обсуждению -->
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! 
-                  </span>
-                </div>
-              </div>
-
-               <div class="flex_row flex_space-between margin_top_1em">
-                <div class="search_title btn_rollup"> 
-                  <a class="search_roll-up">Свернуть <i class="fas fa-arrow-up"></i></a>
-                </div>
-
-                <div class=" btn_answer_two" data-target="dis_1">
-                  <a class="button_reset">Ответить
-                  </a>
-                </div>
-               </div>
-
-            </div>
-
-
-
-
-
-          </div>
-          <div class="discussion flex_column pos_center_for_div" id="dis_2">      
-            <!-- одно обсуждение -->
-            <div class="flex_row">
-              <div class = "reviews_title">Иванов М.Л.
-              </div>
-              <div class = "reviews_date">20.01.2020
-              </div>
-            </div>
-            <div  class="discussion_text">
-              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! 
-              </span>
-              <div class="pos_right_for_div btn_answer" data-target="dis_2">
-                <a class="button_reset">Ответить
-                </a>
-              </div>
-            </div>
-            <div class="margin_top_07em comment_roll" data-target="dis_2">
-              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
-              </i>Комментарии (10)
-              </a>
-            </div>
-            <div class ="discussion_comment pos_right" style="display: none;">      
-              <!-- комментарии к обсуждению -->
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!  Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО!Огромное спасмбо за отзыв! Мы стараемся радовать вас 
-                    с каждым выходом нового ПО! 
-                  </span>
-                </div>
-              </div>
-              <div  class="discussion_comment_one flex_column  ">
-                <div class="flex_row">
-                  <div class = "reviews_title">Иванов М.Л.
-                  </div>
-                  <div class = "reviews_date">20.01.2020
-                  </div>
-                </div>
-                <div>
-                  <span>Огромное спасмбо за отзыв! 
-                  </span>
-                </div>
-              </div>
-              <div class="flex_row flex_space-between margin_top_1em">
-                <div class="search_title btn_rollup"> 
-                  <a class="search_roll-up">Свернуть <i class="fas fa-arrow-up"></i></a>
-                </div>
-
-                <div class=" btn_answer_two" data-target="dis_2">
-                  <a class="button_reset">Ответить
-                  </a>
-                </div>
-               </div>
-            </div>
-          </div>
-          <div class="discussion flex_column pos_center_for_div" id="dis_3">      
-            <!-- одно обсуждение -->
-            <div class="flex_row">
-              <div class = "reviews_title">Иванов М.Л.
-              </div>
-              <div class = "reviews_date">20.01.2020
-              </div>
-            </div>
-            <div  class="discussion_text">
-              <span>Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! Замечательная программа! Не могу нарадоваться! Жду доработки, 
-                которую предложила, и тогда приложение станет совершенно идеальным 
-                для меня! Спасибо вам! 
-              </span>
-              <div class="pos_right_for_div btn_answer" data-target="dis_3">
-                <a class="button_reset">Ответить
-                </a>
-              </div>
-            </div>
-            <div class="margin_top_07em comment_roll" data-target="dis_3">
-              <a class="link_style_border"><i class="far fa-comments discussion_icon_com" aria-hidden="true">
-              </i>Комментарии (0)
-              </a>
-            </div>
-          </div>
-          <div class="pos_center margin_top-bootom_1em">
-            <a href="{% url 'discussion:discussions' 'softwares' software.id %}" class="button_reset">Показать все
-            </a>
-          </div>
-        </div>
-        <div class=" flex_column pos_center w_50_sm margin_top_3em">     
-          <!-- Форма комментария Ваше мнение -->
-
-          <h3>Начните свое обсуждение
-          </h3>
-          <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
-            <form>
-              <div class="pos_center w_70_xl">
-                <div class="input_style ">
-                  <input type="text" id="name" autocomplete="off">
-                  <label for="name">Ваше имя
-                  </label>
-                </div>
-                <div class="input_style margin_top_3em">
-                  <input type="text" id="email" required autocomplete="off">
-                  <label for="email">Номер телефона/ эл.почта
-                  </label>
-                </div>
-                <div>
-                  <div class="textarea_style margin_top_3em">
-                    <textarea type="textarea" rows="5" required="required"></textarea>
-                    <label id = "label" class = "textarea_style_label">Ваш комментарий
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="pos_сenter">
-                <a href="#" class="button_reset">Оставить комментарий
-                </a>
-              </div>
-            </form>
-          </fieldset>
-        </div>
-      </div>
+      {{discussion_comment_block}}
     </div>
     </section>
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from software.models import *
+from discussion.models import *
 from django.template.loader import render_to_string
 
 
@@ -36,3 +37,43 @@ def render_similars_tags(software):
     result = render_to_string('common/pattern_similars_tags.html', {'similar_tags_list':similar_tags_list})
     return result
 
+
+# Ф-ия создания кода html обсуждений и их комментариев
+def render_discussion_comment(software, limit=0):
+
+    # Объявление переменных
+    list_disc_id = []
+    discussions_list = []
+    comments_dict = {}
+    result =''
+
+    if limit == 0 :
+
+        discussions_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=software.id).order_by('date')
+
+    if limit != 0 and str(limit).isdigit() :
+
+        discussions_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=software.id).order_by('date')[:int(limit)]
+
+    for d in discussions_list:
+
+        list_disc_id.append(d.id)
+
+    comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion__in=list_disc_id).order_by('date')
+    
+    for discussion in discussions_list:
+
+        list_comment_for_one_disc = []
+
+        for comment in comment_list:
+            
+            if comment.discussion == discussion:
+
+                list_comment_for_one_disc.append(comment)
+
+        # Добавляем ключ и значение в словарь
+        comments_dict[discussion.id] = list_comment_for_one_disc
+    
+    result = render_to_string('discussion/pattern_block_discussion.html', {'discussions_list':discussions_list,
+    'comments_dict':comments_dict,'software':software})
+    return result

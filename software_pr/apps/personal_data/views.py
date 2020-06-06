@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseRedirect
 from user.models import CustomUser
 from software.models import Software, Favourite
+from order.models import Order
 # from user.authentication import get_user_by_email_phone
 from django import forms
 from .forms import *
@@ -61,3 +62,12 @@ def favourites_clean(request):
         for fav in favourites:
             fav.delete()
         return render(request, 'user/favourites.html', {'favourites':None})
+
+
+
+# Заказы
+def orders(request):
+    if request.user.is_authenticated:
+        orders = Order.get_orders_by_user(request.user)
+        dbl.log(str(orders))
+        return render(request, 'order/orders.html', {'orders':orders})
