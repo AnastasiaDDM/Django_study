@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseRedirect
 from user.models import CustomUser
+from user.views import get_user
 from software.models import Software, Favourite
 from order.models import Order
+import util.views
 # from user.authentication import get_user_by_email_phone
 from django import forms
 from .forms import *
@@ -11,6 +13,7 @@ import re
 
 # Личные данные
 def personal_data(request):
+
     if request.user.is_authenticated:
         return render(request, 'user/personal_data.html')
 
@@ -51,9 +54,21 @@ def personal_data_edit(request):
 
 # Избранное
 def favourites(request):
-    if request.user.is_authenticated:
-        favourites = Software.get_favourites_by_user(request.user)
-        return render(request, 'user/favourites.html', {'favourites':favourites})
+
+    user = CustomUser()
+    cookie = {}
+
+    user, cookie = get_user(request)
+    if user:
+        favourites = Software.get_favourites_by_user(user)
+
+        response= render(request, 'user/favourites.html', {'favourites':favourites})
+        response = util.views.wrap_cookie(response, cookie)
+        dbl.log(str(response))
+
+        return response
+
+        # return render(request, 'user/favourites.html', {'favourites':favourites})
 
 # Полная очистка избранного
 def favourites_clean(request):

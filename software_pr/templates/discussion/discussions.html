@@ -27,42 +27,6 @@
     </div>
     <div class="padding_top_2em">
     {{discussion_comment_block}}
-    <div class=" flex_column pos_center w_50_sm margin_top_3em">     
-        <!-- Форма комментария Ваше мнение -->
-        <h3>Начните свое обсуждение
-        </h3>
-        <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
-        {% autoescape on %}
-        <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' %}">
-            {% csrf_token %}
-            <div class="pos_center w_70_xl">
-            <input type="hidden" name="id_software" value="{{software.id}}">
-            <div class="input_style ">
-                <input type="text" id="name" name="name">
-                <label for="name">Ваше имя
-                </label>
-            </div>
-            <div class="input_style margin_top_3em">
-                <input type="text" id="email_phone" name="email_phone" required>
-                <label for="email_phone">Номер телефона/ эл.почта
-                </label>
-            </div>
-            <div>
-                <div class="textarea_style margin_top_3em">
-                <textarea type="textarea" rows="5" name="content" id="content" required="required"></textarea>
-                <label id = "content" class = "textarea_style_label">Ваш комментарий
-                </label>
-                </div>
-            </div>
-            </div>
-            <div class="pos_сenter">
-            <button type="submit" class="button_show-more">Добавить обсуждение
-            </button>
-            </div>
-        </form>
-        {% endautoescape %}
-        </fieldset>
-    </div>
     </div>
     <div class="padding_top_4em">    
       <!--Это контейнер похожих ПО-->
@@ -79,54 +43,7 @@
         {{similar_block}}
       </div>
       </section>
-    <div id="pattern_form_answer" style="display: none;">
-      <div class="copy_form_answer" style="display: none;">
-        <div class=" flex_column pos_center margin_top_1em width_100">     
-          <!-- Форма комментария -->
-          <h3>Ответ
-          </h3>
-          <fieldset class=" fieldset_border_primary padding_2em_xs">
-            {% autoescape on %}
-            <form method="post" action="{% url 'discussion:discussion_create' %}">
-                {% csrf_token %}
-              <div class="pos_center">
-                <div class="flex_row flex_space-between">
-                  <input type="hidden" name="id_discussion">
-                  <div class="input_style w_45_sm">
-                    <input type="text" id="comment_name" name="name">
-                    <label for="comment_name">Ваше имя
-                    </label>
-                  </div>
-                  <div class="input_style w_45_sm">
-                    <input type="text"  id="comment_email_phone" name="email_phone" required>
-                    <label for="comment_email_phone">Номер телефона/ эл.почта
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <div class="textarea_style margin_top_3em textarea_height_small">
-                    <textarea type="textarea" name="content" id="comment_content" required="required"></textarea>
-                    <label id = "comment_content" class = "textarea_style_label">Ваш комментарий
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="flex_row flex_space-between margin_top_3em">
-                <div class="btn_cancel">
-                  <a class="button_reset">Отменить
-                  </a>
-                </div>
-                <div class="">
-                    <button type="submit" class="button_show-more" data-comment="submit_comment">Ответить
-                    </button>
-                </div>
-              </div>
-            </form>
-            {% endautoescape %}
-          </fieldset>
-        </div>
-      </div>
-    </div>
+
     {% endblock %}	
     {% block js_extend %}
     <script src="{% static '/js/slick.min.js' %}"></script>
@@ -135,9 +52,10 @@
     jQuery(document).ready(function () {
         input_filled('input');
         input_filled('textarea');
-        comments_form_answer();
         carousel_soft('same_software');
         append_discussion();
+        comments_form_answer();
+        comment_roll();
     })         
     </script>
     {% endblock %}

@@ -37,9 +37,74 @@ class CustomUserManager(BaseUserManager):
         return user
 
 
-    def create_user(self, email=None, phone=None, password=None, **extra_fields):
+    def create_user(self, email=None, phone=None, password=None, session=None, max_age=None, **extra_fields):
+
+        if session:
+            dbl.log('сесиия ' +str(session)  )
+            dbl.log("время "+str(max_age))
+            extra_fields.setdefault('is_superuser', False)
+            user = self.model(guest_session=session, max_age=max_age)
+            # user = Cus
+            # user.guest_session = session
+            # user.max_age =max_age
+            user.save()
+            dbl.log('сесиия юзер до' )
+            # dbl.log('сесиия юзер' +str(user) )
+            dbl.log('сесиия юзер после' )
+            return user
+
         extra_fields.setdefault('is_superuser', False)
         return self._create_user(email=email, phone=phone, password=password, **extra_fields)
+
+
+
+    # def _create_user(self, email=None, phone=None, password=None, guest_session=None, max_age=None, **extra_fields):
+
+    #     # if not email:
+    #     #     raise ValueError('Введите email')
+    #     if email:
+    #         email = self.normalize_email(email)
+    #         # extra_fields.setdefault('phone', No)
+    #         user = self.model(email=email, **extra_fields)
+    #     if phone:
+    #         user = self.model(phone=phone, **extra_fields)
+
+    #     if guest_session:
+    #         dbl.log('сесиия ' +str(guest_session)  )
+    #         dbl.log("время "+str(max_age))
+    #         # extra_fields.setdefault('is_superuser', False)
+    #         user = self.model(guest_session=guest_session, max_age=max_age, **extra_fields)
+    #         # user = Cus
+    #         # user.guest_session = session
+    #         # user.max_age =max_age
+    #         # user.save()
+    #         dbl.log('сесиия юзер' +str(user) )
+    #         # return user
+
+    #     dbl.log('манагер '+str(email)+str(phone)+str(password))
+    #     # user = self.model(email=email, phone=phone, **extra_fields)
+    #     # dbl.log(str(user))
+    #     user.set_password(password)
+    #     user.save()
+    #     return user
+
+
+    # def create_user(self, email=None, phone=None, password=None, session=None, max_age=None, **extra_fields):
+
+    #     # if session:
+    #     #     dbl.log('сесиия ' +str(session)  )
+    #     #     dbl.log("время "+str(max_age))
+    #     #     extra_fields.setdefault('is_superuser', False)
+    #     #     user = self.model(guest_session=session, max_age=max_age)
+    #     #     # user = Cus
+    #     #     user.guest_session = session
+    #     #     user.max_age =max_age
+    #     #     user.save()
+    #     #     dbl.log('сесиия юзер' +str(user) )
+    #     #     return user
+
+    #     extra_fields.setdefault('is_superuser', False)
+    #     return self._create_user(email=email, phone=phone, password=password, guest_session=session, max_age=max_age, **extra_fields)
 
 
 

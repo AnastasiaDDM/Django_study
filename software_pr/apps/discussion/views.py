@@ -6,7 +6,11 @@ import dbl
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 from .forms import Discussion_CommentForm
 import json
-from util.views import render_similars, render_similars_tags, render_discussion_comment
+# # from software.views import render_similars, render_similars_tags
+from software.models import Software
+import software.views as software_views
+
+# from software.views import render_similars, render_similars_tags
 
 # Обсуждения 
 def discussions(request, type='', id = 0):
@@ -52,12 +56,13 @@ def discussions(request, type='', id = 0):
                 #     # Добавляем ключ и значение в словарь
                 #     comments_dict[discussion.id] = list_comment_for_one_disc
 
-                discussion_comment_block = render_discussion_comment(software, limit=0)
-                dbl.log("комментарии блок  " + str(discussion_comment_block))
+                discussion_comment_block = render_discussion_comment(software, request, limit=0)
 
+                dbl.log("Ошибка 1 " )
                 # Второстепенные объекты - похожие ПО
-                similar_block = render_similars(software)
-                similar_tags_block = render_similars_tags(software)
+                similar_block = software_views.render_similars(software)
+                dbl.log("Ошибка 2 ")
+                similar_tags_block = software_views.render_similars_tags(software)
 
             return render(request, 'discussion/discussions.html', {'discussion_comment_block':discussion_comment_block,
             'software':software, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block})
@@ -164,3 +169,44 @@ def discussion_create(request):
 
 
 
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+
+# Ф-ия создания кода html обсуждений и их комментариев
+def render_discussion_comment(software, request, limit=0):
+
+    # Объявление переменных
+    list_disc_id = []
+    discussions_list = []
+    comments_dict = {}
+    result =''
+
+    if limit == 0 :
+
+        discussions_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=software.id).order_by('date')
+
+    if limit != 0 and str(limit).isdigit() :
+
+        discussions_list = Discussion.objects.all().filter(date_of_delete=None, visibility=True, software=software.id).order_by('date')[:int(limit)]
+
+    for d in discussions_list:
+
+        list_disc_id.append(d.id)
+
+    comment_list = Comment.objects.filter(date_of_delete=None, visibility=True, discussion__in=list_disc_id).order_by('date')
+    
+    for discussion in discussions_list:
+
+        list_comment_for_one_disc = []
+
+        for comment in comment_list:
+            
+            if comment.discussion == discussion:
+
+                list_comment_for_one_disc.append(comment)
+
+        # Добавляем ключ и значение в словарь
+        comments_dict[discussion.id] = list_comment_for_one_disc
+    
+    result = render_to_string('discussion/pattern_block_discussion.html', {'discussions_list':discussions_list,
+    'comments_dict':comments_dict,'software':software}, request=request)
+    return result

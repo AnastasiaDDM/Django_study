@@ -32,6 +32,8 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     is_active = models.BooleanField('Активность', default=True)
     is_staff = models.BooleanField('Админ', default=False)
+    guest_session = models.CharField('Сессия гостя', max_length = 80, unique=True, default=None, null=True, blank=True)
+    max_age = models.FloatField('Время действия кук', max_length = 20, default=None, null=True, blank=True)
 
     objects = CustomUserManager()
 
@@ -65,6 +67,26 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
             return CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
         except :
             return None
+
+    # Метод возвращающий пользователя, гостя или добавляет гостя и возвращает его
+    # def get_user(email_or_phone):
+    #     try:
+    #         return CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
+    #     except :
+    #         return None
+
+    @staticmethod
+    def get_user( field = None, value = None ):
+        try:
+
+            # Переменная вида : {поле в бд для фильтрации: значение фильтра}
+            kw = {field: value}
+
+            return CustomUser.objects.get(**kw)
+            
+        except :
+            return None
+
 
 
 

@@ -29,10 +29,10 @@
                 {% if comments_dict %}
                 {% with comments=comments_dict|get_value_in_dict:disc.id %}
                 <div class="margin_top_07em comment_roll" id = "comment_roll_1" data-target="dis_{{disc.id}}">
-                <a class="link_style_border">
-                    <i class="far fa-comments discussion_icon_com" aria-hidden="true">
-                    </i>Комментарии ( <span data-rel="comment_count">{{comments|length}}</span> )
-                </a>
+                    <a class="link_style_border">
+                        <i class="far fa-comments discussion_icon_com" aria-hidden="true">
+                        </i>Комментарии ( <span data-rel="comment_count">{{comments|length}}</span> )
+                    </a>
                 </div> 
                 <div class ="discussion_comment pos_right" style="display: none;" id="comment_1">      
                 <!-- комментарии к обсуждению -->
@@ -82,39 +82,87 @@
         </div>
     </div>
     <div class=" flex_column pos_center w_50_sm margin_top_3em">     
-    <!-- Форма комментария Ваше мнение -->
-    <h3>Начните свое обсуждение
-    </h3>
-    <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
-    {% autoescape on %}
-    <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' %}">
-        {% csrf_token %}
-        <div class="pos_center w_70_xl">
-        <input type="hidden" name="id_software" value="{{software.id}}">
-        <div class="input_style ">
-            <input type="text" id="name" name="name">
-            <label for="name">Ваше имя
-            </label>
-        </div>
-        <div class="input_style margin_top_3em">
-            <input type="text" id="email_phone" name="email_phone" required>
-            <label for="email_phone">Номер телефона/ эл.почта
-            </label>
-        </div>
-        <div>
-            <div class="textarea_style margin_top_3em">
-            <textarea type="textarea" rows="5" name="content" id="content" required="required"></textarea>
-            <label id = "content" class = "textarea_style_label">Ваш комментарий
-            </label>
+        <!-- Форма комментария Ваше мнение -->
+        <h3>Начните свое обсуждение
+        </h3>
+        <fieldset class=" border_fieldset_top main_block_bg padding_2em_xs">
+        {% autoescape on %}
+        <form method="post" id="form_discussion" action="{% url 'discussion:discussion_create' %}">
+            {% csrf_token %}
+            <div class="pos_center w_70_xl">
+            <input type="hidden" name="id_software" value="{{software.id}}">
+            <div class="input_style ">
+                <input type="text" id="name" name="name">
+                <label for="name">Ваше имя
+                </label>
             </div>
+            <div class="input_style margin_top_3em">
+                <input type="text" id="email_phone" name="email_phone" required>
+                <label for="email_phone">Номер телефона/ эл.почта
+                </label>
+            </div>
+            <div>
+                <div class="textarea_style margin_top_3em">
+                <textarea type="textarea" rows="5" name="content" id="content" required="required"></textarea>
+                <label id = "content" class = "textarea_style_label">Ваш комментарий
+                </label>
+                </div>
+            </div>
+            </div>
+            <div class="pos_сenter">
+            <button type="submit" class="button_show-more">Добавить обсуждение
+            </button>
+            </div>
+        </form>
+        {% endautoescape %}
+        </fieldset>
+    </div>
+    <div id="pattern_form_answer" style="display: none;">
+        <div class="copy_form_answer" style="display: none;">
+          <div class=" flex_column pos_center margin_top_1em width_100">     
+            <!-- Форма комментария -->
+            <h3>Ответ
+            </h3>
+            <fieldset class=" fieldset_border_primary padding_2em_xs">
+              {% autoescape on %}
+              <form method="post" action="{% url 'discussion:discussion_create' %}" data-comment='form_comment'>
+                  {% csrf_token %}
+                <div class="pos_center">
+                  <div class="flex_row flex_space-between">
+                    <input type="hidden" name="id_discussion">
+                    <div class="input_style w_45_sm">
+                      <input type="text" id="comment_name" name="name">
+                      <label for="comment_name">Ваше имя
+                      </label>
+                    </div>
+                    <div class="input_style w_45_sm">
+                      <input type="text"  id="comment_email_phone" name="email_phone" required>
+                      <label for="comment_email_phone">Номер телефона/ эл.почта
+                      </label>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="textarea_style margin_top_3em textarea_height_small">
+                      <textarea type="textarea" name="content" id="comment_content" required="required"></textarea>
+                      <label id = "comment_content" class = "textarea_style_label">Ваш комментарий
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex_row flex_space-between margin_top_3em">
+                  <div class="btn_cancel">
+                    <a class="button_reset">Отменить
+                    </a>
+                  </div>
+                  <div class="">
+                      <button type="submit" class="button_show-more" data-comment="submit_comment">Ответить
+                      </button>
+                  </div>
+                </div>
+              </form>
+              {% endautoescape %}
+            </fieldset>
+          </div>
         </div>
-        </div>
-        <div class="pos_сenter">
-        <button type="submit" class="button_show-more">Добавить обсуждение
-        </button>
-        </div>
-    </form>
-    {% endautoescape %}
-    </fieldset>
-</div>
+      </div>
 </div>

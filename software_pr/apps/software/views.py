@@ -8,8 +8,11 @@ from django.core.paginator import *
 import dbl
 import re
 from user.models import CustomUser
+from user.views import get_user
+import util.views
 import json
-from util.views import render_similars, render_similars_tags, render_discussion_comment
+from django.template.loader import render_to_string
+from discussion.views import render_discussion_comment
 
 # Ф-ия составления списка ПО
 def catalog(request):
@@ -187,7 +190,7 @@ def software_page(request, id):
         # Второстепенные объекты - похожие ПО
         similar_block = render_similars(software)
         similar_tags_block = render_similars_tags(software)
-        discussion_comment_block = render_discussion_comment(software, limit=5)
+        discussion_comment_block = render_discussion_comment(software, request, limit=5)
 
         
         return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
@@ -214,34 +217,120 @@ def software_page(request, id):
 def add_favourite(request, software_id):
 
     try:
+        dbl.log("начало" )
         
-        if request.user.is_authenticated:
+        # if request.user.is_authenticated:
 
-            client = request.user
+        #     client = request.user
+        #     software = Software.objects.get( id = int(software_id) )
+
+        #     data = { 'status': 'success' }
+
+        #     fav = software.is_favourite(client)
+
+        #     if fav:
+                
+        #         fav.delete()
+
+        #         data['result'] = False  
+                
+        #     else:
+        #         Favourite.objects.create(client=client, software=software)
+
+        #         data['result'] = True
+
+        #     return HttpResponse(json.dumps(data), content_type='application/json')
+        # else:
+        #     pass
+        user = CustomUser()
+        cookie = {}
+
+        user, cookie = get_user(request)
+
+        dbl.log("0" )
+        if user:
+
+            dbl.log("1")
+
             software = Software.objects.get( id = int(software_id) )
 
             data = { 'status': 'success' }
 
-            fav = software.is_favourite(client)
+            fav = software.is_favourite(user)
 
             if fav:
                 
                 fav.delete()
 
                 data['result'] = False  
+                dbl.log("2")
                 
             else:
-                Favourite.objects.create(client=client, software=software)
+                Favourite.objects.create(client=user, software=software)
 
                 data['result'] = True
+                dbl.log("3")
 
+            respons = HttpResponse(json.dumps(data), content_type='application/json')
+            dbl.log("4")
 
-            # return redirect('software:catalog')
-            return HttpResponse(json.dumps(data), content_type='application/json')
+            # response = respons.set_cookie(key, value, max_age=max_age)
+            # response = util.views.wrap_cookie(response, cookie)
+            dbl.log("5")
+            # dbl.log("5" + str(response))
+            key = cookie.get('key')
+            value = cookie.get('value')
+            max_age = cookie.get('max_age')
+            dbl.log("6")
+
+            return respons.set_cookie(key, value, max_age=max_age)
+
+            # return HttpResponse(json.dumps(data), content_type='application/json')
         else:
             pass
 
-    except:
+
+    except Exception as error:
         pass
+        dbl.log("Ошибка работы " + str(error))
 
     return redirect('software:catalog')
+
+
+
+
+
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+
+# Ф-ия создания кода html для похожих ПО
+def render_similars(software):
+
+    # Получение списка похожих ПО
+    similar_list = software.get_similars()
+
+    # Хэш фотографий ПО
+    photo_dict = {}
+    result =''
+
+    for soft in similar_list:
+
+        soft_photo = soft.get_main_photo()
+
+        # Добавляем ключ и значение в словарь
+        if soft_photo is not None:
+            for s in soft_photo:
+                photo_dict[soft.id] = s
+
+    result = render_to_string('common/pattern_similars.html', {'similar_list':similar_list, 'photo_dict':photo_dict})
+    return result
+
+
+# Ф-ия создания кода html для облака тегов к ПО
+def render_similars_tags(software):
+
+    # Получение списка тегов похожих ПО
+    similar_tags_list = software.get_similars_tags()
+    result =''
+
+    result = render_to_string('common/pattern_similars_tags.html', {'similar_tags_list':similar_tags_list})
+    return result

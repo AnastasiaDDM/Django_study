@@ -215,66 +215,20 @@
       {{discussion_comment_block}}
     </div>
     </section>
-
-    <div id="pattern_form_answer" style="display: none;">
-      <div class="copy_form_answer" style="display: none;">
-        <div class=" flex_column pos_center margin_top_1em width_100">     
-          <!-- Форма комментария -->
-          <h3>Ответ
-          </h3>
-          <fieldset class=" fieldset_border_primary padding_2em_xs">
-            <form>
-              <div class="pos_center">
-                <div class="flex_row flex_space-between">
-                  <div class="input_style w_45_sm">
-                    <input type="text" id="name" autocomplete="off">
-                    <label for="name">Ваше имя
-                    </label>
-                  </div>
-                  <div class="input_style w_45_sm">
-                    <input type="text" id="phone" required>
-                    <label for="phone">Номер телефона/ эл.почта
-                    </label>
-                  </div>
-                </div>
-                <div>
-                  <div class="textarea_style margin_top_3em textarea_height_small">
-                    <textarea type="textarea"></textarea>
-                    <label id = "label" class = "textarea_style_label">Ваш комментарий
-                    </label>
-                  </div>
-                </div>
-              </div>
-    
-              <div class="flex_row flex_space-between margin_top_3em">
-                <div class="btn_cancel">
-                  <a class="button_reset">Отменить
-                  </a>
-                </div>
-                <div class="">
-                  <a href="#" class="button_reset">Оставить комментарий
-                  </a>
-                </div>
-              </div>
-            </form>
-          </fieldset>
-        </div>
-      </div>
-    </div>
     {% endblock %}	
-
-
     {% block js_extend %}
     <script src="{% static '/js/slick.min.js' %}"></script>
     <script src="{% static '/js/lightbox.min.js' %}"></script>
     <script>
         jQuery(document).ready(function () {
-          comments_form_answer();
           input_filled('input');
           input_filled('textarea');
           carousel_soft('same_software');
           read_more_text_roll();
           favourite();
+          append_discussion();
+          comments_form_answer();
+          comment_roll();
         })          
     </script>
     {% endblock %}

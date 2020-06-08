@@ -25,8 +25,6 @@ def list_review(request):
         # Здесь автоматически проверяются все поля формы методами clean_...
         if form.is_valid():
             pass
-            
-
 
         # Получение пременных из формы поиска
         rating_to = form.cleaned_data['rating_to']

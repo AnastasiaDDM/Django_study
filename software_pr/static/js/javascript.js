@@ -216,11 +216,12 @@ function comments_form_answer() {
 		else
 		{
 			comments_form_answer_show_2(elem)
-		}
+        }
+        
+        comment_roll();
 
     });
 
-    comment_roll();
     
 }
 
@@ -487,7 +488,9 @@ function append_discussion()
                 if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
                 {
                     $('#container_discussions').append(data.result);  // Ошибки нет, добавляем обсуждение
-                    comments_form_answer();                 
+                    comments_form_answer();
+                    append_comment();    
+                    comment_roll();                                
                 }
 
             } 
@@ -522,7 +525,10 @@ function append_comment()
             if (!container.length) // Нет ранее добавленных комментариев
             {
                 // Элемент, в конец которого будет добавлен блок ответа
-                container = $( container_discussion ).find(".discussion_comment");
+                // container = $( container_discussion ).find(".discussion_comment");
+                // container = container_discussion;
+                container = $( container_discussion ).find(".comment_roll");
+                
             }
 
             var options = { 
