@@ -117,6 +117,8 @@ def catalog(request):
         if soft_photo is not None:
             # dbl.log("колво "+str(count(soft_photo)))
             # if count(soft_photo) >1:
+
+            # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
             for s in soft_photo:
                 photo_dict[soft.id] = s
 
@@ -133,16 +135,42 @@ def catalog(request):
 # Страница одного ПО
 def software_page(request, id):
 
+    # Объявление начальных значений переменных
     # Хэш классификаций ПО
     classif = {}
+    software = Software()
+    software_img = Q()
+    main_photo = Q()
+    software_tag = Q()
+    list_descr = []
+    similar_block = ""
+    similar_tags_block = ""
+    discussion_comment_block = ""
 
     try:
         software = Software.objects.get( id = id )
 
+        #  Получение главного фото
+        main_photo_query = software.get_main_photo()
+        dbl.log("сойт 2  " + str(main_photo_query))
+
+
+        # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+        for photo in main_photo_query:
+            main_photo = photo
+        
+        dbl.log("сойт 3  " + str(main_photo))
+
         # Получаем список приложений данного ПО (ФАЙЛЫ, ФОТОГРАФИИ)
         software_img = software.get_addition()
 
-        
+        dbl.log("сойт 4  " + str(software_img))
+
+        # Исключения главного фото (main_photo) из списка фото
+        if software_img:
+            software_img = software_img.exclude(pk=main_photo.id)
+
+ 
         # Получаем список тегов данного ПО
         software_tag = software.get_tags()
 
@@ -151,15 +179,20 @@ def software_page(request, id):
         # Сплит строки по '\n' по первому вхождению - получаем массив элементов одной переменной
         list_descr = software.description.split('\n', 1)
 
-         # Получаем список классификаций данного ПО
+        # Получаем список классификаций данного ПО
         classif = software.get_classifications()
 
-        ar = software.get_area()
+        # ar = software.get_area()
 
         # Второстепенные объекты - похожие ПО
         similar_block = render_similars(software)
         similar_tags_block = render_similars_tags(software)
         discussion_comment_block = render_discussion_comment(software, limit=5)
+
+        
+        return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
+        'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
+        'discussion_comment_block':discussion_comment_block})
 
 
     # except:
@@ -169,9 +202,11 @@ def software_page(request, id):
         pass
         dbl.log("Ошибка работы " + str(error))
 
-    return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'classif':classif,
-    'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
-    'discussion_comment_block':discussion_comment_block})
+    # return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
+    # 'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
+    # 'discussion_comment_block':discussion_comment_block})
+
+    raise Http404("ПО не найдено")
 
 
 

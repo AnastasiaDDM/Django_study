@@ -73,10 +73,8 @@ def clean_email(self):
 
 def clean_email_phone(self):
     ephone = self.cleaned_data['email_phone']
-    dbl.log(str('клин'))
     # Проверка валидности значения номера телефона
     if (re.match(r'^\+?\s?[78]\s?[-\(]?\d{3}\)?\s?-?\s?\d{3}\s?-?\s?\d{2}\s?-?\s?\d{2}$', str(ephone)) is None) and (re.match(r'^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$', str(ephone)) is None):
-        dbl.log(str('данные ошибочны!!'))
         raise ValidationError("Некорретное значение. Попробуйте еще раз")
 
     return ephone
@@ -89,3 +87,11 @@ def clean_date(date):
         raise ValidationError("Неверный тип даты")
 
     return date
+
+
+def clean_isdigit(number):
+
+    if re.match(r'^\d+$', str(number)) is None:
+        raise ValidationError("Неверный формат номера, используйте только цифры")
+
+    return number

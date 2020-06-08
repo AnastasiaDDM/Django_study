@@ -31,20 +31,20 @@
       <div class="flex_column w_50_sm pos_center_sm"> 
         <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
         <div class="flex_row flex_wrap">
-          {% if software_img %}
-          {% for s in software_img %}
-            {% if s.is_main == 'True' %}
+        {% if main_photo %}
+        <a class="example-image-link" href="{{main_photo.photo.url}}" data-lightbox="example-set" 
+        data-title="{{main_photo.name}}"><img class="example-image img_width padding_bottom_2em" src="{{main_photo.photo.url}}" alt="{{main_photo.name}}"/></a>
+        {% endif %} 
+        {% if software_img %}
+        {% for s in software_img %}
+        <div class = "img_margin">
             <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
-            data-title="{{s.name}}"><img class="example-image img_width padding_bottom_2em" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
-            {% else %}
-            <div class = "img_margin">
-              <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
-              data-title="{{s.name}}"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
-            </div>
-            {% endif %} 
-          {% endfor %}
-        {% else %}
-          Фотографий нет
+            data-title="{{s.name}}"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
+        </div>
+        {% endfor %}
+        {% endif %} 
+        {% if not main_photo and not software_img %}
+            Фотографий нет
         {% endif %} 
         </div>
             {% if software_tag %}

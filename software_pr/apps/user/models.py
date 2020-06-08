@@ -39,7 +39,11 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.email
+        if self.email:
+            return self.email
+        else:
+            return self.phone
+
 
     class Meta:
         verbose_name = 'Пользователь'

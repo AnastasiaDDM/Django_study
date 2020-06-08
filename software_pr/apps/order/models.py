@@ -28,6 +28,7 @@ class Order(models.Model):
     manager = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Менеджер', null=True, blank=True, related_name='order_manager')
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
+    type_soft = models.CharField('Тип ПО', max_length = 200, null=True, blank=True)
 
     class Meta:
         verbose_name = 'Заказ'
@@ -37,5 +38,4 @@ class Order(models.Model):
     @staticmethod
     # Ф-ия получения списка избранных по клиенту
     def get_orders_by_user(client):
-        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
         return Order.objects.filter(client=client.id)

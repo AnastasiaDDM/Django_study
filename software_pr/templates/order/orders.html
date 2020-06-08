@@ -19,13 +19,12 @@
         {% breadcrumb_url 'Мои заказы' %}
         </ul>
         {% endblock %}
-        {{orders}}
         <section class="margin_top_3em"> 
           <div class="order_search_size">
             <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
               <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
             <fieldset class="fieldset_border_primary search_div_fieldset">
-              <form data-target="form_search">
+              <form data-target="form_search" method="get" id="form_search_orders">
                 <div class="flex_row width_100 flex_space-between margin_top_1em">
                   <div class="slct_div find_column-3 " id="div_date_select">
                     <a href="javascript:void(0);" id="date_type_select_a" class="slct">Выберите по какой дате искать:
@@ -211,6 +210,11 @@
                     </li>
                   </ul>
                 </div>
+                {% if form.has_changed %}
+                <div class="pos_left_for_text input_style_error">{{ form.errors.number }}
+                    {{ form.errors.date_from }} 
+                    {{ form.errors.date_to }}</div>
+                {% endif %}
                 <div class="flex_row flex_space-between ">
                   <div class="margin_top-bootom_1em">
                     <button data-rel="form_search" class="button_reset">Сбросить
@@ -316,7 +320,6 @@
                 <fieldset class=" order_card margin_top_2" name="fieldset">
                   <legend>Заказ №{{order.id}}
                   </legend>
-                  <form>
                     <div class="float_right ml_mb">
                       <div class="order_type_i pos_right order_card_type_state_small">
                         {% if order.kind == 'buy' %}
@@ -343,7 +346,7 @@
                         {% endif %}
                         
                       </div>
-                      <div class = "orders_text_small" href="URL">Настольное приложение
+                      <div class = "orders_text_small" href="URL">{{order.type_soft}}
                       </div>
                       <div class="float_right w_55_xs">
                         <div  class="order_state_dev">В разработке
@@ -384,7 +387,6 @@
                         </i>
                       </div>
                     </div>
-                  </form>
                 </fieldset>
               </article>
             </div>
@@ -740,6 +742,7 @@
     </script>
     <script src="{% static '/js/datepicker.ru.js' %}">
     </script>
+    <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
     <script>
     jQuery(document).ready(function () {
         datepicker_init();
@@ -758,6 +761,18 @@
             $("#dateto_input").attr("disabled", false); 
             }	  
         });
+        // form_validate(
+        //         $("#form_search_orders"), 
+        //         {	
+        //             phone:{mobileRU: true},
+                    
+        //         },
+        //         {
+        //             name:{required: "Введите имя"},
+        //             date_to:{date: "Введите корректное значение конечной даты"},
+        //             phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
+        //         }
+        //         )
     })         
     </script>
     {% endblock %}

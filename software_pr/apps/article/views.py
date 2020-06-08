@@ -13,15 +13,13 @@ from django.http import HttpResponse, HttpRequest
 import dbl
 
 # Ф-ия списка статей
-def list_article(request, **kwargs):
+def list_article(request):
     art_list = Article.objects.all()
 
     # Получение пременных из формы поиска
     search_query_name = request.GET.get('article_name', '')
     art_author = request.GET.get('article_author', '')
 
-
-    dbl.log("aaaaaa  "+ str(kwargs))
     dbl.log("fffff  "+ str(art_author))
 
     art_date_from = request.GET.get('article_date_from', '')
@@ -51,8 +49,6 @@ def list_article(request, **kwargs):
 
         if str(art_author).isdigit():
 
-            dbl.log("111")
-
             art_list = art_list.filter(author__id=int(art_author), date_of_delete=None).order_by('-date_of_review')
 
             author = CustomUser.objects.get( id = art_author )
@@ -60,7 +56,6 @@ def list_article(request, **kwargs):
 
         else :
 
-            dbl.log("333")
             art_list = art_list.filter((Q(author__name__icontains=art_author) | Q(author__surname__icontains=art_author) | Q(author__patronymic__icontains=art_author)), date_of_delete=None).order_by('-date_of_review')
 
         

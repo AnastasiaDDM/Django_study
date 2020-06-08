@@ -236,7 +236,6 @@ class Software(models.Model):
 
         tag_list = []
 
-        dbl.log("айди " + str(software_id))
 
         tag_raw = Tag.objects.raw('''select distinct tags.*
                                         from new_db.software_tag tags
@@ -252,7 +251,6 @@ class Software(models.Model):
 
         for p in tag_raw:
 
-            dbl.log(".t  " + str(p))
             tag_list.append(p)
         
         return tag_list

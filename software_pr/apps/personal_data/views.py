@@ -65,9 +65,9 @@ def favourites_clean(request):
 
 
 
-# Заказы
-def orders(request):
-    if request.user.is_authenticated:
-        orders = Order.get_orders_by_user(request.user)
-        dbl.log(str(orders))
-        return render(request, 'order/orders.html', {'orders':orders})
+# # Заказы
+# def orders(request):
+#     if request.user.is_authenticated:
+#         orders = Order.get_orders_by_user(request.user)
+#         dbl.log(str(orders))
+#         return render(request, 'order/orders.html', {'orders':orders})
