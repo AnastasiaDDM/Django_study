@@ -125,7 +125,19 @@ def get_user(request):
 
         if request.COOKIES.get('guest_session'):
             dbl.log('есть такие куки' )
-            user = CustomUser.get_user( field = 'guest_session', value= request.COOKIES.get('guest_session') )
+            try:
+                dbl.log('111111')
+                user = CustomUser.get_user( field = 'guest_session', value= request.COOKIES.get('guest_session') )
+                dbl.log('22222')
+
+            # Такого пользователя в бд нет, нужно добавить 
+            except :
+                dbl.log('3333')
+                session_string = request.COOKIES.get('guest_session')
+                dbl.log(str(session_string))
+                max_age = 365 * 12 * 3600 * 2
+                # Добавления пользователя в бд
+                user = CustomUser.objects.create_user(session=session_string, max_age=max_age)
             # dbl.log('есть такие куки' +str(user) )
 
         else:

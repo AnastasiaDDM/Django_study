@@ -125,14 +125,46 @@ def catalog(request):
             for s in soft_photo:
                 photo_dict[soft.id] = s
 
+    user = CustomUser()
+    cookie = {}
+
+    user, cookie = get_user(request)
+
+    dbl.log("5")
+    # dbl.log("5" + str(response))
+    key = cookie.get('key')
+    value = cookie.get('value')
+    max_age = cookie.get('max_age')
+    dbl.log("6")
+
+    # return respons.set_cookie(key, value, max_age=max_age)
+
+
 
     # Получение списка всех видов ПО
     classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
 
-    return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
+    # response = HttpResponse()
+    # response.set_cookie('color', 'blue')
+    # return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
+    # 'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
+    # 'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
+    # 'classification_dict':classification_dict}).set_cookie(key, value, max_age=max_age)
+    # # return response
+
+
+    response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
     'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
     'classification_dict':classification_dict})
+
+    response.set_cookie(key, value, max_age=max_age)
+    return response
+
+    # return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
+    # 'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
+    # 'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
+    # 'classification_dict':classification_dict})
 
 
 # Страница одного ПО
@@ -271,21 +303,34 @@ def add_favourite(request, software_id):
                 data['result'] = True
                 dbl.log("3")
 
-            respons = HttpResponse(json.dumps(data), content_type='application/json')
-            dbl.log("4")
+            # respons = HttpResponse(json.dumps(data), content_type='application/json')
+            # dbl.log("4")
 
-            # response = respons.set_cookie(key, value, max_age=max_age)
-            # response = util.views.wrap_cookie(response, cookie)
+            # # response = respons.set_cookie(key, value, max_age=max_age)
+            # # response = util.views.wrap_cookie(response, cookie)
             dbl.log("5")
             # dbl.log("5" + str(response))
-            key = cookie.get('key')
-            value = cookie.get('value')
-            max_age = cookie.get('max_age')
+            key =""
+            value = ""
+            # key = cookie.get('key')
+            # value = cookie.get('value')
+            # max_age = cookie.get('max_age')
             dbl.log("6")
+            # dbl.log(str(key))
+            # dbl.log(str(value))
 
-            return respons.set_cookie(key, value, max_age=max_age)
+            # return respons.set_cookie(key, value, max_age=max_age)
 
             # return HttpResponse(json.dumps(data), content_type='application/json')
+
+            dbl.log("7")
+            response = HttpResponse(json.dumps(data), content_type='application/json')
+            response.set_cookie('color', 'blue')
+            # response = HttpResponse(json.dumps(data), content_type='application/json')
+            return response
+
+
+
         else:
             pass
 
@@ -294,7 +339,7 @@ def add_favourite(request, software_id):
         pass
         dbl.log("Ошибка работы " + str(error))
 
-    return redirect('software:catalog')
+    return redirect('software:catalog').set_cookie('color', 'blue333')
 
 
 
