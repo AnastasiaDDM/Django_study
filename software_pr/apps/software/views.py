@@ -13,6 +13,7 @@ import util.views
 import json
 from django.template.loader import render_to_string
 from discussion.views import render_discussion_comment
+from order.models import Order
 
 
 # Ф-ия составления списка ПО
@@ -273,9 +274,30 @@ def software_buy(request, software_id):
 
         if user:
 
+            # Объявление начальных значений
+            order = None
+            url_to_pay = ""
+
             software = Software.objects.get( id = int(software_id) )
 
-            response = render(request, 'soft/buy.html', {'software':software, 'user':user})
+            # Создание заказа
+            new_order = Order()
+            new_order.software = software
+            new_order.client = user
+            new_order.cost = software.price
+            new_order.name = software.name
+            # todo
+            # Еще добавить тип ПО надо!
+            # Еще добавить тип заказа надо!
+
+            order = new_order.get_order_or_create()
+            dbl.log("заказ " + str(order))
+
+            if order:
+                # Строка запроса к платежной системе
+                url_to_pay = "/order_id=" + str(order.pk) + "&amount=" + str(order.cost)
+
+            response = render(request, 'soft/buy.html', {'software':software, 'user':user, 'url_to_pay':url_to_pay})
             response = util.views.wrap_cookie(response, cookie)
             return response
 
@@ -290,6 +312,7 @@ def software_buy(request, software_id):
 def software_download(request, software_id):
 
     form = Register_by_email_phone_Form()
+    url_to_download = ""
 
     try:
         # Объявление начальных значений
@@ -303,6 +326,11 @@ def software_download(request, software_id):
 
             software = Software.objects.get( id = int(software_id) )
 
+            # if software:
+                # Строка запроса к платежной системе
+                # url_to_download = "/software_id=" + str(software.pk) + "&amount=" + str(software.cost)
+
+
             response = render(request, 'soft/download.html', {'software':software, 'user':user})
             response = util.views.wrap_cookie(response, cookie)
             return response
@@ -312,6 +340,41 @@ def software_download(request, software_id):
         dbl.log("Ошибка работы " + str(error))
 
     return redirect('software:catalog')
+
+
+# Ф-ия добавления избранного
+def add_download(request, software_id):
+    
+    message =""
+    download_link=""
+    list_crumb =[]
+
+    try:
+
+        # Получения пользователя
+        user = CustomUser.get_user(request)
+
+        if user:
+
+            software = Software.objects.get( id = int(software_id) )
+
+            Download.objects.get_or_create(client=user, software=software)
+
+            message = "Благодарим вас за доверие!"
+            download_link = "скачать.ссылка"
+            h1 = "Успешная загрузка"
+            list_crumb = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name, 'software:software_page', software.id], ['Скачать бесплатно', 'software:software_download', software.id]]
+
+            return render(request, 'common/successfull.html', {'message':message, 'download_link':download_link, 'h1':h1, 'list_crumb':list_crumb})
+
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
+
+    message = "К сожалению, что-то пошло не так. Возможно вам стоит попробовать в следующий раз."
+
+    return render(request, 'common/fail.html', {'message':message})
+
 
 
 

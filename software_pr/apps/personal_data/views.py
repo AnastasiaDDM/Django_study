@@ -81,3 +81,15 @@ def favourites_clean(request):
 #         orders = Order.get_orders_by_user(request.user)
 #         dbl.log(str(orders))
 #         return render(request, 'order/orders.html', {'orders':orders})
+
+
+# Загрузки
+def downloads(request):
+    # Получения пользователя
+    user = CustomUser.get_user(request)
+
+    if user:
+        downloads = Software.get_downloads_by_user(user)
+
+        response= render(request, 'user/downloads.html', {'downloads':downloads, 'user':user})
+        return response

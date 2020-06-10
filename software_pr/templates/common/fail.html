@@ -1,7 +1,7 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}{{title|default:"Успешно"}}{% endblock %}
+<title>{% block page_title %}{{title|default:"Ошибка"}}{% endblock %}
  {% block content %}
       <section>
         {% block breadcrumb %}
@@ -13,13 +13,13 @@
         {% breadcrumb_url crumb.0 crumb.1 %}
         {% endif %}
         {% endfor %}
-        {% breadcrumb_url 'Успешно' %}
+        {% breadcrumb_url 'Оплата не прошла' %}
         </ul>
         {% endblock %}
         <div class="margin_top_2">     
-          <fieldset class="border_fieldset_top">
+          <fieldset class="border_fieldset_top_fail">
             <legend class="pos_center padding_left-right_1em">
-              <h1>{{h1|default:"Успешно"}}
+              <h1>Ошибка
               </h1>
             </legend>
             <form>
@@ -30,12 +30,6 @@
                         {{message}}
                         {% endif %}
                     </div>
-                    {% if download_link %}
-                    <div class="padding_bottom_1em pos_center a_big">
-                        Ссылка для скачивания: 
-                        <a class="link_style_border link_read-more">{{download_link}}</a>
-                    </div>
-                    {% endif %}
                     {% if not request.user.is_authenticated %}
                     <div class="margin_top_3em pos_center">
                         Для удобной работы на нашем сайте предлагаем вам зарегистрироваться
@@ -49,7 +43,7 @@
                     {% endif %}
                 </div>
                 <div class="margin_top-bootom_1em">
-                  <i class="fa fa-check i_big" aria-hidden="true">
+                  <i class="fa fa-times i_big" style="color:#D9756C"aria-hidden="true">
                   </i>
                 </div>
               </div>

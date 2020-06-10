@@ -30,8 +30,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    
+
     'order.apps.OrderConfig',
+    'pay.apps.PayConfig',
     'discussion.apps.DiscussionConfig',
     'personal_data.apps.PersonalDataConfig',
     'feedback.apps.FeedbackConfig',

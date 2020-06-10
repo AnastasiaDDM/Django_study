@@ -368,13 +368,27 @@ class Favourite(models.Model):
         verbose_name_plural = 'Избранные'
 
     @staticmethod
-    # Ф-ия получения списка избранных в промежуточной таблице по клиенту
+    # Ф-ия получения списка избранных в Favourite таблице по клиенту
     def get_favourites_by_user(client):
         # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
         return Favourite.objects.filter(client=client.id)
 
 
 
+# Избранные - ПО №2: (клиент)
+class Download(models.Model):
+    software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
+    client = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, verbose_name='Клиент')
+    date_joined = models.DateTimeField('Дата создания', auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Загрузка'
+        verbose_name_plural = 'Загрузки'
+
+    @staticmethod
+    # Ф-ия получения списка избранных в Download таблице по клиенту
+    def get_downloads_by_user(client):
+        return Download.objects.filter(client=client.id)
 
         
 

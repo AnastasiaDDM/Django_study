@@ -2,8 +2,8 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from user.models import CustomUser
 from software.models import Software
-import pay.models as Pay_models
 from django.db.models import Sum
+import dbl
 
 class Order(models.Model):
 
@@ -46,11 +46,38 @@ class Order(models.Model):
 
     # Ф-ия получения суммы оплат по данному заказу и обновление paid_amount
     def set_paid_amount(self):
+        try:
+            dbl.log("эмм  ")
+            dbl.log("эмм  " + str(self)+ str(self.id))
+            # amount = pay.models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
+            amount = pay.models.Pay.objects.filter(order=self.id)
+            dbl.log("эмм  "+ str(amount))
+            # Изменение поля paid_amount в Order
+            self.paid_amount = amount
+            dbl.log("эмм 2 ")
+            self.save()
 
-        amount = Pay_models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
+        except :
+            return False
 
-        # Изменение поля paid_amount в Order
-        self.paid_amount = amount
-        self.save()
+        return True
 
-        return amount
+
+    # Метод возвращающий заказ или добавляет и возвращает его
+    def get_order_or_create(self):
+
+        try:
+            # Получение уже имеющегося в бд заказа
+            order = Order.objects.get( software=self.software, client=self.client )
+
+        except:
+
+            # Такого заказа нет, добавляем его в бд
+            order.save()
+            
+            # Получение добавленного заказа
+            order = Order.objects.get( software=self.software, client=self.client )
+
+        return order
+
+        

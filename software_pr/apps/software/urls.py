@@ -11,6 +11,7 @@ urlpatterns = [
     path('favourite/<int:software_id>', views.add_favourite, name='add_favourite'),  
     path('<int:software_id>/buy/', views.software_buy, name='software_buy'), 
     path('<int:software_id>/download/', views.software_download, name='software_download'),
+    path('<int:software_id>/download/add', views.add_download, name='add_download'),
     # path('<int:id>/discussions', discussions, name = 'discussions'),
 
     # path('<int:id_soft>/review_create/success/', review_success, name = 'review_success'),

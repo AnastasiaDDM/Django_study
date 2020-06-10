@@ -1,29 +1,23 @@
-<HttpResponse status_code=200, "text/html; charset=utf-8">
-сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
-сойт 3  Грузоперевозки
-сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
-айди 1
-.t  Кафе
+000  3
+00000 Order object (3)
+1  
+2  
+33  3
+33  
+3  
+4  
+5  
+эмм  
+эмм  Order object (3)3
+Ошибка работы name 'order' is not defined
+Ошибка работы name 'order' is not defined
+заказ Order object (3)
+Ошибка работы 'Software' object has no attribute 'cost'
+Ошибка работы default requires 2 arguments, 1 provided
+Ошибка работы default requires 2 arguments, 1 provided
+сойт 2  <QuerySet []>
+сойт 3  (AND: )
+сойт 4  <QuerySet []>
+айди 3
+.t  Грузоперевозки
 .t  Поликлиника
-.t  Образование
-сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
-сойт 3  Грузоперевозки
-сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Образование
-сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
-сойт 3  Грузоперевозки
-сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Образование
-сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
-сойт 3  Грузоперевозки
-сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
-айди 1
-.t  Кафе
-.t  Поликлиника
-.t  Образование
