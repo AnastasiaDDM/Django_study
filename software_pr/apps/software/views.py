@@ -8,11 +8,12 @@ from django.core.paginator import *
 import dbl
 import re
 from user.models import CustomUser
-from user.views import get_user
+from user.forms import Register_by_email_phone_Form
 import util.views
 import json
 from django.template.loader import render_to_string
 from discussion.views import render_discussion_comment
+
 
 # Ф-ия составления списка ПО
 def catalog(request):
@@ -125,46 +126,17 @@ def catalog(request):
             for s in soft_photo:
                 photo_dict[soft.id] = s
 
-    user = CustomUser()
-    cookie = {}
-
-    user, cookie = get_user(request)
-
-    dbl.log("5")
-    # dbl.log("5" + str(response))
-    key = cookie.get('key')
-    value = cookie.get('value')
-    max_age = cookie.get('max_age')
-    dbl.log("6")
-
-    # return respons.set_cookie(key, value, max_age=max_age)
-
-
+    # Получение текущего пользователя 
+    user = CustomUser.get_user(request)
 
     # Получение списка всех видов ПО
     classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
 
-    # response = HttpResponse()
-    # response.set_cookie('color', 'blue')
-    # return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
-    # 'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
-    # 'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
-    # 'classification_dict':classification_dict}).set_cookie(key, value, max_age=max_age)
-    # # return response
-
-
     response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
     'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
-    'classification_dict':classification_dict})
-
-    response.set_cookie(key, value, max_age=max_age)
+    'classification_dict':classification_dict, 'user':user})
     return response
-
-    # return render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
-    # 'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
-    # 'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
-    # 'classification_dict':classification_dict})
 
 
 # Страница одного ПО
@@ -205,10 +177,8 @@ def software_page(request, id):
         if software_img:
             software_img = software_img.exclude(pk=main_photo.id)
 
- 
         # Получаем список тегов данного ПО
         software_tag = software.get_tags()
-
 
         #  Для разрыва текста (скрытого и открытого)
         # Сплит строки по '\n' по первому вхождению - получаем массив элементов одной переменной
@@ -224,10 +194,12 @@ def software_page(request, id):
         similar_tags_block = render_similars_tags(software)
         discussion_comment_block = render_discussion_comment(software, request, limit=5)
 
+        # Получение текущего пользователя 
+        user = CustomUser.get_user(request)
         
         return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
         'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
-        'discussion_comment_block':discussion_comment_block})
+        'discussion_comment_block':discussion_comment_block, 'user':user})
 
 
     # except:
@@ -249,40 +221,14 @@ def software_page(request, id):
 def add_favourite(request, software_id):
 
     try:
-        dbl.log("начало" )
-        
-        # if request.user.is_authenticated:
-
-        #     client = request.user
-        #     software = Software.objects.get( id = int(software_id) )
-
-        #     data = { 'status': 'success' }
-
-        #     fav = software.is_favourite(client)
-
-        #     if fav:
-                
-        #         fav.delete()
-
-        #         data['result'] = False  
-                
-        #     else:
-        #         Favourite.objects.create(client=client, software=software)
-
-        #         data['result'] = True
-
-        #     return HttpResponse(json.dumps(data), content_type='application/json')
-        # else:
-        #     pass
-        user = CustomUser()
+        # Объявление начальных значений
+        user = None
         cookie = {}
 
-        user, cookie = get_user(request)
+        # Получение текущего пользователя 
+        user, cookie = CustomUser.get_user_or_create(request)
 
-        dbl.log("0" )
         if user:
-
-            dbl.log("1")
 
             software = Software.objects.get( id = int(software_id) )
 
@@ -295,53 +241,77 @@ def add_favourite(request, software_id):
                 fav.delete()
 
                 data['result'] = False  
-                dbl.log("2")
                 
             else:
                 Favourite.objects.create(client=user, software=software)
 
                 data['result'] = True
-                dbl.log("3")
 
-            # respons = HttpResponse(json.dumps(data), content_type='application/json')
-            # dbl.log("4")
-
-            # # response = respons.set_cookie(key, value, max_age=max_age)
-            # # response = util.views.wrap_cookie(response, cookie)
-            dbl.log("5")
-            # dbl.log("5" + str(response))
-            key =""
-            value = ""
-            # key = cookie.get('key')
-            # value = cookie.get('value')
-            # max_age = cookie.get('max_age')
-            dbl.log("6")
-            # dbl.log(str(key))
-            # dbl.log(str(value))
-
-            # return respons.set_cookie(key, value, max_age=max_age)
-
-            # return HttpResponse(json.dumps(data), content_type='application/json')
-
-            dbl.log("7")
             response = HttpResponse(json.dumps(data), content_type='application/json')
-            response.set_cookie('color', 'blue')
-            # response = HttpResponse(json.dumps(data), content_type='application/json')
+            response = util.views.wrap_cookie(response, cookie)
             return response
-
-
-
-        else:
-            pass
-
 
     except Exception as error:
         pass
         dbl.log("Ошибка работы " + str(error))
 
-    return redirect('software:catalog').set_cookie('color', 'blue333')
+    return redirect('software:catalog')
 
 
+# Ф-ия отображения страницы покупки
+def software_buy(request, software_id):
+
+    form = Register_by_email_phone_Form()
+
+    try:
+        # Объявление начальных значений
+        user = None
+        cookie = {}
+
+        # Получение текущего пользователя 
+        user, cookie = CustomUser.get_user_or_create(request)
+
+        if user:
+
+            software = Software.objects.get( id = int(software_id) )
+
+            response = render(request, 'soft/buy.html', {'software':software, 'user':user})
+            response = util.views.wrap_cookie(response, cookie)
+            return response
+
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
+
+    return redirect('software:catalog')
+
+
+# Ф-ия отображения страницы покупки
+def software_download(request, software_id):
+
+    form = Register_by_email_phone_Form()
+
+    try:
+        # Объявление начальных значений
+        user = None
+        cookie = {}
+
+        # Получение текущего пользователя 
+        user, cookie = CustomUser.get_user_or_create(request)
+
+        if user:
+
+            software = Software.objects.get( id = int(software_id) )
+
+            response = render(request, 'soft/download.html', {'software':software, 'user':user})
+            response = util.views.wrap_cookie(response, cookie)
+            return response
+
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
+
+    return redirect('software:catalog')
 
 
 

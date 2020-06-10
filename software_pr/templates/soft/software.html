@@ -88,15 +88,17 @@
                 <button class="button_pay button_pay_width_full">Заказать доработку
                 </button>
                 <div>
-                {% if request.user.is_authenticated %}
-                {% with favourite=software|is_favourite:request.user %}
+                {% if user %}
+                {% with favourite=software|is_favourite:user %}
                     {% if favourite %}
                     <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
                     {% else %}
                     <i class="fa fa-heart button_like" aria-hidden="true"></i>
                     {% endif %}
                 {% endwith %}
-                {% endif %}  
+                {% else %}
+                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                {% endif %} 
                 </div>
             </div>
             {% else %}
@@ -106,14 +108,16 @@
                 </button>
                 <div>
                     <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{software.id}}">
-                    {% if request.user.is_authenticated %}
-                    {% with favourite=software|is_favourite:request.user %}
+                    {% if user %}
+                    {% with favourite=software|is_favourite:user %}
                         {% if favourite %}
                         <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
                         {% else %}
                         <i class="fa fa-heart button_like" aria-hidden="true"></i>
                         {% endif %}
                     {% endwith %}
+                    {% else %}
+                    <i class="fa fa-heart button_like" aria-hidden="true"></i>
                     {% endif %}  
                     </div>
                 </div>

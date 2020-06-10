@@ -11,10 +11,14 @@ import dbl
 
 # Заказы
 def orders(request):
-    if request.user.is_authenticated:
+
+    # Получения пользователя
+    user = CustomUser.get_user(request)
+
+    if user:
 
         # Получение неотфильтрованного списка заказов клиента
-        orders = Order.get_orders_by_user(request.user)
+        orders = Order.get_orders_by_user(user)
         orders = orders.filter(date_of_delete=None, visibility=True)
 
         # Получение данных из формы в переменную
@@ -123,7 +127,7 @@ def orders(request):
             # ЗДЕСЬ НУЖНО БУДЕТ СДЛЕАТЬ РЕДИРЕКТ НА ОБЩУЮ СТРАНИЦУ С ОПИСАНЕИМ ОШИБКИ И ССЫЛКАМИ НА ЛК, КАТАЛОГ И ТД
                 dbl.log("Ошибка работы с заказами" + str(error))
 
-        return render(request, 'order/orders.html', {'orders':orders, 'form':form})
+        return render(request, 'order/orders.html', {'orders':orders, 'form':form, 'user':user})
 
     else:
         

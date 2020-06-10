@@ -10,7 +10,7 @@ import dbl
 import re
 from django.contrib.auth import authenticate, login, logout
 from .forms import LoginForm, RegisterForm
-import secrets
+
 
 # Ф-ия определния что именно передано в нее: номер телефона или эл.почта
 def is_email(email_phone=None):
@@ -103,59 +103,6 @@ def Logout(request):
     return redirect('software:catalog')
 
 
-# Метод возвращающий пользователя, гостя или добавляет гостя и возвращает его
-def get_user(request):
 
-    dbl.log("11" )
-
-    user = CustomUser()
-    cookie = {}
-    session_string =""
-    max_age = None
-
-    if request.user.is_authenticated:
-        user = request.user
-        dbl.log('эзареган' )
-        # photo_dict[software.id] = s
-        
-
-    else:
-
-        dbl.log(' не эзареган' )
-
-        if request.COOKIES.get('guest_session'):
-            dbl.log('есть такие куки' )
-            try:
-                dbl.log('111111')
-                user = CustomUser.get_user( field = 'guest_session', value= request.COOKIES.get('guest_session') )
-                dbl.log('22222')
-
-            # Такого пользователя в бд нет, нужно добавить 
-            except :
-                dbl.log('3333')
-                session_string = request.COOKIES.get('guest_session')
-                dbl.log(str(session_string))
-                max_age = 365 * 12 * 3600 * 2
-                # Добавления пользователя в бд
-                user = CustomUser.objects.create_user(session=session_string, max_age=max_age)
-            # dbl.log('есть такие куки' +str(user) )
-
-        else:
-
-            # Устанавливаем куки и добавляем пользователя в бд
-            session_string = secrets.token_urlsafe(32) 
-            dbl.log(str(session_string))
-            # Срок хранения кук -2 года
-            max_age = 365 * 12 * 3600 * 2
-
-            dbl.log('нет таких куки')
-
-            # Добавления пользователя в бд
-            user = CustomUser.objects.create_user(session=session_string, max_age=max_age)
-            # dbl.log('нет таких куки' +str(user) )
-
-    # dbl.log(str(user))
-    cookie = {'key': 'guest_session', 'value': user.guest_session, 'max_age': user.max_age}
-    return user, cookie
 
 

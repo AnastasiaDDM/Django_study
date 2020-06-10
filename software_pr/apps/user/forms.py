@@ -77,3 +77,17 @@ class RegisterForm(forms.Form):
         # }
         # {{form.name}}, {{form.phone}} -  таким будет обращение к этим полям из шаблона,
         # {{ form.errors.name }} - а это обращение к ошибкам, генерируемым методами clean_...
+
+
+
+
+class Register_by_email_phone_Form(forms.Form):
+    
+    email_phone = forms.CharField(max_length = 50)
+
+    #  Ф-ии проверки валидности полей
+    def clean_email_phone(self):
+
+        return util.forms.clean_email_phone(self)
+
+

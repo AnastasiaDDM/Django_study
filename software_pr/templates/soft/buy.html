@@ -1,0 +1,69 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+<title>{% block page_title %}Покупка ПО{% endblock %}
+{% block content %}
+<section>
+    {% block breadcrumb %}
+    <ul class="breadcrumb">
+    {% breadcrumb_url 'Главная' 'software:catalog' %}
+    {% breadcrumb_url 'Каталог' 'software:catalog' %}
+    {% breadcrumb_url software.name 'software:software_page' software.id %}
+    {% breadcrumb_url 'Покупка' %}
+    </ul>
+    {% endblock %}
+    <div class="margin_top_2">     
+        <fieldset class="border_fieldset_top" >
+        <legend class="pos_center padding_left-right_1em">
+            <h1>Приобретение программного продукта
+            </h1>
+        </legend>
+        <form>
+            <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+            <div class="input_style margin_top_3em">
+                <input type="text" id="email_phone" name="email_phone">
+                <label for="email_phone">Номер телефона/ эл. почта
+                </label>
+            </div>
+            <div class="pos_left_for_text padding_bottom_1em margin_top_1em">
+                <i class="fa fa-exclamation order_chat_i margin_right_04em" 
+                    aria-hidden="true">
+                </i>
+                Рекомендуется: Зарегистрируйтесь в один клик, чтобы не потерять свои заказы и скачивания. Для этого вам нужно всего лишь ввести свой номер телефона, и данный заказ будет привязан к вашему номеру телефона.
+                Это необязательно.
+            </div>
+            <div class="pos_left_for_text orders_text_big text_bold padding_top-bootom_1em">
+                Итого к оплате: {{software.price}} &#8381
+            </div>
+            <div class="pos_left_for_text">
+                Далее вам будут предложены различные способы оплаты вашего заказа. После оплаты
+                ссылка на скачивание появится на странице, также посмотреть свои заказы можно в личном кабинете при условии регистрации.
+            </div>
+            <div class="margin_top-bootom_1em">
+                <i class="fa fa-cart-arrow-down i_big" aria-hidden="true">
+                </i>
+            </div>
+            <div class="flex_row flex_space-between margin_top_3em">
+                <div class="pos_сenter">
+                <a href="{% url 'software:catalog' %}" class="button_reset">Отменить
+                </a>
+                </div>
+                <div class="pos_сenter">
+                <a href="#" class="button_show-more">Перейти к оплате
+                </a>
+                </div>
+            </div>
+            </div>
+        </form>
+        </fieldset>
+    </div>
+</section>
+{% endblock %}
+{% block js_extend %}
+<script>
+jQuery(document).ready(function () {
+    input_filled();
+})
+</script>
+{% endblock %}  
+

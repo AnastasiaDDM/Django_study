@@ -37,16 +37,14 @@ class CustomUserManager(BaseUserManager):
         return user
 
 
-    def create_user(self, email=None, phone=None, password=None, session=None, max_age=None, **extra_fields):
+    def create_user(self, email=None, phone=None, password=None, session=None, expires=None, **extra_fields):
 
         if session:
             dbl.log('сесиия ' +str(session)  )
-            dbl.log("время "+str(max_age))
+            dbl.log("время "+str(expires))
             extra_fields.setdefault('is_superuser', False)
-            user = self.model(guest_session=session, max_age=max_age)
-            # user = Cus
-            # user.guest_session = session
-            # user.max_age =max_age
+            user = self.model(guest_session=session, expires=expires)
+
             user.save()
             dbl.log('сесиия юзер до' )
             # dbl.log('сесиия юзер' +str(user) )

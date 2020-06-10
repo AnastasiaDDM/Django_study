@@ -309,7 +309,7 @@
           <!-- Контейнер для всех карточек --> 
           <div  class="flex_row pos_center article_container padding_bottom_2em margin_top_2">
 
-            {% if request.user.is_authenticated %}
+            {% if user %}
             {% if orders %}
             {% for order in orders %}
 

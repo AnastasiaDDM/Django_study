@@ -288,17 +288,16 @@
                                   </div>
                                   <div class="flex_row software_container_button flex_space-between"> 
                                     <!-- Бокс кнопки покупки и лайка --> 
-                                    <button  href="software.html" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">       
+                                          
                                         {% if s.price <= 0 or s.is_free %}
-                                        Скачать бесплатно
+                                        <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_download' s.id %}" class="text_color_white">Скачать бесплатно</a></button>
                                         {% else %}
-                                        Приобрести
-                                        {% endif %}  
-                                    </button>
+                                        <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_buy' s.id %}" class="text_color_white">Приобрести</a></button>
+                                        {% endif %}                  
                                     <div>
                                         <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">
-                                        {% if request.user.is_authenticated %}
-                                        {% with favourite=s|is_favourite:request.user %}
+                                        {% if user %}
+                                        {% with favourite=s|is_favourite:user %}
                                             {% if favourite %}
                                             <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
                                             {% else %}

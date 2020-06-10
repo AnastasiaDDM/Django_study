@@ -34,19 +34,11 @@ def is_identical_for_dict(dictionary, value):
             
     return False
 
-    # if val_obj.id in dictionary.values():
-
-    #     dbl.log("дваааааа "+str(val_obj.id))
-    #     return True
-    # else:
-    #     return False
-
 
 @register.filter(name='get_value_for_dict')
 def get_value_for_dict(dictionary, key):
     try:
         return dictionary.get(key)
-
     except:
         return None
 
@@ -55,9 +47,8 @@ def get_value_for_dict(dictionary, key):
 # Ф-ия проверки является ли данное ПО избранным у конкретного клиента
 @register.filter(name='is_favourite')
 def is_favourite(self, client):
-    try:
-        dbl.log(str(client))  
-        return Favourite.objects.filter(software=self.id, client=client )
+    try: 
+        return Favourite.objects.filter(software=self.id, client=client.id )
     except:
         return None
 
@@ -67,8 +58,7 @@ def is_favourite(self, client):
 def get_date_joined(self, client):
     try:
         if client:
-            favourite = Favourite.objects.get(software=self.id, client=client)
-            # dbl.log(str(favourite.date_joined))  
+            favourite = Favourite.objects.get(software=self.id, client=client.id) 
             return favourite.date_joined
         return None
     except:

@@ -16,7 +16,7 @@
     </ul>
     {% endblock %}
     <section class="margin_top_3em"> 
-      {% if request.user.is_authenticated %}
+      {% if user %}
       {% if favourites %}
       <div class="software_container_all-width software_container pos_center_for_div">
         <div class="pos_left">
@@ -29,7 +29,7 @@
         <!-- Контейнер для всех карточек --> 
         {% for s in favourites %}
         <div class="column-2 review_card_software"> 
-          <div class = "pos_right_for_div"> Дата добавления: {{s|get_date_joined:request.user|default:""|date:"j E Y"}}
+          <div class = "pos_right_for_div"> Дата добавления: {{s|get_date_joined:user|default:""|date:"j E Y"}}
           </div>	
           <article class="flex_column software_alone_container "> 
             <!-- Контейнер одной карточки --> 
@@ -76,8 +76,8 @@
                        </button>
                     <div>
                       <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">
-                        {% if request.user.is_authenticated %}
-                        {% with favourite=s|is_favourite:request.user %}
+                        {% if user %}
+                        {% with favourite=s|is_favourite:user %}
                         {% if favourite %}
                         <i class="fa fa-heart button_like_true" aria-hidden="true">
                         </i>

@@ -2,6 +2,8 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from user.models import CustomUser
 from software.models import Software
+import pay.models as Pay_models
+from django.db.models import Sum
 
 class Order(models.Model):
 
@@ -29,6 +31,7 @@ class Order(models.Model):
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
     type_soft = models.CharField('Тип ПО', max_length = 200, null=True, blank=True)
+    paid_amount = models.FloatField('Сумма оплат', null=True, blank=True, db_index=True)
 
     class Meta:
         verbose_name = 'Заказ'
@@ -39,3 +42,15 @@ class Order(models.Model):
     # Ф-ия получения списка избранных по клиенту
     def get_orders_by_user(client):
         return Order.objects.filter(client=client.id)
+
+
+    # Ф-ия получения суммы оплат по данному заказу и обновление paid_amount
+    def set_paid_amount(self):
+
+        amount = Pay_models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
+
+        # Изменение поля paid_amount в Order
+        self.paid_amount = amount
+        self.save()
+
+        return amount
