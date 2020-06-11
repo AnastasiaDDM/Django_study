@@ -1,48 +1,37 @@
 from django import forms
 from django.core.exceptions import ValidationError
 import re
-from order.models import Order
+from order.models import Order, Request
 import dbl
 # Импорт общего приложения 
 import util.forms
 
-# # Форма для добавления отзыва
-# class ReviewForm(forms.ModelForm):
-#     class Meta:
-#         # Описание используемой модели и полей на форме, а также их атрибутов
-#         model = Review
-#         fields = ['content', 'comment', 'email_phone', 'name', 'star', 'software']
+class RequestForm(forms.ModelForm):
+    class Meta:
+        # Описание используемой модели и полей на форме, а также их атрибутов
+        model = Request
+        fields = ['comment', 'phone', 'name']
+ 
+        widgets = {
+            'name': forms.TextInput(attrs={'maxlength' : 100, 'id' : 'name'}),
+            'phone': forms.TextInput(attrs={'id' : 'phone','type':'tel', 'maxlength' : 25}),
+            'comment': forms.Textarea(attrs={'rows':5, 'id' : 'comment'}),
+        }
+        # {{form.name}}, {{form.phone}} -  таким будет обращение к этим полям из шаблона,
+        # {{ form.errors.name }} - а это обращение к ошибкам, генерируемым методами clean_...
 
-#         widgets = {
-#             'name': forms.TextInput(attrs={'maxlength' : 100, 'id' : 'name'}),
-#             'email_phone': forms.TextInput(attrs={'required':True, 'id' : 'ephone', 'maxlength' : 25}),
-#             'content': forms.Textarea(attrs={'rows':5, 'id' : 'content'}),
-#             'comment': forms.Textarea(attrs={'rows':5, 'id' : 'comment'}),
-#             'star': forms.TextInput(attrs={'required':True,'type':'radio'}),
-#         }
-#         # {{form.name}}, {{form.phone}} -  таким будет обращение к этим полям из шаблона,
-#         # {{ form.errors.name }} - а это обращение к ошибкам, генерируемым методами clean_...
+    #  Ф-ии проверки валидности полей
+    def clean_name(self):
 
-#     #  Ф-ии проверки валидности полей
-#     def clean_name(self):
+        if self.cleaned_data['name'] is not None:
 
-#         if self.cleaned_data['name'] is not None:
+            return util.forms.clean_name(self)
 
-#             return util.forms.clean_name(self)
+    def clean_phone(self):
 
-#     def clean_email_phone(self):
+        if self.cleaned_data['phone'] is not None and str(self.cleaned_data['phone']) != "":
 
-#         return util.forms.clean_email_phone(self)
-
-#     def clean_star(self):
-#         star = self.cleaned_data['star']
-#         dbl.log('звезда !'+str(star))
-#         # Проверка валидности значения рейтинга
-#         if star == "":
-#             dbl.log('звездыыыыы'+str(star))
-#             raise ValidationError("Пожалуйста поставьте оценку")
-
-#         return star
+            return util.forms.clean_phone(self)
 
 
 # Форма элементов для поиска заказов

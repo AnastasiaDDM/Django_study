@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseRedirect
 from user.models import CustomUser
-from software.models import Software, Favourite
+from software.models import Software, Favourite, Download
 from order.models import Order
 import util.views
 # from user.authentication import get_user_by_email_phone
@@ -59,7 +59,21 @@ def favourites(request):
     if user:
         favourites = Software.get_favourites_by_user(user)
 
-        response= render(request, 'user/favourites.html', {'favourites':favourites, 'user':user})
+        # Словарь главных фото
+        photo_dict = {}
+
+        for soft in favourites:
+
+            # Получение главного фото
+            soft_photo = soft.get_main_photo()
+
+            if soft_photo is not None:
+
+                # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+                for s in soft_photo:
+                    photo_dict[soft.id] = s
+
+        response= render(request, 'user/favourites.html', {'favourites':favourites, 'user':user, 'photo_dict':photo_dict})
         return response
 
 
@@ -91,5 +105,19 @@ def downloads(request):
     if user:
         downloads = Software.get_downloads_by_user(user)
 
-        response= render(request, 'user/downloads.html', {'downloads':downloads, 'user':user})
+        # Словарь главных фото
+        photo_dict = {}
+
+        for soft in downloads:
+
+            # Получение главного фото
+            soft_photo = soft.get_main_photo()
+
+            if soft_photo is not None:
+
+                # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+                for s in soft_photo:
+                    photo_dict[soft.id] = s
+
+        response= render(request, 'user/downloads.html', {'downloads':downloads, 'user':user, 'photo_dict':photo_dict})
         return response

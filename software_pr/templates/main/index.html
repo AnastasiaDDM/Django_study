@@ -1,0 +1,513 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load software_tags %}
+{% load common_tags %}
+<title>{% block page_title %}Главная{% endblock %}
+{% block content %}
+<section>
+        <div class="margin_top_3em">
+            <div class="pos_center main_slider div_main">
+              <div id="main_slider" style="height:30em;">
+                    <!-- children = slides -->
+                    <div style="height:30em;">
+                      <img  class = "img_width " src="{% static '/images/code.jpg' %}" alt=""/>
+                      <div class="main_slider_text">Мы предоставляем вам любые возможности 
+                        усовершенствования вашего бизнеса!
+                        <br>
+                        1. Покупка или бесплатное скачивание уже готовых продуктов
+                        <br>
+                        2. Доработка вашего или нашего продукта
+                        <br>
+                        3. Разработка уникального нового продукта 
+                        <br>
+                        <!-- У нас вы найдете оптимальный вариант с интересующими<br>
+          вас возможностями под бюджет вашего проекта<br> -->
+                      </div>
+                    </div>
+                    <div style="height:30em;">
+                      <img  class = "img_width " src="{% static '/images/cafe.jpg' %}" alt=""/>
+                      <div class="main_slider_text">Мы предоставляем вам любые возможности 
+                        усовершенствования вашего бизнеса!
+                        <br>
+                        1. Покупка или бесплатное скачивание уже готовых продуктов
+                        <br>
+                        2. Доработка вашего или нашего продукта
+                        <br>
+                        3. Разработка уникального нового продукта 
+                        <br>
+                        <!-- У нас вы найдете оптимальный вариант с интересующими<br>
+          вас возможностями под бюджет вашего проекта<br> -->
+                      </div>
+                    </div>
+                    <div style="height:30em;">
+                      <img src="{% static '/images/computer.jpg' %}" alt="">
+                      <div style="height:30em;">
+                        <!-- <div class="main_slider_text">У нас вы найдете оптимальный вариант с интересующими<br>
+                          вас возможностями под бюджет вашего проекта
+                          <br>
+                          1. Покупка или бесплатное скачивание уже готовых продуктов
+                          <br>
+                          2. Доработка вашего или нашего продукта
+                          <br>
+                          3. Разработка уникального нового продукта 
+                          <br>
+                        </div> -->
+                      </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+        <div class=" main_banner margin_top_3em">
+          <a class="link_style_none" href="email_us.html">
+            <div class="flex_row main_banner_order pos_center_for_div">
+              <div class="main_banner_order_text" href="make_an_order.html">
+                <h2>Хотите заказать свою разработку ?
+                </h2>
+                <p>Узнайте сроки выполнения и стоимость 
+                  реализации прямо сейчас
+                </p>
+              </div>
+              <div class="main_banner_order_arrow">
+                <div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="margin_top_4em padding_top-bootom_1em">    
+          <!--Это контейнер новых ПО-->
+          <div class="pos_center text_up padding_bottom_1em">
+            <h2>Наши новинки
+            </h2>
+          </div>
+          {{block_new_soft}}
+        </div>
+        <div class="margin_top_4em padding_top-bootom_1em main_block_bg">    
+          <!--Это контейнер примеров ПО-->
+          <div class = "flex_row  pos_center_for_div" style="flex-wrap: center;justify-content: space-between; width: 70%; " id="type_software">
+            <div class=" main_type-soft cursor w_25_sm text_right" data-target="mobile_software">
+              <h2>Мобильные приложения
+              </h2>
+            </div>
+            <div class=" main_type-soft_active cursor w_25_sm text_center"  data-target="desktop_software">
+              <h2>Настольные приложения
+              </h2>
+            </div>
+            <div class=" main_type-soft cursor w_25_sm text_left" data-target="site_software">
+              <h2>Сайты
+              </h2>
+            </div>
+          </div>
+          <div class="div_horizontal_soft" id="software_container">
+            {{block_site_soft}}
+            {{block_desktop_soft}}
+            {{block_mobile_soft}}
+          </div>
+        </div>
+        <div>
+          <div class="margin_top_4em padding_top-bootom_1em w_70_95_70_95_md pos_center">    
+            <!--Это контейнер видов заказов-->
+            <div class="pos_center text_up">
+              <h2>Закажи прямо сейчас
+              </h2>
+            </div>
+            <div class="flex_row flex_space-between margin_top-bootom_1em">
+              <div class="ord_column-3 margin_top_3em">
+                <div class="main_order flex_column">
+                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                    <div class = "main_order_title">Сайт
+                    </div>
+                    <div>
+                      <ul class = "main_order_list">
+                        <li class="main_order_list_price">от 3 000 &#8381
+                        <li class="widget_marker">Закажите разработку сайта
+                          для своей компании!
+                        <li class="widget_marker">Краткие сроки разработки
+                        <li class="widget_marker">Высокое качество 
+                      </ul>
+                    </div>
+                    <button href="make_an_order.html" class="width_100 software_button-pay_style ">Заказать сейчас!
+                    </button>
+                 </a>
+                </div>
+                <div class = "margin_top_1em">
+                  <a href="/softwares/?classification_1_value_2=2&soft_price=soft_price_free" class="link_read-more link_style_border">
+                    <span>Или посмотреть демо
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="ord_column-3 margin_top_3em">
+                <div class="main_order flex_column"  href="URL">
+                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                    <div class = "main_order_title">Настольные приложения
+                    </div>
+                    <div>
+                      <ul class = "main_order_list">
+                        <li class="main_order_list_price">от 500 &#8381
+                        <li class="widget_marker">Закажите разработку качественого ПО
+                          для своей компании или личного пользования!
+                        <li class="widget_marker">Краткие сроки разработки
+                        <li class="widget_marker">Высокое качество 
+                          <li class="widget_marker">Закажите разработку мобильного приложения
+                            для своей компании или личного пользования!
+                          <li class="widget_marker">Краткие сроки разработки
+                          <li class="widget_marker">Высокое качество 
+                      </ul>
+                    </div>
+                    <button  href="make_an_order.html"  class="width_100 software_button-pay_style ">Заказать сейчас!
+                    </button>
+                  </a>
+                </div>
+                <div class = "margin_top_1em">
+                  <a href="/softwares/?classification_1_value_1=1&soft_price=soft_price_free" class="link_read-more link_style_border">
+                    <span>Или скачать бесплатно
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="margin_top_3em ord_column-3">
+                <div class="main_order flex_column">
+                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                    <div class = "main_order_title">Мобильное приложение
+                    </div>
+                    <div>
+                      <ul class = "main_order_list">
+                        <li class="main_order_list_price">от 1 000 &#8381
+                        <li class="widget_marker">Закажите разработку мобильного приложения
+                          для своей компании или личного пользования!
+                        <li class="widget_marker">Краткие сроки разработки
+                        <li class="widget_marker">Высокое качество 
+                          <li class="widget_marker">Закажите разработку мобильного приложения
+                            для своей компании или личного пользования!
+                          <li class="widget_marker">Краткие сроки разработки
+                          <li class="widget_marker">Высокое качество 
+                            <li class="widget_marker">Закажите разработку мобильного приложения
+                              для своей компании или личного пользования!
+                            <li class="widget_marker">Краткие сроки разработки
+                            <li class="widget_marker">Высокое качество 
+                      </ul>
+                    </div>
+                    <button  href="make_an_order.html"  class="width_100 software_button-pay_style ">Заказать сейчас!
+                    </button>
+                  </a>
+                </div>
+                <div class = "margin_top_1em">
+                  <a href="/softwares/?classification_1_value_3=3&soft_price=soft_price_free" class="link_read-more link_style_border">
+                    <span>Или скачать бесплатно
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>   
+          </div>
+        </div>
+        <!--Стек технологий-->
+        <div class="margin_top_4em padding_top-bootom_1em main_block_bg">
+          <div class="pos_center text_up padding_bottom_1em">
+            <h2>Стек технологий
+            </h2>
+          </div>
+          <div class="flex_row flex_space-around main_stack_all">
+            <div  class = "main_stack">
+              <div class = "main_stack_cap">Языки программирования
+              </div>
+              <div class="flex_row main_stack_div">
+                <!-- <div class = ""><img class = "main_stack_div_img"  src="tech_stack/c.jpg" alt="Расписание"/></div>
+<div class = ""><img class = ""  src="tech_stack/python.jpg" alt="Расписание"/></div> -->
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+                <div class = "main_stack_div_word">.NET
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+              </div>
+            </div>
+            <div  class = "main_stack">
+              <div class = "main_stack_cap">Фронтенд
+              </div>
+              <div class="flex_row main_stack_div">
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+              </div>
+            </div>
+            <div  class = "main_stack">
+              <div class = "main_stack_cap">Базы данных
+              </div>
+              <div class="flex_row main_stack_div">
+                <div class = "main_stack_div_word">SQLite
+                </div>
+                <div class = "main_stack_div_word">MySQL
+                </div>
+              </div>
+            </div>
+            <div  class = "main_stack">
+              <div class = "main_stack_cap">Языки программирования
+              </div>
+              <div class="flex_row main_stack_div">
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+                <div class = "main_stack_div_word">.NET
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+              </div>
+            </div>
+            <div  class = "main_stack">
+              <div class = "main_stack_cap">Языки программирования
+              </div>
+              <div class="flex_row main_stack_div">
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+                <div class = "main_stack_div_word">.NET
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">Java
+                </div>
+                <div class = "main_stack_div_word">JavaScript
+                </div>
+                <div class = "main_stack_div_word">C#
+                </div>
+                <div class = "main_stack_div_word">Python
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="margin_top_4em padding_top-bootom_1em">
+          <div class ="text_up">
+            <h2 class="pos_center let_sp_01em padding_bottom_1em">Отзывы
+            </h2>
+          </div>
+          <div class="flex_row reviews_all flex_space-between margin_top_1em">
+            {% if list_review %}
+            {% for review in list_review %} 
+            <div class="reviews flex_column">
+              <a class = "link_style_none" href="{% url 'review:review_page' review.id %}">
+                <div class="flex_row">
+                  <div class = "reviews_title">{{review.name|default:"Клиент"}}
+                  </div>
+                  <div class = "reviews_date">{{review.date|date:"j E Y"}}
+                  </div>
+                </div>
+                <div class = "reviews_text">       
+                    <span>
+                        {{s.content|linebreaks|default:""}}
+                    </span>
+                  </div>
+                {% if review.comment %}
+                <div  class="flex_column  pos_right margin_top_1em">	   
+                  <fieldset class="reviews_adm_border" name="fieldset">
+                    <legend class="pos_center reviews_adm_px">Администратор
+                    </legend>
+                    <span>{{review.comment|linebreaks|default:""}}
+                    </span>	
+                  </fieldset>           
+                </div>
+                {% endif %}
+              </a>
+            </div>
+            {% endfor %}
+            {% endif %}
+          </div>
+          <div class="w_50_sm_70_md_90 flex_row flex_space-between pos_center margin_top_1em">   
+            <div class="margin_top-bootom_1em w_0_xs_100">
+              <a href="{% url 'review:list_review' %}" class="button_search">Читать еще
+              </a>
+            </div>
+            <div class="margin_top-bootom_1em w_0_xs_100">
+              <a href="{% url 'review:review_create' %}" class="button_search">Добавить отзыв
+              </a>
+            </div> 
+          </div>
+        </section>
+        <section class="padding_top_4em main_contact">
+          <div class = "main_contact_title_div"> 
+            <div class = "main_contact_title">
+              <h2>Хотите повысить эффективность 
+                своего проекта или добавить свои идеи в существующий 
+                проект?
+                <br>
+                <br>С вас идеи, с нас - реализация!
+              </h2>
+            </div>
+          </div>
+          <div  class="flex_row flex_space-between">
+            <div class="flex_column contact_container">
+              <div class = " ">
+                <a class = "pos_center link_style_none" href = "tel:+7 (924)8793741">
+                <div class = " pos_center"> 
+                  <!-- Бокс картинки --> 
+                  <img  class = "contact_img" src="{% static '/icons/phone_you.png' %}"/>
+                </div>
+                  <h2>Позвоните нам
+                  </h2>
+                  <p>Есть вопросы? Звоните скорее
+                  </p>
+                </a>
+                  <div class="flex_column contact pos_center">
+                    <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
+                      +7 (901) 123-45-67
+                    </a>
+                    <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
+                      +7 (901) 123-45-67
+                    </a>
+                </div>
+              </div>
+            </div>
+            <div class="flex_column contact_container">
+              <a class = "text-align link_style_none" href="{% url 'review:review_create' %}">
+              <div class = "img_width pos_center"> 
+                <!-- Бокс картинки --> 
+                <img  class = "contact_img" src="{% static '/icons/review.png' %}"/>
+              </div>
+              <div  class = "pos_center">
+                <h2>Оставьте свой отзыв
+                </h2>
+                <p>Поделитесь своим мнением о нашем сервисе!
+                </p>
+                <div class=" contact">
+                  <div class = "text-align link_as_a">
+                    Написать отзыв
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>
+            <div class="flex_column contact_container">
+              <a class = "text-align link_style_none"  href="mailto: example@mail.ru">
+                <div class = "img_width pos_center"> 
+                  <!-- Бокс картинки --> 
+                  <img  class = "contact_img" src="{% static '/icons/email.png' %}"/>
+                </div>
+                <div  class = "pos_center" >
+                  <h2>Напишите нам
+                  </h2>
+                  <p>У вас есть какие-то предложения или вопросы?
+                  </p>
+                  <div class=" contact">
+                    <div class = "text-align link_as_a">
+                      example@mail.ru
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="flex_column contact_container">
+              <a class = "text-align link_style_none" href="{% url 'feedback:client_feedback' %}">
+                <div class = "img_width pos_center"> 
+                  <!-- Бокс картинки --> 
+                  <img  class = "contact_img" src="{% static '/icons/feedback.png' %}"/>
+                </div>
+                <div  class = "pos_center" >
+                  <h2>Обратный звонок
+                  </h2>
+                  <p>Оставьте свой номер и мы с вами свяжемся!
+                  </p>
+                  <div class=" contact">
+                    <div id = "phone" class = "text-align link_as_a">
+                      Заказать звонок
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+        <div>
+          <fieldset class="fieldset_tags w_50_sm_80 pos_center" name="fieldset">
+            <legend>Облако тегов
+            </legend>
+            <form>
+              <div class = "fieldset_tags_word">
+                <span>
+                {% for tag in list_tag %}
+                    <a href="catalog.html">#{{tag.name}}</a>
+                {% endfor %}
+                </span>
+              </div>        
+            </form>
+          </fieldset>
+        </div>
+      </section>
+{% endblock %}	
+{% block js_extend %}
+<script src="{% static '/js/slick.min.js' %}"></script>
+<script>
+jQuery(document).ready(function () {
+carousel_soft('new_software');
+carousel_soft('desktop_software'); // Инициализируем сначала слайдер в настольными приложениям
+$("#type_software").children().click(function(){
+
+    $("#type_software").children().removeClass('main_type-soft_active').addClass('main_type-soft'); // Убираем класс активности
+    $(this).addClass('main_type-soft_active');
+    
+    try // Не у всех элементов есть слайдер, поэтому уничтожение вызывает ошибку у тех, где слайдера нет. Приходится делать обработку исключения. 
+    {
+    $("#software_container").find(".width_90").slick('unslick'); // Находим внутри #software_container все элементы, у которых есть вот такой класс .width_90 Ну это получаются все контейнеры слайдера.
+    }
+    catch{}
+    
+    $("#software_container").children().hide(); // Скрываем все слайдеры
+    
+    var target = $(this).data('target');
+    
+    $("#"+target+"_container").show(); // Показываем целевой контейнер со слайдером
+    $("#"+target+"_button").show(); // Показываем целевой контейнер со слайдером
+    
+    carousel_soft(target);
+});
+
+$('#main_slider').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 500,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows:false,
+});	
+})         
+</script>
+{% endblock %}

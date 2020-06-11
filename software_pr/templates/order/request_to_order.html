@@ -1,57 +1,67 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Заказать звонок{% endblock %}
+<title>{% block page_title %}Оставить заявку{% endblock %}
  {% block content %}
 <section>
 {% block breadcrumb %}
 <ul class="breadcrumb">
-{% breadcrumb_url 'Главная' 'software:catalog' %}
-{% breadcrumb_url 'Заказать звонок' %}
+{% breadcrumb_url 'Главная' 'main:index' %}
+{% breadcrumb_url 'Оставить заявку' %}
 </ul>
 {% endblock %}
         <div class="margin_top_2">     
           <!-- Форма комментария -->
           <fieldset class="border_fieldset_top">
             <legend class="pos_center padding_left-right_1em">
-              <h1>Заказать звонок
+              <h1>Оставить заявку
               </h1>
             </legend>
             {% autoescape on %}
-            <form method="post" action="{% url 'feedback:client_feedback' %}" id="feedback_form">
+            <form method="post" action="{% url 'order:request_to_order' %}" id="feedback_form">
                 {% csrf_token %}
               <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
-                <div class="input_style">
-                    {% if client != '' %}
-                    {{form.name}}
-                    {% else %}
-                    {{form.name}}
+                {% if not request.user.is_authenticated %}
+                    <div class="input_style">
+                        {% if client != '' %}
+                        {{form.name}}
+                        {% else %}
+                        {{form.name}}
+                        {% endif %}
+                        <label for="name">Ваше имя</label>   
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
                     {% endif %}
-                    <label for="name">Ваше имя</label>   
-                </div>
-                {% if form.has_changed %}
-                <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
-                {% endif %}
-                <div class="input_style margin_top_3em">
-                  {% if client != '' %}
-                  {{form.phone}}
-                  {% else %}
-                  {{form.phone}}
-                  {% endif %}
-                  <label for="phone">Номер телефона *</label>
-                </div>
-                {% if form.has_changed %}
-                <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
+                    <div class="input_style margin_top_3em">
+                    {% if client != '' %}
+                    {{form.phone}}
+                    {% else %}
+                    {{form.phone}}
+                    {% endif %}
+                    <label for="phone">Номер телефона *</label>
+                    </div>
+                    {% if form.has_changed %}
+                    <div class="pos_left_for_text input_style_error">{{ form.errors.phone }}</div>
+                    {% endif %}
                 {% endif %}
                 <div>
                   <div class="textarea_style margin_top_3em">
                     {{form.comment}}
-                    <label for="comment" class = "textarea_style_label">Опишите свою проблему
+                    <label for="comment" class = "textarea_style_label">Опишите свои требования
                     </label>
                   </div>
                 </div>
-                <div class="pos_сenter">
-                    <button type="submit" class="button_show-more">Заказать звонок</button>
+                <div class="pos_left_for_text">
+                    <i class="fa fa-exclamation order_chat_i" aria-hidden="true" style="margin-right: 0.4em;">
+                    </i>
+                    Для уточнения заказа, установлений требований и согласования проекта мы 
+                    позвоним или отправим письмо на почту вам в ближайшее время. 
+                    Обращаем ваше внимание, что без телефонного звонка ваш заказ не будет принят, 
+                    вам необохдимо согласовать все нюансы по телефону.
+                  </div>
+                <div class="pos_сenter margin_top_3em">
+                    <button type="submit" class="button_show-more">Оставить заявку</button>
                 </div>
               </div>
             </form>
@@ -82,7 +92,6 @@
             }
         </style>
         {% endblock %}
-
         {% block js_extend %}
         <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
         <script>
@@ -98,8 +107,7 @@
                     phone:{mobileRU: true}
                 },
                 {
-                    name:{required: "Введите имя"},
-                    phone:{required: "Введите телефон", mobileRU: "Некорретный номер телефона. Попробуйте еще раз"}
+
                 }
                 )
             })          

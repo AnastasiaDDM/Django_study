@@ -2,10 +2,11 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from user.models import CustomUser
 from software.models import Software, Favourite
-from order.models import Order
-from order.forms import Search_OrderForm
+from .models import Order
+from .forms import *
 import datetime
 import dbl
+
 
 
 
@@ -133,3 +134,43 @@ def orders(request):
         
         return redirect('software:catalog')
 
+
+
+# Ф-ия я заявки на заказ
+def request_to_order(request):
+
+    # Добавление клиента в заявку, если пользователь авторизован
+    if request.user.is_authenticated:
+        client = request.user
+    else:
+        client = ''
+
+    # Получение данных из формы в переменную
+    form = RequestForm(request.POST)
+
+    #  Получение данных из формы и сохранение в бд
+    if request.method == "POST":
+        try:
+
+            # Здесь автоматически проверяются все поля формы методами clean_...
+            if form.is_valid():
+
+                # Сохранение запроса (происходит тогда, когда все поля валидны)
+                form.save()
+                return redirect('order:request_success')
+
+        except Exception as error:
+            pass
+            dbl.log("Ошибка работы" + str(error))
+
+    return render(request, 'order/request_to_order.html', {'client':client, 'form': form})
+
+# Ф-ия отображаения страницы успешного выполнения
+def request_success(request):
+
+    # Массив хлебных крошек
+    list_crumb = [['Главная', 'main:index'], ['Оставить заявку', 'order:request_to_order']]
+
+    message = "Ваша заявка на заказ принята! Вам перезвонят в ближайшее время"
+
+    return render(request, 'common/successfull.html', {'message':message, 'list_crumb':list_crumb})

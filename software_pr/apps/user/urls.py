@@ -13,6 +13,7 @@ urlpatterns = [
     path('lk/edit', personal.personal_data_edit, name='personal_data_edit'),
     path('lk/favourites', personal.favourites, name='favourites'),
     path('lk/favourites/clean', personal.favourites_clean, name='favourites_clean'),
+    path('lk/downloads', personal.downloads, name='downloads'),
     path('lk/orders', order.orders, name='orders'),
     # re_path('(?article_author=<article_author>[0-9]+)', views.list_article),
     # path('soft/', include('soft.urls')),

@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from PIL import Image
+from django.db.models import Q
 from article.models import Article
 import dbl
 from user.models import CustomUser
@@ -18,7 +19,9 @@ class Software(models.Model):
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
     modification = models.BooleanField('Возможность доработки', default=True)
     size = models.FloatField('Размер', blank=True, validators=[MinValueValidator(0)], null=True)
+    date_joined = models.DateTimeField('Дата создания', auto_now_add=True, blank=True, null=True)
     date_of_delete = models.CharField('Дата удаления', blank=True, max_length = 20, null=True, db_index=True)
+    file = models.FileField('Ссылка на программу', upload_to="file_software/", blank=True, null=True)
 	# soft_image = models.ImageField()
     def __str__(self):
         return self.name
@@ -191,7 +194,6 @@ class Software(models.Model):
 
     # Ф-ия проверки является ли данное ПО избранным у конкретного клиента
     def is_favourite(self, client):
-        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
         try:
             return Favourite.objects.filter(software=self.id, client=client )
         except:
@@ -205,14 +207,16 @@ class Software(models.Model):
         return Software.objects.filter(favourite__client=client.id)
 
     
+    @staticmethod
+    # Ф-ия получения списка загрузок в Download таблице по клиенту
+    def get_downloads_by_user(client):
+        return Software.objects.filter(download__client=client.id)
+
+
     # Ф-ия получения списка похожих ПО
     def get_similars(self):
         software_id = int(self.id)
-
         software_list = []
-
-        dbl.log("айди " + str(software_id))
-
         soft_raw = Software.objects.raw('''select softwares.*
                                         from software_software softwares
                                         inner join software_tag_softwares st on st.software_id = softwares.id 
@@ -223,8 +227,6 @@ class Software(models.Model):
                                         order by count(st.id) desc ''', [software_id, software_id] )
 
         for p in soft_raw:
-
-            dbl.log(".t  " + str(p))
             software_list.append(p)
         
         return software_list
@@ -233,10 +235,7 @@ class Software(models.Model):
     # Ф-ия получения облака тегов для ПО
     def get_similars_tags(self):
         software_id = int(self.id)
-
         tag_list = []
-
-
         tag_raw = Tag.objects.raw('''select distinct tags.*
                                         from new_db.software_tag tags
                                         inner join new_db.software_tag_softwares st on st.tag_id = tags.id 
@@ -250,10 +249,32 @@ class Software(models.Model):
                                         order by tags.name''', [software_id] )
 
         for p in tag_raw:
-
-            tag_list.append(p)
-        
+            tag_list.append(p)   
         return tag_list
+
+
+    @staticmethod
+    # Ф-ия получения новинок
+    def get_new():
+        return Software.objects.filter(date_of_delete=None, visibility=True).order_by('date_joined')[:6]
+
+
+    # Ф-ия фильтрации По по одной классификации (по её id)
+    @staticmethod
+    def software_list_by_type(cl_val=None):
+    
+        # Проверка значения поля формы поиска
+        if str(cl_val) !="" and str(cl_val).isdigit():
+
+            soft_list = Software.objects.filter(date_of_delete=None, visibility=True)
+
+            # Добавление условия фильтрации
+            cond =Q(classification_value=int(cl_val))
+
+            # Фильтрация списка всех ПО по выбранной классификации
+            return soft_list.filter(cond)
+
+        return None
 
 
 
@@ -298,8 +319,8 @@ class Classification(models.Model):
 class Classification_Value(models.Model):
     classification = models.ForeignKey(Classification, on_delete = models.PROTECT, verbose_name='Классификация')
     value = models.CharField('Значение классификации', max_length = 200)
-    visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
     softwares = models.ManyToManyField(Software)
+    visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
 
     def __str__(self):
         return self.value
@@ -307,22 +328,6 @@ class Classification_Value(models.Model):
     class Meta:
         verbose_name = 'Классификация_значение'
         verbose_name_plural = 'Классификация_значение'
-
-
-
-
-# ПО №2: (Область применения: грузоперевозки)
-# class Software_Classification_Value(models.Model):
-#     software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
-#     classification_value = models.ForeignKey(Classification_Value, on_delete = models.PROTECT, verbose_name='Классификация_значение')
-
-#     # def __str__(self):
-#     #     return self.value
-
-#     class Meta:
-#         verbose_name = 'Приложение_классификация'
-#         verbose_name_plural = 'Приложения_классификация'
-
 
 
 # Теги ПО и статей 
@@ -342,21 +347,6 @@ class Tag(models.Model):
         verbose_name_plural = 'Теги'
 
 
-# # ПО №2: (тег)
-# class Software_Tag(models.Model):
-#     software = models.ForeignKey(Software, on_delete = models.CASCADE, verbose_name='ПО')
-#     tag = models.ForeignKey(Tag, on_delete = models.CASCADE, verbose_name='Тег')
-
-#     # def __str__(self):
-#     #     return self.tag
-
-#     class Meta:
-#         verbose_name = 'Приложение_тег'
-#         verbose_name_plural = 'Приложения_теги'
-
-
-
-
 # Избранные - ПО №2: (клиент)
 class Favourite(models.Model):
     software = models.ForeignKey(Software, on_delete = models.PROTECT, verbose_name='ПО')
@@ -370,7 +360,6 @@ class Favourite(models.Model):
     @staticmethod
     # Ф-ия получения списка избранных в Favourite таблице по клиенту
     def get_favourites_by_user(client):
-        # return Software.objects.filter(classification__id = self.id, visibility=True).order_by('value')
         return Favourite.objects.filter(client=client.id)
 
 
@@ -385,10 +374,4 @@ class Download(models.Model):
         verbose_name = 'Загрузка'
         verbose_name_plural = 'Загрузки'
 
-    @staticmethod
-    # Ф-ия получения списка избранных в Download таблице по клиенту
-    def get_downloads_by_user(client):
-        return Download.objects.filter(client=client.id)
-
-        
 

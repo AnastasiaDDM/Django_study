@@ -1,4 +1,3 @@
-#editor.detectIndentation#
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.db import models
@@ -30,7 +29,7 @@ def catalog(request):
     # Словарь для фильтра классификаций
     classification_dict = {}
 
-    # Перебор всех прищедших аргументов
+    # Перебор всех пришедших аргументов
     for req in request.GET.items():
 
         # Проверка валидности значения имени (классификации)
@@ -53,6 +52,8 @@ def catalog(request):
 
     # Фильтрация списка всех ПО по выбранным классификациям
     soft_list = soft_list.filter(cond)
+    dbl.log(str(cond))
+    dbl.log(str(soft_list))
 
     # Исключение повторений ПО
     soft_list = soft_list.order_by('id').distinct()
@@ -120,8 +121,6 @@ def catalog(request):
         tags_dict[soft.id] = soft_tags_list
 
         if soft_photo is not None:
-            # dbl.log("колво "+str(count(soft_photo)))
-            # if count(soft_photo) >1:
 
             # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
             for s in soft_photo:
@@ -191,7 +190,7 @@ def software_page(request, id):
         # ar = software.get_area()
 
         # Второстепенные объекты - похожие ПО
-        similar_block = render_similars(software)
+        similar_block = render_similars(software, id_widget="same_software")
         similar_tags_block = render_similars_tags(software)
         discussion_comment_block = render_discussion_comment(software, request, limit=5)
 
@@ -361,7 +360,7 @@ def add_download(request, software_id):
             Download.objects.get_or_create(client=user, software=software)
 
             message = "Благодарим вас за доверие!"
-            download_link = "скачать.ссылка"
+            download_link = software.file
             h1 = "Успешная загрузка"
             list_crumb = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name, 'software:software_page', software.id], ['Скачать бесплатно', 'software:software_download', software.id]]
 
@@ -381,26 +380,41 @@ def add_download(request, software_id):
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 
 # Ф-ия создания кода html для похожих ПО
-def render_similars(software):
+def render_similars(software, id_widget=None, display_type="", widget_shell=True, show_more=""):
 
     # Получение списка похожих ПО
     similar_list = software.get_similars()
 
-    # Хэш фотографий ПО
+    # Ф-ия составления html кода горихонтальных виджетов
+    return render_horizontal_widgets(similar_list, id_widget=id_widget, display_type=display_type, widget_shell=widget_shell, show_more=show_more)
+
+def render_horizontal_widgets(list_soft, id_widget=None, display_type="", widget_shell=True, show_more=""):
+# list_soft - список ПО, id_widget - id блока виджетов, display_type - скрытий или видимы блок, widget_shell - true/false наличие большого контейнера виджета
+
     photo_dict = {}
     result =''
 
-    for soft in similar_list:
+    try:
+        for soft in list_soft:
 
-        soft_photo = soft.get_main_photo()
+            soft_photo = soft.get_main_photo()
 
-        # Добавляем ключ и значение в словарь
-        if soft_photo is not None:
-            for s in soft_photo:
-                photo_dict[soft.id] = s
+            # Добавляем ключ и значение в словарь
+            if soft_photo is not None:
+                for s in soft_photo:
+                    photo_dict[soft.id] = s
 
-    result = render_to_string('common/pattern_similars.html', {'similar_list':similar_list, 'photo_dict':photo_dict})
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
+
+
+    
+    result = render_to_string('common/pattern_horizontal_widgets.html', {'list_soft':list_soft, 'photo_dict':photo_dict, 'id_widget':id_widget,
+    'display_type':display_type, 'widget_shell':widget_shell, 'show_more':show_more})
     return result
+
+
 
 
 # Ф-ия создания кода html для облака тегов к ПО
@@ -412,3 +426,6 @@ def render_similars_tags(software):
 
     result = render_to_string('common/pattern_similars_tags.html', {'similar_tags_list':similar_tags_list})
     return result
+
+
+

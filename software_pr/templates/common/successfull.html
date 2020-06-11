@@ -33,7 +33,7 @@
                     {% if download_link %}
                     <div class="padding_bottom_1em pos_center a_big">
                         Ссылка для скачивания: 
-                        <a class="link_style_border link_read-more">{{download_link}}</a>
+                        <a class="link_style_border link_read-more" href="{{ MEDIA_URL }}/{{download_link.url}}">{{ MEDIA_URL }}/{{download_link}}</a>
                     </div>
                     {% endif %}
                     {% if not request.user.is_authenticated %}

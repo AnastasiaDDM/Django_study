@@ -60,7 +60,7 @@ def discussions(request, type='', id = 0):
 
                 dbl.log("Ошибка 1 " )
                 # Второстепенные объекты - похожие ПО
-                similar_block = software_views.render_similars(software)
+                similar_block = software_views.render_similars(software, id_widget="same_software")
                 dbl.log("Ошибка 2 ")
                 similar_tags_block = software_views.render_similars_tags(software)
 

@@ -1,8 +1,9 @@
 {% load software_tags %}
-{% if similar_list %}
-<div class="margin_top_3em div_horizontal_soft">
-  <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="same_software_container">
-    <div class="flex_row flex_space-between  width_90 pos_center_for_div"  id="same_software">{% for soft in similar_list %}
+{% if list_soft %}
+{% if widget_shell %}
+<div class="margin_top_3em div_horizontal_soft">{% endif %}
+  <div class="flex_row flex_space-between margin_top-bootom_1em padding_top_2em"  id="{{id_widget}}_container" {{display_type}}>
+    <div class="flex_row flex_space-between  width_90 pos_center_for_div"  id="{{id_widget}}">{% for soft in list_soft %}
       <section class="widget_section">
         <div class="p_1">
           <a class="link_style_none" href="{% url 'software:software_page' soft.id %}">
@@ -34,8 +35,9 @@
       </section>{% endfor %}
     </div>
   </div>
-  <div class="margin_top-bootom_1em pos_center">
-    <a href="#" class="button_reset ">Посмотреть еще
+  <div id="{{id_widget}}_button" class="margin_top-bootom_1em pos_center" {{display_type}}>
+    <a href="{{show_more}}" class="button_reset">Посмотреть еще
     </a>
   </div> 
-</div>{% endif %}
+{% if widget_shell %}</div>{% endif %}
+{% endif %}

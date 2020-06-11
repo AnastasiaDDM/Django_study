@@ -15,16 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# from . import views
 from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
+# import main.views as s
 # from user import views as user_views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', views.index, name='index'),
+    # path('/', s.index, name='index'),
     path('softwares/', include('software.urls')),
     path('articles/', include('article.urls')),
     path('reviews/', include('review.urls')),
@@ -32,6 +32,8 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('discussions/', include('discussion.urls')),
     path('pay/', include('pay.urls')),
+    path('/', include('main.urls')),
+    path('order/', include('order.urls')),
 ]
 
 

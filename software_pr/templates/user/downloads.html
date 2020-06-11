@@ -2,34 +2,28 @@
 {% load static %}
 {% load software_tags %}
 {% load common_tags %}
-<title>{% block page_title %}Избранное{% endblock %}
+<title>{% block page_title %}Мои загрузки{% endblock %}
 {% block content %}
 {% include "common/pattern_lk_menu.html" %}
   <section>
-    <h1>Избранное
+    <h1>Мои загрузки
     </h1>
     {% block breadcrumb %}
     <ul class="breadcrumb">
     {% breadcrumb_url 'Главная' 'software:catalog' %}
     {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
-    {% breadcrumb_url 'Избранное' %}
+    {% breadcrumb_url 'Мои загрузки' %}
     </ul>
     {% endblock %}
     <section class="margin_top_3em"> 
       {% if user %}
-      {% if favourites %}
-      <div class="software_container_all-width software_container pos_center_for_div">
-        <div class="pos_left">
-          <a href="{% url 'user:favourites_clean' %}" class="button_search">Очистить все
-          </a>
-        </div>
-      </div>
+      {% if downloads %}
       <!-- Контейнер для всех карточек --> 
       <div  class="flex_row pos_center article_container software_container_all-width padding_bottom_2em margin_top_2">
         <!-- Контейнер для всех карточек --> 
-        {% for s in favourites %}
+        {% for s in downloads %}
         <div class="column-2 review_card_software"> 
-          <div class = "pos_right_for_div"> Дата добавления: {{s|get_date_joined_favourite:user|default:""|date:"j E Y"}}
+          <div class = "pos_right_for_div"> Дата загрузки: {{s|get_date_joined_download:user|default:""|date:"j E Y"}}
           </div>	
           <article class="flex_column software_alone_container"> 
             <!-- Контейнер одной карточки --> 
