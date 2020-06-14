@@ -1,0 +1,52 @@
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_price=soft_price_free&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?sortid=name'>
+hhhh
+---  Грузоперевозки
+---  Кафе
+---  Образование
+---  Поликлиника
+---  Цветочная лавка
+111
+22
+22  <WSGIRequest: GET '/softwares/?sortid=name'>
+22  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>, <Software: Поликлиника>, <Software: Цветочная лавка>]>
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 name
+000
+33
+hhhh <HttpResponse status_code=200, "application/json">
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_price=soft_price_paid&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?sortid=-price'>
+hhhh
+---  Грузоперевозки
+---  Кафе
+---  Образование
+---  Поликлиника
+---  Цветочная лавка
+111
+22
+22  <WSGIRequest: GET '/softwares/?sortid=-price'>
+22  <QuerySet [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>, <Software: Поликлиника>, <Software: Цветочная лавка>]>
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 -price
+000
+33
+hhhh <HttpResponse status_code=200, "application/json">
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_pricefrom=&soft_priceto=&classification_1_value_1=1'>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_price=soft_price_paid&soft_pricefrom=&soft_priceto=&classification_1_value_1=1'>

@@ -10,6 +10,8 @@ from django import forms
 from .forms import *
 from software.models import Software
 from review.models import Review
+import software.views as software_views
+from user.models import CustomUser
 
 # Ф-ия списка статей
 def list_review(request):
@@ -17,9 +19,6 @@ def list_review(request):
 
     # Получение данных из формы в переменную
     form = Search_ReviewForm(request.GET)
-    dbl.log(str(form))
-
-
     
     try:
         # Здесь автоматически проверяются все поля формы методами clean_...
@@ -230,10 +229,16 @@ def review_success(request, type='', id = 0):
 # Страница одного отзыва
 def review_page(request, id):
 
-    # Хэш классификаций ПО
-    # classif = {}
- 
+    # Объявление начальных значений переменных
+    similar_block = ""
+    similar_tags_block = ""
+    user = None
+
     try:
+
+        # Получение текущего пользователя 
+        user = CustomUser.get_user(request)
+
         this_object= Review.objects.get( id = id )
 
         # Получаем список приложений данного отзыва
@@ -247,43 +252,26 @@ def review_page(request, id):
             software = Software.objects.get(id=this_object.software.id)
 
 
-
-            # soft_tags_list = soft.get_tags()
-
             if software:
 
                 soft_photo = software.get_main_photo()
 
-                # # Добавляем ключ и значение в словарь
-                # tags_dict[soft.id] = soft_tags_list
-
                 if soft_photo is not None:
-                    dbl.log("колво "+str(soft_photo))
-                    # if count(soft_photo) >1:
                     for s in soft_photo:
                         photo_dict[software.id] = s
 
+                # Второстепенные объекты - похожие ПО
+                similar_block = software_views.render_similars(software, id_widget="same_software")
+                similar_tags_block = software_views.render_similars_tags(software)
 
+    # except:
+    #     raise Http404("Отзыв не найден")
 
-        # dbl.log(str(software))
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы с отзывом" + str(error))
 
-        
-        # # Получаем список тегов данного ПО
-        # software_tag = software.get_tags()
-
-
-        # #  Для разрыва текста (скрытого и открытого)
-        # # Сплит строки по '\n' по первому вхождению - получаем массив элементов одной переменной
-        # list_descr = software.description.split('\n', 1)
-
-        #  # Получаем список классификаций данного ПО
-        # classif = software.get_classifications()
-        # # dbl.log(str(classif))
-
-    except:
-        raise Http404("Отзыв не найден")
     
     rating = [1,2,3,4,5]
     return render(request, 'review/review.html', {'review':this_object, 'rating': rating, 'review_img':review_img, 'software':software,
-    'photo_dict':photo_dict})
-    # return render(request, 'soft/software.html', {'this_object':this_object, 'software_img':software_img, 'classif':classif, 'list_descr':list_descr, 'software_tag':software_tag})
+    'photo_dict':photo_dict, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block, 'user':user})

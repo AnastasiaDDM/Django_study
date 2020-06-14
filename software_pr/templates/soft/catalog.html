@@ -21,8 +21,9 @@
                       <div class="flex_column software_left_column">
                       <div class="flex_column software_search margin_bottom_2em ">
                         {% autoescape on %}
+                        <form data-target="form_search">
                          <fieldset class="fieldset_border_primary" name="fieldset" >
-                            <form name="form_page" action="{% url 'software:catalog' %}">
+                            <!-- <form name="form_page" action="{% url 'software:catalog' %}"> -->
                               <div class = "flex_row ">
                                 <div class=" slct_div" type="submit" style ="width: 30%;">
                                   <a href="http://127.0.0.1:8000/softwares/?count={{count}}" class="slct">По</a>
@@ -42,11 +43,15 @@
                                   <ul class="drop">
                                     <li><a>Все</a></li>
                                     <li><a>Популярное</a></li>
-                                    <li><a>Новое</a></li>
-                                    <li><a>&#8657 по размеру</a></li>
-                                    <li><a>&#8659 по размеру</a></li>
+                                    <li><a data-value="date_joined">Новое</a></li>
+                                    <li><a data-value="name">В алфавитном порядке</a></li>
+                                    <li><a data-value="-name">В обратном порядке</a></li>
+                                    <li><a data-value="price">&#8657 по цене</a></li>
+                                    <li><a data-value="-price">&#8659 по цене</a></li>
+                                    <li><a data-value="size">&#8657 по размеру</a></li>
+                                    <li><a data-value="-size">&#8659 по размеру</a></li>
                                   </ul>
-                                  <input type="hidden" id="select">
+                                  <input type="hidden" id="sort" data-url="{% url 'software:catalog' %}"> 
                                 </div>
                                 </div>
                                 <div class="flex_row flex_space-between margin_top_1em">
@@ -55,10 +60,10 @@
                                     <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                                   </div>
                                 </div>
-                          </form>
+                          <!-- </form> -->
                          </fieldset>
                         <fieldset class="fieldset_border_primary margin_top_2 search_disp_f search_div_fieldset" name="fieldset" >
-                          <form data-target="form_search">         
+                          <!-- <form data-target="form_search">          -->
                           <div class="flex_column">
                             <div class="input_style ">
                               <input type="text" id="soft_name" name="soft_name" value="{{search_query_name}}" autocomplete="off"><label for="soft_name">Наименование ПО</label>
@@ -151,8 +156,9 @@
                             <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
                             <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
                         </div>
-                        </form>
+                        
                         </fieldset>
+                    </form>
                         {% endautoescape %}
                       </div>
       
@@ -290,9 +296,9 @@
                                     <!-- Бокс кнопки покупки и лайка --> 
                                           
                                         {% if s.price <= 0 or s.is_free %}
-                                        <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_download' s.id %}" class="text_color_white">Скачать бесплатно</a></button>
+                                        <a href="{% url 'software:software_download' s.id %}" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">Скачать бесплатно</a>
                                         {% else %}
-                                        <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_buy' s.id %}" class="text_color_white">Приобрести</a></button>
+                                        <a href="{% url 'software:software_buy' s.id %}" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">Приобрести</a>
                                         {% endif %}                  
                                     <div>
                                         <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">
@@ -342,10 +348,8 @@
                 
                   {% block pagination %}		
                   <div class=" flex_column margin_top-bootom_1em">
-        
                     <div class=" pos_center"><a href="#" class="button_show-more">Показать еще</a></div>
                     <div class=" flex_row pagination flex_space-between">
-
                     {% if soft_list.has_previous %}
                         <a class = "pagination_page_numbers" href="?page={{ soft_list.previous_page_number }}">&laquo;</a>
                     {% else %}
@@ -363,22 +367,9 @@
                     {% else %}
                         <a class = "pagination_ellipsis">&raquo;</a>
                     {% endif %}
-
-
-                      <!-- <a class = "pagination_page_numbers" href="#">&laquo;</a>
-                      <a class = "pagination_page_numbers" href="#">1</a>
-                      <a class = "pagination_page_numbers pagination_page_numbers_active"  href="#">2</a>
-                      <a class = "pagination_page_numbers" href="#">3</a>
-                      <a class = "pagination_page_numbers" href="#">4</a>
-                      <a class = "pagination_page_numbers" href="#">5</a>
-                      <a class = "pagination_ellipsis" href="#">...</a>
-                      <a class = "pagination_page_numbers" href="#">15</a>
-                      <a class = "pagination_page_numbers" href="#">16</a>
-                      <a class = "pagination_page_numbers" href="#">&raquo;</a> -->
                     </div>
                   </div>
-
-              {% endblock %}	
+              {% endblock pagination %}	
                  
                 </section>
 
@@ -396,6 +387,7 @@
                     areas_more();
                     form_search_reset();
                     favourite();
+                    filtering_for_search();
 
                     $('#widgets_vertical_slider').slick({
                       vertical:true,

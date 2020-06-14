@@ -575,3 +575,27 @@ function comment_count_change(container_discussion)
     var new_count = parseInt(comment_count_elem.html()) + 1;
     comment_count_elem.html(new_count)
 }
+
+
+
+// Ф-ия дополнительной фильтрации поисков
+function filtering_for_search() 
+{
+    console.log("111")
+    // ajax запрос для сортировки
+    $('#sort').on('change', function() {
+        console.log("222")
+        var sortid = $('#sort').val();
+        console.log(sortid)
+        $.ajax({
+            type: "GET",
+            url: $(this).data('url'),
+            data: {'sortid': sortid}
+        })
+        .done(function (data) {
+            console.log("333")
+            console.log(data.result)
+            $('.software_container').html(data.result);
+        });
+    });
+}

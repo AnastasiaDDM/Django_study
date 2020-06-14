@@ -13,6 +13,7 @@ urlpatterns = [
     path('<int:software_id>/download/', views.software_download, name='software_download'),
     path('<int:software_id>/download/add', views.add_download, name='add_download'),
     # path('<int:id>/discussions', discussions, name = 'discussions'),
+    path('sort/', views.sort, name='sort'),
 
     # path('<int:id_soft>/review_create/success/', review_success, name = 'review_success'),
     # path('<int:id_soft>/', include('review.urls'))

@@ -46,9 +46,12 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     def __str__(self):
         if self.email:
             return self.email
-        else:
+        elif self.phone:
             return self.phone
-
+        elif self.guest_session:
+            return self.guest_session
+        else:
+            return "Неизвестный"
 
     class Meta:
         verbose_name = 'Пользователь'

@@ -41,7 +41,7 @@ class Review(models.Model):
 
 class Review_Addition(models.Model):
     review = models.ForeignKey(Review, on_delete = models.PROTECT, verbose_name='Отзыв')
-    name = models.CharField('Название', max_length = 50, null=True)
+    name = models.CharField('Название', max_length = 50, null=True, blank=True)
     size = models.BooleanField('Тип (true - большая картинка)', default=True)
     photo = models.ImageField('Фото', upload_to="review/")     
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)

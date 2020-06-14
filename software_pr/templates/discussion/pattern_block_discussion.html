@@ -75,11 +75,13 @@
         {% else %}
             Обсуждений пока нет, но вы можете начать новое обсуждение
         {% endif %}
-        </div> 
+        </div>
+        {% if discussions_list and show_more == True %} 
         <div class="pos_center margin_top-bootom_1em">
-            <a href="#" class="button_reset">Показать еще
+            <a href="{% url 'discussion:discussions' 'softwares' software.id %}" class="button_reset">Показать еще
             </a>
         </div>
+        {% endif %}
     </div>
     <div class=" flex_column pos_center w_50_sm margin_top_3em">     
         <!-- Форма комментария Ваше мнение -->

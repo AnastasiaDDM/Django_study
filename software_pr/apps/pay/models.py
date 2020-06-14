@@ -2,6 +2,7 @@ from django.db import models
 # import order.models as Order_models
 from order.models import Order
 import dbl
+from django.db.models import Sum
 
 
 class Pay(models.Model):
@@ -17,3 +18,12 @@ class Pay(models.Model):
     class Meta:
         verbose_name = 'Оплата'
         verbose_name_plural = 'Оплаты'
+
+    # Ф-ия считает сумму платежей переданного заказа
+    @staticmethod
+    def get_payment_of_order(order_id = 0):
+        if order_id > 0:
+            data = Pay.objects.filter(order=order_id).aggregate(Sum('amount'))
+            if 'amount__sum' in data.keys():
+                return int(data['amount__sum'])
+        return 0

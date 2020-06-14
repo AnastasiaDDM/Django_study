@@ -286,7 +286,7 @@
                 <i class="fas fa-cart-plus orders_legend_i" title="Купленное ПО" aria-hidden="true">
                 </i>
               </div>
-              <div class="orders_legend_text">&#8212 Купленные ПО
+              <div class="orders_legend_text">&#8212 Покупка ПО
               </div>  
             </div>
             <div class="flex_row">
@@ -332,33 +332,39 @@
                         <i class="fas fa-pencil-alt order_type_i" title="Доработка ПО" aria-hidden="true">
                         </i>
                         {% endif %}  
-
                       </div>
                     </div>   
                     <div class = "pos_left_for_text "> 
                       <div class="order_div_name margin_bottom_1em">
                         {% if order.name %}
-                        <a class = "orders_text_big" href="URL">{{order.name}}
+                        <a class = "orders_text_big" href="{% url 'order:order_page' order.id %}">{{order.name}}
                         </a>
                         {% else %}
-                        <a class = "orders_text_big" href="URL">{{order.software.name}}
+                        <a class = "orders_text_big" href="{% url 'order:order_page' order.id %}">{{order.software.name}}
                         </a>
-                        {% endif %}
-                        
+                        {% endif %}                      
                       </div>
-                      <div class = "orders_text_small" href="URL">{{order.type_soft}}
+                      <div class = "orders_text_small">{{order.type_soft|default:''}}
                       </div>
                       <div class="float_right w_55_xs">
-                        <div  class="order_state_dev">В разработке
+                        {% if order.cost == order.paid_amount %}
+                        <div class="order_state_pay">Оплачено
                         </div>
-                        <div class="">
+                        {% elif order.paid_amount == 0 %}
+                        <div class="order_state_not_pay">Не оплачено
+                        </div>
+                        {% elif order.paid_amount != 0 %}
+                        <div class="order_state_dev">В разработке
+                        </div>
+                        {% endif %}
+                        <div>
                           <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
+                            <div class="orders_text_medium text_bold">Итого: {{order.cost|floatformat|default:"0"}} &#8381
                             </div>
                             <div class="orders_text_small">
-                              <div>Внесено: 5 000 &#8381
+                              <div>Внесено: {{order.paid_amount|floatformat|default:"0"}} &#8381
                               </div>
-                              <div>Осталось: 95 000 &#8381
+                              <div>Осталось: {{order.cost|subtraction:order.paid_amount|floatformat|default:'0'}} &#8381
                               </div>
                             </div>
                           </div>
@@ -368,13 +374,13 @@
                       </div>    
                       <div class="margin_top_07em">
                         <div class="orders_text_medium">
-                          <div>Дата заказа: {% localtime on %}{{order.date|default:"-"|date:"d.m.Y H:i"}}{% endlocaltime %}
+                          <div>Дата заказа: {% localtime on %}{{order.date|date:"d.m.Y H:i"|default_if_none:"-"}}{% endlocaltime %}
                           </div>
-                          <div>Дата покупки: {% localtime on %}{{order.starting_date|default:"-"|date:"d.m.Y"}}{% endlocaltime %}
+                          <div>Дата покупки: {% localtime on %}{{order.starting_date|date:"d.m.Y"|default_if_none:"-"}}{% endlocaltime %}
                           </div>
-                          <div>Дата завершения: {% localtime on %}{{order.ending_date|default:"-"|date:"d.m.Y"}}{% endlocaltime %}
+                          <div>Дата завершения: {% localtime on %}{{order.ending_date|default_if_none:"-"|date:"d.m.Y"}}{% endlocaltime %}
                           </div>
-                          <div>Скидка: {{order.discount|floatformat|add:'%'|default:"-"}}
+                          <div>Скидка: {{order.discount|floatformat|add:'%'|default_if_none:"-"}}
                           </div>
                           <div>Лицензия: {% localtime on %}{{order.ending_date|default:"Не ограничена"|date:"d.m.Y"}}{% endlocaltime %}
                           </div>
@@ -399,340 +405,6 @@
             </div>
             {% endif %}  
             {% endif %}
-
-
-
-
-
-            <div class="column-2"> 
-              <!-- Бокс одной карточки --> 
-              <article class="flex_column  "> 
-                <!-- Контейнер одной карточки --> 
-                <fieldset class=" order_card margin_top_2" name="fieldset">
-                  <legend>Заказ №25
-                  </legend>
-                  <form>
-                    <div class="float_right ml_mb">
-                      <div class="order_type_i pos_right order_card_type_state_small">
-                        <i class="fas fa-pencil-alt order_type_i" title="Оригинальная разработка" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div> 
-                    <div class = "pos_left_for_text "> 
-                      <div class="order_div_name margin_bottom_1em">
-                        <!-- <div class = "software_price">350 000 000 р</div> -->
-                        <!-- Контейнер названия и типа ПО -->
-                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
-                        </a>
-                      </div>
-                      <div class = "orders_text_small" href="URL">Настольное приложение
-                      </div>
-                      <div class="float_right w_55_xs">
-                        <div  class="order_state_pay">Оплачено
-                        </div>
-                        <div class="">
-                          <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 100 000 &#8381
-                            </div>
-                            <div class="orders_text_small">
-                              <div>Внесено: 100 000 &#8381
-                              </div>
-                              <div>Осталось: 0 &#8381
-                              </div>
-                            </div>
-                          </div>
-                          <button class="button_pay margin_top_1em img_width">Оплатить
-                          </button>
-                        </div> 
-                      </div>    
-                      <div class="margin_top_07em">
-                        <div class="orders_text_medium">
-                          <div>Дата заказа: 10.12.2019 11:45
-                          </div>
-                          <div>Дата покупки: -
-                          </div>
-                          <div>Дата завершения: 10.06.2020
-                          </div>
-                          <div>Скидка: 30%
-                          </div>
-                          <div>Лицензия: Не ограничена
-                          </div>
-                        </div>
-                      </div>
-                      <div class=" cursor">
-                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
-                        </a>
-                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </article>
-            </div>
-            <div class="column-2"> 
-              <!-- Бокс одной карточки --> 
-              <article class="flex_column  "> 
-                <!-- Контейнер одной карточки --> 
-                <fieldset class=" order_card margin_top_2" name="fieldset">
-                  <legend>Заказ №25
-                  </legend>
-                  <form>
-                    <div class="float_right ml_mb">
-                      <div class="order_type_i pos_right order_card_type_state_small">
-                        <i class="fas fa-cart-plus order_type_i" title="Купленное ПО" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div> 
-                    <div class = "pos_left_for_text "> 
-                      <div class="order_div_name margin_bottom_1em">
-                        <!-- <div class = "software_price">350 000 000 р</div> -->
-                        <!-- Контейнер названия и типа ПО -->
-                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
-                        </a>
-                      </div>
-                      <div class = "orders_text_small" href="URL">Настольное приложение
-                      </div>
-                      <div class="float_right w_55_xs">
-                        <div  class="order_state_not_pay">Не оплачено
-                        </div>
-                        <div class="">
-                          <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 150 000 &#8381
-                            </div>
-                            <div class="orders_text_small">
-                              <div>Внесено: 0 &#8381
-                              </div>
-                              <div>Осталось: 150 000 &#8381
-                              </div>
-                            </div>
-                          </div>
-                          <button class="button_pay margin_top_1em img_width">Оплатить
-                          </button>
-                        </div> 
-                      </div>    
-                      <div class="margin_top_07em">
-                        <div class="orders_text_medium">
-                          <div>Дата заказа: 10.12.2019 11:45
-                          </div>
-                          <div>Дата покупки: -
-                          </div>
-                          <div>Дата завершения: 10.06.2020
-                          </div>
-                          <div>Скидка: 30%
-                          </div>
-                          <div>Лицензия: Не ограничена
-                          </div>
-                        </div>
-                      </div>
-                      <div class=" cursor">
-                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
-                        </a>
-                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </article>
-            </div>
-            <div class="column-2"> 
-              <!-- Бокс одной карточки --> 
-              <article class="flex_column  "> 
-                <!-- Контейнер одной карточки --> 
-                <fieldset class=" order_card margin_top_2" name="fieldset">
-                  <legend>Заказ №25
-                  </legend>
-                  <form>
-                    <div class="float_right ml_mb">
-                      <div class="order_type_i pos_right order_card_type_state_small">
-                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div> 
-                    <div class = "pos_left_for_text "> 
-                      <div class="order_div_name margin_bottom_1em">
-                        <!-- Контейнер названия и типа ПО -->
-                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
-                        </a>
-                      </div>
-                      <div class = "orders_text_small" href="URL">Настольное приложение
-                      </div>
-                      <div class="float_right w_55_xs">
-                        <div  class="order_state_dev">В разработке
-                        </div>
-                        <div class="">
-                          <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
-                            </div>
-                            <div class="orders_text_small">
-                              <div>Внесено: 5 000 &#8381
-                              </div>
-                              <div>Осталось: 95 000 &#8381
-                              </div>
-                            </div>
-                          </div>
-                          <button class="button_pay margin_top_1em img_width">Оплатить
-                          </button>
-                        </div> 
-                      </div>    
-                      <div class="margin_top_07em">
-                        <div class="orders_text_medium">
-                          <div>Дата заказа: 10.12.2019 11:45
-                          </div>
-                          <div>Дата покупки: -
-                          </div>
-                          <div>Дата завершения: 10.06.2020
-                          </div>
-                          <div>Скидка: 30%
-                          </div>
-                          <div>Лицензия: Не ограничена
-                          </div>
-                        </div>
-                      </div>
-                      <div class=" cursor">
-                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
-                        </a>
-                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </article>
-            </div>
-            <div class="column-2"> 
-              <!-- Бокс одной карточки --> 
-              <article class="flex_column  "> 
-                <!-- Контейнер одной карточки --> 
-                <fieldset class=" order_card margin_top_2" name="fieldset">
-                  <legend>Заказ №25
-                  </legend>
-                  <form>
-                    <div class="float_right ml_mb">
-                      <div class="order_type_i pos_right order_card_type_state_small">
-                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div> 
-                    <div class = "pos_left_for_text "> 
-                      <div class="order_div_name margin_bottom_1em">
-                        <!-- <div class = "software_price">350 000 000 р</div> -->
-                        <!-- Контейнер названия и типа ПО -->
-                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
-                        </a>
-                      </div>
-                      <div class = "orders_text_small" href="URL">Настольное приложение
-                      </div>
-                      <div class="float_right width_55">
-                        <div  class="order_state_dev">В разработке
-                        </div>
-                        <div class="">
-                          <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
-                            </div>
-                            <div class="orders_text_small">
-                              <div>Внесено: 5 000 &#8381
-                              </div>
-                              <div>Осталось: 95 000 &#8381
-                              </div>
-                            </div>
-                          </div>
-                          <button class="button_pay margin_top_1em img_width">Оплатить
-                          </button>
-                        </div> 
-                      </div>    
-                      <div class="margin_top_07em">
-                        <div class="orders_text_medium">
-                          <div>Дата заказа: 10.12.2019 11:45
-                          </div>
-                          <div>Дата покупки: -
-                          </div>
-                          <div>Дата завершения: 10.06.2020
-                          </div>
-                          <div>Скидка: 30%
-                          </div>
-                          <div>Лицензия: Не ограничена
-                          </div>
-                        </div>
-                      </div>
-                      <div class=" cursor">
-                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
-                        </a>
-                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </article>
-            </div>
-            <div class="column-2"> 
-              <!-- Бокс одной карточки --> 
-              <article class="flex_column  "> 
-                <!-- Контейнер одной карточки --> 
-                <fieldset class=" order_card margin_top_2" name="fieldset">
-                  <legend>Заказ №25
-                  </legend>
-                  <form>
-                    <div class="float_right ml_mb">
-                      <div class="order_type_i pos_right order_card_type_state_small">
-                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div> 
-                    <div class = "pos_left_for_text "> 
-                      <div class="order_div_name margin_bottom_1em">
-                        <!-- <div class = "software_price">350 000 000 р</div> -->
-                        <!-- Контейнер названия и типа ПО -->
-                        <a class = "orders_text_big" href="URL">Автоматизированное кафе для доставки кофе на дом и в офис
-                        </a>
-                      </div>
-                      <div class = "orders_text_small" href="URL">Сайт
-                      </div>
-                      <div class="float_right width_55">
-                        <div  class="order_state_dev">В разработке
-                        </div>
-                        <div class="">
-                          <div class = "flex_row flex_space-between">
-                            <div class="orders_text_medium text_bold">Итого: 100 333 000 &#8381
-                            </div>
-                            <div class="orders_text_small">
-                              <div>Внесено: 5 000 &#8381
-                              </div>
-                              <div>Осталось: 95 000 &#8381
-                              </div>
-                            </div>
-                          </div>
-                          <button class="button_pay margin_top_1em img_width">Оплатить
-                          </button>
-                        </div> 
-                      </div>    
-                      <div class="margin_top_07em">
-                        <div class="orders_text_medium">
-                          <div>Дата заказа: 10.12.2019 11:45
-                          </div>
-                          <div>Дата покупки: -
-                          </div>
-                          <div>Дата завершения: 10.06.2020
-                          </div>
-                          <div>Скидка: 30%
-                          </div>
-                          <div>Лицензия: Не ограничена
-                          </div>
-                        </div>
-                      </div>
-                      <div class=" cursor">
-                        <a class="link_style_border orders_text_medium text_bold vertical_mid">Чат (3)
-                        </a>
-                        <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse vertical_mid" aria-hidden="true">
-                        </i>
-                      </div>
-                    </div>
-                  </form>
-                </fieldset>
-              </article>
-            </div>
           </div>
         </section>
       </section>

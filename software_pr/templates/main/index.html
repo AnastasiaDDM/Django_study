@@ -58,9 +58,9 @@
             </div>
         </div>
         <div class=" main_banner margin_top_3em">
-          <a class="link_style_none" href="email_us.html">
+          <a class="link_style_none" href="{% url 'order:request_to_order' %}">
             <div class="flex_row main_banner_order pos_center_for_div">
-              <div class="main_banner_order_text" href="make_an_order.html">
+              <div class="main_banner_order_text">
                 <h2>Хотите заказать свою разработку ?
                 </h2>
                 <p>Узнайте сроки выполнения и стоимость 
@@ -114,7 +114,7 @@
             <div class="flex_row flex_space-between margin_top-bootom_1em">
               <div class="ord_column-3 margin_top_3em">
                 <div class="main_order flex_column">
-                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                  <a class = "pos_center link_style_none" href = "{% url 'order:request_to_order' %}">
                     <div class = "main_order_title">Сайт
                     </div>
                     <div>
@@ -126,7 +126,7 @@
                         <li class="widget_marker">Высокое качество 
                       </ul>
                     </div>
-                    <button href="make_an_order.html" class="width_100 software_button-pay_style ">Заказать сейчас!
+                    <button href="{% url 'order:request_to_order' %}" class="width_100 software_button-pay_style ">Заказать сейчас!
                     </button>
                  </a>
                 </div>
@@ -138,8 +138,8 @@
                 </div>
               </div>
               <div class="ord_column-3 margin_top_3em">
-                <div class="main_order flex_column"  href="URL">
-                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                <div class="main_order flex_column">
+                  <a class = "pos_center link_style_none" href = "{% url 'order:request_to_order' %}">
                     <div class = "main_order_title">Настольные приложения
                     </div>
                     <div>
@@ -155,7 +155,7 @@
                           <li class="widget_marker">Высокое качество 
                       </ul>
                     </div>
-                    <button  href="make_an_order.html"  class="width_100 software_button-pay_style ">Заказать сейчас!
+                    <button  href="{% url 'order:request_to_order' %}"  class="width_100 software_button-pay_style ">Заказать сейчас!
                     </button>
                   </a>
                 </div>
@@ -168,7 +168,7 @@
               </div>
               <div class="margin_top_3em ord_column-3">
                 <div class="main_order flex_column">
-                  <a class = "pos_center link_style_none" href = "make_an_order.html">
+                  <a class = "pos_center link_style_none" href = "{% url 'order:request_to_order' %}">
                     <div class = "main_order_title">Мобильное приложение
                     </div>
                     <div>
@@ -188,7 +188,7 @@
                             <li class="widget_marker">Высокое качество 
                       </ul>
                     </div>
-                    <button  href="make_an_order.html"  class="width_100 software_button-pay_style ">Заказать сейчас!
+                    <button  href="{% url 'order:request_to_order' %}"  class="width_100 software_button-pay_style ">Заказать сейчас!
                     </button>
                   </a>
                 </div>
@@ -213,8 +213,6 @@
               <div class = "main_stack_cap">Языки программирования
               </div>
               <div class="flex_row main_stack_div">
-                <!-- <div class = ""><img class = "main_stack_div_img"  src="tech_stack/c.jpg" alt="Расписание"/></div>
-<div class = ""><img class = ""  src="tech_stack/python.jpg" alt="Расписание"/></div> -->
                 <div class = "main_stack_div_word">C#
                 </div>
                 <div class = "main_stack_div_word">Python
@@ -363,97 +361,19 @@
           </div>
         </section>
         <section class="padding_top_4em main_contact">
-          <div class = "main_contact_title_div"> 
-            <div class = "main_contact_title">
-              <h2>Хотите повысить эффективность 
-                своего проекта или добавить свои идеи в существующий 
-                проект?
-                <br>
-                <br>С вас идеи, с нас - реализация!
-              </h2>
-            </div>
-          </div>
-          <div  class="flex_row flex_space-between">
-            <div class="flex_column contact_container">
-              <div class = " ">
-                <a class = "pos_center link_style_none" href = "tel:+7 (924)8793741">
-                <div class = " pos_center"> 
-                  <!-- Бокс картинки --> 
-                  <img  class = "contact_img" src="{% static '/icons/phone_you.png' %}"/>
+            <a class = "link_style_none" href="{% url 'order:request_to_order' %}">
+                <div class = "main_contact_title_div"> 
+                    <div class = "main_contact_title">
+                    <h2>Хотите повысить эффективность 
+                        своего проекта или добавить свои идеи в существующий 
+                        проект?
+                        <br>
+                        <br>С вас идеи, с нас - реализация!
+                    </h2>
+                    </div>
                 </div>
-                  <h2>Позвоните нам
-                  </h2>
-                  <p>Есть вопросы? Звоните скорее
-                  </p>
-                </a>
-                  <div class="flex_column contact pos_center">
-                    <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
-                      +7 (901) 123-45-67
-                    </a>
-                    <a id = "phone" class = "text-align" href = "tel:+7 (924)8793741">
-                      +7 (901) 123-45-67
-                    </a>
-                </div>
-              </div>
-            </div>
-            <div class="flex_column contact_container">
-              <a class = "text-align link_style_none" href="{% url 'review:review_create' %}">
-              <div class = "img_width pos_center"> 
-                <!-- Бокс картинки --> 
-                <img  class = "contact_img" src="{% static '/icons/review.png' %}"/>
-              </div>
-              <div  class = "pos_center">
-                <h2>Оставьте свой отзыв
-                </h2>
-                <p>Поделитесь своим мнением о нашем сервисе!
-                </p>
-                <div class=" contact">
-                  <div class = "text-align link_as_a">
-                    Написать отзыв
-                  </div>
-                </div>
-              </div>
             </a>
-            </div>
-            <div class="flex_column contact_container">
-              <a class = "text-align link_style_none"  href="mailto: example@mail.ru">
-                <div class = "img_width pos_center"> 
-                  <!-- Бокс картинки --> 
-                  <img  class = "contact_img" src="{% static '/icons/email.png' %}"/>
-                </div>
-                <div  class = "pos_center" >
-                  <h2>Напишите нам
-                  </h2>
-                  <p>У вас есть какие-то предложения или вопросы?
-                  </p>
-                  <div class=" contact">
-                    <div class = "text-align link_as_a">
-                      example@mail.ru
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="flex_column contact_container">
-              <a class = "text-align link_style_none" href="{% url 'feedback:client_feedback' %}">
-                <div class = "img_width pos_center"> 
-                  <!-- Бокс картинки --> 
-                  <img  class = "contact_img" src="{% static '/icons/feedback.png' %}"/>
-                </div>
-                <div  class = "pos_center" >
-                  <h2>Обратный звонок
-                  </h2>
-                  <p>Оставьте свой номер и мы с вами свяжемся!
-                  </p>
-                  <div class=" contact">
-                    <div id = "phone" class = "text-align link_as_a">
-                      Заказать звонок
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
+          {% include "common/pattern_contact_container.html" %}
         </section>
         <div>
           <fieldset class="fieldset_tags w_50_sm_80 pos_center" name="fieldset">

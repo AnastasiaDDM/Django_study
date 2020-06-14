@@ -19,6 +19,9 @@ from order.models import Order
 def catalog(request):
     soft_list = Software.objects.all().filter(date_of_delete=None, visibility=True)
 
+    dbl.log("mmmmm")
+    dbl.log("бббб"+str(request))
+
     # Получение пременных из формы поиска
     search_query_name = request.GET.get('soft_name', '')
     soft_price = request.GET.get('soft_price', '')
@@ -52,8 +55,8 @@ def catalog(request):
 
     # Фильтрация списка всех ПО по выбранным классификациям
     soft_list = soft_list.filter(cond)
-    dbl.log(str(cond))
-    dbl.log(str(soft_list))
+    # dbl.log(str(cond))
+    # dbl.log(str(soft_list))
 
     # Исключение повторений ПО
     soft_list = soft_list.order_by('id').distinct()
@@ -86,27 +89,6 @@ def catalog(request):
         soft_list = soft_list.filter(modification=True)
 
 
-    count = request.GET.get('count', '10')
-    if count == "":
-        count = 10
-    count = int(count)
-
-    paginator = Paginator( soft_list, count )
-
-    try:
-        page = int(request.GET.get('page', '1'))
-
-    except:
-        page = 1
-    
-    try:
-        soft_list = paginator.page(page)
-        # dbl.log(str(page))
-        # dbl.log("пагинация")
-    except(EmptyPage, InvalidPage):
-        soft_list = paginator.page(paginator.num_pages) 
-        # dbl.log("!!пагинация")
-
     # Хэш классификаций ПО
     tags_dict = {}
     photo_dict = {}
@@ -132,11 +114,71 @@ def catalog(request):
     # Получение списка всех видов ПО
     classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
 
+    if request.is_ajax():
+        dbl.log("hhhh")
+        for soft in soft_list:
+            dbl.log("---  " + str(soft))
+        response = sort( request, soft_list)
+        dbl.log("hhhh "+str(response))
+        return response
+
+
+
+    count = request.GET.get('count', '10')
+    if count == "":
+        count = 10
+    count = int(count)
+
+    paginator = Paginator( soft_list, count )
+
+    try:
+        page = int(request.GET.get('page', '1'))
+
+    except:
+        page = 1
+    
+    try:
+        soft_list = paginator.page(page)
+        # dbl.log(str(page))
+        # dbl.log("пагинация")
+    except(EmptyPage, InvalidPage):
+        soft_list = paginator.page(paginator.num_pages) 
+        # dbl.log("!!пагинация")
+
     response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
     'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
     'classification_dict':classification_dict, 'user':user})
     return response
+
+
+def sort( request, soft_list, *args, **kwargs):
+        # sorting articles by date and rating with ajax
+        data = {}
+        dbl.log("111")
+        if request.is_ajax():
+            dbl.log("22")
+            dbl.log("22  " + str(request))
+            dbl.log("22  " + str(soft_list))
+            for soft in soft_list:
+                dbl.log("88  " + str(soft))
+            # soft_list = Software.objects.all().filter(date_of_delete=None, visibility=True)
+            # soft_list = Software.objects.all().filter(date_of_delete=None, visibility=True)
+            sort_param = request.GET.get('sortid')
+            dbl.log("99 "+str(sort_param))
+            # if sort_param in ('create_date', '-create_date', 'rate', '-rate'):
+            soft_list = soft_list.order_by(sort_param)
+            dbl.log("000")
+            data['result'] = render_block_software(request, soft_list)
+            # dbl.log("22  " + str(data))
+            # return JsonResponse(data)
+            dbl.log("33")
+            return HttpResponse(json.dumps(data), content_type='application/json')
+        return super().get(request, *args, **kwargs)
+
+
+
+
 
 
 # Страница одного ПО
@@ -186,8 +228,6 @@ def software_page(request, id):
 
         # Получаем список классификаций данного ПО
         classif = software.get_classifications()
-
-        # ar = software.get_area()
 
         # Второстепенные объекты - похожие ПО
         similar_block = render_similars(software, id_widget="same_software")
@@ -427,5 +467,35 @@ def render_similars_tags(software):
     result = render_to_string('common/pattern_similars_tags.html', {'similar_tags_list':similar_tags_list})
     return result
 
+# Ф-ия создания кода html для облака тегов к ПО
+def render_block_software(request, soft_list):
 
+        # Хэш классификаций ПО
+    tags_dict = {}
+    photo_dict = {}
+
+    for soft in soft_list:
+
+        soft_tags_list = soft.get_tags()
+
+        soft_photo = soft.get_main_photo()
+
+        # Добавляем ключ и значение в словарь
+        tags_dict[soft.id] = soft_tags_list
+
+        if soft_photo is not None:
+
+            # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+            for s in soft_photo:
+                photo_dict[soft.id] = s
+
+    # Получение текущего пользователя 
+    user = CustomUser.get_user(request)
+
+    # Получение списка тегов похожих ПО
+
+    result =''
+
+    result = render_to_string('soft/pattern_block_software.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'user':user})
+    return result
 

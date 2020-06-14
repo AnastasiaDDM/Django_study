@@ -19,7 +19,7 @@
             </h1>
         </legend>
         <form>
-            <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
+            <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">{% if not request.user.is_authenticated %}
             <div class="input_style margin_top_3em">
                 <input type="text" id="email_phone" name="email_phone">
                 <label for="email_phone">Номер телефона/ эл. почта
@@ -31,7 +31,7 @@
                 </i>
                 Рекомендуется: Зарегистрируйтесь в один клик, чтобы не потерять свои заказы и скачивания. Для этого вам нужно всего лишь ввести свой номер телефона, и данный заказ будет привязан к вашему номеру телефона.
                 Это необязательно.
-            </div>
+            </div>{% endif %}
             <div class="margin_top-bootom_1em">
                 <i class="fa fa-download i_big" aria-hidden="true">
                 </i>

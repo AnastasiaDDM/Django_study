@@ -99,12 +99,12 @@
         <div class="header">
           <div class="flex_row flex_justify-content_flex-start logo margin_bottom_1em width_70">
             <div class="header-logo">
-              <a href="/main.html">
-                <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+              <a href="{% url 'main:index' %}">
+                <img class="logo" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
               </a>
             </div>
             <div class="header-logo_name">
-              <a class = "link_style_none" href="/main.html">Название сайта
+              <a class = "link_style_none" href="{% url 'main:index' %}">Название сайта
               </a>
             </div>
           </div>
@@ -135,19 +135,19 @@
               </a>
             </li>
             <li>
-              <a href="/order.html" class ="link_style_col">Заказать
+              <a href="{% url 'order:request_to_order' %}" class ="link_style_col">Заказать
               </a>
             </li>
           </ul>
         </div>
         <div class="flex_row flex_justify-content_flex-start header_disp_none">
           <div class="header-logo">
-            <a href="/main.html">
-              <img class="logo" href="/main.html" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
+            <a href="{% url 'main:index' %}">
+              <img class="logo" src="{% static 'icons/logo.png' %}" alt="Название сайта"/>
             </a>
           </div>
           <div class="header-logo_name">
-            <a class = "link_style_none" href="/main.html">Название сайта
+            <a class = "link_style_none" href="{% url 'main:index' %}">Название сайта
             </a>
           </div>
         </div>

@@ -160,3 +160,16 @@ def get_value_in_dict(dictionary, key):
 
     except:
         return None
+
+@register.filter(name='subtraction')
+def subtraction(first_num, second_num):
+    try:
+        return float(first_num) - float(second_num)
+    except:
+        return None
+
+
+@register.filter(name='list_cross_section')
+def list_cross_section(list, start_index=0):
+    return list[start_index:]
+        

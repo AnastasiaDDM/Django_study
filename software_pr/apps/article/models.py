@@ -1,7 +1,7 @@
 from django.db import models
-from user.models import *
 from user.models import CustomUser
 from django.conf import settings
+import software.models as software_models
 
 class Article(models.Model):
     author = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Автор', null=True, blank=True)
@@ -18,3 +18,11 @@ class Article(models.Model):
     class Meta:
         verbose_name = 'Статья'
         verbose_name_plural = 'Статьи'
+
+
+    # Ф-ия получения списка тегов 
+    def get_tags(self):
+
+        # Получаем список тегов данного ПО
+        article_tag = software_models.Tag.objects.filter(articles__id=self.id, visibility=True, date_of_delete=None)
+        return article_tag

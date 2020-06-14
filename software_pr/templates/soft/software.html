@@ -3,15 +3,10 @@
 {% load software_tags %}
 {% load common_tags %}
 <title>{% block page_title %}{{software.name}}{% endblock %}
-
-  {% block link_extend %}
-  <link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
-  {% endblock %}
-
-
-
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
+{% endblock %}
  {% block content %}
-
  {% block content_title %}
  <h1>{{software.name}}</h1>
 {% endblock %}
@@ -23,7 +18,6 @@
 {% breadcrumb_url software.name %}
 </ul>
 {% endblock %}
-
  <section>
   <div class="flex_column  pos_left padding_top_2em padding_bottom_2em" >
     <div class="flex_row flex_space-between width_100"> 
@@ -76,17 +70,17 @@
             {% if software.modification %}
             <!--Это контейнер кнопок-->
             <div>
-                <button href="buy.html" class="button_pay width_100 margin_top-bootom_1em">
+                <!-- <button href="buy.html" class="button_pay width_100 margin_top-bootom_1em"> -->
                 {% if software.price <= 0 or software.is_free %}
-                Скачать бесплатно
+                <a href="{% url 'software:software_download' software.id %}" class="button_pay width_100 margin_top-bootom_1em">Скачать бесплатно</a>
                 {% else %}
-                Приобрести
+                <a href="{% url 'software:software_buy' software.id %}" class="button_pay width_100 margin_top-bootom_1em">Приобрести</a>
                 {% endif %}  
-                </button>
             </div>
             <div class="flex_row  flex_space-between">
-                <button class="button_pay button_pay_width_full">Заказать доработку
-                </button>
+                <a href="{% url 'software:software_buy' software.id %}" class="button_pay button_pay_width_full">Заказать доработку</a>
+                <!-- <button class="button_pay button_pay_width_full">Заказать доработку
+                </button> -->
                 <div>
                 {% if user %}
                 {% with favourite=software|is_favourite:user %}
@@ -104,8 +98,7 @@
             {% else %}
             <!--Это контейнер кнопок-->
             <div class="flex_row  flex_space-between">
-                <button class="button_pay button_pay_width_full">Скачать бесплатно
-                </button>
+                <a href="{% url 'software:software_download' software.id %}" class="button_pay button_pay_width_full">Скачать бесплатно</a>
                 <div>
                     <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{software.id}}">
                     {% if user %}
@@ -174,13 +167,11 @@
   <div> 
     <!--Это контейнер кнопок, которые находятся в контенте-->
     <div class="flex_row w_50_sm pos_center padding_top_2em padding_bottom_2em">
-      <button href="buy.html" class="button_pay button_pay_width_full ">
         {% if software.price <= 0 or software.is_free %}
-        Скачать бесплатно
+        <a href="{% url 'software:software_download' software.id %}" class="button_pay button_pay_width_full">Скачать бесплатно</a>
         {% else %}
-        {{software.price|floatformat |default:""}}  &#8381 Приобрести
+        <a href="{% url 'software:software_buy' software.id %}" class="button_pay button_pay_width_full">{{software.price|floatformat |default:""}}  &#8381 Приобрести</a>
         {% endif %}
-      </button>
       <div >
         <i class="fa fa-heart button_like width_30" aria-hidden="true">
         </i>

@@ -11,32 +11,25 @@ def add_pay(request):
 
     # Получение данных из формы в переменную
     form = PayForm(request.GET)
+    data = { 'status': 'no' }
 
     if form.is_valid():
 
-        data = { 'status': 'no' }
-        dbl.log("1  ")
-
         try:
             pay = Pay()
-            dbl.log("2  ")
 
             # Заполнение полей модели
             order_id = form.cleaned_data['order_id']
-            dbl.log("33  "+str(order_id))
             order = Order.objects.get( id = int(order_id) )
-            dbl.log("33  ")
             pay.order = order
-            dbl.log("3  ")
             pay.amount = form.cleaned_data['amount']
-            dbl.log("4  ")
             pay.save()
             
-            dbl.log("5  ")
-            bool_flag = order.set_paid_amount()
-
-            if bool_flag:
-                data = { 'status': 'ok' }
+            # Получения суммы оплат по данному заказу и обновление paid_amount
+            amount = Pay.get_payment_of_order(order.id)
+            order.paid_amount = amount
+            order.save()
+            data = { 'status': 'ok' }
 
         # except :
         #     pass
@@ -45,7 +38,7 @@ def add_pay(request):
             pass
             dbl.log("Ошибка работы " + str(error))
     
-        return HttpResponse(json.dumps(data), content_type='application/json')
+    return HttpResponse(json.dumps(data), content_type='application/json')
 
 
 # Ф-ия успешной оплаты

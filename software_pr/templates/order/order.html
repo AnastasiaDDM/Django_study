@@ -1,0 +1,354 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load tz %}
+{% load common_tags %}
+<title>{% block page_title %}Заказ № {{order.id}}{% endblock %}
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
+{% endblock %}
+ {% block content %}
+ {% block content_title %}
+ <h1>Заказ № {{order.id}}</h1>
+{% endblock %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+{% breadcrumb_url 'Главная' 'main:index' %}
+{% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+{% breadcrumb_url 'Мои заказы' 'user:orders' %}
+{% breadcrumb_url order.name %}
+</ul>
+{% endblock %}
+      <section>
+        <div>
+          <!-- Это для мобильной версии! -->
+          <div class="order_card_type_state pos_right disp_div_state_first">
+            {% if order.kind == 'buy' %}
+            <div class="order_type_i float_right">
+                <i class="fas fa-cart-plus order_type_i" title="Покупка ПО" aria-hidden="true"></i>
+            </div>
+            <div class="order_type">Покупка ПО</div>
+            {% elif order.kind == 'org' %}
+            <div class="order_type_i float_right">
+                <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true"></i>
+            </div>
+            <div class="order_type">Оригинальная разработка</div>
+            {% else %}
+            <div class="order_type_i float_right">
+                <i class="fas fa-pencil-alt order_type_i" title="Доработка ПО" aria-hidden="true"></i>
+            </div>
+            <div class="order_type">Доработка ПО</div>
+            {% endif %}  
+            {% if order.cost == order.paid_amount %}
+            <div class="order_state_pay margin_top_07em">Оплачено
+            </div>
+            {% elif order.paid_amount == 0 %}
+            <div class="order_state_not_pay margin_top_07em">Не оплачено
+            </div>
+            {% elif order.paid_amount != 0 %}
+            <div class="order_state_dev margin_top_07em">В разработке
+            </div>
+            {% endif %}
+          </div>
+          <div class="flex_column  pos_left padding_top_2em padding_bottom_2em width_100" >
+            <div class="flex_row flex_space-between width_100""> 
+              <!--Это контейнер фоток ПО и начала его описания, характеристик-->
+              <div class="flex_column w_50_sm pos_center_sm"> 
+                <div class="flex_row flex_wrap">
+                    {% if main_photo %}
+                    <a class="example-image-link" href="{{main_photo.photo.url}}" data-lightbox="example-set" 
+                    data-title="{{main_photo.name}}"><img class="example-image img_width padding_bottom_2em" src="{{main_photo.photo.url}}" alt="{{main_photo.name}}"/></a>
+                    {% endif %} 
+                    {% if order_img %}
+                    {% for s in order_img %}
+                    <div class = "img_margin">
+                        <a class="example-image-link" href="{{s.photo.url}}" data-lightbox="example-set" 
+                        data-title="{{s.name}}"><img class="example-image max_width_10em_img" src="{{s.photo.url}}" alt="{{s.name}}"/></a>
+                    </div>
+                    {% endfor %}
+                    {% endif %} 
+                    {% if not main_photo and not order_img %}
+                        Фотографий нет
+                    {% endif %} 
+                </div>
+                <div class="order_pay "name="fieldset">
+                    <div class="w_80_xs">
+                      <div class = "flex_row flex_space-between">
+                        <div style ="font-size: 140%;">Итого: {{order.cost|floatformat|default:"0"}} &#8381
+                        </div>
+                        <div style =" vertical-align: middle;">
+                          <div>Внесено: {{order.paid_amount|floatformat|default:"0"}} &#8381
+                          </div>
+                          <div>Осталось: {{order.cost|subtraction:order.paid_amount|floatformat|default:'0'}} &#8381
+                          </div>
+                        </div>
+                      </div>
+                      <button class="button_pay margin_top_1em img_width">Оплатить
+                      </button>
+                    </div>        
+                </div>
+              </div>
+              <div class="flex_column w_50_sm padding_left_4em_sm pos_center_sm padding_top_2em_sm"> 
+                <!--Это контейнер состояния, типа разработки, дат и описания-->
+                <div>
+                  <div class="order_card_type_state pos_right disp_div_state_second">
+                    {% if order.kind == 'buy' %}
+                    <div class="order_type_i float_right">
+                        <i class="fas fa-cart-plus order_type_i" title="Покупка ПО" aria-hidden="true"></i>
+                    </div>
+                    <div class="order_type">Покупка&nbsp;ПО</div>
+                    {% elif order.kind == 'org' %}
+                    <div class="order_type_i float_right">
+                        <i class="fa fa-magic order_type_i" title="Оригинальная разработка" aria-hidden="true"></i>
+                    </div>
+                    <div class="order_type">Оригинальная разработка</div>
+                    {% else %}
+                    <div class="order_type_i float_right">
+                        <i class="fas fa-pencil-alt order_type_i" title="Доработка ПО" aria-hidden="true"></i>
+                    </div>
+                    <div class="order_type">Доработка&nbsp;ПО</div>
+                    {% endif %}  
+                    {% if order.cost == order.paid_amount %}
+                    <div class="order_state_pay margin_top_07em">Оплачено
+                    </div>
+                    {% elif order.paid_amount == 0 %}
+                    <div class="order_state_not_pay margin_top_07em">Не&nbsp;оплачено
+                    </div>
+                    {% elif order.paid_amount != 0 %}
+                    <div class="order_state_dev margin_top_07em">В&nbsp;разработке
+                    </div>
+                    {% endif %}
+                  </div>
+                  <div class="order_text">
+                    <div class="padding_bottom_2em">
+                        <div>Дата заказа: {% localtime on %}{{order.date|date:"d.m.Y H:i"|default_if_none:"-"}}{% endlocaltime %}
+                        </div>
+                        <div>Дата покупки: {% localtime on %}{{order.starting_date|date:"d.m.Y"|default_if_none:"-"}}{% endlocaltime %}
+                        </div>
+                        <div>Дата завершения: {% localtime on %}{{order.ending_date|default_if_none:"-"|date:"d.m.Y"}}{% endlocaltime %}
+                        </div>
+                        <div>Скидка: {{order.discount|floatformat|add:'%'|default_if_none:"-"}}
+                        </div>
+                        <div>Лицензия: {% localtime on %}{{order.ending_date|default:"Не ограничена"|date:"d.m.Y"}}{% endlocaltime %}
+                        </div>
+                    </div>
+                    <div class="">
+                      <ul class = "pos_left software_description_list">
+                        <li class="software_description_marker">Вид: 
+                            {{order.type_soft|default:'Не установлено'}}
+                        </li>
+                        <li class="software_description_marker">Тип использования: 
+                          <a href="URL">Групповой доступ
+                          </a>
+                        </li>
+                        <li class="software_description_marker">Ограничение доступа: 
+                          <a href="URL">Без разделения ролей
+                          </a>
+                        </li>
+                        <li class="software_description_marker">Дополнительные установки: 
+                          <a href="URL">Не требуются
+                          </a>
+                        </li>
+                        <li class="software_description_marker">Установка приложение: 
+                          <a href="URL">Не требуется
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="order_chat cursor">
+                      <a class="link_style_border">Чат (3)
+                      </a>
+                      <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse" aria-hidden="true">
+                      </i>
+                    </div>
+                    <!-- <h1 style="color: #a8ccf0; font-size: 55px;" class="animated infinite pulse">Pulse</h1> -->
+                    <div class="">
+                      <h2>Требования
+                      </h2>
+                      <div class="margin_top-bootom_1em w_80_xs">
+                        <div>{{list_note.0}}
+                        </div>
+                        <div style="display: none;" id="description_text" class="all_text">
+                            {{list_note.1|linebreaks}}
+                        </div>
+                      <div class="margin_top-bootom_1em pos_left bt_read_pos_center">
+                        <a class="button_reset text_roll" data-target="description_text">Читать полностью
+                        </a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="padding_top-bootom_1em">
+          <div class="pos_center">
+            <h2>Последние сообщения в чате
+            </h2>
+          </div>
+          <div class="pos_center margin_top_2 padding_bottom_4em">
+            <a href="#" class="button_show-more">Перейти в чат (3)
+            </a>
+          </div>
+          <div class="w_70_sm pos_center_for_div padding_top-bootom_1em">
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">На нас те медали, что мы добывали в бою
+                    <br>
+                    Не смотри на меня волком, не смотри - я пастух
+                    <br>
+                    Не молчи - я молю, разожги - я потух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух
+                    Накорми меня с рук, напои меня с губ
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right">
+              <div class="chat_comment ">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Неживой водой
+                    <br>
+                    Ключевым ручьем
+                    <br>
+                    Сытой зимой
+                    <br>
+                    Спелой весной
+                    <br>
+                    Спела приговор
+                    <br>
+                    Перспективы стен
+                    <br>
+                    Это нелюбовь
+                    <br>
+                    Разве только плен
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right">
+              <div class="chat_comment ">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Нет уж, не терпеть больно
+                    <br>
+                    Больно доставлять боль
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Ты - белая, как день ночью
+                    Черная, как ночь днем
+                    Небо, точно дождь прочит
+                    В ведрах вон уж весь дом
+                    Хватит, это ложь - полно
+                    Режет, точно ножом
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Вот фотографии проекта, внесите свои поправки,
+                    если таковые имеются.
+                  </div>
+                  <div class="flex_row flex_wrap margin_top-bootom_1em " >
+                    <div class = " chat_img_margin_between">
+                      <img class = "chat_img"  src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = " chat_img_margin_between">
+                      <img class = "chat_img"  src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = " chat_img_margin_between">
+                      <img class = "chat_img"  src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img  class = "chat_img" src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right" id="last">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Круто! Все отлично!
+                  </div>
+                  <div class="flex_row flex_space-between margin_top-bootom_1em chat_img">
+                    <div class = "chat_img_margin_between">
+                      <img class = "chat_img"  src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <img class = "chat_img"  src="images/timetable.jpg" alt="Расписание"/>
+                    </div>
+                  </div>
+                  <div class="chat_comment_text"> Вот дополнение 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pos_center margin_top-bootom_1em">
+            <a href="#" class="button_show-more">Перейти в чат (3)
+            </a>
+          </div>
+        </div>
+        {% include "common/pattern_contact_container.html" %}
+      </section>
+{% endblock %}	
+{% block js_extend %}
+<script src="{% static '/js/lightbox.min.js' %}"></script>
+<script>
+    jQuery(document).ready(function () {
+        read_more_text_roll();
+        })         
+</script>
+{% endblock %}

@@ -55,13 +55,16 @@ def personal_data_edit(request):
 def favourites(request):
     # Получения пользователя
     user = CustomUser.get_user(request)
+    dbl.log("1")
 
     if user:
+        dbl.log("1")
         favourites = Software.get_favourites_by_user(user)
+        dbl.log("1"+str(favourites))
 
         # Словарь главных фото
         photo_dict = {}
-
+        dbl.log("1")
         for soft in favourites:
 
             # Получение главного фото
@@ -71,8 +74,9 @@ def favourites(request):
 
                 # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
                 for s in soft_photo:
+                    dbl.log("1")
                     photo_dict[soft.id] = s
-
+        dbl.log("1")
         response= render(request, 'user/favourites.html', {'favourites':favourites, 'user':user, 'photo_dict':photo_dict})
         return response
 
@@ -87,14 +91,6 @@ def favourites_clean(request):
         for fav in favourites:
             fav.delete()
         return render(request, 'user/favourites.html', {'favourites':None})
-
-
-# # Заказы
-# def orders(request):
-#     if request.user.is_authenticated:
-#         orders = Order.get_orders_by_user(request.user)
-#         dbl.log(str(orders))
-#         return render(request, 'order/orders.html', {'orders':orders})
 
 
 # Загрузки

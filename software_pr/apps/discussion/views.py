@@ -56,7 +56,7 @@ def discussions(request, type='', id = 0):
                 #     # Добавляем ключ и значение в словарь
                 #     comments_dict[discussion.id] = list_comment_for_one_disc
 
-                discussion_comment_block = render_discussion_comment(software, request, limit=0)
+                discussion_comment_block = render_discussion_comment(software, request, limit=0, show_more=False)
 
                 dbl.log("Ошибка 1 " )
                 # Второстепенные объекты - похожие ПО
@@ -172,7 +172,7 @@ def discussion_create(request):
 # ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
 
 # Ф-ия создания кода html обсуждений и их комментариев
-def render_discussion_comment(software, request, limit=0):
+def render_discussion_comment(software, request, limit=0, show_more=True):
 
     # Объявление переменных
     list_disc_id = []
@@ -208,5 +208,5 @@ def render_discussion_comment(software, request, limit=0):
         comments_dict[discussion.id] = list_comment_for_one_disc
     
     result = render_to_string('discussion/pattern_block_discussion.html', {'discussions_list':discussions_list,
-    'comments_dict':comments_dict,'software':software}, request=request)
+    'comments_dict':comments_dict,'software':software, 'show_more':show_more}, request=request)
     return result

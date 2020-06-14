@@ -1,0 +1,88 @@
+{% load static %}
+{% load software_tags %}
+{% load common_tags %}
+{% if soft_list %}
+{% for s in soft_list %}
+  <div class="software_column-2 catalog_card_software"> 
+    <!-- Бокс одной карточки --> 
+    <article class="flex_column software_alone_container blue_bg"> 
+      <!-- Контейнер одной карточки --> 
+
+      <div class = "flex_column width_100"> 
+<div>
+    {% if s.is_free is False %}
+    <div class = "software_price">{{s.price}} &#8381</div>
+    {% endif %}
+        <!-- Контейнер названия и типа ПО -->
+        <div class="software_div_name">
+          <!-- Контейнер названия и типа ПО -->
+          <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
+    </div>
+  </div>
+        <span class = "software_type" href="software_page">{{s.get_type|join:", "|default:""}}
+        </span>
+      </div>
+      <div class="flex_row container_img_text">  
+        <!-- Контейнер картинки и текста --> 
+        <div class = "flex_column software_container_image_button"> 
+          <!-- Контейнер картинки и кнопок -->
+          <div class = "software_div_images"> 
+            <!-- Бокс картинки --> 
+            {% if photo_dict %}
+            {% with photo=photo_dict|get_value_for_dict:s.id %}
+                {% if photo %}
+                <a href="{% url 'software:software_page' s.id %}"><img class = "img_width cursor" src="{{photo.photo.url}}"  alt="{{s.name}}"/></a>
+                {% endif %}
+            {% endwith %}
+            {% endif %}
+          </div>
+          <div class="flex_row software_container_button flex_space-between"> 
+            <!-- Бокс кнопки покупки и лайка --> 
+                  
+                {% if s.price <= 0 or s.is_free %}
+                <a href="{% url 'software:software_download' s.id %}" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">Скачать бесплатно</a>
+                {% else %}
+                <a href="{% url 'software:software_buy' s.id %}" class="software_button-pay_style dark_blue-bg software_button-pay_style_width">Приобрести</a>
+                {% endif %}                  
+            <div>
+                <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">
+                {% if user %}
+                {% with favourite=s|is_favourite:user %}
+                    {% if favourite %}
+                    <i class="fa fa-heart button_like_true" aria-hidden="true"></i>
+                    {% else %}
+                    <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                    {% endif %}
+                {% endwith %}
+                {% else %}
+                <i class="fa fa-heart button_like" aria-hidden="true"></i>
+                {% endif %}  
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class = "software_description article_div_text">
+          <div style = "padding-bottom: 0.25em">Для: 
+            <span href="catalog.html">{{s.get_area|join:", "|default:"Не ограничено"}}
+            </span>
+          </div>
+          <ul class = "software_description_list"style = "list-style: none">
+            {{s.description_medium}}
+          </ul>
+        </div>
+      </div>
+      <div class = "software_tag">
+        <span>
+            {% for tag in s.get_tags %}
+            <a href="">#{{tag}}</a>
+            {% endfor %}
+        </span>
+      </div>
+    </article>
+  </div>
+
+{% endfor %}
+
+{% else %}
+ПО нет
+{% endif %} 

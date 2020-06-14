@@ -2,7 +2,6 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from user.models import CustomUser
 from software.models import Software
-from django.db.models import Sum
 import dbl
 
 class Order(models.Model):
@@ -31,7 +30,7 @@ class Order(models.Model):
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
     type_soft = models.CharField('Тип ПО', max_length = 200, null=True, blank=True)
-    paid_amount = models.FloatField('Сумма оплат', null=True, blank=True, db_index=True)
+    paid_amount = models.FloatField('Сумма оплат', null=True, blank=True, db_index=True, default=0)
 
     class Meta:
         verbose_name = 'Заказ'
@@ -44,23 +43,23 @@ class Order(models.Model):
         return Order.objects.filter(client=client.id)
 
 
-    # Ф-ия получения суммы оплат по данному заказу и обновление paid_amount
-    def set_paid_amount(self):
-        try:
-            dbl.log("эмм  ")
-            dbl.log("эмм  " + str(self)+ str(self.id))
-            # amount = pay.models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
-            amount = pay.models.Pay.objects.filter(order=self.id)
-            dbl.log("эмм  "+ str(amount))
-            # Изменение поля paid_amount в Order
-            self.paid_amount = amount
-            dbl.log("эмм 2 ")
-            self.save()
+    # # Ф-ия получения суммы оплат по данному заказу и обновление paid_amount
+    # def set_paid_amount(self):
+    #     try:
+    #         dbl.log("эмм  ")
+    #         dbl.log("эмм  " + str(self)+ str(self.id))
+    #         # amount = pay.models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
+    #         amount = pay.models.Pay.objects.filter(order=self.id)
+    #         dbl.log("эмм  "+ str(amount))
+    #         # Изменение поля paid_amount в Order
+    #         self.paid_amount = amount
+    #         dbl.log("эмм 2 ")
+    #         self.save()
 
-        except :
-            return False
+    #     except :
+    #         return False
 
-        return True
+    #     return True
 
 
     # Метод возвращающий заказ или добавляет и возвращает его
@@ -80,6 +79,37 @@ class Order(models.Model):
 
         return order
 
+    # Ф-ия получения списка приложений
+    def get_addition(self):
+
+        # Получаем список приложений данного заказа (ФАЙЛЫ, ФОТОГРАФИИ)
+        order_img = Order_Addition.objects.filter(order__id = self.id, date_of_delete=None)
+        return order_img
+
+    # Ф-ия получения главного фото заказа
+    def get_main_photo(self):
+        try:
+            main_img = Order_Addition.objects.filter(order__id = self.id, date_of_delete=None, is_main=True)[:1]
+            if not main_img:
+                main_img = Order_Addition.objects.filter(order__id = self.id, date_of_delete=None)[:1]
+        except:
+            return None
+        return main_img
+
+
+    # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+    @staticmethod
+    def get_order_by_client(order_id, client):
+
+        try:
+            # Получение уже имеющегося в бд заказа
+            order = Order.objects.get( pk=order_id, client=client )
+
+        except:
+            return None
+
+        return order
+
         
 class Request(models.Model):
     name = models.CharField('Имя', max_length = 100, null=True, blank=True)
@@ -92,3 +122,21 @@ class Request(models.Model):
     class Meta:
         verbose_name = 'Заявка на заказ'
         verbose_name_plural = 'Заявки на заказ'
+
+
+class Order_Addition(models.Model):
+    order = models.ForeignKey(Order, on_delete = models.PROTECT, verbose_name='Заказ')
+    name = models.CharField('Название', max_length = 50, null=True)
+    kind = models.BooleanField('Тип (true - картинка)', default=True)
+    size = models.BooleanField('Тип (true - большая картинка)', default=True)
+    photo = models.ImageField('Фото', upload_to="order/", blank=True, null=True)
+    file = models.FileField('Ссылка на файл', upload_to="file_order/", blank=True, null=True)
+    is_main = models.BooleanField('Тип (true - главная)', default=False)      
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = 'Приложение'
+        verbose_name_plural = 'Приложения'

@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.db.models import Q
 from user.models import CustomUser
 from software.models import Software, Favourite
@@ -133,6 +134,69 @@ def orders(request):
     else:
         
         return redirect('software:catalog')
+
+
+
+
+# Страница одного ПО
+def order_page(request, id):
+
+    # Объявление начальных значений переменных
+    order_img = Q()
+    main_photo = Q()
+    list_note = []
+    order = None
+
+    try:
+        # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+        # Получения пользователя
+        user = CustomUser.get_user(request)
+
+        if user:
+            # Получение заказа
+            order = Order.get_order_by_client(id, user)
+
+        if order != None:
+
+            # Получаем список приложений данного ПО (ФАЙЛЫ, ФОТОГРАФИИ)
+            if order.kind == "buy":
+                software = Software.objects.get( order_software = id )
+
+                #  Получение главного фото
+                main_photo_query = software.get_main_photo()
+                # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+                for photo in main_photo_query:
+                    main_photo = photo
+
+                order_img = software.get_addition()
+            else:
+                #  Получение главного фото
+                main_photo_query = order.get_main_photo()
+                # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+                for photo in main_photo_query:
+                    main_photo = photo
+
+                order_img = order.get_addition()
+
+            # Исключения главного фото (main_photo) из списка фото
+            if order_img:
+                order_img = order_img.exclude(pk=main_photo.id)
+
+            #  Для разрыва текста (скрытого и открытого)
+            # Сплит строки по '\n' по первому вхождению - получаем массив элементов одной переменной
+            if order.note:
+                list_note = order.note.split('\n', 1)
+
+            # Получение текущего пользователя 
+            user = CustomUser.get_user(request)
+            
+            return render(request, 'order/order.html', {'order':order,  'user':user, 'list_note':list_note, 'order_img':order_img, 'main_photo':main_photo})
+
+    except:
+        raise Http404("Заказ не найден")
+
+    raise Http404("Заказ не найден")
+
 
 
 

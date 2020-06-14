@@ -149,68 +149,77 @@
                       <div class="column-2">
                         <a class="link_style_none" href="{% url 'review:review_page' s.id %}">
                           <div class="flex_row reviews_alone_container">
-                            <div class=" flex_column">
-                              <div class=" flex_row">
-                                <div class="flex_column width_30 review_img_big_disp"> 
-                                  <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
-                                  <img  class = "img_width " src="images/rewiew.jpg" alt="Расписание"/>
-                                  <div class="flex_row  margin_top-bootom_1em" >
-                                    <div class = " chat_img_margin_between">
-                                      <img class = "reviews_img cursor"  src="images/rewiew.jpg" alt="Расписание"/>
-                                    </div>
-                                    <div class = "chat_img_margin_between">
-                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                    </div>
-                                    <div class = "chat_img_margin_between">
-                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                    </div>
-                                    <div class = "chat_img_margin_between">
-                                      <img  class = "reviews_img cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="flex_row  margin_top-bootom_1em review_img_small_disp" >
-                                  <div class = " chat_img_margin_between">
-                                    <img class = "reviews_img_small cursor"  src="images/rewiew.jpg" alt="Расписание"/>
-                                  </div>
-                                  <div class = " chat_img_margin_between">
-                                    <img class = "reviews_img_small cursor"  src="images/rewiew.jpg" alt="Расписание"/>
-                                  </div>
-                                  <div class = "chat_img_margin_between">
-                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                  </div>
-                                  <div class = "chat_img_margin_between">
-                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                  </div>
-                                  <div class = "chat_img_margin_between">
-                                    <img  class = "reviews_img_small cursor" src="images/rewiew.jpg" alt="Расписание"/>
-                                  </div>
-                                </div>
-                                <div class="flex_column padding_left_2em_xs w_60_xs">	          
-                                  <div class="flex_row flex_space-between">
-                                    <div class = "reviews_title">{{s.name|default:"Клиент"}}
-                                    </div>	
-                                    <div class = "reviews_date">{{s.date|date:"j E Y"}}
-                                    </div>	
-                                  </div>	
-                                  <div class="flex_row reviews_stars">	
-                                    <div class="rating-result">
-                                        {% for num_star in rating %}
-                                        {% if s.star|more_than_numbers:num_star %} 
-                                        <span class="active"></span> 	                        
-                                        {% else %}
-                                        <span></span>
-                                        {% endif %}
+                            <div class=" flex_column width_100">
+                                <div class=" flex_row">
+                                    {% with photos_list=s.get_addition %}
+                                    {% if photos_list %}
+                                    <div class="flex_column width_30 review_img_big_disp"> 
+                                    <!--фото ПО и теги(которые потом в мобилке будут убираться)-->
+                                    <img  class = "img_width " src="{{photos_list.0.photo.url}}"/>
+                                    <div class="flex_row  margin_top-bootom_1em" >
+                                        {% for photo in photos_list|list_cross_section:1 %}
+                                        <img class = "reviews_img" src="{{photo.photo.url}}"/>
                                         {% endfor %}
-                                    </div>		
-                                  </div>  
-                                  <div class = "reviews_text">       
-                                    <span>
-                                        {{s.content|linebreaks|default:""}}
-                                    </span>
-                                  </div>	
+                                    </div>
+                                    </div>
+                                    <div class="flex_row margin_top-bootom_1em review_img_small_disp" >
+                                    <div class = " chat_img_margin_between">
+                                        {% for photo in photos_list %}
+                                        <img class = "reviews_img_small" src="{{photo.photo.url}}"/>
+                                        {% endfor %}
+                                    </div>
+                                    </div>
+                                    <div class="flex_column padding_left_2em_xs w_60_xs">	          
+                                    <div class="flex_row flex_space-between flex_wrap">
+                                        <div class = "reviews_title">{{s.name|default:"Клиент"}}
+                                        </div>	
+                                        <div class = "reviews_date">{{s.date|date:"j E Y"}}
+                                        </div>	
+                                    </div>	
+                                    <div class="flex_row reviews_stars">	
+                                        <div class="rating-result">
+                                            {% for num_star in rating %}
+                                            {% if s.star|more_than_numbers:num_star %} 
+                                            <span class="active"></span> 	                        
+                                            {% else %}
+                                            <span></span>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </div>		
+                                    </div>  
+                                    <div class = "reviews_text">       
+                                        <span>
+                                            {{s.content|linebreaks|default:""}}
+                                        </span>
+                                    </div>	
+                                    </div>
+                                    {% else %}
+                                    <div class="flex_column width_100">	          
+                                        <div class="flex_row flex_space-between flex_wrap">
+                                            <div class = "reviews_title">{{s.name|default:"Клиент"}}
+                                            </div>	
+                                            <div class = "reviews_date">{{s.date|date:"j E Y"}}
+                                            </div>	
+                                        </div>	
+                                        <div class="flex_row reviews_stars">	
+                                            <div class="rating-result">
+                                                {% for num_star in rating %}
+                                                {% if s.star|more_than_numbers:num_star %} 
+                                                <span class="active"></span> 	                        
+                                                {% else %}
+                                                <span></span>
+                                                {% endif %}
+                                                {% endfor %}
+                                            </div>		
+                                        </div>  
+                                        <div class = "reviews_text">       
+                                            <span>
+                                                {{s.content|linebreaks|default:""}}
+                                            </span>
+                                        </div>	
+                                        </div>
+                                    {% endif %}{% endwith %}
                                 </div>
-                              </div>
                               {% if s.comment %}
                               <div class="flex_column  pos_right">	   
                                 <fieldset class="reviews_adm" name="fieldset" >
@@ -228,7 +237,7 @@
                       </div>   
                       {% endfor %}                 
                     {% else %}
-                      Статей не найдено
+                      Отзывов не найдено
                     {% endif %}        
         </section>
         {% block pagination %}		
@@ -258,7 +267,7 @@
         </div>
     {% endblock %}	
         <div class="pos_right_for_div">
-          <a href="#" class="button_show-more">Оставить отзыв
+          <a href="{% url 'review:review_create' %}" class="button_show-more">Оставить отзыв
           </a>
         </div>
       </section>

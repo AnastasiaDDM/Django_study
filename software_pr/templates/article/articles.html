@@ -124,7 +124,7 @@
                             <div class="flex_row article_box_author_date"> 
                               <!-- Бокс автора и даты --> 
                               <div>Автор: 
-                                <a class = "link_style_border" name="article_author" href="{% url 'articles:list_article' %}">{{s.author.surname}} {{s.author.name}}
+                                <a class = "link_style_border" name="article_author" href="?article_author={{s.author.id}}">{{s.author.surname|default:"Не указан"}} {{s.author.name|default:""}}
                                 </a>
                                 <!-- <p>url 'articles:list_article' art_author=s.author.id</p> -->
                               </div>
@@ -139,7 +139,7 @@
                               <div class = "software_div_images" > 
                                 <!-- Бокс картинки --> 
                                 <a href="/software.html">
-                                  <img  class = "img_width cursor" src="!{!{s.image.url}}"  alt="{{s.name}}"/>
+                                  <img  class = "img_width cursor" src="{{s.image.url}}"  alt="{{s.name}}"/>
                                 </a>
                               </div>
                             </div>
@@ -156,30 +156,9 @@
                           </div>
                           <div class = "article_tag">
                             <span>
-                              <a href="URL">#Платно
-                              </a>  
-                              <a href="URL">#Доходы
-                              </a>  
-                              <a href="URL">#ПО ПК
-                              </a>  
-                              <a href="URL">#Бизнес
-                              </a>  
-                              <a href="URL">#Кафе
-                              </a>  
-                              <a href="URL">#Гастропаб
-                              </a>                
-                              <a href="URL">#Платно
-                              </a>  
-                              <a href="URL">#Доходы
-                              </a>  
-                              <a href="URL">#ПО ПК
-                              </a>  
-                              <a href="URL">#Бизнес
-                              </a>  
-                              <a href="URL">#Кафе
-                              </a>  
-                              <a href="URL">#Гастропаб
-                              </a>
+                                {% for tag in s.get_tags %}
+                                <a href="">#{{tag}}</a>
+                                {% endfor %}
                             </span>
                           </div>
                         </article>
