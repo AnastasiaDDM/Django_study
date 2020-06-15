@@ -11,37 +11,23 @@ import datetime
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpRequest
 import dbl
+import re
 
 # Ф-ия списка статей
 def list_article(request):
     art_list = Article.objects.all().filter(date_of_delete=None, visibility=True)
 
+    list_tags = []
+
     # Получение пременных из формы поиска
     search_query_name = request.GET.get('article_name', '')
     art_author = request.GET.get('article_author', '')
-
-    dbl.log("fffff  "+ str(art_author))
-
     art_date_from = request.GET.get('article_date_from', '')
     art_date_to = request.GET.get('article_date_to', '')
-
-    # НЕ РАБОТАЕТ
-    # Здась планируется обработка запроса списка статей по автору ( когда на карточке статьи
-    #  нажимают на автора, прогружается новый список статей с фильтром по автору )
-    dbl.log("fffff")
-    # auth_id = kwargs.get("author_id")
-    # if auth_id:
-
-    #     art_list = art_list.filter(author=auth_id, visibility=True, date_of_delete=None).order_by('-date_of_review')
-
-            
-    # # Получаем список тегов данной статьи
-    # software_tag = Tag.objects.filter(softwares__id=software.id)
-
+    search_query_tags = request.GET.get('article_tags', '')
 
     # Фильтрация по наименовании статьи
     if search_query_name:
-
         art_list = art_list.filter(name__icontains=search_query_name, visibility=True, date_of_delete=None)
 
     # Фильтрация по автору
@@ -62,23 +48,6 @@ def list_article(request):
 
             art_list = art_list.filter((Q(author__name__icontains=art_author) | Q(author__surname__icontains=art_author) | Q(author__patronymic__icontains=art_author)), date_of_delete=None)
 
-        
-
-    # dbl.log(str(art_author))
-    # if str(art_author).isdecimal():
-    #     dbl.log("111")
-    #     # art_author = User.get__name_surname(art_author)
-
-    #     author = User.objects.get( id = art_author )
-
-    #     art_author = str(author.name + " " + author.surname)
-    #     dbl.log(str(art_author)+"fffff")
-
-    # # else:
-    # #     try:
-    # #         pass
-    # #     except ValueError:
-    # #         pass
 
     # Фильтрация по дате начала отображения
     if art_date_from:
@@ -93,6 +62,15 @@ def list_article(request):
         date_to_for_db = datetime.datetime.strptime(art_date_to, '%d.%m.%Y')
 
         art_list = art_list.filter(date_of_review__lte=date_to_for_db)
+
+    # Фильтрация по списку тегов статей
+    if search_query_tags:
+
+        # Сплит строки запроса
+        list_tags = re.split(r'[ ,]+', search_query_tags)
+
+        # Фильтрация статей по списку тегов
+        art_list = Article.get_articles_by_tags(art_list, list_tags)
 
     art_list = art_list.order_by('-date_of_review')
 
@@ -117,4 +95,5 @@ def list_article(request):
         art_list = paginator.page(paginator.num_pages) 
         dbl.log("!!пагинация")
 
-    return render(request, 'article/articles.html', {'art_list':art_list, 'search_query_name':search_query_name, 'art_author':art_author, 'art_date_from':art_date_from, 'art_date_to':art_date_to})
+    return render(request, 'article/articles.html', {'art_list':art_list, 'search_query_name':search_query_name, 'art_author':art_author,
+    'list_tags':list_tags, 'art_date_from':art_date_from, 'art_date_to':art_date_to})

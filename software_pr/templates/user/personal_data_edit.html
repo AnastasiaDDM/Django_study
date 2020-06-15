@@ -1,6 +1,7 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
+{% load common_tags %}
 <title>{% block page_title %}Личный кабинет{% endblock %}
 {% block link_extend %}
 <link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
@@ -12,20 +13,9 @@
     <h1>Мои данные
     </h1>
     <ul class="breadcrumb">
-      <li>
-        <a href="URL">Главная
-        </a>
-      </li>
-      <li>
-        <a href="URL">Личный кабинет
-        </a>
-      </li>
-      <li>
-        <a href="URL">Мои данные
-        </a>
-      </li>
-      <li>Редактирование
-      </li>
+    {% breadcrumb_url 'Главная' 'main:index' %}
+    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+    {% breadcrumb_url 'Редактирование личных данных' %}
     </ul>
     <div>
         {% autoescape on %}
@@ -94,9 +84,8 @@
                     <div class="pos_left_for_text input_style_error">{{ form.errors.social }}</div>
                     {% endif %}
                     <div class="div_datepic margin_top_2">
+                        <div class="pos_left_for_text">Дата рождения </div>
                         <input  type="text" id="date_of_birth" class="slct_div slct search_datepicker" autocomplete="off" name="date_of_birth" value="{{request.user.date_of_birth|default:''|date:'d.m.Y'}}">
-                        <label for="date_of_birth">Дата рождения
-                        </label>
                     </div> 	
                     {% if form.has_changed %}
                     <div class="pos_left_for_text input_style_error">{{ form.errors.date_of_birth }}</div>

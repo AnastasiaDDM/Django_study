@@ -1,6 +1,7 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load software_tags %}
+{% load common_tags %}
 <title>{% block page_title %}Личный кабинет{% endblock %}
 {% block content %}
 {% include "common/pattern_lk_menu.html" %}
@@ -8,9 +9,8 @@
         <h1>Мои данные
         </h1>
         <ul class="breadcrumb">
-            <li><a href="URL">Главная</a></li>
-            <li><a href="URL">Личный кабинет</a></li>
-            <li>Мои данные</li>
+            {% breadcrumb_url 'Главная' 'main:index' %}
+            {% breadcrumb_url 'Личный кабинет' %}
         </ul>
         {% if request.user.is_authenticated %}
         <div>

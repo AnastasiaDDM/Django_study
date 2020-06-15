@@ -26,6 +26,7 @@ class Order(models.Model):
     starting_date = models.DateTimeField('Дата начала', null=True, blank=True)
     ending_date = models.DateTimeField('Дата окончания', null=True, blank=True)
     discount = models.FloatField('Скидка', null=True, blank=True, validators=[MinValueValidator(0)])
+    license = models.DateTimeField('Дата окончания лицензии', blank=True, null=True)
     manager = models.ForeignKey(CustomUser, on_delete = models.PROTECT, verbose_name='Менеджер', null=True, blank=True, related_name='order_manager')
     date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
     visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
@@ -43,25 +44,6 @@ class Order(models.Model):
         return Order.objects.filter(client=client.id)
 
 
-    # # Ф-ия получения суммы оплат по данному заказу и обновление paid_amount
-    # def set_paid_amount(self):
-    #     try:
-    #         dbl.log("эмм  ")
-    #         dbl.log("эмм  " + str(self)+ str(self.id))
-    #         # amount = pay.models.Pay.objects.filter(order=self.id).aggregate(Sum('amount'))
-    #         amount = pay.models.Pay.objects.filter(order=self.id)
-    #         dbl.log("эмм  "+ str(amount))
-    #         # Изменение поля paid_amount в Order
-    #         self.paid_amount = amount
-    #         dbl.log("эмм 2 ")
-    #         self.save()
-
-    #     except :
-    #         return False
-
-    #     return True
-
-
     # Метод возвращающий заказ или добавляет и возвращает его
     def get_order_or_create(self):
 
@@ -72,7 +54,7 @@ class Order(models.Model):
         except:
 
             # Такого заказа нет, добавляем его в бд
-            order.save()
+            self.save()
             
             # Получение добавленного заказа
             order = Order.objects.get( software=self.software, client=self.client )

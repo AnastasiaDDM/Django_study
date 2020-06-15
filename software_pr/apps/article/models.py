@@ -26,3 +26,8 @@ class Article(models.Model):
         # Получаем список тегов данного ПО
         article_tag = software_models.Tag.objects.filter(articles__id=self.id, visibility=True, date_of_delete=None)
         return article_tag
+
+    @staticmethod
+    # Ф-ия получения списка ПО по тегам
+    def get_articles_by_tags(article_list, list_tags):
+        return article_list.filter(tag__name__in=list_tags).distinct()

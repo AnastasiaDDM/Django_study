@@ -1,6 +1,7 @@
 
 {% extends 'basic/pattern.html' %}
 {% load static %}
+{% load common_tags %}
 
 <title>{% block page_title %}Статьи{% endblock %}
 
@@ -14,8 +15,8 @@
                 <h1>Статьи
                 </h1>
                 <ul class="breadcrumb">
-                    <li><a href="main.html">Главная</a></li>
-                    <li>Статьи</li>
+                    {% breadcrumb_url 'Главная' 'main:index' %}
+                    {% breadcrumb_url 'Статьи' %}
                 </ul>
         
                 {% block search %}
@@ -40,8 +41,8 @@
                         </div>
                         <div class="flex_row flex_space-between padding_top-bootom_1em ">
                           <div class="input_style w_45_xs">
-                            <input type="text" id="keyword" autocomplete="off">
-                            <label for="keyword">Ключевые слова
+                            <input type="text" id="article_tags" name="article_tags" value="{{ list_tags|join:', ' }}" autocomplete="off">
+                            <label for="article_tags">Ключевые слова
                             </label>
                           </div>
                           <div  class="flex_row flex_space-between w_45_xs" style="margin-top: 1.7em;">
@@ -59,8 +60,8 @@
                             <button data-rel="form_search" class="button_reset">Сбросить
                             </button>
                           </div>
-                          <div class="margin_top-bootom_1em" type="submit">
-                            <button class="button_search">Поиск
+                          <div class="margin_top-bootom_1em">
+                            <button class="button_search" type="submit">Поиск
                             </button>
                           </div>  
                         </div>
@@ -157,7 +158,7 @@
                           <div class = "article_tag">
                             <span>
                                 {% for tag in s.get_tags %}
-                                <a href="">#{{tag}}</a>
+                                <a href="?article_tags={{tag.name}}">#{{tag}}</a>
                                 {% endfor %}
                             </span>
                           </div>

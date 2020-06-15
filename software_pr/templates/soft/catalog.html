@@ -9,7 +9,7 @@
                 </h1>
                 {% block breadcrumb %}
                 <ul class="breadcrumb">
-                {% breadcrumb_url 'Главная' 'software:catalog' %}
+                {% breadcrumb_url 'Главная' 'main:index' %}
                 {% breadcrumb_url 'Каталог' %}
                 </ul>
                 {% endblock %}
@@ -60,17 +60,19 @@
                                     <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                                   </div>
                                 </div>
-                          <!-- </form> -->
                          </fieldset>
                         <fieldset class="fieldset_border_primary margin_top_2 search_disp_f search_div_fieldset" name="fieldset" >
-                          <!-- <form data-target="form_search">          -->
                           <div class="flex_column">
-                            <div class="input_style ">
+                            <div class="input_style">
                               <input type="text" id="soft_name" name="soft_name" value="{{search_query_name}}" autocomplete="off"><label for="soft_name">Наименование ПО</label>
                             </div>
+                            <div class="input_style">
+                                <input type="text" id="soft_tags" name="soft_tags" value="{{ list_tags|join:', ' }}" autocomplete="off"><label for="soft_tags">Теги ПО</label> 
+                              </div>
+                              <div>* Пишите теги через запятую</div>
                             <div class="flex_row flex_space-between">
                                 <div class="margin_top-bootom_1em" ><button data-rel="form_search" class="button_reset">Сбросить</button></div>
-                                <div class="margin_top-bootom_1em" type="submit"><button class="button_search">Поиск</button></div>  
+                                <div class="margin_top-bootom_1em"><button class="button_search" type="submit">Поиск</button></div>  
                             </div>
                             <fieldset class="fieldset_border_secondary" name="fieldset" >
                               <legend >Цена</legend>
@@ -161,96 +163,41 @@
                     </form>
                         {% endautoescape %}
                       </div>
-      
-                      <fieldset class="fieldset_border_primary widget_disp" name="fieldset" >
-                        <legend >Популярные на неделе</legend>
+                      {% if vertical_widget %}
+                      <fieldset class="fieldset_border_primary widget_disp" name="fieldset">
+                        <legend >
+                            {% if choice_widget == "popular" %}Популярные на неделе
+                            {% elif choice_widget == "new" %}Наши новинка
+                            {% endif %} 
+                            </legend>
                         <aside class="flex_column">
-        
-                          <div id="widgets_vertical_slider">
+                            <div id="widgets_vertical_slider">
+                            {% for widget in vertical_widget %}
                                   <section class="item">
-                                    <a href="">
+                                    <a href="{% url 'software:software_page' widget.id %}">
                                       <div class="widget flex_column">
-                                        <div class = "widget_div_title">Автоматизируй образование!</div>
+                                        <div class = "widget_div_title">{{widget.name_small}}</div>
                                         <div class = "widget_div_img"> 
                                           <!-- Бокс картинки --> 
                                           <img  class = "img_width" src="images/code.jpg" alt="Расписание"/>
                                         </div>
                                         <div>
-                                          <ul class = "widget_list">
-                                            <li class="widget_marker">Контроль доходов и расходов
-                                            <li class="widget_marker">Мониторинг деятельности компании
+                                          <ul class = "widget_list">{{widget.description_small}}
                                           </ul>
                                         </div>
-                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                                        </button>
+                                        {% if widget.price <= 0 or widget.is_free %}
+                                        <a href="{% url 'software:software_download' widget.id %}" class="software_button-pay_style">Скачать бесплатно</a>
+                                        {% else %}
+                                        <a href="{% url 'software:software_buy' widget.id %}" class="software_button-pay_style">Приобрести</a>
+                                        {% endif %} 
                                       </div>
                                     </a>
                                   </section>
-                            <section class="item">
-                              <a href="">
-                                      <div class="widget flex_column">
-                                        <div class = "widget_div_title">Автоматизируй образование!</div>
-                                        <div class = "widget_div_img"> 
-                                          <!-- Бокс картинки --> 
-                                          <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                                        </div>
-                                        <div>
-                                          <ul class = "widget_list">
-                                            <li class="widget_marker">Контроль доходов и расходов
-                                            <li class="widget_marker">Мониторинг деятельности компании
-                                          </ul>
-                                        </div>
-                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                                        </button>
-                                      </div>
-                                    </a>
-                                  </section>
-                            
-                            
-                                  <section class="item">
-                                    <a href="software.html">
-                                      <div class="widget flex_column">
-                                        <div class = "widget_div_title">2Автоматизируй образование!</div>
-                                        <div class = "widget_div_img"> 
-                                          <!-- Бокс картинки --> 
-                                          <img  class = "img_width" src="images/computer.jpg" alt="Расписание"/>
-                                        </div>
-                                        <div>
-                                          <ul class = "widget_list">
-                                            <li class="widget_marker">Контроль доходов и расходов
-                                            <li class="widget_marker">Мониторинг деятельности компании
-                                          </ul>
-                                        </div>
-                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                                        </button>
-                                      </div>
-                                    </a>
-                                  </section>
-                            
-                                    
-                                  <section class="item">
-                                    <a href="software.html">
-                                      <div class="widget flex_column">
-                                        <div class = "widget_div_title">Автоматизируй3 образование!</div>
-                                        <div class = "widget_div_img"> 
-                                          <!-- Бокс картинки --> 
-                                          <img  class = "img_width" src="images/cafe.jpg" alt="Расписание"/>
-                                        </div>
-                                        <div>
-                                          <ul class = "widget_list">
-                                            <li class="widget_marker">Контроль доходов и расходов
-                                            <li class="widget_marker">Мониторинг деятельности компании
-                                          </ul>
-                                        </div>
-                                        <button class="width_100 software_button-pay_style ">Скачать бесплатно
-                                        </button>
-                                      </div>
-                                    </a>
-                                  </section>
-                            
+                                  {% endfor %}  
                           </div>                      
                         </aside>
                       </fieldset>
+                      {% endif %}
                     </div>
                 
                 
@@ -275,8 +222,9 @@
                                   <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
                             </div>
                           </div>
-                                <span class = "software_type" href="software_page">{{s.get_type|join:", "|default:""}}
-                                </span>
+                          {% with type=s.get_type %}
+                          <a href="?{{type.1}}"><span class = "software_type" href="software_page">{{type.0|join:", "|default:""}}</span>
+                          </a>{% endwith %} 
                               </div>
                               <div class="flex_row container_img_text">  
                                 <!-- Контейнер картинки и текста --> 
@@ -327,10 +275,10 @@
                                   </ul>
                                 </div>
                               </div>
-                              <div class = "software_tag">
+                              <div class="software_tag">
                                 <span>
                                     {% for tag in s.get_tags %}
-                                    <a href="">#{{tag}}</a>
+                                    <a href="?soft_tags={{tag.name}}">#{{tag}}</a>
                                     {% endfor %}
                                 </span>
                               </div>

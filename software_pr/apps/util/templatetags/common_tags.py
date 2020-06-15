@@ -173,3 +173,8 @@ def subtraction(first_num, second_num):
 def list_cross_section(list, start_index=0):
     return list[start_index:]
         
+
+@register.filter(name='return_str')
+def return_str(param):
+    return str(param)
+        

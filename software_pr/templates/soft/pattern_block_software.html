@@ -19,7 +19,7 @@
           <a class = "software_name" href="{% url 'software:software_page' s.id %}">{{s.name}}</a>
     </div>
   </div>
-        <span class = "software_type" href="software_page">{{s.get_type|join:", "|default:""}}
+        <span class = "software_type" href="software_page">{{s.get_type.0|join:", "|default:""}}
         </span>
       </div>
       <div class="flex_row container_img_text">  
@@ -74,7 +74,7 @@
       <div class = "software_tag">
         <span>
             {% for tag in s.get_tags %}
-            <a href="">#{{tag}}</a>
+            <a href="/softwares/?soft_tags={{tag.name}}">#{{tag}}</a>
             {% endfor %}
         </span>
       </div>

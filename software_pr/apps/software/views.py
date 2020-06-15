@@ -5,7 +5,7 @@ from software.models import *
 from django.db.models import Q
 from django.core.paginator import *
 import dbl
-import re
+import re, random
 from user.models import CustomUser
 from user.forms import Register_by_email_phone_Form
 import util.views
@@ -24,6 +24,7 @@ def catalog(request):
 
     # Получение пременных из формы поиска
     search_query_name = request.GET.get('soft_name', '')
+    search_query_tags = request.GET.get('soft_tags', '')
     soft_price = request.GET.get('soft_price', '')
     soft_pricefrom = request.GET.get('soft_pricefrom', '')
     soft_priceto = request.GET.get('soft_priceto', '')
@@ -31,6 +32,8 @@ def catalog(request):
 
     # Словарь для фильтра классификаций
     classification_dict = {}
+    vertical_widget = None
+    list_tags = []
 
     # Перебор всех пришедших аргументов
     for req in request.GET.items():
@@ -62,7 +65,6 @@ def catalog(request):
     soft_list = soft_list.order_by('id').distinct()
 
 
-
     # Фильтрация по цене (бесплатные ПО)
     if soft_price =="soft_price_free":
         soft_list = soft_list.filter(price=0)
@@ -83,11 +85,21 @@ def catalog(request):
     if search_query_name:
         soft_list = soft_list.filter(name__icontains=search_query_name)
 
-
     # Фильтрация по полю доработки
     if modification:
         soft_list = soft_list.filter(modification=True)
 
+    # Фильтрация по списку тегов ПО
+    if search_query_tags:
+
+        # Сплит строки запроса
+        dbl.log("ввввввв  " + str(search_query_tags))
+        list_tags = re.split(r'[ ,]+', search_query_tags)
+        dbl.log("ртртртрт  " + str(list_tags))
+
+        # Фильтрация ПО по списку тегов
+        soft_list = Software.get_softwares_by_tags(soft_list, list_tags)
+        dbl.log("ddddddddd " + str(soft_list))
 
     # Хэш классификаций ПО
     tags_dict = {}
@@ -114,14 +126,13 @@ def catalog(request):
     # Получение списка всех видов ПО
     classifications = Classification.objects.all().filter(date_of_delete=None, visibility=True).order_by('id')
 
-    if request.is_ajax():
-        dbl.log("hhhh")
-        for soft in soft_list:
-            dbl.log("---  " + str(soft))
-        response = sort( request, soft_list)
-        dbl.log("hhhh "+str(response))
-        return response
-
+    # if request.is_ajax():
+    #     dbl.log("hhhh")
+    #     for soft in soft_list:
+    #         dbl.log("---  " + str(soft))
+    #     response = sort( request, soft_list)
+    #     dbl.log("hhhh "+str(response))
+    #     return response
 
 
     count = request.GET.get('count', '10')
@@ -145,10 +156,32 @@ def catalog(request):
         soft_list = paginator.page(paginator.num_pages) 
         # dbl.log("!!пагинация")
 
+    # Составление вертикального виджета
+    # Список типов виджетов
+    choice_widget_list = ['popular', 'new']
+    # Выбор типа
+    choice_widget = random.choice(choice_widget_list)
+    dbl.log("виджеты " + str(choice_widget))
+
+    # Популярные ПО
+    if choice_widget == "popular":
+        vertical_widget_all = Software.get_popular()
+        dbl.log("виджеты " + str(vertical_widget_all))
+
+        if len(vertical_widget_all) > 6 :
+            vertical_widget = random.sample(vertical_widget_all,6)
+        else:
+            vertical_widget = vertical_widget_all
+        dbl.log("виджеты " + str(vertical_widget))
+    
+    # Новые ПО
+    elif choice_widget == "new":
+        vertical_widget = Software.get_new()
+
     response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
-    'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 
+    'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 'list_tags':list_tags,
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
-    'classification_dict':classification_dict, 'user':user})
+    'classification_dict':classification_dict, 'user':user, 'choice_widget':choice_widget, 'vertical_widget':vertical_widget})
     return response
 
 
@@ -196,6 +229,9 @@ def software_page(request, id):
     similar_tags_block = ""
     discussion_comment_block = ""
 
+    # Строка фильтра для хлебных крошек
+    str_filter_for_breadcrumb = ""
+
     try:
         software = Software.objects.get( id = id )
 
@@ -227,7 +263,7 @@ def software_page(request, id):
         list_descr = software.description.split('\n', 1)
 
         # Получаем список классификаций данного ПО
-        classif = software.get_classifications()
+        classif, str_filter_for_breadcrumb = software.get_classifications()
 
         # Второстепенные объекты - похожие ПО
         similar_block = render_similars(software, id_widget="same_software")
@@ -239,7 +275,7 @@ def software_page(request, id):
         
         return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
         'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
-        'discussion_comment_block':discussion_comment_block, 'user':user})
+        'discussion_comment_block':discussion_comment_block, 'user':user, 'str_filter_for_breadcrumb':str_filter_for_breadcrumb})
 
 
     # except:
@@ -310,6 +346,7 @@ def software_buy(request, software_id):
 
         # Получение текущего пользователя 
         user, cookie = CustomUser.get_user_or_create(request)
+        dbl.log("заказ " + str(user))
 
         if user:
 
@@ -467,7 +504,7 @@ def render_similars_tags(software):
     result = render_to_string('common/pattern_similars_tags.html', {'similar_tags_list':similar_tags_list})
     return result
 
-# Ф-ия создания кода html для облака тегов к ПО
+# Ф-ия создания кода html для блока ПО
 def render_block_software(request, soft_list):
 
         # Хэш классификаций ПО

@@ -115,7 +115,7 @@
           </label>
           <ul class="menu">
             <li>
-              <a href="/aboutcompany.html">О&nbsp;компании
+              <a href="{% url 'main:company' %}">О&nbsp;компании
               </a>
             </li>
             <li>
@@ -131,7 +131,7 @@
               </a>
             </li>
             <li>
-              <a href="/contacts.html">Контакты
+              <a href="{% url 'main:contacts' %}">Контакты
               </a>
             </li>
             <li>
@@ -154,7 +154,7 @@
         <div class="flex_row header_navbar header_disp_none">
           <ul>
             <li>
-              <a  class = "header_navbar_active" title="О компании" href="/aboutcompany.html">О&nbsp;компании
+              <a  class = "header_navbar_active" title="О компании" href="{% url 'main:company' %}">О&nbsp;компании
               </a>
             </li>
             <li>
@@ -170,7 +170,7 @@
               </a>
             </li>
             <li>
-              <a title="Контакты" href="/contacts.html">Контакты
+              <a title="Контакты" href="{% url 'main:contacts' %}">Контакты
               </a>
             </li>
             <li>
@@ -195,7 +195,7 @@
               </a>
               <a title="Доработка" href="/articles.html">Доработка
               </a>
-              <a title="О нас" href="/aboutcompany.html">О нас
+              <a title="О нас" href="{% url 'main:company' %}">О нас
               </a>
             </div>
             <div class="flex_column">

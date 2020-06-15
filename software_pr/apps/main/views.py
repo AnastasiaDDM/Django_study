@@ -35,3 +35,21 @@ def index(request):
 
     return render(request, 'main/index.html', {'block_new_soft':block_new_soft, 'block_site_soft':block_site_soft,
     'block_desktop_soft':block_desktop_soft, 'block_mobile_soft':block_mobile_soft, 'list_review':list_review, 'list_tag':list_tag})
+
+
+
+# Ф-ия присоединения куки к ответу
+def company(request):
+    return render(request, 'manual_page/aboutcompany.html')
+
+    # Ф-ия присоединения куки к ответу
+def how_to_order(request):
+    return render(request, 'manual_page/how_to_order.html')
+
+# Ф-ия присоединения куки к ответу
+def help(request):
+    return render(request, 'manual_page/help.html')
+
+# Ф-ия присоединения куки к ответу
+def contacts(request):
+    return render(request, 'manual_page/contacts.html')

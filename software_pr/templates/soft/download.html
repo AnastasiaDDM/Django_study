@@ -6,7 +6,7 @@
 <section>
     {% block breadcrumb %}
     <ul class="breadcrumb">
-    {% breadcrumb_url 'Главная' 'software:catalog' %}
+    {% breadcrumb_url 'Главная' 'main:index' %}
     {% breadcrumb_url 'Каталог' 'software:catalog' %}
     {% breadcrumb_url software.name 'software:software_page' software.id %}
     {% breadcrumb_url 'Скачать бесплатно' %}

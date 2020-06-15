@@ -3,7 +3,8 @@ function input_file() {
 	let inputs = document.querySelectorAll('.input__file');
 	Array.prototype.forEach.call(inputs, function (input) {
 		let label = input.nextElementSibling,
-		labelVal = label.querySelector('.input__file-button-text').innerText;
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+        input.setAttribute("value", "disabled");
 
 		input.addEventListener('change', function (e) {
 			let countFiles = '';

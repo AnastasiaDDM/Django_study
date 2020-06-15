@@ -14,7 +14,7 @@
         </h1>
         {% block breadcrumb %}
         <ul class="breadcrumb">
-        {% breadcrumb_url 'Главная' 'software:catalog' %}
+        {% breadcrumb_url 'Главная' 'main:index' %}
         {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
         {% breadcrumb_url 'Мои заказы' %}
         </ul>
@@ -382,7 +382,7 @@
                           </div>
                           <div>Скидка: {{order.discount|floatformat|add:'%'|default_if_none:"-"}}
                           </div>
-                          <div>Лицензия: {% localtime on %}{{order.ending_date|default:"Не ограничена"|date:"d.m.Y"}}{% endlocaltime %}
+                          <div>Лицензия: {% localtime on %}{{order.license|default_if_none:"Не ограничена"|date:"d.m.Y"}}{% endlocaltime %}
                           </div>
                         </div>
                       </div>

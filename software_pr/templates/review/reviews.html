@@ -10,12 +10,8 @@
         <h1>Отзывы
         </h1>
         <ul class="breadcrumb">
-          <li>
-            <a href="URL">Главная
-            </a>
-          </li>
-          <li>Отзывы
-          </li>
+            {% breadcrumb_url 'Главная' 'main:index' %}
+            {% breadcrumb_url 'Отзывы' %}
         </ul>
         <div class="pos_right_for_div">
           <a href="{% url 'review:review_create' %}" class="button_show-more">Оставить отзыв

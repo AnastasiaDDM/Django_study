@@ -10,7 +10,7 @@
 <section>
 {% block breadcrumb %}
 <ul class="breadcrumb">
-{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Главная' 'main:index' %}
 {% breadcrumb_url 'Заказать звонок' %}
 </ul>
 {% endblock %}
@@ -88,7 +88,7 @@
                         <a class = "software_name" href="{% url 'software:software_page' software.id %}">{{software.name}}</a>
                   </div>
                 </div>
-                      <span class = "software_type">{{software.get_type|join:", "|default:""}}
+                      <span class = "software_type">{{software.get_type.0|join:", "|default:""}}
                       </span>
                     </div>
                     <div class="flex_row container_img_text">  
@@ -143,7 +143,7 @@
                     <div class = "software_tag">
                       <span>
                           {% for tag in software.get_tags %}
-                          <a href="">#{{tag}}</a>
+                          <a href="../../softwares/?soft_tags={{tag.name}}">#{{tag}}</a>
                           {% endfor %}
                       </span>
                     </div>

@@ -12,9 +12,14 @@
 {% endblock %}
 {% block breadcrumb %}
 <ul class="breadcrumb">
-{% breadcrumb_url 'Главная' 'software:catalog' %}
+{% breadcrumb_url 'Главная' 'main:index' %}
 {% breadcrumb_url 'Каталог' 'software:catalog' %}
-{% breadcrumb_url 'Настольное приложенте -- НЕ СДЕЛАНО' 'software:catalog' %}
+{% if str_filter_for_breadcrumb %}
+~<li>
+    <a href="../?{{str_filter_for_breadcrumb}}">{{classif.type}}
+    </a>
+  </li>
+  {% endif %}
 {% breadcrumb_url software.name %}
 </ul>
 {% endblock %}
@@ -119,7 +124,7 @@
           </div>
         </div>
         <div >
-          <div class="">
+          <div>
             <ul class = "pos_left software_description_list"style = "list-style: none">
               <li class="software_description_marker">Вид: 
                 <span>{{classif.type|default:"Не задано"}}
@@ -149,17 +154,20 @@
               </li>
             </ul>
           </div>
+          {% if list_descr %}
           <div class="margin_top-bootom_1em page_software_description">
             <div>{{list_descr.0}}
             </div>
             <div style="display: none;" id="description_text" class="all_text">
                 {{list_descr.1|linebreaks}}
             </div>  
-          </div>
+          </div>{% if list_descr.1 %}
           <div class="margin_top-bootom_1em pos_left bt_read_pos_center">
             <a class="button_reset text_roll" data-target="description_text">Читать полностью
             </a>
-          </div> 
+          </div>
+          {% endif %}
+          {% endif %} 
         </div>
       </div>
     </div>

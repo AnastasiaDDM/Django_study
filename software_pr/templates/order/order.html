@@ -8,14 +8,18 @@
 {% endblock %}
  {% block content %}
  {% block content_title %}
- <h1>Заказ № {{order.id}}</h1>
+ <h1>{{order.name}}</h1>
 {% endblock %}
 {% block breadcrumb %}
 <ul class="breadcrumb">
 {% breadcrumb_url 'Главная' 'main:index' %}
 {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
 {% breadcrumb_url 'Мои заказы' 'user:orders' %}
-{% breadcrumb_url order.name %}
+{% with order_number=order.id|return_str %}
+{% with str_order_number='Заказ № '|add:order_number %}
+{% breadcrumb_url str_order_number %}
+{% endwith %}
+{% endwith %}
 </ul>
 {% endblock %}
       <section>
@@ -160,22 +164,24 @@
                       <i class="fa fa-exclamation-circle order_chat_i animated infinite pulse" aria-hidden="true">
                       </i>
                     </div>
-                    <!-- <h1 style="color: #a8ccf0; font-size: 55px;" class="animated infinite pulse">Pulse</h1> -->
+                    {% if list_note %}
                     <div class="">
                       <h2>Требования
                       </h2>
                       <div class="margin_top-bootom_1em w_80_xs">
                         <div>{{list_note.0}}
                         </div>
+                        {% if list_note.1 %}
                         <div style="display: none;" id="description_text" class="all_text">
                             {{list_note.1|linebreaks}}
                         </div>
                       <div class="margin_top-bootom_1em pos_left bt_read_pos_center">
                         <a class="button_reset text_roll" data-target="description_text">Читать полностью
                         </a>
-                      </div> 
+                      </div>{% endif %} 
                     </div>
                   </div>
+                  {% endif %}
                 </div>
               </div>
             </div>

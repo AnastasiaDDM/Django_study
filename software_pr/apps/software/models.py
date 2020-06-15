@@ -67,25 +67,44 @@ class Software(models.Model):
 
         # Хэш классификаций ПО
         classif = {}
+        # Строка фильтра для хлебных крошек
+        str_filter_for_breadcrumb = ""
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value
         software_classifications = Classification_Value.objects.filter(softwares__id = self.id)
 
         # Переменная для составления строки классификаций ПО (Грузоперевозки, перевозки)
-        str_clas =""
+        str_clas = ""
 
         # Дальнейшие действия нужны для составления словаря классификаций данного ПО
         for clas_val in software_classifications:
-
-            # Получение одной записи из Classification_Value
-            # clas_val = Classification_Value.objects.get(id = clas.classification_value.id)
 
             if clas_val:
                 
                 # Получение одной записи из Classification для получения названия классификации
                 clas = Classification.objects.get(id = clas_val.classification.id)
 
-                if str(clas) == "Область применения" :
+                if clas.id == 1 :
+
+                    # Получаем значение ключа, если есть:
+                    if classif.get("type"):
+
+                        # Составляем строку значений классификации
+                        str_clas = str(classif.get("type")) + ", " + str(clas_val)
+                        # Составляем строку для хлeбных крошек
+                        str_filter_for_breadcrumb = str_filter_for_breadcrumb + "&" + "classification_1_value_"+str(clas_val.id)+"="+str(clas_val.id)
+
+                        # Добавляем ключ и значение в словарь
+                        classif["type"] = str_clas
+
+                    else:
+
+                        # Добавляем ключ и значение в словарь
+                        classif["type"] = clas_val
+                        # Добавляем строку для хлeбных крошек
+                        str_filter_for_breadcrumb = "classification_1_value_"+str(clas_val.id)+"="+str(clas_val.id)
+
+                elif clas.id == 2 :
 
                     # Получаем значение ключа, если есть:
                     if classif.get("area"):
@@ -101,49 +120,27 @@ class Software(models.Model):
                         # Добавляем ключ и значение в словарь
                         classif["area"] = clas_val
 
-
-                elif str(clas) == "Вид" :
-
-                    # Получаем значение ключа, если есть:
-                    if classif.get("type"):
-
-                        # Составляем строку значений классификации
-                        str_clas = str(classif.get("type")) + ", " + str(clas_val)
-
-                        # Добавляем ключ и значение в словарь
-                        classif["type"] = str_clas
-
-                    else:
-
-                        # Добавляем ключ и значение в словарь
-                        classif["type"] = clas_val
-
-
-                elif str(clas) == "Тип использования" :
+                elif clas.id == 3 :
 
                     # Добавляем ключ и значение в словарь
                     classif["type_of_use"] = clas_val
 
-
-                elif str(clas) == "Ограничение доступа" :
+                elif clas.id == 4 :
 
                     # Добавляем ключ и значение в словарь
                     classif["access"] = clas_val
 
-
-
-                elif str(clas) == "Дополнительные установки" :
+                elif clas.id == 5 :
 
                     # Добавляем ключ и значение в словарь
                     classif["extra_install"] = clas_val
 
-
-                elif str(clas) == "Установка" :
+                elif clas.id == 6 :
 
                     # Добавляем ключ и значение в словарь
                     classif["install"] = clas_val
 
-        return classif   
+        return classif, str_filter_for_breadcrumb   
 
 
     # Ф-ия получения списка областей применения
@@ -154,7 +151,6 @@ class Software(models.Model):
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value
         software_classifications = Classification_Value.objects.filter(softwares__id = self.id)
-        # software_classifications = Software_Classification_Value.objects.filter(software__id = self.id)
 
         # Дальнейшие действия нужны для составления словаря классификаций данного ПО
         for clas_val in software_classifications:
@@ -162,9 +158,11 @@ class Software(models.Model):
             # Получение одной записи из Classification для получения названия классификации
             clas = Classification.objects.get(id = clas_val.classification.id)
 
-            if clas.name == "Область применения":
+            if clas.id == 2:
 
                 areas.append(str(clas_val))
+
+
 
         return areas   
     
@@ -174,6 +172,8 @@ class Software(models.Model):
 
         # Хэш классификаций ПО
         types = []
+                # Строка фильтра для хлебных крошек
+        str_filter_for_breadcrumb = ""
 
         # Получение списка всех классификаций ПО из таблицы Software_Classification_Value
         software_classifications = Classification_Value.objects.filter(softwares__id = self.id)
@@ -185,11 +185,14 @@ class Software(models.Model):
             # Получение одной записи из Classification для получения названия классификации
             clas = Classification.objects.get(id = clas_val.classification.id)
 
-            if clas.name == "Вид":
+            if clas.id == 1:
 
                 types.append(str(clas_val))
 
-        return types   
+                # Составляем строку для хлeбных крошек
+                str_filter_for_breadcrumb = str_filter_for_breadcrumb + "&" + "classification_1_value_"+str(clas_val.id)+"="+str(clas_val.id)
+
+        return types, str_filter_for_breadcrumb
 
 
     # Ф-ия проверки является ли данное ПО избранным у конкретного клиента
@@ -211,6 +214,12 @@ class Software(models.Model):
     # Ф-ия получения списка загрузок в Download таблице по клиенту
     def get_downloads_by_user(client):
         return Software.objects.filter(download__client=client.id)
+
+
+    @staticmethod
+    # Ф-ия получения списка ПО по тегам
+    def get_softwares_by_tags(soft_list, list_tags):
+        return soft_list.filter(tag__name__in=list_tags).distinct()
 
 
     # Ф-ия получения списка похожих ПО
@@ -253,12 +262,6 @@ class Software(models.Model):
         return tag_list
 
 
-    @staticmethod
-    # Ф-ия получения новинок
-    def get_new():
-        return Software.objects.filter(date_of_delete=None, visibility=True).order_by('date_joined')[:6]
-
-
     # Ф-ия фильтрации По по одной классификации (по её id)
     @staticmethod
     def software_list_by_type(cl_val=None):
@@ -276,6 +279,37 @@ class Software(models.Model):
 
         return None
 
+    # Методы получения новинок, популярных и другое( для виджетов)
+    @staticmethod
+    # Ф-ия получения новинок
+    def get_new():
+        return Software.objects.filter(date_of_delete=None, visibility=True).order_by('date_joined')[:6]
+
+
+    # Ф-ия получения списка ПОПУЛЯРНЫХ ПО
+    @staticmethod
+    def get_popular():
+        software_list = []
+        soft_raw = Software.objects.raw('''SELECT distinct * from new_db.software_software AS softwares
+        where softwares.id in 
+        ((select software_id
+        from new_db.order_order
+        where software_id is not null
+        group by software_id
+        order by count(*) DESC)
+        UNION
+        (select software_id
+        from new_db.software_download
+        where software_id is not null
+        group by software_id
+        order by count(*) DESC)
+        )
+        limit 15 ''' )
+
+        for p in soft_raw:
+            software_list.append(p)
+        
+        return software_list
 
 
 

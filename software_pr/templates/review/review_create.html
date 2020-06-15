@@ -101,7 +101,7 @@
                       </div>
                     </div>
                     <div class="input__wrapper">
-                      <input name="file" type="file" name="file" id="input__file" class="input input__file " multiple>
+                      <input name="file" type="file" id="input__file" class="input input__file " multiple>
                       <label for="input__file" class="input__file-button">
                         <span class="input__file-icon-wrapper">
                           <i class="fa fa-paperclip chat_panel_sticky_clip_i" aria-hidden="true">
@@ -113,7 +113,7 @@
                     </div>
                     <div class="flex_row flex_space-between margin_top_3em">
                       <div class="pos_сenter">
-                        <a href="#" class="button_reset">Отменить
+                        <a href="{% url 'review:list_review' %}" class="button_reset">Отменить
                         </a>
                       </div>
                       <div class="pos_сenter">
@@ -150,10 +150,12 @@
 
         {% block js_extend %}
         <script src="{% static '/js/jquery.validate.min.js' %}" charset="UTF-8"></script>
+        <script src="{% static '/js/file_input_custom.js' %}" charset="UTF-8"></script>
         <script>
             jQuery(document).ready(function () {
             input_filled('input');
             input_filled('textarea');
+            input_file();
              // Список методов валидации
 		  // https://jqueryvalidation.org/documentation/#link-list-of-built-in-validation-methods
 		  // mobileRU : https://github.com/jquery-validation/jquery-validation/blob/master/src/additional/mobileRU.js

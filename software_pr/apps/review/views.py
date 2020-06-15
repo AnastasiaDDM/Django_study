@@ -130,14 +130,16 @@ def review_create(request):
     dbl.log("Форма" + str(form))
 
     # global list_crumb_for_software
-    list_crumb_for_software = [['Главная', 'software:catalog'], ['Отзывы', 'review:list_review']]
-
+    list_crumb_for_software = [['Главная', 'main:index'], ['Отзывы', 'review:list_review']]
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
         try:
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
+
+                name = form.cleaned_data['file']
+                dbl.log("Ошибка работы" + str(name))
 
                 # Сохранение запроса (происходит тогда, когда все поля валидны)
                 form.save()
@@ -168,7 +170,7 @@ def review_create_for_software(request, id_soft):
     # list_crumb_for_software = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id],
     # ['Написать отзыв', 'review:review_create_for_software',software.id]]
 
-    list_crumb_for_software = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id]]
+    list_crumb_for_software = [['Главная', 'main:index'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id]]
 
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
@@ -211,13 +213,13 @@ def review_success(request, type='', id = 0):
 
             software = Software.objects.get(id=id)
 
-            list_crumb = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'],
+            list_crumb = [['Главная', 'main:index'], ['Каталог', 'software:catalog'],
              [software.name,'software:software_page', id], ['Написать отзыв', 'software:review_create_for_software', id]]
 
             # list_crumb.append(['Написать отзыв', 'software:review_create_for_software', id])
 
     else:
-        list_crumb = [['Главная', 'software:catalog'], ['Отзывы', 'review:list_review'], ['Написать отзыв', 'review:review_create']]
+        list_crumb = [['Главная', 'main:index'], ['Отзывы', 'review:list_review'], ['Написать отзыв', 'review:review_create']]
         # list_crumb.append(['Написать отзыв', 'review:review_create'])
 
     message = "Спасибо за отзыв!"
