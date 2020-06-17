@@ -1,7 +1,10 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}{{title|default:"Ошибка"}}{% endblock %}
+{% block page_title %}{{title|default:"Ошибка"}}{% endblock %}
+{% block page_description %}Ошибка, возможно вы ввели какие-то некорректные данные. Попробуйте заново, и обязательно обращайте внимание на вспомогательный текст.
+{% endblock %}
+
  {% block content %}
       <section>
         {% block breadcrumb %}

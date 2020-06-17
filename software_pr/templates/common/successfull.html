@@ -1,8 +1,11 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}{{title|default:"Успешно"}}{% endblock %}
- {% block content %}
+{% block page_title %}{{title|default:"Успешно"}}{% endblock %}
+{% block page_description %}Успешное выполнение операции! Поздравляем вас, спасибо за доверие, будем стараться радовать вас чаще!
+{% endblock %}
+
+{% block content %}
       <section>
         {% block breadcrumb %}
         <ul class="breadcrumb">

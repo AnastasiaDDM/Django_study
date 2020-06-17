@@ -1,7 +1,10 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Регистрация{% endblock %}
+{% block page_title %}Регистрация{% endblock %}
+{% block page_description %}Компания Название сайта предлагает вам зарегистрироваться на нашем сайте, чтобы просматривать свои заказы, скачивания. В свою очередь мы предоставляем вам сохранность ваших данных.
+{% endblock %}
+
  {% block content %}
 <section>
 {% block breadcrumb %}

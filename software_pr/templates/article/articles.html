@@ -3,12 +3,23 @@
 {% load static %}
 {% load common_tags %}
 
-<title>{% block page_title %}Статьи{% endblock %}
+{% block page_title %}Статьи{% endblock %}
+{% block page_description %}Статьи компании Название компании - это полноценные ёмкие гайды и пошаговые инструкции по выполнению каких-либо операций в мире IT, а также спрвочные данные и описательные статьи по интересующим вас темам
+{% endblock %}
 
 {% block link_extend %}
 <link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
 {% endblock %}
 
+{% block semantics %}
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Статьи" />
+<meta property="og:description" content="Статьи компании Название компании - это полноценные ёмкие гайды и пошаговые инструкции по выполнению каких-либо операций в мире IT, а также спрвочные данные и описательные статьи по интересующим вас темам"/>
+<meta property="og:image" content="/media/article/цели.jpg"/>
+<meta property="og:url" content="https://site.ru/articles/" />
+<meta property="og:site_name" content="название сайта" />
+{% endblock %}
 
  {% block content %}
               <section>

@@ -1,7 +1,49 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Как оформить заказ{% endblock %}
+{% block page_title %}Как оформить заказ{% endblock %}
+{% block page_description %}Компания Название сайта описывает множества IT-решений на каждый случай и под каждый бюджет. Вам остается только выбрать подходящий вам метод реализации и действовать!
+{% endblock %}
+{% block semantics %}
+
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Как заказать - название сайта" />
+<meta property="og:description" content="Компания Название сайта описывает множества IT-решений на каждый случай и под каждый бюджет. Вам остается только выбрать подходящий вам метод реализации и действовать!" />
+<meta property="og:url" content="https://site.ru/how_to_order/" />
+<meta property="og:site_name" content="название сайта" />
+<meta property="og:image" content="https://site.ru//static/icons/company_1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<script type='application/ld+json'> 
+    {
+        "@context": "http://www.schema.org",
+        "@type": "Organization",
+        "name": "название компании",
+        "url": "https://site.ru/how_to_order/",
+        "logo": "{% static 'icons/company.png' %}",
+        "image": "{% static 'icons/company.png' %}",
+        "description": "Компания Название сайта описывает множества IT-решений на каждый случай и под каждый бюджет. Вам остается только выбрать подходящий вам метод реализации и действовать!",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "г. Иркутск, ул. Ленина, 6",
+        "addressLocality": "Иркутск",
+        "addressRegion": "Иркутская область",
+        "addressCountry": "Россия"
+        },
+        
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "89011234567",
+        "contactType": "general"
+        }
+    }
+</script>
+
+{% endblock %}
+
 {% block content %}
  <section>
  {% block content_title %}

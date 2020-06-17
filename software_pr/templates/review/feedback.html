@@ -1,8 +1,11 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Заказать звонок{% endblock %}
- {% block content %}
+{% block page_title %}Заказать звонок{% endblock %}
+{% block page_description %}Компания Название сайта предлагает вам бесплатный заказ звонка для консультации и разъяснений ваших вопросов. 
+{% endblock %}
+
+{% block content %}
 <section>
 {% block breadcrumb %}
 <ul class="breadcrumb">

@@ -2,8 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <title>{% block page_title %}{% endblock %}
-    </title>
+    <title>{% block page_title %}{% endblock %}</title>
     <meta name="description" content="{% block page_description %}{% endblock %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="">
     <link rel="stylesheet" type="text/css" href="{% static 'css/fa/css/all.css' %}">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">{% block link_extend %}{% endblock %}
+    {% block semantics %}{% endblock %}
   </head>
   <body class = "fix_width bg-head">
     <header class = "flex_column header_container_height">

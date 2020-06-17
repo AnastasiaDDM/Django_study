@@ -1,8 +1,33 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Обсуждения{% endblock %}
-  {% block content %}
+{% block page_title %}Обсуждения{% endblock %}
+{% block page_description %}Обсуждения компании Название компании - это возможность пользователей общаться друг с другом и делиться своими впечатлениями о наших программных продуктах.
+{% endblock %}
+
+{% block semantics %}
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="discussion" />
+<meta property="og:title" content="Обсуждения" />
+<meta property="og:description" content="Обсуждения компании Название компании - это возможность пользователей общаться друг с другом и делиться своими впечатлениями о наших программных продуктах."/>
+<meta property="og:image" content="/media/article/цели.jpg"/>
+<meta property="og:url" content="https://site.ru/discussions/softwares/{{software.id}}" />
+<meta property="og:site_name" content="название сайта" />
+<!-- 
+<div itemscope itemtype="http://schema.org/Question">
+    <h1 itemprop="name">Обсуждения ПО "{{software.name}}"</h1>
+    <a href="https://site.ru/discussions/softwares/{{software.id}}" itemprop="url">сайт урл</a>
+    <div itemprop="acceptedAnswer" itemscope itemtype="http://schema.org/Answer">
+       <div itemprop="text">Обсуждение 1</div>
+    </div>
+    <div itemprop=" suggestedAnswer" itemscope itemtype="http://schema.org/Answer">
+       <div itemprop="text">Обсуждение 2</div>
+    </div>
+</div> -->
+
+{% endblock %}
+
+{% block content %}
   <section>
     <h1>Обсуждения ПО
     </h1>

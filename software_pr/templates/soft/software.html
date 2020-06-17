@@ -2,10 +2,59 @@
 {% load static %}
 {% load software_tags %}
 {% load common_tags %}
-<title>{% block page_title %}{{software.name}}{% endblock %}
+{% block page_title %}{{software.name}}{% endblock %}
+{% block page_description %}{{software.description_small}}{% endblock %}
 {% block link_extend %}
 <link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
 {% endblock %}
+{% block semantics %}
+<script type='application/ld+json'> 
+    {
+      "@context": "http://www.schema.org",
+      "@type": "product",
+      "brand": "{{classif.type}}",
+      "name": "{{software.name}}",
+      "image": "{{main_photo.photo.url}}",
+      "description": "{{software.description_small}}"
+    }
+</script>
+
+<!-- <div itemscope itemtype="http://schema.org/Product">
+    <h1 itemprop="name">{{software.name}}</h1>
+    <span itemprop="description">{{software.description_small}}</span>
+    <img src="{{main_photo.photo.url}}">
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"> 
+        <span itemprop="price">{{software.price}}</span>
+        <span itemprop="priceCurrency">RUB</span>
+    </div>
+</div> -->
+
+<!-- <div itemscope itemtype="http://schema.org/SoftwareApplication">
+    <span itemprop="name">{{software.name}}</span><br>
+    <a href="{% url 'software:software_page' software.id %}" itemprop="url">сайт урл</a>
+    <span itemprop="applicationCategory">{{classif.type}}</span><br>
+    <img src="{{main_photo.photo.url}}">
+    <span itemprop="description">{{software.description_small}}</span><br>
+    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        Rating <span itemprop="ratingValue"></span> 
+        (<span itemprop="ratingCount"> ratings</span>)
+    </div>
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"> 
+        <span itemprop="price">{{software.price}}</span>
+        <span itemprop="priceCurrency">RUB</span>
+    </div>
+</div> -->
+
+
+<meta name="og:title" content="{{software.name}}">
+<meta name="og:description" content="{{software.description_small}}">
+<meta name="og:url" content="{% url 'software:software_page' software.id %}">
+<meta name="og:site_name" content="имя сайта">
+<meta name="og:locale" content="ru_RU">
+<meta name="og:type" content="product">
+
+{% endblock %}
+
  {% block content %}
  {% block content_title %}
  <h1>{{software.name}}</h1>

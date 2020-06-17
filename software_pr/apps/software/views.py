@@ -150,29 +150,26 @@ def catalog(request):
     
     try:
         soft_list = paginator.page(page)
-        # dbl.log(str(page))
-        # dbl.log("пагинация")
     except(EmptyPage, InvalidPage):
         soft_list = paginator.page(paginator.num_pages) 
-        # dbl.log("!!пагинация")
 
     # Составление вертикального виджета
     # Список типов виджетов
     choice_widget_list = ['popular', 'new']
     # Выбор типа
     choice_widget = random.choice(choice_widget_list)
-    dbl.log("виджеты " + str(choice_widget))
+    # dbl.log("виджеты " + str(choice_widget))
 
     # Популярные ПО
     if choice_widget == "popular":
         vertical_widget_all = Software.get_popular()
-        dbl.log("виджеты " + str(vertical_widget_all))
+        # dbl.log("виджеты " + str(vertical_widget_all))
 
         if len(vertical_widget_all) > 6 :
             vertical_widget = random.sample(vertical_widget_all,6)
         else:
             vertical_widget = vertical_widget_all
-        dbl.log("виджеты " + str(vertical_widget))
+        # dbl.log("виджеты " + str(vertical_widget))
     
     # Новые ПО
     elif choice_widget == "new":

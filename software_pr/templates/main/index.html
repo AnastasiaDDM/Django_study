@@ -2,7 +2,65 @@
 {% load static %}
 {% load software_tags %}
 {% load common_tags %}
-<title>{% block page_title %}Главная{% endblock %}
+{% block page_title %}название сайта{% endblock %}
+{% block page_description %}Название сайта представляет возможность покупки готовых IT-решений, доработка существующих проектов и создание новых систем для автоматизации различных бизнес процессов.
+{% endblock %}
+
+{% block semantics %}
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="название сайта - лучшее решение для вас" />
+<meta property="og:description" content="Название сайта представляет возможность покупки готовых IT-решений, доработка существующих проектов и создание новых систем для автоматизации различных бизнес процессов." />
+<meta property="og:url" content="https://site.ru/" />
+<meta property="og:site_name" content="название сайта" />
+<meta property="og:image" content="https://site.ru//static/icons/logo_1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<script type='application/ld+json'> 
+{
+    "@context": "http://www.schema.org",
+    "@type": "Organization",
+    "name": "название компании",
+    "url": "https://site.ru/",
+    "logo": "{% static 'icons/logo.png' %}",
+    "image": "{% static 'icons/logo.png' %}",
+    "description": "Название сайта представляет возможность покупки готовых IT-решений, доработка существующих проектов и создание новых систем для автоматизации различных бизнес процессов.",
+    "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "г. Иркутск, ул. Ленина, 6",
+    "addressLocality": "Иркутск",
+    "addressRegion": "Иркутская область",
+    "addressCountry": "Россия"
+    },
+    "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "89011234567",
+    "contactType": "general"
+    }
+}
+</script>
+
+<!-- <div itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="name">название компании</span>
+    <a href="https://site.ru/" itemprop="url">сайт урл</a>
+    <span itemprop="description">Название сайта представляет возможность покупки готовых IT-решений, доработка существующих проектов и создание новых систем для автоматизации различных бизнес процессов.</span><br>
+    Контакты:
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      Адрес:
+      <span itemprop="streetAddress">Ленина, 6</span>
+      <span itemprop="postalCode"></span>
+      <span itemprop="addressLocality">Иркутск</span>,
+    </div>
+    Телефон:<span itemprop="telephone">+7 495 000–70–00</span>,
+    Факс:<span itemprop="faxNumber">+7 495 000–70–70</span>,
+    Электронная почта: <span itemprop="email">компания@компания.ru</span>
+</div> -->
+
+{% endblock %}
+
+
 {% block content %}
 <section>
         <div class="margin_top_3em">

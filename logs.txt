@@ -288,3 +288,228 @@ mmmmm
 виджеты popular
 виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
 виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=1&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2&count=2'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=3&count=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=1&count=2'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2&count=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=3&count=2'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=3&count=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2&count=2'>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты popular
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+виджеты [<Software: Грузоперевозки>, <Software: Кафе>, <Software: Образование>]
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?sortid=date_joined'>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=10&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto=&classification_5_value_14=14'>
+виджеты new
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto=&classification_5_value_14='>
+виджеты new
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=10&page=2&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=2&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=3&count=2'>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=3&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=1&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=0&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=1&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=2&page=1&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?soft_tags=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81'>
+ввввввв  Бизнес
+ртртртрт  ['Бизнес']
+ddddddddd <QuerySet [<Software: Грузоперевозки>, <Software: Образование>, <Software: Поликлиника>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=1&page=&soft_name=&soft_tags=%D0%91%D0%B8%D0%B7%D0%BD%D0%B5%D1%81&soft_pricefrom=&soft_priceto='>
+ввввввв  Бизнес
+ртртртрт  ['Бизнес']
+ddddddddd <QuerySet [<Software: Грузоперевозки>, <Software: Образование>, <Software: Поликлиника>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?page=2&count=1'>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/?count=&page=&soft_name=&soft_tags=&soft_pricefrom=&soft_priceto='>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+10000fffff
+1
+пагинация
+10000fffff
+1
+пагинация
+10000fffff
+1
+пагинация
+10000fffff
+1
+пагинация
+10000fffff
+1
+пагинация
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+Ошибка 1 
+Ошибка 2 
+0
+сойт 2  <QuerySet [<Addition: Больница>]>
+сойт 3  Больница
+сойт 4  <QuerySet [<Addition: Больница>]>
+0
+0
+0
+звездыыыыыNone
+мммм  None
+мммм  None
+111111111 ddkjdkd None
+10fffff
+1
+пагинация
+звездыыыыыNone
+мммм  None
+мммм  None
+111111111 ddkjdkd None
+10fffff
+1
+пагинация

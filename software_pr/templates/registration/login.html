@@ -1,7 +1,51 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Заказать звонок{% endblock %}
+{% block page_title %}Вход - название сайта{% endblock %}
+{% block page_description %}Компания Название сайта предлагает вам войти в ваш профиль, чтобы просматривать свои заказы, скачивания. В свою очередь мы предоставляем вам сохранность ваших данных.
+{% endblock %}
+
+
+{% block semantics %}
+
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Оставь заявку на разработку - название сайта" />
+<meta property="og:description" content="Компания Название сайта предлагает вам войти в ваш профиль, чтобы просматривать свои заказы, скачивания. В свою очередь мы предоставляем вам сохранность ваших данных." />
+<meta property="og:url" content="https://site.ru/user/login/" />
+<meta property="og:site_name" content="название сайта" />
+<meta property="og:image" content="https://site.ru//static/icons/company_1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<script type='application/ld+json'> 
+    {
+        "@context": "http://www.schema.org",
+        "@type": "Organization",
+        "name": "название компании",
+        "url": "https://site.ru/user/login/",
+        "logo": "{% static 'icons/company.png' %}",
+        "image": "{% static 'icons/company.png' %}",
+        "description": "Компания Название сайта предлагает вам войти в ваш профиль, чтобы просматривать свои заказы, скачивания. В свою очередь мы предоставляем вам сохранность ваших данных.",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "г. Иркутск, ул. Ленина, 6",
+        "addressLocality": "Иркутск",
+        "addressRegion": "Иркутская область",
+        "addressCountry": "Россия"
+        },
+        
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "89011234567",
+        "contactType": "general"
+        }
+    }
+</script>
+
+{% endblock %}
+
  {% block content %}
 <section>
 {% block breadcrumb %}

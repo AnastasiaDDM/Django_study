@@ -1,7 +1,65 @@
 {% extends 'basic/pattern.html' %}
 {% load static %}
 {% load common_tags %}
-<title>{% block page_title %}Контакты{% endblock %}
+{% block page_title %}Контакты{% endblock %}
+{% block page_description %}Компания Название сайта предлагает множество способов для связи, выбирайте любой идавайте вместе воплощать мечты в реальность!
+{% endblock %}
+
+{% block semantics %}
+
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="О компании название сайта" />
+<meta property="og:description" content="Компания Название сайта предлагает множество способов для связи, выбирайте любой идавайте вместе воплощать мечты в реальность!" />
+<meta property="og:url" content="https://site.ru/company/" />
+<meta property="og:site_name" content="название сайта" />
+<meta property="og:image" content="https://site.ru//static/icons/company_1200x630.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+
+<script type='application/ld+json'> 
+    {
+        "@context": "http://www.schema.org",
+        "@type": "Organization",
+        "name": "название компании",
+        "url": "https://site.ru/contacts/",
+        "logo": "{% static 'icons/company.png' %}",
+        "image": "{% static 'icons/company.png' %}",
+        "description": "Компания Название сайта предлагает множество способов для связи, выбирайте любой идавайте вместе воплощать мечты в реальность!",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "г. Иркутск, ул. Ленина, 6",
+        "addressLocality": "Иркутск",
+        "addressRegion": "Иркутская область",
+        "addressCountry": "Россия"
+        },
+        
+        "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "89011234567",
+        "contactType": "general"
+        }
+    }
+</script>
+
+<!-- <div itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="name">название компании</span>
+    Контакты:
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+      Адрес:
+      <span itemprop="streetAddress">Ленина, 6</span>
+      <span itemprop="postalCode"></span>
+      <span itemprop="addressLocality">Иркутск</span>,
+    </div>
+    Телефон:<span itemprop="telephone">+7 495 000–70–00</span>,
+    Факс:<span itemprop="faxNumber">+7 495 000–70–70</span>,
+    Электронная почта: <span itemprop="email">компания@компания.ru</span>
+  </div> -->
+
+{% endblock %}
+
+
 {% block content %}
  <section>
  {% block content_title %}

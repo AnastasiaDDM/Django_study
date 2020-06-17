@@ -28,15 +28,15 @@
                                 <div class=" slct_div" type="submit" style ="width: 30%;">
                                   <a href="http://127.0.0.1:8000/softwares/?count={{count}}" class="slct">По</a>
                                   <ul class="drop">
-                                    <li><a>1</a></li>
-                                    <li><a>2</a></li>
-                                    <li><a>4</a></li>
+                                    <li><a data-value="1">1</a></li>
+                                    <li><a data-value="2">2</a></li>
+                                    <li><a data-value="4">4</a></li>
                                     <!-- href="javascript:void(0);" -->
-                                    <li><a>6</a></li>
-                                    <li><a>10</a></li>
-                                    <li><a>12</a></li>
+                                    <li><a data-value="6">6</a></li>
+                                    <li><a data-value="10">10</a></li>
+                                    <li><a data-value="12">12</a></li>
                                   </ul>
-                                  <input type="hidden" name="count">
+                                  <input type="hidden" name="count" value="{{count}}">
                                 </div>             
                                 <div class="slct_div" type="submit" style="margin-left: .5em; width: calc(100% - 30% - 10px);">
                                   <a href="javascript:void(0);" class="slct">Сортировать:</a>
@@ -55,7 +55,7 @@
                                 </div>
                                 </div>
                                 <div class="flex_row flex_space-between margin_top_1em">
-                                  <input class="slct" type="number" name="page" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                                  <input class="slct" type="number" name="page" min="1" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
                                   <div>
                                     <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                                   </div>
@@ -299,19 +299,19 @@
                     <div class=" pos_center"><a href="#" class="button_show-more">Показать еще</a></div>
                     <div class=" flex_row pagination flex_space-between">
                     {% if soft_list.has_previous %}
-                        <a class = "pagination_page_numbers" href="?page={{ soft_list.previous_page_number }}">&laquo;</a>
+                        <a class = "pagination_page_numbers" href="?page={{ soft_list.previous_page_number }}&count={{count}}">&laquo;</a>
                     {% else %}
                         <a class = "pagination_ellipsis">&laquo;</a>
                     {% endif %}
                     {% for pg in soft_list.paginator.page_range %}
                         {% if soft_list.number == pg %}
-                            <a class = "pagination_page_numbers pagination_page_numbers_active"  href="?page={{ pg }}">{{ pg }}</a>
+                            <a class = "pagination_page_numbers pagination_page_numbers_active"  href="?page={{ pg }}&count={{count}}">{{ pg }}</a>
                         {% else %}
-                            <a class = "pagination_page_numbers"  href="?page={{ pg }}">{{ pg }}</a>
+                            <a class = "pagination_page_numbers"  href="?page={{ pg }}&count={{count}}">{{ pg }}</a>
                         {% endif %}
                     {% endfor %}
                     {% if soft_list.has_next %}
-                        <a class = "pagination_page_numbers" href="?page={{ soft_list.next_page_number }}">&raquo;</a>
+                        <a class = "pagination_page_numbers" href="?page={{ soft_list.next_page_number }}&count={{count}}">&raquo;</a>
                     {% else %}
                         <a class = "pagination_ellipsis">&raquo;</a>
                     {% endif %}
