@@ -1,4 +1,5 @@
-{% load static %}<!DOCTYPE HTML>
+{% load static %}
+{% load common_tags %}<!DOCTYPE HTML>
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
@@ -80,14 +81,14 @@
         </div>
         <div class=" header_person flex_row">{% if request.user.is_authenticated %}
             <a id = "user" href="{% url 'user:Logout' %}" >Выйти</a>
-            <a id = "user" href = "{% url 'user:personal_data' %}"> 
+            <a id = "user" href = "{% url 'user:orders' %}"> 
                 <div class="header_i_for_div header_i">
                     <i class="fas fa-user">
                     </i>
-                </div>   
+                </div>Личный кабинет   
             </a>{% else %}
             <a id = "user" href="{% url 'user:Login' %}" >Войти </a> / <a id = "user" href="{% url 'user:Registration' %}" > Регистрация</a>
-            <a id = "user" href = "{% url 'user:Login' %}" > 
+            <a id = "user" href = "{% url 'user:orders' %}" > 
                 <div class="header_i_for_div header_i">
                   <i class="fas fa-user">
                   </i>
@@ -115,29 +116,60 @@
           </label>
           <ul class="menu">
             <li>
-              <a href="{% url 'main:company' %}">О&nbsp;компании
+              <a class = "{{ request|is_active:'/company/'}}" href="{% url 'main:company' %}">О&nbsp;компании
               </a>
             </li>
             <li>
-              <a href="{% url 'software:catalog' %}">Каталог
+              <a class = "{{ request|is_active:'/softwares/'}}" href="{% url 'software:catalog' %}">Каталог
               </a>
             </li>
             <li>
-              <a href="{% url 'articles:list_article' %}">Статьи
+              <a class = "{{ request|is_active:'/articles/'}}" href="{% url 'article:list_article' %}">Статьи
               </a>
             </li>
             <li>
-              <a href="{% url 'review:list_review' %}">Отзывы
+              <a class = "{{ request|is_active:'/reviews/'}}" href="{% url 'review:list_review' %}">Отзывы
               </a>
             </li>
             <li>
-              <a href="{% url 'main:contacts' %}">Контакты
+              <a class = "{{ request|is_active:'/contacts/'}}" href="{% url 'main:contacts' %}">Контакты
               </a>
             </li>
             <li>
-              <a href="{% url 'order:request_to_order' %}" class ="link_style_col">Заказать
+              <a class = "{{ request|is_active:'/order/request/'}} link_style_col" href="{% url 'order:request_to_order' %}">Заказать
               </a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'user:orders' %}">Мои&nbsp;заказы
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'user:downloads' %}">Мои&nbsp;загрузки
+                </a>
+              </li>
+              <li>
+                <a class = "header_navbar_active" href="{% url 'user:favourites' %}">Избранное
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'user:personal_data' %}">Мои&nbsp;данные
+                </a>
+              </li>
+              {% else %}
+              <li>
+                <a href="{% url 'user:orders' %}">Мои&nbsp;заказы
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'user:downloads' %}">Мои&nbsp;загрузки
+                </a>
+              </li>
+              <li>
+                <a class = "header_navbar_active" href="{% url 'user:favourites' %}">Избранное
+                </a>
+              </li>
+            {% endif %} 
           </ul>
         </div>
         <div class="flex_row flex_justify-content_flex-start header_disp_none">
@@ -154,29 +186,40 @@
         <div class="flex_row header_navbar header_disp_none">
           <ul>
             <li>
-              <a  class = "header_navbar_active" title="О компании" href="{% url 'main:company' %}">О&nbsp;компании
+              <a class = "{{ request|is_active:'/company/'}}" title="О компании" href="{% url 'main:company' %}">О&nbsp;компании
               </a>
             </li>
             <li>
-              <a title="Каталог" href="{% url 'software:catalog' %}">Каталог
+              <a title="Каталог" class = "{{ request|is_active:'/softwares/'}}" href="{% url 'software:catalog' %}">Каталог
               </a>
             </li>
             <li>
-              <a title="Статьи" href="{% url 'articles:list_article' %}">Статьи
+              <a title="Статьи" class = "{{ request|is_active:'/articles/'}}" href="{% url 'article:list_article' %}">Статьи
               </a>
             </li>
             <li>
-              <a title="Отзывы" href="{% url 'review:list_review' %}">Отзывы
+              <a title="Отзывы" class = "{{ request|is_active:'/reviews/'}}" href="{% url 'review:list_review' %}">Отзывы
               </a>
             </li>
             <li>
-              <a title="Контакты" href="{% url 'main:contacts' %}">Контакты
+              <a title="Контакты" class = "{{ request|is_active:'/contacts/'}}" href="{% url 'main:contacts' %}">Контакты
               </a>
             </li>
             <li>
-              <a class ="link_style_col" title="заказать" href="{% url 'order:request_to_order' %}">Заказать
+              <a class ="link_style_col" class = "{{ request|is_active:'/order/request/'}}" title="заказать" href="{% url 'order:request_to_order' %}">Заказать
               </a>
             </li>
+            {% if request.user.is_authenticated %}
+            <li>
+                <a href="{% url 'user:orders' %}" class ="link_style_col">Личный кабинет
+                </a>
+            </li>
+            {% else %}
+            <li>
+                <a href="{% url 'user:orders' %}" class ="link_style_col">Личный кабинет
+                </a>
+              </li>
+            {% endif %} 
           </ul>
         </div>
       </div>
@@ -191,19 +234,19 @@
         <div class="footer_all-link">
           <div class="flex_row footer_container_l">
             <div class="flex_column footer_first-link">
-              <a title="Заказать" href="/catalog.html">Заказать
+              <a title="Заказать" class = "{{ request|is_active:'/order/request/'}}" href="{% url 'order:request_to_order' %}">Заказать
               </a>
-              <a title="Доработка" href="/articles.html">Доработка
+              <a title="Доработка" class = "{{ request|is_active:'//'}}" href="/articles.html">Доработка
               </a>
-              <a title="О нас" href="{% url 'main:company' %}">О нас
+              <a title="О нас" class = "{{ request|is_active:'/company/'}}" href="{% url 'main:company' %}">О нас
               </a>
             </div>
             <div class="flex_column">
-              <a title="Каталог" href="/catalog.html">Каталог
+              <a title="Каталог" class = "{{ request|is_active:'/softwares/'}}" href="{% url 'software:catalog' %}">Каталог
               </a>
-              <a title="Статьи" href="/articles.html">Статьи
+              <a title="Статьи" class = "{{ request|is_active:'/articles/'}}" href="{% url 'article:list_article' %}">Статьи
               </a>
-              <a title="Отзывы" href="/reviews.html">Отзывы
+              <a title="Отзывы" class = "{{ request|is_active:'/reviews/'}}" href="{% url 'review:list_review' %}">Отзывы
               </a>
             </div>
           </div>

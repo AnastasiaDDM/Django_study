@@ -1,0 +1,265 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load software_tags %}
+{% load common_tags %}
+{% block page_title %}Чат заказа № {{order.id}} {% endblock %}
+{% block content %}
+{% include "common/pattern_lk_menu.html" %}
+<div id= "toTop">         
+    <i class="fa fa-chevron-circle-up chat_panel_sticky_i" aria-hidden="true">
+    </i>
+    </div>
+  <section>
+    <h1>Чат "{{order.name}}"
+    </h1>
+    {% block breadcrumb %}
+    <ul class="breadcrumb">
+    {% breadcrumb_url 'Главная' 'main:index' %}
+    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+    {% breadcrumb_url 'Мои заказы' 'user:orders' %}
+    {% with order_number=order.id|return_str %}
+    {% with str_order_number='Заказ № '|add:order_number %}
+    {% breadcrumb_url str_order_number 'order:order_page' order.id %}
+    {% endwith %}
+    {% endwith %}
+    {% breadcrumb_url 'Чат' %}
+    </ul>
+    {% endblock %}
+
+        <div class="pos_center_for_div padding_top-bootom_1em">
+          <div class= "chat_panel_sticky chat">
+            {% autoescape on %}
+              <form action="{% url 'order:message_add_for_chat' order.id %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+            <div class="flex_column">
+                <input type="text" style="display:none;" name="order_id" value="{{order.id}}">
+              <div class="pos_center width_100"> 
+                <div class="pos_left_for_text">Новое сообщение
+                </div>
+                <textarea name="content" class="chat_panel_sticky_textarea" rows="5" cols="105"></textarea>
+              </div>
+              <div class="flex_row flex_space-between">
+
+                <div class="input__wrapper">
+                  <input name="file" type="file" id="input__file" class="input input__file " multiple>
+                  <label for="input__file" class="input__file-button">
+                    <span class="input__file-icon-wrapper">
+                      <i class="fa fa-paperclip chat_panel_sticky_clip_i" aria-hidden="true">
+                      </i>
+                    </span>
+                    <span class="input__file-button-text">Выберите файл
+                    </span>
+                  </label>
+                </div>
+
+                <div class="pos_сenter">
+                  <button type="submit" class="fa fa-arrow-circle-right chat_panel_sticky_i">
+                  </button>
+                </div>
+            </form>
+            {% endautoescape %}
+              </div>
+            </div>
+
+          </div>
+          <div class="margin_top_3em">
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">На нас те медали, что мы добывали в бою
+                    <br>
+                    Не смотри на меня волком, не смотри - я пастух
+                    <br>
+                    Не молчи - я молю, разожги - я потух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух Не смотри на меня волком, не смотри - я пастух
+                    Накорми меня с рук, напои меня с губ
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right">
+              <div class="chat_comment ">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Неживой водой
+                    <br>
+                    Ключевым ручьем
+                    <br>
+                    Сытой зимой
+                    <br>
+                    Спелой весной
+                    <br>
+                    Спела приговор
+                    <br>
+                    Перспективы стен
+                    <br>
+                    Это нелюбовь
+                    <br>
+                    Разве только плен
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right">
+              <div class="chat_comment ">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Нет уж, не терпеть больно
+                    <br>
+                    Больно доставлять боль
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Ты - белая, как день ночью
+                    Черная, как ночь днем
+                    Небо, точно дождь прочит
+                    В ведрах вон уж весь дом
+                    Хватит, это ложь - полно
+                    Режет, точно ножом
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_left">
+              <div class="chat_comment">
+                <div class="chat_comment_bubble_left">
+                  <div class="chat_comment_date_left">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Вот фотографии проекта, внесите свои поправки,
+                    если таковые имеются.
+                  </div>
+                  <div class="flex_row flex_wrap margin_top-bootom_1em ">
+                    <div class = " chat_img_margin_between">
+                      <a class="example-image-link" href="images/computer.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/computer.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/computer.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/computer.jpg" alt=""/></a>
+                    </div>
+                    <div class = " chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/cafe.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/cafe.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/computer.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/computer.jpg" alt=""/></a>
+                    </div>
+                    <div class = " chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/cafe.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/cafe.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/cafe.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/cafe.jpg" alt=""/></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat_right" id="last">
+              <div class="chat_comment ">
+                <div class="chat_comment_bubble_right">
+                  <div class="chat_comment_date_right">20.04.2020 10:34
+                  </div>
+                  <div class="chat_comment_text">Круто! Все отлично!
+                  </div>
+                  <div class="flex_row flex_space-between margin_top-bootom_1em chat_img">
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                    data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                    <div class = "chat_img_margin_between">
+                      <a class="example-image-link" href="images/code.jpg" data-lightbox="example-set" 
+                      data-title="Главная страница"><img class="example-image chat_img" src="images/code.jpg" alt=""/></a>
+                    </div>
+                  </div>
+                  <div class="chat_comment_text"> Вот дополнение 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endblock %}	
+      {% block js_extend %}
+      <script src="{% static '/js/file_input_custom.js' %}"></script>
+      <script src="{% static '/js/lightbox.min.js' %}"></script>
+      <script>
+        jQuery(document).ready(function () {
+            input_filled('input');
+            input_filled('textarea');
+            input_file();
+    
+          $(function() {
+    
+            $(window).scroll(function() {
+            
+              if($(this).scrollTop() != 0) {
+              
+                $('#toTop').fadeIn();
+              
+              } else {
+              
+                $('#toTop').fadeOut();
+              
+              }
+            
+            });
+            
+            $('#toTop').click(function() {
+              
+              $('body,html').animate({scrollTop:430},400);
+            
+            });  
+          });
+    
+        })
+      </script>
+      {% endblock %}

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /*sort=*
+Disallow: /*page=*&count=*
+Crawl-Delay:15

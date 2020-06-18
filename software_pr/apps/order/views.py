@@ -3,7 +3,7 @@ from django.http import Http404, HttpResponseRedirect, HttpResponse
 from django.db.models import Q
 from user.models import CustomUser
 from software.models import Software, Favourite
-from .models import Order
+from .models import *
 from .forms import *
 import datetime
 import dbl
@@ -40,7 +40,19 @@ def orders(request):
                 number = form.cleaned_data['number']
                 name = form.cleaned_data['name']
                 unread_messages = form.cleaned_data['unread_messages']
+                sort_param = form.cleaned_data['sort']
+                if sort_param is None:
+                    sort_param = ""
+                count = form.cleaned_data['count']
+                if count == "":
+                    count = 10
+                count = int(count)
+                try:
+                    page = int(form.cleaned_data['page'])
+                except:
+                    page = 1
 
+                
                 # Получение поля фильтрации по типу даты
                 date_type_for_db = ""
 
@@ -122,6 +134,9 @@ def orders(request):
                 # Фильтрация по наименованию заказа
                 if name:
                     orders = orders.filter(name__icontains=name)
+
+                # Сортировка, показать по, перейти на страницу
+                orders = util.views.sort_show_by(orders, sort_param, count, page )
 
             except Exception as error:
                 pass
@@ -238,3 +253,90 @@ def request_success(request):
     message = "Ваша заявка на заказ принята! Вам перезвонят в ближайшее время"
 
     return render(request, 'common/successfull.html', {'message':message, 'list_crumb':list_crumb})
+
+
+
+# Страница чата
+def chat(request, id):
+
+    # Объявление начальных значений переменных
+    # order_img = Q()
+    # main_photo = Q()
+    # list_note = []
+    order = None
+    chat = None
+
+    try:
+        # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+        # Получения пользователя
+        user = CustomUser.get_user(request)
+
+        if user:
+            # Получение заказа
+            order = Order.get_order_by_client(id, user)
+            # chat = order.chat
+
+    except Exception as error:
+            pass
+            dbl.log("Ошибка работы" + str(error))
+
+    return render(request, 'order/chat.html', {'order':order, 'chat':chat})
+
+
+
+# Добавление сообщения в чат
+def message_add_for_chat(request, id):
+
+    order = None
+    chat = None
+
+    if request.method == 'POST':
+        form = ChatForm(request.POST, request.FILES)
+
+        try:
+            # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+            # Получения пользователя
+            user = CustomUser.get_user(request)
+
+            if user:
+                # Получение заказа
+                order = Order.get_order_by_client(id, user)
+        except Exception as error:
+            pass
+            dbl.log("Ошибка работы" + str(error))
+
+
+        if form.is_valid():
+
+            new_chat = Chat()
+            
+
+            # addition_file = request.FILES['file']
+
+            addition_file = request.FILES.getlist('file')
+
+            dbl.log(str(addition_file))
+
+            new_chat.order = order
+
+            # new_chat.order = form.cleaned_data['order_id']
+            new_chat.content = form.cleaned_data['content']
+            new_chat.sender = "cl"
+
+            # Сохранение сообщения чата (происходит тогда, когда все поля валидны)
+            new_chat.save()
+            dbl.log(str(new_chat.pk))
+
+            # chat = Software.objects.get( order_software = new_chat.id )
+
+            for file in addition_file:
+
+                new_addition = Chat_Addition()
+
+
+                new_addition.chat = new_chat
+                new_addition.file = file
+                new_addition.save()
+                dbl.log(str(new_addition.pk))
+
+    return redirect('order:chat', id=order.id )

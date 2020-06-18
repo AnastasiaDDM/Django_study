@@ -23,8 +23,8 @@
           <div class="order_search_size">
             <div class="search_title">Поиск <a id = "search_roll_up" class="search_roll-up  search_roll_up" style="display: none;">Свернуть <i class="fas fa-arrow-up"></i></a>
               <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
-            <fieldset class="fieldset_border_primary search_div_fieldset">
               <form data-target="form_search" method="get" id="form_search_orders">
+            <fieldset class="fieldset_border_primary search_div_fieldset">
                 <div class="flex_row width_100 flex_space-between margin_top_1em">
                   <div class="slct_div find_column-3 " id="div_date_select">
                     <a href="javascript:void(0);" id="date_type_select_a" class="slct">Выберите по какой дате искать:
@@ -224,62 +224,47 @@
                     <button type="submit" class="button_search">Поиск</button>
                   </div>  
                 </div>
-              </form>
             </fieldset>
-
-
             <fieldset class="fieldset_border_primary margin_top_1em" name="fieldset" >
-              <form>
-    
-    
-    
-                  <div class = "flex_row ">
-    
-                      
-                    <div class=" slct_div column-3">
-                      <a href="javascript:void(0);" class="slct">По</a>
-                      <ul class="drop ">
-                        <li><a>4</a></li>
-                        <li><a>6</a></li>
-                        <li><a>10</a></li>
-                        <li><a>12</a></li>
-                      </ul>
-                      <input type="hidden" id="select">
+                <div class = "flex_row ">
+                  <div class=" slct_div column-3">
+                    <a href="/user/lk/orders/?count={{form.count.value}}" class="slct">По</a>
+                    <ul class="drop">
+                      <li><a data-value="1">1</a></li>
+                      <li><a data-value="2">2</a></li>
+                      <li><a data-value="4">4</a></li>
+                      <li><a data-value="6">6</a></li>
+                      <li><a data-value="10">10</a></li>
+                      <li><a data-value="12">12</a></li>
+                    </ul>
+                    <input type="hidden" name="count" value="{{form.count.value}}">
+                  </div>
+                  <div class="slct_div column-3">
+                    <a href="/user/lk/orders/?sort={{form.sort.value}}" class="slct">Сортировать:</a>
+                    <ul class="drop">
+                      <li><a>Все</a></li>
+                      <li><a data-value="daending_datete">&#8657 по дате окончания</a></li>
+                      <li><a data-value="-ending_date">&#8659 по дате окончания</a></li>
+                      <li><a data-value="id">Номер по возрастанию</a></li>
+                      <li><a data-value="-id">Номер по убыванию</a></li>
+                      <li><a data-value="name">В алфавитном порядке</a></li>
+                      <li><a data-value="-name">В обратном порядке</a></li>
+                      <li><a data-value="paid_amount">&#8657 по сумме оплаты</a></li>
+                      <li><a data-value="-paid_amount">&#8659 по сумме оплаты</a></li>
+                    </ul>
+                    <input type="hidden" id="sort" name="sort" value="{{form.sort.value}}" data-url="{% url 'software:catalog' %}"> 
+                  </div>
+                  <div class="flex_row column-3">
+                    <input class="slct" type="number" min="1" name="page" value="{{form.page.value}}" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                    <div>
+                        <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                     </div>
-    
-    
-                    <div class="slct_div column-3">
-                      <a href="javascript:void(0);" class="slct">Сортировать:</a>
-                      <ul class="drop">
-                        <li><a>Все</a></li>
-                        <li><a>Популярное</a></li>
-                        <li><a>Новое</a></li>
-                        <li><a>&#8657 по размеру</a></li>
-                        <li><a>&#8659 по размеру</a></li>
-                      </ul>
-                      <input type="hidden" id="select">
-                    </div>
-
-
-                    <div class="flex_row column-3">
-                      <input class="slct" type="number" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
-                      <div class="">
-                        <a type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></a>
-                      </div>
-                    </div>
-
-
-                    </div>
-                  
-    
-              </form>
-             </fieldset>
-
-
+                  </div>
+                  </div>
+           </fieldset>
+            </form>
           </div>
-
-
-          
+   
           <div class="flex_row main_block_bg padding_top-bootom_1em flex_flex-start" style="line-height: 2em;">
             <div class="flex_row">
               <div class=" pos_right order_card_type_state_small">

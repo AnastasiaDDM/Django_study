@@ -13,6 +13,7 @@ import json
 from django.template.loader import render_to_string
 from discussion.views import render_discussion_comment
 from order.models import Order
+from django.http import FileResponse
 
 
 # Ф-ия составления списка ПО
@@ -29,6 +30,17 @@ def catalog(request):
     soft_pricefrom = request.GET.get('soft_pricefrom', '')
     soft_priceto = request.GET.get('soft_priceto', '')
     modification = request.GET.get('modification', '')
+    sort_param = request.GET.get('sort', '')
+    if sort_param is None:
+        sort_param = ""
+    count = request.GET.get('count', '10')
+    if count == "":
+        count = 10
+    count = int(count)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
 
     # Словарь для фильтра классификаций
     classification_dict = {}
@@ -50,7 +62,7 @@ def catalog(request):
     #  Перменная составления запроса с фильтрами по классификациям
     cond = Q()
 
-    # перебор словаря классификаций
+    # Перебор словаря классификаций
     for cl_val in classification_dict.values():
 
         # Добавление условия фильтрации
@@ -58,12 +70,9 @@ def catalog(request):
 
     # Фильтрация списка всех ПО по выбранным классификациям
     soft_list = soft_list.filter(cond)
-    # dbl.log(str(cond))
-    # dbl.log(str(soft_list))
 
     # Исключение повторений ПО
     soft_list = soft_list.order_by('id').distinct()
-
 
     # Фильтрация по цене (бесплатные ПО)
     if soft_price =="soft_price_free":
@@ -104,6 +113,7 @@ def catalog(request):
     # Хэш классификаций ПО
     tags_dict = {}
     photo_dict = {}
+    vertical_widget_photo_dict = {}
 
     for soft in soft_list:
 
@@ -134,24 +144,9 @@ def catalog(request):
     #     dbl.log("hhhh "+str(response))
     #     return response
 
+    # Сортировка, показать по, перейти на страницу
+    soft_list = util.views.sort_show_by(soft_list, sort_param, count, page )
 
-    count = request.GET.get('count', '10')
-    if count == "":
-        count = 10
-    count = int(count)
-
-    paginator = Paginator( soft_list, count )
-
-    try:
-        page = int(request.GET.get('page', '1'))
-
-    except:
-        page = 1
-    
-    try:
-        soft_list = paginator.page(page)
-    except(EmptyPage, InvalidPage):
-        soft_list = paginator.page(paginator.num_pages) 
 
     # Составление вертикального виджета
     # Список типов виджетов
@@ -175,36 +170,49 @@ def catalog(request):
     elif choice_widget == "new":
         vertical_widget = Software.get_new()
 
-    response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'modification':modification, 
-    'search_query_name':search_query_name, 'soft_price':soft_price, 'soft_pricefrom':soft_pricefrom, 'list_tags':list_tags,
+
+    for soft in vertical_widget:
+
+        vertical_widget_soft_photo = soft.get_main_photo()
+
+        if vertical_widget_soft_photo is not None:
+
+            # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+            for s in vertical_widget_soft_photo:
+                vertical_widget_photo_dict[soft.id] = s
+    
+
+    response = render(request, 'soft/catalog.html', {'soft_list':soft_list, 'photo_dict':photo_dict, 'count':count, 'sort_param':sort_param, 'page':page,
+    'modification':modification, 'search_query_name':search_query_name, 'soft_price':soft_price, 
+    'soft_pricefrom':soft_pricefrom, 'list_tags':list_tags,
     'soft_priceto':soft_priceto, 'tags_dict':tags_dict, 'classifications':classifications, 
-    'classification_dict':classification_dict, 'user':user, 'choice_widget':choice_widget, 'vertical_widget':vertical_widget})
+    'classification_dict':classification_dict, 'user':user, 'choice_widget':choice_widget, 'vertical_widget':vertical_widget,
+    'vertical_widget_photo_dict':vertical_widget_photo_dict})
     return response
 
 
-def sort( request, soft_list, *args, **kwargs):
-        # sorting articles by date and rating with ajax
-        data = {}
-        dbl.log("111")
-        if request.is_ajax():
-            dbl.log("22")
-            dbl.log("22  " + str(request))
-            dbl.log("22  " + str(soft_list))
-            for soft in soft_list:
-                dbl.log("88  " + str(soft))
-            # soft_list = Software.objects.all().filter(date_of_delete=None, visibility=True)
-            # soft_list = Software.objects.all().filter(date_of_delete=None, visibility=True)
-            sort_param = request.GET.get('sortid')
-            dbl.log("99 "+str(sort_param))
-            # if sort_param in ('create_date', '-create_date', 'rate', '-rate'):
-            soft_list = soft_list.order_by(sort_param)
-            dbl.log("000")
-            data['result'] = render_block_software(request, soft_list)
-            # dbl.log("22  " + str(data))
-            # return JsonResponse(data)
-            dbl.log("33")
-            return HttpResponse(json.dumps(data), content_type='application/json')
-        return super().get(request, *args, **kwargs)
+# def sort( request, soft_list, *args, **kwargs):
+#         # sorting articles by date and rating with ajax
+#         data = {}
+#         dbl.log("111")
+#         if request.is_ajax():
+#             dbl.log("22")
+#             dbl.log("22  " + str(request))
+#             dbl.log("22  " + str(soft_list))
+#             for soft in soft_list:
+#                 dbl.log("88  " + str(soft))
+
+#             sort_param = request.GET.get('sortid')
+#             dbl.log("99 "+str(sort_param))
+#             # if sort_param in ('create_date', '-create_date', 'rate', '-rate'):
+#             soft_list = soft_list.order_by(sort_param)
+#             dbl.log("000")
+#             data['result'] = render_block_software(request, soft_list)
+#             # dbl.log("22  " + str(data))
+#             # return JsonResponse(data)
+#             dbl.log("33")
+#             return HttpResponse(json.dumps(data), content_type='application/json')
+#         return super().get(request, *args, **kwargs)
 
 
 
@@ -381,7 +389,7 @@ def software_buy(request, software_id):
     return redirect('software:catalog')
 
 
-# Ф-ия отображения страницы покупки
+# Ф-ия отображения страницы скачивания
 def software_download(request, software_id):
 
     form = Register_by_email_phone_Form()
@@ -433,12 +441,18 @@ def add_download(request, software_id):
 
             Download.objects.get_or_create(client=user, software=software)
 
-            message = "Благодарим вас за доверие!"
-            download_link = software.file
+            message = "Благодарим вас за доверие! Через 5 секунд начнется автоматическая загрузка."
+
+            # download_url = software.file
+            # download_url = '/softwares/download?id='+str(software.id)
+            download_url = '/softwares/'+str(software.id) +'/download/send_file'
+            
+            dbl.log(str(download_url))
             h1 = "Успешная загрузка"
             list_crumb = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name, 'software:software_page', software.id], ['Скачать бесплатно', 'software:software_download', software.id]]
 
-            return render(request, 'common/successfull.html', {'message':message, 'download_link':download_link, 'h1':h1, 'list_crumb':list_crumb})
+            return render(request, 'common/successfull.html', {'message':message, 'download_link':download_link, 'h1':h1, 'list_crumb':list_crumb,
+            'download_url':download_url})
 
     except Exception as error:
         pass
@@ -448,6 +462,26 @@ def add_download(request, software_id):
 
     return render(request, 'common/fail.html', {'message':message})
 
+
+# Ф-ия отправки файла пользователю
+def software_send_file(request, software_id):
+
+    # todo Осуществить проверку на правомочия скачивания файла
+    software = Software.objects.get( id = int(software_id) )
+    if software:
+        dbl.log("путь  1  " + str(settings.MEDIA_ROOT))
+        path = str(settings.MEDIA_ROOT)+ '/'+ str(software.file)
+        dbl.log("путь  " + str(path))
+
+        file = open(path, 'rb') # Открываешь файл, который вытащила из БД по переданному ИД
+
+        response = FileResponse(file) # Формируеьш ответ.
+
+        return response # И выдаешь в браузер
+
+    message = "К сожалению, что-то пошло не так. Возможно вам стоит попробовать в следующий раз."
+
+    return render(request, 'common/fail.html', {'message':message})
 
 
 
@@ -504,7 +538,7 @@ def render_similars_tags(software):
 # Ф-ия создания кода html для блока ПО
 def render_block_software(request, soft_list):
 
-        # Хэш классификаций ПО
+    # Хэш классификаций ПО
     tags_dict = {}
     photo_dict = {}
 

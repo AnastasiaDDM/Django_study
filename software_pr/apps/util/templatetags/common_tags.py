@@ -3,6 +3,7 @@ from django.template import loader, Node, Variable
 from django.utils.encoding import smart_str
 from django.template.defaulttags import url
 from django.template import VariableDoesNotExist
+import re
 import dbl
 
 register = template.Library()
@@ -178,3 +179,11 @@ def list_cross_section(list, start_index=0):
 def return_str(param):
     return str(param)
         
+
+@register.filter(name='is_active')
+def is_active(request, name=''):
+    if request != None and name != '':
+        url= request.get_full_path()
+        if re.match(r'^'+name, url):
+            return 'header_navbar_active'
+    return ''

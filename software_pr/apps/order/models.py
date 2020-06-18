@@ -122,3 +122,44 @@ class Order_Addition(models.Model):
     class Meta:
         verbose_name = 'Приложение'
         verbose_name_plural = 'Приложения'
+
+
+
+class Chat(models.Model):
+
+    client = 'cl'
+    manager = 'man'
+
+    KIND_CHAT = (
+        (client, 'Клиент'),
+        (manager, 'Менеджер'),
+    )
+
+    order = models.ForeignKey(Order, on_delete = models.PROTECT, verbose_name='Заказ', related_name='chat_order')
+    content = models.TextField('Текст', null=True, blank=True)
+    date = models.DateTimeField('Дата', auto_now_add=True, blank=True)
+    sender = models.CharField(max_length=3, choices=KIND_CHAT, default=manager, db_index=True)
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
+    visibility = models.BooleanField('Видимость на сайте', default=True, db_index=True)
+
+    def __str__(self):
+        return str(self.order+ self.date)
+
+    class Meta:
+        verbose_name = 'Чат'
+        verbose_name_plural = 'Чаты'
+
+
+class Chat_Addition(models.Model):
+    chat = models.ForeignKey(Chat, on_delete = models.PROTECT, verbose_name='Чат')
+    kind = models.BooleanField('Тип (true - картинка)', default=True)
+    photo = models.ImageField('Фото', upload_to="order/chat_photo/", blank=True, null=True)
+    file = models.FileField('Ссылка на файл', upload_to="order/chat_file/", blank=True, null=True)     
+    date_of_delete = models.DateField('Дата удаления', null=True, blank=True, db_index=True)
+
+    def __str__(self):
+        return self.chat
+
+    class Meta:
+        verbose_name = 'Приложение к чату'
+        verbose_name_plural = 'Приложения к чату'

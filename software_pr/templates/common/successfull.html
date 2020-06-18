@@ -33,10 +33,10 @@
                         {{message}}
                         {% endif %}
                     </div>
-                    {% if download_link %}
+                    {% if download_url %}
+                    <input style='display: none;' type="text" id='download_url' value="{{download_url}}">
                     <div class="padding_bottom_1em pos_center a_big">
-                        Ссылка для скачивания: 
-                        <a class="link_style_border link_read-more" href="{{ MEDIA_URL }}/{{download_link.url}}">{{ MEDIA_URL }}/{{download_link}}</a>
+                        ССЫЛКА НА ПО ДОБАВЛЕНА В ВАШ <a href="{% url 'user:downloads' %}" class="link_read-more link_style_border">ЛИЧНЫЙ КАБИНЕТ</a>! Можете в любое время просматривать свои скачивания.
                     </div>
                     {% endif %}
                     {% if not request.user.is_authenticated %}
@@ -60,3 +60,15 @@
           </fieldset>
         </div>
         {% endblock %}	
+        {% if download_url %}
+        {% block js_extend %}
+        <script >
+        function go_download()
+            {
+                var url = document.getElementById('download_url').value;
+                document.location.href = url
+            }
+        // setTimeout(  go_download, 5000);
+        </script>
+        {% endblock %}
+        {% endif %}

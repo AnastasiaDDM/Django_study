@@ -26,7 +26,7 @@
                             <!-- <form name="form_page" action="{% url 'software:catalog' %}"> -->
                               <div class = "flex_row ">
                                 <div class=" slct_div" type="submit" style ="width: 30%;">
-                                  <a href="http://127.0.0.1:8000/softwares/?count={{count}}" class="slct">По</a>
+                                  <a href="/softwares/?count={{count}}" class="slct">По</a>
                                   <ul class="drop">
                                     <li><a data-value="1">1</a></li>
                                     <li><a data-value="2">2</a></li>
@@ -39,10 +39,9 @@
                                   <input type="hidden" name="count" value="{{count}}">
                                 </div>             
                                 <div class="slct_div" type="submit" style="margin-left: .5em; width: calc(100% - 30% - 10px);">
-                                  <a href="javascript:void(0);" class="slct">Сортировать:</a>
+                                  <a href="/softwares/?sort={{sort_param}}" class="slct">Сортировать:</a>
                                   <ul class="drop">
                                     <li><a>Все</a></li>
-                                    <li><a>Популярное</a></li>
                                     <li><a data-value="date_joined">Новое</a></li>
                                     <li><a data-value="name">В алфавитном порядке</a></li>
                                     <li><a data-value="-name">В обратном порядке</a></li>
@@ -51,11 +50,11 @@
                                     <li><a data-value="size">&#8657 по размеру</a></li>
                                     <li><a data-value="-size">&#8659 по размеру</a></li>
                                   </ul>
-                                  <input type="hidden" id="sort" data-url="{% url 'software:catalog' %}"> 
+                                  <input type="hidden" id="sort" name="sort" value="{{sort_param}}" data-url="{% url 'software:catalog' %}"> 
                                 </div>
                                 </div>
                                 <div class="flex_row flex_space-between margin_top_1em">
-                                  <input class="slct" type="number" name="page" min="1" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                                  <input class="slct" type="number" name="page" value="{{page}}" min="1" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
                                   <div>
                                     <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                                   </div>
@@ -179,7 +178,13 @@
                                         <div class = "widget_div_title">{{widget.name_small}}</div>
                                         <div class = "widget_div_img"> 
                                           <!-- Бокс картинки --> 
-                                          <img  class = "img_width" src="images/code.jpg" alt="Расписание"/>
+                                          {% if vertical_widget_photo_dict %}
+                                          {% with photo=vertical_widget_photo_dict|get_value_for_dict:widget.id %}
+                                              {% if photo %}
+                                              <img class = "img_width cursor" src="{{photo.photo.url}}"  alt="{{widget.name}}"/>
+                                              {% endif %}
+                                          {% endwith %}
+                                          {% endif %}
                                         </div>
                                         <div>
                                           <ul class = "widget_list">{{widget.description_small}}
@@ -335,7 +340,6 @@
                     areas_more();
                     form_search_reset();
                     favourite();
-                    filtering_for_search();
 
                     $('#widgets_vertical_slider').slick({
                       vertical:true,

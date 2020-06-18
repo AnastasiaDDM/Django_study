@@ -47,6 +47,9 @@ class Search_OrderForm(forms.Form):
     number = forms.CharField(required=False)
     name = forms.CharField(required=False)
     unread_messages = forms.BooleanField(required=False)
+    count = forms.CharField(required=False)
+    page = forms.CharField(required=False)
+    sort = forms.CharField(required=False)
 
 
     #  Ф-ии проверки валидности полей
@@ -71,3 +74,16 @@ class Search_OrderForm(forms.Form):
         if number is not None and str(number) != "":
 
             return util.forms.clean_isdigit(number)
+
+
+
+
+# Форма элементов для поиска заказов
+class ChatForm(forms.Form):
+
+    order_id = forms.CharField()
+    content = forms.CharField(required=False)
+    # image = forms.ImageField(required=False)
+    file = forms.FileField(required=False, widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
+

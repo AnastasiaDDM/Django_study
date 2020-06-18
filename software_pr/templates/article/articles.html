@@ -36,8 +36,8 @@
                       <a id = "search_roll_down" class="search_roll-up search_roll_down" style="display: none;">Развернуть <i class="fas fa-arrow-down"></i></a></div>
                     {% autoescape on %}
                     {% csrf_token %}
+                    <form data-target="form_search">
                     <fieldset class="fieldset_border_primary search_div_fieldset">
-                      <form data-target="form_search">
                         <div class="flex_row flex_space-between">
                           <div class="input_style w_45_xs">
                             <input type="text" name="article_author" id="author" value="{{art_author}}" autocomplete="off">
@@ -76,41 +76,41 @@
                             </button>
                           </div>  
                         </div>
-                      </form>
                     </fieldset>
                     <fieldset class="fieldset_border_primary margin_top_1em" name="fieldset" >
-                      <form action="" method="get">
-                          <div class = "flex_row ">                  
-                            <div class=" slct_div column-3">
-                              <a href="javascript:void(0);" class="slct">По...</a>
-                              <ul class="drop ">
-                                <li><a>4</a></li>
-                                <li><a>6</a></li>
-                                <li><a>10</a></li>
-                                <li><a>12</a></li>
-                              </ul>
-                              <input class="disp_none" type="submit" name="count" value="">
+                        <div class = "flex_row ">
+                          <div class=" slct_div column-3">
+                            <a href="/articles/?count={{count}}" class="slct">По</a>
+                            <ul class="drop">
+                              <li><a data-value="1">1</a></li>
+                              <li><a data-value="2">2</a></li>
+                              <li><a data-value="4">4</a></li>
+                              <li><a data-value="6">6</a></li>
+                              <li><a data-value="10">10</a></li>
+                              <li><a data-value="12">12</a></li>
+                            </ul>
+                            <input type="hidden" name="count" value="{{count}}">
+                          </div>
+                          <div class="slct_div column-3">
+                            <a href="/articles/?sort={{sort_param}}" class="slct">Сортировать:</a>
+                            <ul class="drop">
+                              <li><a>Все</a></li>
+                              <li><a data-value="date_of_review">&#8657 по дате</a></li>
+                              <li><a data-value="-date_of_review">&#8659 по дате</a></li>
+                              <li><a data-value="text">В алфавитном порядке</a></li>
+                              <li><a data-value="-text">В обратном порядке</a></li>
+                            </ul>
+                            <input type="hidden" id="sort" name="sort" value="{{sort_param}}" data-url="{% url 'software:catalog' %}"> 
+                          </div>
+                          <div class="flex_row column-3">
+                            <input class="slct" type="number" min="1" name="page" value="{{page}}" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
+                            <div>
+                                <button type="submit" type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></button>
                             </div>
-                            <div class="slct_div column-3">
-                              <a href="javascript:void(0);" class="slct">Сортировать:</a>
-                              <ul class="drop">
-                                <li><a>Все</a></li>
-                                <li><a>Популярное</a></li>
-                                <li><a>Новое</a></li>
-                                <li><a>&#8657 по размеру</a></li>
-                                <li><a>&#8659 по размеру</a></li>
-                              </ul>
-                              <input type="hidden" >
-                            </div>
-                            <div class="flex_row column-3">
-                              <input class="slct" type="number" min="0" style="width: calc(100% - 75px);" placeholder="Перейти на страницу...">
-                              <div class="">
-                                <a type="button" style="width: 25px;" class="button_delicate pos_center"><i class="fas fa-arrow-right"></i></a>
-                              </div>
-                            </div>
-                            </div>
-                      </form>
-                     </fieldset>
+                          </div>
+                          </div>
+                   </fieldset>
+                </form>
                      {% endautoescape %}
                   </div>
                 {% endblock %}
@@ -130,7 +130,7 @@
                           <div class = "flex_column width_100"> 
                             <div class="software_div_name">
                               <!-- Контейнер названия и типа ПО -->
-                              <a class = "software_name" href="/software.html">{{s.name}}
+                              <a class = "software_name" href="{% url 'article:article_page' s.id %}">{{s.name}}
                               </a>
                             </div>
                             <div class="flex_row article_box_author_date"> 
@@ -150,7 +150,7 @@
                               <!-- Контейнер картинки и кнопок -->
                               <div class = "software_div_images" > 
                                 <!-- Бокс картинки --> 
-                                <a href="/software.html">
+                                <a href="{% url 'article:article_page' s.id %}">
                                   <img  class = "img_width cursor" src="{{s.image.url}}"  alt="{{s.name}}"/>
                                 </a>
                               </div>
@@ -159,7 +159,7 @@
                               <div class = "article_start-of-article">{{s.text}}
                               </div>
                               <div class = "article_read-more_text-align">
-                                <a href="#" class="link_read-more link_style_border">
+                                <a href="{% url 'article:article_page' s.id %}" class="link_read-more link_style_border">
                                   <span>Читать далее
                                   </span>
                                 </a>

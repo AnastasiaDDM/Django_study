@@ -75,26 +75,26 @@ class ReviewForm(forms.ModelForm):
 
 
 
-    #  Ф-ии проверки валидности полей
-    def clean_name(self):
+    # #  Ф-ии проверки валидности полей
+    # def clean_name(self):
 
-        if self.cleaned_data['name'] is not None:
+    #     if self.cleaned_data['name'] is not None:
 
-            return util.forms.clean_name(self)
+    #         return util.forms.clean_name(self)
 
-    def clean_email_phone(self):
+    # def clean_email_phone(self):
 
-        return util.forms.clean_email_phone(self)
+    #     return util.forms.clean_email_phone(self)
 
-    def clean_star(self):
-        star = self.cleaned_data['star']
-        dbl.log('звезда !'+str(star))
-        # Проверка валидности значения рейтинга
-        if star == "":
-            dbl.log('звездыыыыы'+str(star))
-            raise ValidationError("Пожалуйста поставьте оценку")
+    # def clean_star(self):
+    #     star = self.cleaned_data['star']
+    #     dbl.log('звезда !'+str(star))
+    #     # Проверка валидности значения рейтинга
+    #     if star == "":
+    #         dbl.log('звездыыыыы'+str(star))
+    #         raise ValidationError("Пожалуйста поставьте оценку")
 
-        return star
+    #     return star
 
 
 
@@ -116,6 +116,9 @@ class Search_ReviewForm(forms.Form):
     date_from = forms.DateField(required=False)
     date_to = forms.DateField(required=False)
     review_type = forms.CharField(required=False)
+    count = forms.CharField(required=False)
+    page = forms.CharField(required=False)
+    sort = forms.CharField(required=False)
 
     #  Ф-ии проверки валидности полей
     def clean_date_from(self):

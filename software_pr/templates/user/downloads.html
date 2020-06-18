@@ -2,7 +2,7 @@
 {% load static %}
 {% load software_tags %}
 {% load common_tags %}
-<title>{% block page_title %}Мои загрузки{% endblock %}
+{% block page_title %}Мои загрузки{% endblock %}
 {% block content %}
 {% include "common/pattern_lk_menu.html" %}
   <section>
@@ -11,7 +11,6 @@
     {% block breadcrumb %}
     <ul class="breadcrumb">
     {% breadcrumb_url 'Главная' 'main:index' %}
-    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
     {% breadcrumb_url 'Мои загрузки' %}
     </ul>
     {% endblock %}
@@ -59,9 +58,9 @@
                   <!-- Бокс кнопки покупки и лайка --> 
                         
                       {% if s.price <= 0 or s.is_free %}
-                      <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_download' s.id %}" class="text_color_white">Скачать бесплатно</a></button>
+                      <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_send_file' s.id %}" class="text_color_white">Скачать бесплатно</a></button>
                       {% else %}
-                      <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_buy' s.id %}" class="text_color_white">Приобрести</a></button>
+                      <button class="software_button-pay_style dark_blue-bg software_button-pay_style_width"><a href="{% url 'software:software_send_file' s.id %}" class="text_color_white">Приобрести</a></button>
                       {% endif %}                  
                   <div>
                       <div data-target="favourite" data-url="/softwares/favourite/"  data-id="{{s.id}}">

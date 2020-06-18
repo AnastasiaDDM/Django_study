@@ -8,6 +8,7 @@ from django.db import models
 from django.db.models import Q
 from django.core.paginator import *
 import datetime
+import util.views
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse, HttpRequest
 import dbl
@@ -25,6 +26,17 @@ def list_article(request):
     art_date_from = request.GET.get('article_date_from', '')
     art_date_to = request.GET.get('article_date_to', '')
     search_query_tags = request.GET.get('article_tags', '')
+    sort_param = request.GET.get('sort')
+    if sort_param is None:
+        sort_param = ""
+    count = request.GET.get('count', '10')
+    if count == "":
+        count = 10
+    count = int(count)
+    try:
+        page = int(request.GET.get('page', '1'))
+    except:
+        page = 1
 
     # Фильтрация по наименовании статьи
     if search_query_name:
@@ -74,26 +86,86 @@ def list_article(request):
 
     art_list = art_list.order_by('-date_of_review')
 
-    # НЕ РАБОТАЕТ
-    # Поля выбора отображения на странице (мгновенное изменение) пока не работает(
-    count = int(request.GET.get('count', '10000'))
-    dbl.log(str(count)+"fffff")
-
-    paginator = Paginator( art_list, count )
-
-    try:
-        page = int(request.GET.get('page', '1'))
-
-    except:
-        page = 1
-    
-    try:
-        art_list = paginator.page(page)
-        dbl.log(str(page))
-        dbl.log("пагинация")
-    except(EmptyPage, InvalidPage):
-        art_list = paginator.page(paginator.num_pages) 
-        dbl.log("!!пагинация")
+    # Сортировка, показать по, перейти на страницу
+    art_list = util.views.sort_show_by(art_list, sort_param, count, page )
 
     return render(request, 'article/articles.html', {'art_list':art_list, 'search_query_name':search_query_name, 'art_author':art_author,
     'list_tags':list_tags, 'art_date_from':art_date_from, 'art_date_to':art_date_to})
+
+
+
+
+# Страница одного ПО
+def article_page(request, id):
+
+    # Объявление начальных значений переменных
+    # Хэш классификаций ПО
+    # classif = {}
+    article = Article()
+    # software_img = Q()
+    # main_photo = Q()
+    # software_tag = Q()
+    # list_descr = []
+    # similar_block = ""
+    # similar_tags_block = ""
+    # discussion_comment_block = ""
+
+    # Строка фильтра для хлебных крошек
+    # str_filter_for_breadcrumb = ""
+
+    try:
+        article = Article.objects.get( id = id )
+
+        #  Получение главного фото
+        # main_photo_query = software.get_main_photo()
+        # dbl.log("сойт 2  " + str(main_photo_query))
+
+
+        # # Здесь перебор в цикле, но на самом деле в этом запросе всего 1 объект
+        # for photo in main_photo_query:
+        #     main_photo = photo
+        
+        # dbl.log("сойт 3  " + str(main_photo))
+
+        # # Получаем список приложений данного ПО (ФАЙЛЫ, ФОТОГРАФИИ)
+        # software_img = software.get_addition()
+
+        # dbl.log("сойт 4  " + str(software_img))
+
+        # # Исключения главного фото (main_photo) из списка фото
+        # if software_img:
+        #     software_img = software_img.exclude(pk=main_photo.id)
+
+        # # Получаем список тегов данного ПО
+        # software_tag = software.get_tags()
+
+        # #  Для разрыва текста (скрытого и открытого)
+        # # Сплит строки по '\n' по первому вхождению - получаем массив элементов одной переменной
+        # list_descr = software.description.split('\n', 1)
+
+        # # Получаем список классификаций данного ПО
+        # classif, str_filter_for_breadcrumb = software.get_classifications()
+
+        # # Второстепенные объекты - похожие ПО
+        # similar_block = render_similars(software, id_widget="same_software")
+        # similar_tags_block = render_similars_tags(software)
+        # discussion_comment_block = render_discussion_comment(software, request, limit=5)
+
+        # Получение текущего пользователя 
+        user = CustomUser.get_user(request)
+        
+        return render(request, 'article/article.html', {'article':article, 'user':user})
+
+
+    # except:
+    #     raise Http404("ПО не найдено")
+
+    except Exception as error:
+        pass
+        dbl.log("Ошибка работы " + str(error))
+
+    # return render(request, 'soft/software.html', {'software':software, 'software_img':software_img, 'main_photo':main_photo, 'classif':classif,
+    # 'list_descr':list_descr, 'software_tag':software_tag, 'similar_block':similar_block, 'similar_tags_block':similar_tags_block,
+    # 'discussion_comment_block':discussion_comment_block})
+
+    raise Http404("ПО не найдено")

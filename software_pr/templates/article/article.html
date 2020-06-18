@@ -1,0 +1,50 @@
+{% extends 'basic/pattern.html' %}
+{% load static %}
+{% load common_tags %}
+{% block page_title %}Статья{% endblock %}
+
+
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
+{% endblock %}
+
+
+ {% block content %}
+ <section>
+ {% block content_title %}
+ <h1>{{article.name}}</h1>
+{% endblock %}
+{% block breadcrumb %}
+<ul class="breadcrumb">
+{% breadcrumb_url 'Главная' 'main:index' %}
+{% breadcrumb_url 'Статьи' 'article:list_article' %}
+{% breadcrumb_url 'Статья' %}
+</ul>
+{% endblock %}
+<div class="pos_center div_main margin_top_3em">
+    <div>
+        <div style="height:30em; overflow: hidden; ">
+        <img class = "img_width " src="{{article.image.url}}"  alt="{{article.name}}"/>
+        </div>
+    </div>
+</div>
+        <div class ="max_width_70em margin_top_3em pos_center"> 
+            <div class="pos_right_for_text margin_top_1em">Автор:
+                <a class = "link_style_border" name="article_author" href="/articles/?article_author={{article.author.id}}">{{article.author.surname|default:"Не указан"}} {{article.author.name|default:""}}
+            </a></div>
+          <div class="flex_column margin_top_1em">
+            <div class="flex_row padding_bottom_4em">
+              <!-- <div class="w_50_sm ">
+                <a class="example-image-link" href="{% static '/images/business.jpg' %}" data-lightbox="example-set" 
+                data-title="Главный офис"><img class="example-image width_100" src="{% static '/images/business.jpg' %}" alt=""/></a>
+              </div> -->
+              <div >{{article.text}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+{% endblock %}	
+{% block js_extend %}
+<script src="{% static '/js/lightbox.min.js' %}"></script>
+{% endblock %}

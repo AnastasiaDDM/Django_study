@@ -26,7 +26,7 @@ from util import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('/', s.index, name='index'),
+    # path('', s.index, name='index'),
     path('softwares/', include('software.urls')),
     path('articles/', include('article.urls')),
     path('reviews/', include('review.urls')),
@@ -34,7 +34,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     path('discussions/', include('discussion.urls')),
     path('pay/', include('pay.urls')),
-    path('/', include('main.urls')),
+    path('', include('main.urls')),
     path('order/', include('order.urls')),
     # path('company/', util_views.company, name = 'company'),
 ]

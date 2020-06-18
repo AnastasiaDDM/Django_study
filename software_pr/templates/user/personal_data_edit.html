@@ -2,7 +2,7 @@
 {% load static %}
 {% load software_tags %}
 {% load common_tags %}
-<title>{% block page_title %}Личный кабинет{% endblock %}
+{% block page_title %}Личный кабинет{% endblock %}
 {% block link_extend %}
 <link rel="stylesheet" href="{% static '/css/datepicker.css' %}">
 {% endblock %}
@@ -14,7 +14,7 @@
     </h1>
     <ul class="breadcrumb">
     {% breadcrumb_url 'Главная' 'main:index' %}
-    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+    {% breadcrumb_url 'Личные данные' 'user:personal_data' %}
     {% breadcrumb_url 'Редактирование личных данных' %}
     </ul>
     <div>

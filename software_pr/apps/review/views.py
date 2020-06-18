@@ -33,15 +33,21 @@ def list_review(request):
         review_type = form.cleaned_data['review_type']
         dbl.log("мммм  "+str(date_from))
         dbl.log("мммм  "+str(date_to))
-        # dbl.log("sss   "+str(form.date_to))
+        sort_param = form.cleaned_data['sort']
+        if sort_param is None:
+            sort_param = ""
+        count = form.cleaned_data['count']
+        if count == "":
+            count = 10
+        count = int(count)
+        try:
+            page = int(form.cleaned_data['page'])
+        except:
+            page = 1
 
-        # rating_to = request.GET.get('rating_to', '')
-        # rating_from = request.GET.get('rating_from', '')
-        # date_from_1 = request.GET.get('date_from', '')
-        # date_to = request.GET.get('date_to', '')
-        # dbl.log(str(date_from_1))
+        dbl.log("мммм  "+str(count))
+        dbl.log("мммм  "+str(page))
 
-        # review_type = request.GET.get('review_type', '')
         # review_type_name = "Дополнительные возможности..."
         dbl.log("111111111 ddkjdkd "+str(re.match(r'^\d{1,2}\.\d{2}\.\d{4}$', str(date_from))))
 
@@ -84,29 +90,8 @@ def list_review(request):
                     
         review_list = review_list.order_by('-date')
 
-
-
-
-        # НЕ РАБОТАЕТ
-        # Поля выбора отображения на странице (мгновенное изменение) пока не работает(
-        count = int(request.GET.get('count', '10'))
-        dbl.log(str(count)+"fffff")
-
-        paginator = Paginator( review_list, count )
-
-        try:
-            page = int(request.GET.get('page', '1'))
-
-        except:
-            page = 1
-        
-        try:
-            review_list = paginator.page(page)
-            dbl.log(str(page))
-            dbl.log("пагинация")
-        except(EmptyPage, InvalidPage):
-            review_list = paginator.page(paginator.num_pages) 
-            dbl.log("!!пагинация")
+        # Сортировка, показать по, перейти на страницу
+        review_list = util.views.sort_show_by(review_list, sort_param, count, page )
 
     except Exception as error:
         pass

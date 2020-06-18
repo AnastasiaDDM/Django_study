@@ -205,7 +205,7 @@
           </div>
           {% if list_descr %}
           <div class="margin_top-bootom_1em page_software_description">
-            <div>{{list_descr.0}}
+            <div>{{list_descr.0|linebreaks}}
             </div>
             <div style="display: none;" id="description_text" class="all_text">
                 {{list_descr.1|linebreaks}}
@@ -230,8 +230,17 @@
         <a href="{% url 'software:software_buy' software.id %}" class="button_pay button_pay_width_full">{{software.price|floatformat |default:""}}  &#8381 Приобрести</a>
         {% endif %}
       <div >
-        <i class="fa fa-heart button_like width_30" aria-hidden="true">
-        </i>
+        {% if user %}
+        {% with favourite=software|is_favourite:user %}
+            {% if favourite %}
+            <i class="fa fa-heart button_like_true width_30" aria-hidden="true"></i>
+            {% else %}
+            <i class="fa fa-heart button_like width_30" aria-hidden="true"></i>
+            {% endif %}
+        {% endwith %}
+        {% else %}
+        <i class="fa fa-heart button_like width_30" aria-hidden="true"></i>
+        {% endif %} 
       </div>
     </div>
   </div>

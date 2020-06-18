@@ -246,14 +246,14 @@ class Software(models.Model):
         software_id = int(self.id)
         tag_list = []
         tag_raw = Tag.objects.raw('''select distinct tags.*
-                                        from new_db.software_tag tags
-                                        inner join new_db.software_tag_softwares st on st.tag_id = tags.id 
+                                        from software_tag tags
+                                        inner join software_tag_softwares st on st.tag_id = tags.id 
                                         and st.software_id in 
                                         (select softwares.id
-                                        from new_db.software_software softwares
-                                        inner join new_db.software_tag_softwares st on st.software_id = softwares.id 
+                                        from software_software softwares
+                                        inner join software_tag_softwares st on st.software_id = softwares.id 
                                         and st.tag_id in 
-                                        (select tag_id from new_db.software_tag_softwares where software_id = %s))
+                                        (select tag_id from software_tag_softwares where software_id = %s))
                                         group by tags.name
                                         order by tags.name''', [software_id] )
 
@@ -290,16 +290,16 @@ class Software(models.Model):
     @staticmethod
     def get_popular():
         software_list = []
-        soft_raw = Software.objects.raw('''SELECT distinct * from new_db.software_software AS softwares
+        soft_raw = Software.objects.raw('''SELECT distinct * from software_software AS softwares
         where softwares.id in 
         ((select software_id
-        from new_db.order_order
+        from order_order
         where software_id is not null
         group by software_id
         order by count(*) DESC)
         UNION
         (select software_id
-        from new_db.software_download
+        from software_download
         where software_id is not null
         group by software_id
         order by count(*) DESC)
@@ -407,5 +407,3 @@ class Download(models.Model):
     class Meta:
         verbose_name = 'Загрузка'
         verbose_name_plural = 'Загрузки'
-
-

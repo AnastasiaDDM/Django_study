@@ -1,21 +1,21 @@
-
+{% load static %}{% load common_tags %}
 <div class="flex_row second_menu margin_bottom_1em header_disp_none">
   <ul class="pos_center">
     <li>
-      <a href="{% url 'user:orders' %}">Мои&nbsp;заказы
+      <a class = "{{ request|is_active:'/user/lk/orders'}}" href="{% url 'user:orders' %}">Мои&nbsp;заказы
       </a>
     </li>
     <li>
-      <a href="{% url 'user:downloads' %}">Мои&nbsp;загрузки
+      <a class = "{{ request|is_active:'/user/lk/downloads'}}" href="{% url 'user:downloads' %}">Мои&nbsp;загрузки
       </a>
     </li>
     <li>
-      <a class = "header_navbar_active" href="{% url 'user:favourites' %}">Избранное
+      <a class = "{{ request|is_active:'/user/lk/favourites'}}" href="{% url 'user:favourites' %}">Избранное
       </a>
-    </li>
+    </li>{% if request.user.is_authenticated %}
     <li>
-      <a href="{% url 'user:personal_data' %}">Мои&nbsp;данные
+      <a class = "{{ request|is_active:'/user/lk/personal'}}" href="{% url 'user:personal_data' %}">Мои&nbsp;данные
       </a>
-    </li>
+    </li>{% endif %}
   </ul>
 </div>
