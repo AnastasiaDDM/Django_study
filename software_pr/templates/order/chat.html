@@ -3,6 +3,9 @@
 {% load software_tags %}
 {% load common_tags %}
 {% block page_title %}Чат заказа № {{order.id}} {% endblock %}
+{% block link_extend %}
+<link rel="stylesheet" href="{% static '/css/lightbox.min.css' %}">
+{% endblock %}
 {% block content %}
 {% include "common/pattern_lk_menu.html" %}
 <div id= "toTop">         
@@ -14,30 +17,25 @@
     </h1>
     {% block breadcrumb %}
     <ul class="breadcrumb">
-    {% breadcrumb_url 'Главная' 'main:index' %}
-    {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
-    {% breadcrumb_url 'Мои заказы' 'user:orders' %}
-    {% with order_number=order.id|return_str %}
-    {% with str_order_number='Заказ № '|add:order_number %}
-    {% breadcrumb_url str_order_number 'order:order_page' order.id %}
-    {% endwith %}
-    {% endwith %}
-    {% breadcrumb_url 'Чат' %}
+
     </ul>
     {% endblock %}
 
         <div class="pos_center_for_div padding_top-bootom_1em">
+
+
           <div class= "chat_panel_sticky chat">
+            <!-- <div class="flex_column"> -->
             {% autoescape on %}
-              <form action="{% url 'order:message_add_for_chat' order.id %}" method="post" enctype="multipart/form-data">
+              <form action="{% url 'order:message_add_for_chat' order.id %}" method="post" enctype="multipart/form-data" id="form_message_add">
                 {% csrf_token %}
-            <div class="flex_column">
                 <input type="text" style="display:none;" name="order_id" value="{{order.id}}">
               <div class="pos_center width_100"> 
                 <div class="pos_left_for_text">Новое сообщение
                 </div>
                 <textarea name="content" class="chat_panel_sticky_textarea" rows="5" cols="105"></textarea>
               </div>
+
               <div class="flex_row flex_space-between">
 
                 <div class="input__wrapper">
@@ -51,18 +49,24 @@
                     </span>
                   </label>
                 </div>
-
+          
                 <div class="pos_сenter">
                   <button type="submit" class="fa fa-arrow-circle-right chat_panel_sticky_i">
                   </button>
                 </div>
+            </div>
             </form>
             {% endautoescape %}
-              </div>
             </div>
 
-          </div>
-          <div class="margin_top_3em">
+
+
+
+          <section class="margin_top_3em" id="container_messages">
+
+
+
+            
             <div class="chat_left">
               <div class="chat_comment">
                 <div class="chat_comment_bubble_left">
@@ -78,6 +82,13 @@
                 </div>
               </div>
             </div>
+
+
+
+
+
+
+
             <div class="chat_right">
               <div class="chat_comment ">
                 <div class="chat_comment_bubble_right">
@@ -102,6 +113,11 @@
                 </div>
               </div>
             </div>
+
+
+
+
+
             <div class="chat_right">
               <div class="chat_comment ">
                 <div class="chat_comment_bubble_right">
@@ -224,18 +240,25 @@
                 </div>
               </div>
             </div>
-          </div>
+          </section>
+
+          <div class=" pos_center"><button id='load_more_message' class="button_show-more cursor" data-id="{{order.id}}">Показать еще</button></div>
+
+
         </div>
       </section>
       {% endblock %}	
       {% block js_extend %}
       <script src="{% static '/js/file_input_custom.js' %}"></script>
       <script src="{% static '/js/lightbox.min.js' %}"></script>
+      <script src="{% static '/js/scrollspy.js' %}"></script>
       <script>
         jQuery(document).ready(function () {
             input_filled('input');
             input_filled('textarea');
             input_file();
+            chat_append_message();
+            chat_append_message1();
     
           $(function() {
     

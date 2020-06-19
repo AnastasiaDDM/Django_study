@@ -4,8 +4,10 @@ from django.db.models import Q
 from user.models import CustomUser
 from software.models import Software, Favourite
 from .models import *
-from .forms import *
+from .forms import Search_OrderForm, RequestForm
 import datetime
+import json
+from django.template.loader import render_to_string
 import dbl
 
 
@@ -259,6 +261,8 @@ def request_success(request):
 # Страница чата
 def chat(request, id):
 
+    dbl.log("111" )
+
     # Объявление начальных значений переменных
     # order_img = Q()
     # main_photo = Q()
@@ -266,7 +270,34 @@ def chat(request, id):
     order = None
     chat = None
 
+    # dict_addition_for_message = {} # словарь приложений к каждому сообщению ( id_сообщения: массив приложений )
+
+    # dbl.log("111" )
     try:
+
+        # Данные по умолчанию - код ответа
+        data = {'status': 'error'}
+
+        # Получение пременных из запроса
+        next_messages = request.GET.get('next', 0)
+        count_messages = request.GET.get('count', 20)
+
+        # dbl.log("111" )
+        
+        message_block = get_messages(request, next_messages=next_messages, count=count_messages)
+
+        next_messages = next_messages+count_messages
+        data['status'] = 'success'
+        data['next'] = next_messages
+        data['count'] = count_messages
+        data['result'] = message_block
+        dbl.log("10101001" )
+
+        # dbl.log("111" )
+
+        # Составление шаблона сообщения с приложениями
+        # message_block = render_message_block( request, dict_addition_for_message )
+
         # Проверка принадлежности запрашиваемого заказа к текущему пользователю
         # Получения пользователя
         user = CustomUser.get_user(request)
@@ -275,6 +306,9 @@ def chat(request, id):
             # Получение заказа
             order = Order.get_order_by_client(id, user)
             # chat = order.chat
+
+        return HttpResponse(json.dumps(data), content_type='application/json')
+
 
     except Exception as error:
             pass
@@ -289,54 +323,161 @@ def message_add_for_chat(request, id):
 
     order = None
     chat = None
+    result='' # Переменная шаблона ответа
+    list_messages= [] # лист сообщений
+    dict_addition_for_message = {} # словарь приложений к каждому сообщению ( id_сообщения: массив приложений )
+
+    dbl.log("111" )
 
     if request.method == 'POST':
         form = ChatForm(request.POST, request.FILES)
-
+        # dbl.log("222" )
         try:
             # Проверка принадлежности запрашиваемого заказа к текущему пользователю
             # Получения пользователя
             user = CustomUser.get_user(request)
 
+            # dbl.log("333" )
+            # Данные по умолчанию - код ответа
+            data = {'status': 'error'}
+
             if user:
                 # Получение заказа
                 order = Order.get_order_by_client(id, user)
+
+
+            if form.is_valid():
+
+                # dbl.log("444" )
+                new_chat = Chat()
+
+
+                addition_file = request.FILES.getlist('file')
+
+
+                new_chat.order = order
+
+                # new_chat.order = form.cleaned_data['order_id']
+                new_chat.content = form.cleaned_data['content']
+                new_chat.sender = "cl"
+
+                # Сохранение сообщения чата (происходит тогда, когда все поля валидны)
+                new_chat.save()
+                dbl.log("55" )
+                # Добавление сообщения в лист
+                list_messages.append(new_chat)
+                dbl.log("66" )
+                # Лист приложений 
+                list_additions = []
+
+                # Сохранение приложений файлов к сообщению чата (происходит тогда, когда все поля валидны)
+                for file in addition_file:
+                    dbl.log("777" )
+                    new_addition = Chat_Addition()
+
+                    new_addition.chat = new_chat
+                    new_addition.file = file
+                    new_addition.save()
+
+                    # Добавление приложения в массив
+                    list_additions.append(new_addition)
+
+                # Добавление элемента в словарь 
+                # dict_addition_for_message[new_chat.pk] = list_additions
+                dict_addition_for_message[new_chat] = list_additions
+                dbl.log("888" )
+                # Составление шаблона сообщения с приложениями
+                message_block = render_message_block( request, dict_addition_for_message )
+                dbl.log("999" )
+
+                data['status'] = 'success' 
+                data['result'] = message_block
+                dbl.log("10101001" )
+
+            else: # !!! Если ошибка, то отправляем ошибочные данные
+                # !!! Быстро и некрасиво добавляем ошибки в ответ. Желательно для этого сделать отдельную функцию, так как тебе в нескольких местах придется этот код повторять
+                # data['error_text'] = '' # !!!!
+                # for v in form.errors.values(): # !!!!
+                #     data['error_text'] += v[0] + "<br>" # !!!!
+                data['status'] = 'error' # !!!!
+
+            return HttpResponse(json.dumps(data), content_type='application/json')
+
+
+                
+
         except Exception as error:
             pass
             dbl.log("Ошибка работы" + str(error))
 
 
-        if form.is_valid():
-
-            new_chat = Chat()
-            
-
-            # addition_file = request.FILES['file']
-
-            addition_file = request.FILES.getlist('file')
-
-            dbl.log(str(addition_file))
-
-            new_chat.order = order
-
-            # new_chat.order = form.cleaned_data['order_id']
-            new_chat.content = form.cleaned_data['content']
-            new_chat.sender = "cl"
-
-            # Сохранение сообщения чата (происходит тогда, когда все поля валидны)
-            new_chat.save()
-            dbl.log(str(new_chat.pk))
-
-            # chat = Software.objects.get( order_software = new_chat.id )
-
-            for file in addition_file:
-
-                new_addition = Chat_Addition()
-
-
-                new_addition.chat = new_chat
-                new_addition.file = file
-                new_addition.save()
-                dbl.log(str(new_addition.pk))
-
     return redirect('order:chat', id=order.id )
+
+
+
+# ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ
+
+# Ф-ия создания кода html для отрисовки блока сообщений из чата
+def render_message_block(request, dict_addition_for_message):
+
+    result='' # Переменная шаблона ответа
+
+    dbl.log("===111" )
+
+    if dict_addition_for_message :
+        # dbl.log("===222" )
+        result = render_to_string('order/pattern_block_message_for_chat.html', {'dictionary':dict_addition_for_message}, request=request)
+        # dbl.log("===333" )
+        # dbl.log("===333" + str(result))
+    
+    # result = render_to_string('discussion/pattern_block_discussion.html', {'discussions_list':discussions_list,
+    # 'comments_dict':comments_dict,'software':software, 'show_more':show_more}, request=request)
+    return result
+
+
+
+# todo вынести бы этот метод в класс модели чата, но там ошибка с импортами
+def get_messages(request, next_messages=0, count=20):
+
+    # dbl.log("222" )
+
+    dict_addition_for_message={}
+
+    # dbl.log("22" )
+
+    chat_list = Chat.objects.all().order_by('-date')[next_messages:count]
+    # dbl.log("0000" )
+
+
+    # dbl.log("666" )
+
+    # Лист приложений 
+    list_additions = []
+
+    for one_message in chat_list:
+
+        # dbl.log("4444" )
+
+        addition_list = Chat_Addition.objects.filter(chat_id=one_message.id)
+
+
+
+        # dbl.log("777" )
+
+        # Добавление элемента в словарь 
+        # dict_addition_for_message[new_chat.pk] = list_additions
+        dict_addition_for_message[one_message] = addition_list
+
+
+    # dbl.log("888" )
+    # Составление шаблона сообщения с приложениями
+    # message_block = order_views.render_message_block( request, dict_addition_for_message )
+    # dbl.log("вот тут выход" )
+
+    message_block = render_message_block( request, dict_addition_for_message )
+
+    return message_block
+
+
+
+

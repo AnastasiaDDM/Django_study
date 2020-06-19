@@ -1,0 +1,52 @@
+{% load static %}{% load common_tags %}{% load tz %}
+{% if dictionary %}
+{% for key_chat, value_addition in dictionary.items %}
+{% if key_chat.sender == 'cl' %}
+<div class="chat_right">
+    <div class="chat_comment">
+        <div class="chat_comment_bubble_right">
+        <div class="chat_comment_date_right">{% localtime on %}{{key_chat.date|date:"d.m.Y H:i"|default_if_none:""}}{% endlocaltime %}
+        </div>
+        <div class="chat_comment_text"> 
+            {{key_chat.content|linebreaks}}
+        </div>
+        {% if value_addition %}
+        <div class="flex_row flex_space-between margin_top-bootom_1em chat_img">
+            {% for value_add in value_addition %}
+            <div class = "chat_img_margin_between">
+                <a class="example-image-link" href="{{value_add.file.url}}" data-lightbox="example-set">
+                    <img class="example-image chat_img" src="{{value_add.file.url}}"/></a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        </div>
+    </div>
+</div>
+    {% else %}
+    <div class="chat_left">
+        <div class="chat_comment">
+          <div class="chat_comment_bubble_left">
+            <div class="chat_comment_date_left">{% localtime on %}{{key_chat.date|date:"d.m.Y H:i"|default_if_none:""}}{% endlocaltime %}
+            </div>
+            <div class="chat_comment_text">
+                {{key_chat.content|linebreaks}}
+            </div>
+            {% if value_addition %}
+            <div class="flex_row flex_space-between margin_top-bootom_1em chat_img">
+                {% for value_add in value_addition %}
+                <div class = "chat_img_margin_between">
+                    <a class="example-image-link" href="{{value_add.file.url}}" data-lightbox="example-set">
+                        <img class="example-image chat_img" src="{{value_add.file.url}}"/></a>
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+{% endfor %}        
+{% else %}
+Сообщений в чате пока нет
+{% endif %}

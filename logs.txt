@@ -1,19 +1,9 @@
-1
-2
-Снимок экрана (3).png
-3
-1
-Снимок экрана (3).png
-4
-2
-[<InMemoryUploadedFile: Снимок экрана (1).png (image/png)>, <InMemoryUploadedFile: Снимок экрана (2).png (image/png)>, <InMemoryUploadedFile: Снимок экрана (3).png (image/png)>, <InMemoryUploadedFile: Снимок экрана (4).png (image/png)>]
-5
-3
-4
-5
-6
-[<InMemoryUploadedFile: цветы в кружке.jpg (image/jpeg)>]
-6
-7
-[]
-7
+111
+===111
+10101001
+111
+===111
+10101001
+111
+===111
+10101001

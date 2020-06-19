@@ -1,7 +1,8 @@
 from django import forms
 from django.core.exceptions import ValidationError
 import re
-from order.models import Order, Request
+from .models import Request
+# import order.models as order_models
 import dbl
 # Импорт общего приложения 
 import util.forms

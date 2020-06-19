@@ -3,6 +3,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from user.models import CustomUser
 from software.models import Software
 import dbl
+# import order.views.render_message_block as order_views
+# from  .views import render_message_block as order_views
 
 class Order(models.Model):
 
@@ -148,6 +150,67 @@ class Chat(models.Model):
     class Meta:
         verbose_name = 'Чат'
         verbose_name_plural = 'Чаты'
+
+
+
+
+
+    # {% breadcrumb_url 'Главная' 'main:index' %}
+    # {% breadcrumb_url 'Личный кабинет' 'user:personal_data' %}
+    # {% breadcrumb_url 'Мои заказы' 'user:orders' %}
+    # {% with order_number=order.id|return_str %}
+    # {% with str_order_number='Заказ № '|add:order_number %}
+    # {% breadcrumb_url str_order_number 'order:order_page' order.id %}
+    # {% endwith %}
+    # {% endwith %}
+    # {% breadcrumb_url 'Чат' %}
+
+
+    # @staticmethod
+    # def get_messages(request, next_messages=0, count=20):
+
+    #     dbl.log("222" )
+
+    #     dict_addition_for_message={}
+
+    #     dbl.log("22" )
+
+    #     chat_list = Chat.objects.all().order_by('-date')[next_messages:count]
+    #     dbl.log("0000" )
+    #     # dbl.log(str(chat_list) )
+
+    #     dbl.log("666" )
+
+    #     # Лист приложений 
+    #     list_additions = []
+
+    #     for one_message in chat_list:
+
+    #         dbl.log("4444" )
+
+    #         addition_list = Chat_Addition.objects.filter(chat_id=one_message.id)
+    #         # dbl.log("000000  "+str(addition_list) )
+
+
+    #         dbl.log("777" )
+
+    #         # Добавление элемента в словарь 
+    #         # dict_addition_for_message[new_chat.pk] = list_additions
+    #         dict_addition_for_message[one_message] = addition_list
+
+
+    #     dbl.log("888" )
+    #     # Составление шаблона сообщения с приложениями
+    #     # message_block = order_views.render_message_block( request, dict_addition_for_message )
+    #     message_block = order_views( request, dict_addition_for_message )
+    #     dbl.log("блок   "+str(message_block) )
+    #     return message_block
+
+
+
+
+
+
 
 
 class Chat_Addition(models.Model):

@@ -599,3 +599,105 @@ function comment_count_change(container_discussion)
 //         });
 //     });
 // }
+
+
+
+
+
+// Ф-ия для отправки формы комментария
+function chat_append_message()
+{
+
+    console.log("333") ;
+
+    	// Удаляем обработчики событий определенных ранее
+        $( "#form_message_add" ).off();
+
+        // Форма добавления комментария
+        $( "#form_message_add" ).submit(function( event ) {
+
+            console.log("222");
+
+            event.preventDefault();
+            var elem = this;
+
+            // Элемент, в начало которого будет добавлен блок ответа
+            var container = $( "#container_messages" );
+
+            var options = { 
+        
+                success:    function(data) { 
+    
+                    if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
+                    {
+
+                        console.log("ура ");
+                        container.prepend(data.result); // Ошибки нет, добавляем комментарий
+                        $(elem).resetForm(); // Сбрасываем форму
+
+                    }
+                } 
+            }; 
+
+            // Отправка ajaxForm 
+            $(elem).ajaxSubmit(options);
+
+        });
+
+
+}
+
+
+
+
+
+// Ф-ия для отправки формы комментария
+function chat_append_message1()
+{
+    console.log("ура ");
+    $('#load_more_message').on('scrollSpy:enter', function() {
+        console.log("ура ");
+        // Здесь нужно отправлять запрос на догрузку сообщений, вставку и изменение значений переменных
+        // console.log('enter:', $(this).attr('id'));
+        // var elem = this;
+
+        // Элемент, в начало которого будет добавлен блок ответа
+        var container = $( "#container_messages" );
+
+
+
+        // // Элемент, в начало которого будет добавлен блок ответа
+        // var container = $( "#container_messages" );
+
+        // Получение формы поиска
+        var id = $(this).data("id");
+        var next = 0;
+        var count = 20;
+        var url = 'order/'+id+'/chat?next='+next+'&count='+count;
+
+        $.get( url)
+            .done(function( data ) {
+
+                container.prepend(data.result); // Ошибки нет, добавляем комментарий
+                // $(elem).resetForm(); // Сбрасываем форму
+                next = data.next;
+                count = data.count;
+                console.log("ура ");
+                console.log(next);
+                console.log(count);
+
+            })
+            .fail(function() {
+                // alert( "error" );
+            })
+            .always(function() {
+                // alert( "finished" );
+            });
+
+
+
+
+    });
+
+    $('#load_more_message').scrollSpy();
+}
