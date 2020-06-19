@@ -261,42 +261,11 @@ def request_success(request):
 # Страница чата
 def chat(request, id):
 
-    dbl.log("111" )
-
     # Объявление начальных значений переменных
-    # order_img = Q()
-    # main_photo = Q()
-    # list_note = []
     order = None
     chat = None
 
-    # dict_addition_for_message = {} # словарь приложений к каждому сообщению ( id_сообщения: массив приложений )
-
-    # dbl.log("111" )
     try:
-
-        # Данные по умолчанию - код ответа
-        data = {'status': 'error'}
-
-        # Получение пременных из запроса
-        next_messages = request.GET.get('next', 0)
-        count_messages = request.GET.get('count', 20)
-
-        # dbl.log("111" )
-        
-        message_block = get_messages(request, next_messages=next_messages, count=count_messages)
-
-        next_messages = next_messages+count_messages
-        data['status'] = 'success'
-        data['next'] = next_messages
-        data['count'] = count_messages
-        data['result'] = message_block
-        dbl.log("10101001" )
-
-        # dbl.log("111" )
-
-        # Составление шаблона сообщения с приложениями
-        # message_block = render_message_block( request, dict_addition_for_message )
 
         # Проверка принадлежности запрашиваемого заказа к текущему пользователю
         # Получения пользователя
@@ -305,9 +274,62 @@ def chat(request, id):
         if user:
             # Получение заказа
             order = Order.get_order_by_client(id, user)
-            # chat = order.chat
 
-        return HttpResponse(json.dumps(data), content_type='application/json')
+        # Получение пременных из запроса
+        next_messages = request.GET.get('next', None)
+        count_messages = request.GET.get('count', None)
+
+        # Тогда просто отрисовывается страница чата с полседними 20 сообщениями
+        if next_messages == None and count_messages == None:
+
+            dbl.log("111" )
+            next_messages = 0
+            count_messages = 20
+
+
+
+            # Данные по умолчанию - код ответа
+            # data = {'status': 'error'}
+
+            # dbl.log("111" )
+            
+            message_block = get_messages(request, next_messages=next_messages, count=count_messages)
+
+            # next_messages = next_messages+count_messages
+            # data['status'] = 'success'
+            # data['next'] = next_messages
+            # data['count'] = count_messages
+            # data['result'] = message_block
+            # dbl.log("10101001" )
+            next_messages = 20
+
+
+            return render(request, 'order/chat.html', {'order':order, 'message_block':message_block, 'next_messages':next_messages})
+
+        # Догрузка сообщений
+        else:
+
+            dbl.log("444444444444444444" )
+
+
+
+            # Данные по умолчанию - код ответа
+            data = {'status': 'error'}
+
+            # dbl.log("111" )
+            
+            message_block = get_messages(request, next_messages=next_messages, count=count_messages)
+
+            next_messages = int(next_messages)+20
+            dbl.log(str(next_messages) )
+            data['status'] = 'success'
+            data['next'] = next_messages
+            # data['count'] = count_messages
+            data['result'] = message_block
+            dbl.log("10101001" )
+
+
+            return HttpResponse(json.dumps(data), content_type='application/json')
 
 
     except Exception as error:
@@ -445,7 +467,7 @@ def get_messages(request, next_messages=0, count=20):
 
     # dbl.log("22" )
 
-    chat_list = Chat.objects.all().order_by('-date')[next_messages:count]
+    chat_list = Chat.objects.all().order_by('-date')[int(next_messages):20]
     # dbl.log("0000" )
 
 

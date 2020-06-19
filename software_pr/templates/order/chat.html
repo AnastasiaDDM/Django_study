@@ -64,10 +64,10 @@
 
           <section class="margin_top_3em" id="container_messages">
 
-
+            {{message_block}}
 
             
-            <div class="chat_left">
+            <!-- <div class="chat_left">
               <div class="chat_comment">
                 <div class="chat_comment_bubble_left">
                   <div class="chat_comment_date_left">20.04.2020 10:34
@@ -239,10 +239,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </section>
 
-          <div class=" pos_center"><button id='load_more_message' class="button_show-more cursor" data-id="{{order.id}}">Показать еще</button></div>
+          <div class=" pos_center"><button id='load_more_message' class="button_show-more cursor" data-next="{{next_messages}}" data-id="{{order.id}}">Показать еще</button></div>
 
 
         </div>

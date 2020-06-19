@@ -654,12 +654,17 @@ function chat_append_message()
 // Ф-ия для отправки формы комментария
 function chat_append_message1()
 {
+    // Глобальная переменная статуса главного изображения
+    var next;
+
+    // Удаляем обработчики событий определенных ранее
+    $( "#load_more_message" ).off();
     console.log("ура ");
     $('#load_more_message').on('scrollSpy:enter', function() {
         console.log("ура ");
         // Здесь нужно отправлять запрос на догрузку сообщений, вставку и изменение значений переменных
         // console.log('enter:', $(this).attr('id'));
-        // var elem = this;
+        var elem = this;
 
         // Элемент, в начало которого будет добавлен блок ответа
         var container = $( "#container_messages" );
@@ -670,28 +675,44 @@ function chat_append_message1()
         // var container = $( "#container_messages" );
 
         // Получение формы поиска
-        var id = $(this).data("id");
-        var next = 0;
-        var count = 20;
-        var url = 'order/'+id+'/chat?next='+next+'&count='+count;
+        var id = $(elem).data("id");
+        next = 0;
+        console.log(next);
+        // var count = 20;
+        next = $(elem).data("next");
+        console.log(next);
+        // var count = 20;
+
+        // var url = 'order/'+id+'/chat?next='+next+'&count='+count;
+        // var url = '?next='+next+'&count='+count;
+        var url = '?next='+next;
+        console.log(url);
 
         $.get( url)
             .done(function( data ) {
 
                 container.prepend(data.result); // Ошибки нет, добавляем комментарий
                 // $(elem).resetForm(); // Сбрасываем форму
-                next = data.next;
-                count = data.count;
-                console.log("ура ");
-                console.log(next);
-                console.log(count);
+
+                // Добавление атрибута, по которому потом будет удаляться эта форма
+                // $(elem).attr( "data-count", data.count );
+                console.log(data.next);
+                $(elem).attr( "data-next", data.next );
+
+                // next = data.next;
+                // count = data.count;
+                console.log("мы внутри ");
+                // console.log(next);
+                // console.log(count);
 
             })
             .fail(function() {
                 // alert( "error" );
+                console.log("ошибка  ");
             })
             .always(function() {
                 // alert( "finished" );
+                console.log("всегда  ");
             });
 
 
