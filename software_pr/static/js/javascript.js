@@ -601,124 +601,110 @@ function comment_count_change(container_discussion)
 // }
 
 
-
-
-
 // Ф-ия для отправки формы комментария
 function chat_append_message()
 {
 
-    console.log("333") ;
-
-    	// Удаляем обработчики событий определенных ранее
-        $( "#form_message_add" ).off();
-
-        // Форма добавления комментария
-        $( "#form_message_add" ).submit(function( event ) {
-
-            console.log("222");
-
-            event.preventDefault();
-            var elem = this;
-
-            // Элемент, в начало которого будет добавлен блок ответа
-            var container = $( "#container_messages" );
-
-            var options = { 
-        
-                success:    function(data) { 
-    
-                    if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
-                    {
-
-                        console.log("ура ");
-                        container.prepend(data.result); // Ошибки нет, добавляем комментарий
-                        $(elem).resetForm(); // Сбрасываем форму
-
-                    }
-                } 
-            }; 
-
-            // Отправка ajaxForm 
-            $(elem).ajaxSubmit(options);
-
-        });
-
-
-}
-
-
-
-
-
-// Ф-ия для отправки формы комментария
-function chat_append_message1()
-{
-    // Глобальная переменная статуса главного изображения
-    var next;
-
     // Удаляем обработчики событий определенных ранее
-    $( "#load_more_message" ).off();
-    console.log("ура ");
-    $('#load_more_message').on('scrollSpy:enter', function() {
-        console.log("ура ");
-        // Здесь нужно отправлять запрос на догрузку сообщений, вставку и изменение значений переменных
-        // console.log('enter:', $(this).attr('id'));
+    $( "#form_message_add" ).off();
+
+    // Форма добавления комментария
+    $( "#form_message_add" ).submit(function( event ) {
+
+        event.preventDefault();
         var elem = this;
 
         // Элемент, в начало которого будет добавлен блок ответа
         var container = $( "#container_messages" );
 
+        var options = { 
+    
+            success:    function(data) { 
 
+                if (!is_error(data)) // Проверка наличия ошибка в ответе с сервера
+                {
 
-        // // Элемент, в начало которого будет добавлен блок ответа
-        // var container = $( "#container_messages" );
+                    container.prepend(data.result); // Ошибки нет, добавляем сообщение
+                    $(elem).resetForm(); // Сбрасываем форму
 
-        // Получение формы поиска
-        var id = $(elem).data("id");
-        next = 0;
-        console.log(next);
-        // var count = 20;
-        next = $(elem).data("next");
-        console.log(next);
-        // var count = 20;
+                }
+            } 
+        }; 
 
-        // var url = 'order/'+id+'/chat?next='+next+'&count='+count;
-        // var url = '?next='+next+'&count='+count;
-        var url = '?next='+next;
-        console.log(url);
+        // Отправка ajaxForm 
+        $(elem).ajaxSubmit(options);
 
-        $.get( url)
-            .done(function( data ) {
+    });
 
-                container.prepend(data.result); // Ошибки нет, добавляем комментарий
-                // $(elem).resetForm(); // Сбрасываем форму
+}
 
-                // Добавление атрибута, по которому потом будет удаляться эта форма
-                // $(elem).attr( "data-count", data.count );
-                console.log(data.next);
-                $(elem).attr( "data-next", data.next );
+var next_chat=20; // Глобальная переменная, хранящая информацию, сколько сообщений чата уже прочитано
 
-                // next = data.next;
-                // count = data.count;
-                console.log("мы внутри ");
-                // console.log(next);
-                // console.log(count);
+// Ф-ия догрузки комментария
+function chat_loading_message()
+{
 
-            })
-            .fail(function() {
-                // alert( "error" );
-                console.log("ошибка  ");
-            })
-            .always(function() {
-                // alert( "finished" );
-                console.log("всегда  ");
-            });
+    // Удаляем обработчики событий определенных ранее
+    $( "#load_more_message" ).off();
+    console.log("ура ");
 
+    $('#load_more_message').on('scrollSpy:enter', function() {
 
+        chat_loading_message_inside(this);
 
+    });
+
+    $('#load_more_message').on('click', function() {
+
+        chat_loading_message_inside(this);
 
     });
 
     $('#load_more_message').scrollSpy();
+    
+}
+
+
+// Здесь нужно отправлять запрос на догрузку сообщений, вставку и изменение значений переменных
+function chat_loading_message_inside(elem)
+{
+
+    // Элемент, в конец которого будет добавлен блок сообщений
+    var container = $( "#container_messages" );
+
+    // Получение формы поиска
+    var id = $(elem).data("id");
+
+    // next = next_chat; 
+
+    // Формирование запроса
+    var url = '?next='+next_chat; 
+
+    $.get(url)
+        .done(function( data ) {
+            
+            container.append(data.result); // Ошибки нет, добавляем комментарий
+
+            // Установка значения следующих сообщений
+            $(elem).data( "next", data.next ); 
+            next_chat = data.next
+
+            //  Условие для сокрытия кнопки показать еще
+            if (data.count < 20)
+            {
+                $(elem).css( "display", "none" ) ;
+            }
+
+        })
+        .fail(function() {
+            // alert( "error" );
+            console.log("ошибка  ");
+        })
+        .always(function() {
+            // alert( "finished" );
+            console.log("всегда  ");
+        });
+
+    $('#load_more_message').scrollSpy();
+    
 }

@@ -7,27 +7,42 @@ import dbl
 import util.forms
 
 # Форма для добавления отзыва
-class ReviewForm(forms.ModelForm):
-    class Meta:
-        # Описание используемой модели и полей на форме, а также их атрибутов
-        model = Review
-        fields = ['content', 'comment', 'email_phone', 'name', 'star', 'software']
+# class ReviewForm(forms.ModelForm):
+#     class Meta:
+#         # Описание используемой модели и полей на форме, а также их атрибутов
+#         model = Review
+#         fields = ['content', 'comment', 'email_phone', 'name', 'star', 'software']
  
-        widgets = {
-            'name': forms.TextInput(attrs={'maxlength' : 100, 'id' : 'name'}),
-            'email_phone': forms.TextInput(attrs={'required':True, 'id' : 'ephone', 'maxlength' : 25}),
-            'content': forms.Textarea(attrs={'rows':5, 'id' : 'content'}),
-            'comment': forms.Textarea(attrs={'rows':5, 'id' : 'comment'}),
-            'star': forms.TextInput(attrs={'required':True,'type':'radio'}),
+#         widgets = {
+#             'name': forms.TextInput(attrs={'maxlength' : 100, 'id' : 'name'}),
+#             'email_phone': forms.TextInput(attrs={'required':True, 'id' : 'ephone', 'maxlength' : 25}),
+#             'content': forms.Textarea(attrs={'rows':5, 'id' : 'content'}),
+#             'comment': forms.Textarea(attrs={'rows':5, 'id' : 'comment'}),
+#             'star': forms.TextInput(attrs={'required':True,'type':'radio'}),
             
-        }
-        # {{form.name}}, {{form.phone}} -  таким будет обращение к этим полям из шаблона,
-        # {{ form.errors.name }} - а это обращение к ошибкам, генерируемым методами clean_...
+#         }
+#         # {{form.name}}, {{form.phone}} -  таким будет обращение к этим полям из шаблона,
+#         # {{ form.errors.name }} - а это обращение к ошибкам, генерируемым методами clean_...
+
+
+
+
+# Форма элементов для поиска заказов
+class ReviewForm(forms.Form):
+
+    name = forms.CharField(required=False, max_length=100)
+    email_phone = forms.CharField(max_length=50)
+    content = forms.CharField(required=False)
+    # image = forms.ImageField(required=False)
+    star = forms.CharField()
+    file = forms.FileField(required=False, widget=forms.ClearableFileInput(attrs={'multiple': True}))
+
+
 
     #  Ф-ии проверки валидности полей
     def clean_name(self):
 
-        if self.cleaned_data['name'] is not None:
+        if self.cleaned_data['name'] is not None and str(self.cleaned_data['name']) != "":
 
             return util.forms.clean_name(self)
 

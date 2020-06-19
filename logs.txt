@@ -1,34 +1,27 @@
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="100" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="text" name="email_phone" maxlength="50" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" id="id_content"></td></tr>
+<tr><th><label for="id_star">Star:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="text" name="star" required id="id_star"></td></tr>
+<tr><th><label for="id_file">File:</label></th><td><input type="file" name="file" multiple id="id_file"></td></tr>
+Форма<tr><th><label for="id_name">Name:</label></th><td><input type="text" name="name" maxlength="100" id="id_name"></td></tr>
+<tr><th><label for="id_email_phone">Email phone:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="text" name="email_phone" maxlength="50" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_content">Content:</label></th><td><input type="text" name="content" id="id_content"></td></tr>
+<tr><th><label for="id_star">Star:</label></th><td><ul class="errorlist"><li>Обязательное поле.</li></ul><input type="text" name="star" required id="id_star"></td></tr>
+<tr><th><label for="id_file">File:</label></th><td><input type="file" name="file" multiple id="id_file"></td></tr>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
 111
-===111
-444444444444444444
-===111
-40
-10101001
-444444444444444444
-===111
-40
-10101001
-111
-===111
-444444444444444444
-Ошибка работыinvalid literal for int() with base 10: 'undefined'
-444444444444444444
-Ошибка работыinvalid literal for int() with base 10: 'undefined'
-111
-===111
-444444444444444444
-===111
-40
-10101001
-444444444444444444
-===111
-40
-10101001
-444444444444444444
-===111
-40
-10101001
-444444444444444444
-===111
-40
-10101001
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
+сойт 3  Грузоперевозки
+сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>

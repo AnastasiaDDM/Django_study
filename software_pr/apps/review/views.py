@@ -9,7 +9,7 @@ from django.db import models
 from django import forms
 from .forms import *
 from software.models import Software
-from review.models import Review
+from review.models import Review, Review_Addition
 import software.views as software_views
 from user.models import CustomUser
 
@@ -108,8 +108,6 @@ def list_review(request):
 # Ф-ия создания отзыва
 def review_create(request):
 
-    client = ''
-
     # Получение данных из формы в переменную
     form = ReviewForm(request.POST)
     dbl.log("Форма" + str(form))
@@ -120,14 +118,35 @@ def review_create(request):
     if request.method == "POST":
         try:
 
+            # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+            # Получения пользователя
+            user = CustomUser.get_user(request)
+
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
 
-                name = form.cleaned_data['file']
-                dbl.log("Ошибка работы" + str(name))
+                new_review = Review()
+                new_review.kind = 'com'
+                if user:
+                    new_review.client=user
 
-                # Сохранение запроса (происходит тогда, когда все поля валидны)
-                form.save()
+                new_review.content = form.cleaned_data['content']
+                new_review.star = form.cleaned_data['star']
+                new_review.name = form.cleaned_data['name']
+                new_review.email_phone = form.cleaned_data['email_phone']
+                new_review.save()
+                
+                addition_file = request.FILES.getlist('file')
+
+                # Сохранение приложений файлов к отзыву (происходит тогда, когда все поля валидны)
+                for file in addition_file:
+                    dbl.log("777" )
+                    new_addition = Review_Addition()
+
+                    new_addition.review = new_review
+                    new_addition.photo = file
+                    new_addition.save()
+
                 return redirect('review:review_success')
 
         except Exception as error:
@@ -135,46 +154,54 @@ def review_create(request):
             dbl.log("Ошибка работы с отзывом" + str(error))
 
     rating = [5,4,3,2,1]
-    return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating, 'list_crumb':list_crumb_for_software})
+    return render(request, 'review/review_create.html', {'form': form, 'rating': rating, 'list_crumb':list_crumb_for_software})
 
 
-
+# todo нужно вставить этот блок в софт
 # Ф-ия создания отзыва
 def review_create_for_software(request, id_soft):
-
-    client = ''
 
     # Получение данных из формы в переменную
     form = ReviewForm(request.POST)
 
     software = Software.objects.get(id=id_soft)
-    dbl.log("ПО аааааааа кебебебеб " + str(software))
 
-
-    # global list_crumb_for_software
-    # list_crumb_for_software = [['Главная', 'software:catalog'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id],
-    # ['Написать отзыв', 'review:review_create_for_software',software.id]]
 
     list_crumb_for_software = [['Главная', 'main:index'], ['Каталог', 'software:catalog'], [software.name,'software:software_page',software.id]]
 
     #  Получение данных из формы и сохранение в бд
     if request.method == "POST":
         try:
-
-            new_review = Review()
+            
+            # Проверка принадлежности запрашиваемого заказа к текущему пользователю
+            # Получения пользователя
+            user = CustomUser.get_user(request)
 
             # Здесь автоматически проверяются все поля формы методами clean_...
             if form.is_valid():
-                pass
+                
+                new_review = Review()
+                new_review.kind = 'sof'
+                new_review.name = form.cleaned_data['name']
+                new_review.email_phone = form.cleaned_data['email_phone']
+                new_review.content = form.cleaned_data['content']
+                new_review.star = form.cleaned_data['star']
+                new_review.software = software
 
-            new_review.name = form.cleaned_data['name']
-            new_review.email_phone = form.cleaned_data['email_phone']
-            new_review.content = form.cleaned_data['content']
-            new_review.star = form.cleaned_data['star']
-            new_review.software = software
+                # Сохранение запроса (происходит тогда, когда все поля валидны)
+                new_review.save()
 
-            # Сохранение запроса (происходит тогда, когда все поля валидны)
-            new_review.save()
+                addition_file = request.FILES.getlist('file')
+
+                # Сохранение приложений файлов к отзыву (происходит тогда, когда все поля валидны)
+                for file in addition_file:
+                    dbl.log("777" )
+                    new_addition = Review_Addition()
+
+                    new_addition.review = new_review
+                    new_addition.photo = file
+                    new_addition.save()
+
 
             return redirect('review:review_success', type='software', id= software.id)
 
@@ -183,7 +210,7 @@ def review_create_for_software(request, id_soft):
             dbl.log("Ошибка работы с отзывом" + str(error))
 
     rating = [5,4,3,2,1]
-    return render(request, 'review/review_create.html', {'client':client, 'form': form, 'rating': rating, 'list_crumb':list_crumb_for_software})
+    return render(request, 'review/review_create.html', {'form': form, 'rating': rating, 'list_crumb':list_crumb_for_software})
 
 
 # Ф-ия отображаения страницы успешного выполнения

@@ -24,7 +24,7 @@
               </h1>
             </legend>
             {% autoescape on %}
-            <form method="post" id="review_form">
+            <form id="review_form" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 <div class = "w_50_sm_70_md pos_center margin_top_3em" class="pos_center">
@@ -56,21 +56,6 @@
                         <label for="star-{{num_star}}" title="Оценка «{{num_star}}»"></label>	
                         {% endif %}
                         {% endfor %}
-
-                        <!-- <input type="radio" id="star-5" name="star" value="5">
-                        <label for="star-5" title="Оценка «5»"></label>	
-                        <input type="radio" id="star-4" name="star" value="4">
-                        <label for="star-4" title="Оценка «4»">
-                        </label>    
-                        <input type="radio" id="star-3" name="star" value="3">
-                        <label for="star-3" title="Оценка «3»">
-                        </label>  
-                        <input type="radio" id="star-2" name="star" value="2">
-                        <label for="star-2" title="Оценка «2»">
-                        </label>    
-                        <input type="radio" id="star-1" name="star" value="1">
-                        <label for="star-1" title="Оценка «1»">
-                        </label> -->
                       
                       </div>	
                     </div>
@@ -78,7 +63,7 @@
                     <div class="pos_left_for_text input_style_error">{{ form.errors.star }}</div>
                     {% endif %}
                     <div class="input_style">
-                        {{form.name}}
+                        <input type="text" id="name" name="name" value="{{form.name.value|default:''}}">
                       <label for="name">Ваше имя
                       </label>
                     </div>
@@ -86,8 +71,8 @@
                     <div class="pos_left_for_text input_style_error">{{ form.errors.name }}</div>
                     {% endif %}
                     <div class="input_style margin_top_3em">
-                        {{form.email_phone}}
-                      <label for="ephone">Номер телефона/ эл. почта *
+                        <input type="text" id="email_phone" name="email_phone" value="{{form.email_phone.value|default:''}}">
+                      <label for="email_phone">Номер телефона/ эл. почта *
                       </label>
                     </div>
                     {% if form.has_changed %}
@@ -95,7 +80,7 @@
                     {% endif %}
                     <div>
                       <div class="textarea_style margin_top_3em">
-                        {{form.content}}
+                        <textarea name="content" class="chat_panel_sticky_textarea" rows="5" cols="105"></textarea>
                         <label for="content" class = "textarea_style_label">Отзыв
                         </label>
                       </div>

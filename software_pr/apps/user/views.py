@@ -19,7 +19,7 @@ def is_email(email_phone=None):
         return True
     return False
 
-
+# todo Сделать back_url в форме логина - регистрации
 #todo  Нужно сделать правильную регистрацию по смс, в телеграмме есть инструкция
 def Registration(request):
     form = RegisterForm()

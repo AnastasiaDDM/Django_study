@@ -4,7 +4,7 @@ from django.db.models import Q
 from user.models import CustomUser
 from software.models import Software, Favourite
 from .models import *
-from .forms import Search_OrderForm, RequestForm
+from .forms import Search_OrderForm, RequestForm, ChatForm
 import datetime
 import json
 from django.template.loader import render_to_string
@@ -263,7 +263,6 @@ def chat(request, id):
 
     # Объявление начальных значений переменных
     order = None
-    chat = None
 
     try:
 
@@ -275,61 +274,44 @@ def chat(request, id):
             # Получение заказа
             order = Order.get_order_by_client(id, user)
 
-        # Получение пременных из запроса
-        next_messages = request.GET.get('next', None)
-        count_messages = request.GET.get('count', None)
+            # Получение пременных из запроса
+            next_messages = request.GET.get('next', None)
+            # count_messages = request.GET.get('count', None)
 
-        # Тогда просто отрисовывается страница чата с полседними 20 сообщениями
-        if next_messages == None and count_messages == None:
+            # Тогда просто отрисовывается страница чата с полседними 20 сообщениями
+            if next_messages == None:
 
-            dbl.log("111" )
-            next_messages = 0
-            count_messages = 20
+                dbl.log("111" )
+                next_messages = 0
 
+                message_block, count = get_messages(request, order, next_messages=next_messages)
 
+                next_messages = 20
 
-            # Данные по умолчанию - код ответа
-            # data = {'status': 'error'}
+                return render(request, 'order/chat.html', {'order':order, 'message_block':message_block})
 
-            # dbl.log("111" )
-            
-            message_block = get_messages(request, next_messages=next_messages, count=count_messages)
+            # Догрузка сообщений
+            else:
 
-            # next_messages = next_messages+count_messages
-            # data['status'] = 'success'
-            # data['next'] = next_messages
-            # data['count'] = count_messages
-            # data['result'] = message_block
-            # dbl.log("10101001" )
-            next_messages = 20
+                dbl.log("444444444444444444" )
 
+                # Данные по умолчанию - код ответа
+                data = {'status': 'error'}
 
-            return render(request, 'order/chat.html', {'order':order, 'message_block':message_block, 'next_messages':next_messages})
+                # dbl.log("111" )
+                
+                message_block, count = get_messages(request, order, next_messages=next_messages)
 
-        # Догрузка сообщений
-        else:
-
-            dbl.log("444444444444444444" )
-
-
-
-            # Данные по умолчанию - код ответа
-            data = {'status': 'error'}
-
-            # dbl.log("111" )
-            
-            message_block = get_messages(request, next_messages=next_messages, count=count_messages)
-
-            next_messages = int(next_messages)+20
-            dbl.log(str(next_messages) )
-            data['status'] = 'success'
-            data['next'] = next_messages
-            # data['count'] = count_messages
-            data['result'] = message_block
-            dbl.log("10101001" )
+                next_messages = int(next_messages)+20
+                dbl.log(str(next_messages) )
+                data['status'] = 'success'
+                data['next'] = next_messages
+                data['count'] = count
+                data['result'] = message_block
+                dbl.log("10101001" )
 
 
-            return HttpResponse(json.dumps(data), content_type='application/json')
+                return HttpResponse(json.dumps(data), content_type='application/json')
 
 
     except Exception as error:
@@ -459,19 +441,16 @@ def render_message_block(request, dict_addition_for_message):
 
 
 # todo вынести бы этот метод в класс модели чата, но там ошибка с импортами
-def get_messages(request, next_messages=0, count=20):
-
-    # dbl.log("222" )
+def get_messages(request, order, next_messages=0):
 
     dict_addition_for_message={}
+    last_messages = int(next_messages)+20
 
     # dbl.log("22" )
+    dbl.log("22 некст аалааьа     " + str(next_messages))
+    chat_list = Chat.objects.filter(order_id = order.id).order_by('-date')[int(next_messages):last_messages]
 
-    chat_list = Chat.objects.all().order_by('-date')[int(next_messages):20]
-    # dbl.log("0000" )
-
-
-    # dbl.log("666" )
+    count = len(chat_list)
 
     # Лист приложений 
     list_additions = []
@@ -482,23 +461,12 @@ def get_messages(request, next_messages=0, count=20):
 
         addition_list = Chat_Addition.objects.filter(chat_id=one_message.id)
 
-
-
-        # dbl.log("777" )
-
         # Добавление элемента в словарь 
-        # dict_addition_for_message[new_chat.pk] = list_additions
         dict_addition_for_message[one_message] = addition_list
-
-
-    # dbl.log("888" )
-    # Составление шаблона сообщения с приложениями
-    # message_block = order_views.render_message_block( request, dict_addition_for_message )
-    # dbl.log("вот тут выход" )
 
     message_block = render_message_block( request, dict_addition_for_message )
 
-    return message_block
+    return message_block, count
 
 
 

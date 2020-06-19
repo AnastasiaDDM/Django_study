@@ -242,7 +242,7 @@
             </div> -->
           </section>
 
-          <div class=" pos_center"><button id='load_more_message' class="button_show-more cursor" data-next="{{next_messages}}" data-id="{{order.id}}">Показать еще</button></div>
+          <div class=" pos_center"><button id='load_more_message' class="button_show-more cursor" data-id="{{order.id}}">Показать еще</button></div>
 
 
         </div>
@@ -258,7 +258,7 @@
             input_filled('textarea');
             input_file();
             chat_append_message();
-            chat_append_message1();
+            chat_loading_message();
     
           $(function() {
     
