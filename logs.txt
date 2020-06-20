@@ -25,3 +25,195 @@ mmmmm
 сойт 2  <QuerySet [<Addition: Грузоперевозки>]>
 сойт 3  Грузоперевозки
 сойт 4  <QuerySet [<Addition: Грузоперевозки>, <Addition: Компьютер>]>
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер ndmitrievnaa@mail.ru
+вью юзер не ноль ndmitrievnaa@mail.ru
+вью юзер активныйndmitrievnaa@mail.ru
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер None
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер None
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер None
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер ndmitrievnaa@mail.ru
+вью юзер не ноль ndmitrievnaa@mail.ru
+вью юзер активныйndmitrievnaa@mail.ru
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер ndmitrievnaa@mail.ru
+вью юзер не ноль ndmitrievnaa@mail.ru
+вью юзер активныйndmitrievnaa@mail.ru
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+Ошибка работы с заказамиname 'util' is not defined
+111
+22 некст аалааьа     0
+===111
+444444444444444444
+22 некст аалааьа     20
+===111
+40
+10101001
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="hello0154609" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruhello0154609
+вью юзер ndmitrievnaa@mail.ru
+вью юзер не ноль ndmitrievnaa@mail.ru
+вью юзер активныйndmitrievnaa@mail.ru
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+mmmmm
+бббб<WSGIRequest: GET '/softwares/'>
+111
+22
+88  Грузоперевозки
+88  Кафе
+88  Образование
+88  Поликлиника
+88  Цветочная лавка
+99 
+33
+вью форма  <tr><th><label for="id_email_phone">Email phone:</label></th><td><input type="text" name="email_phone" value="ndmitrievnaa@mail.ru" maxlength="250" required id="id_email_phone"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="text" name="password" value="ааа" maxlength="50" required id="id_password"></td></tr>
+вью  ndmitrievnaa@mail.ruааа
+вью юзер None

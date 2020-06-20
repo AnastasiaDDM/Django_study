@@ -84,7 +84,7 @@ def Login(request):
                 email = form.cleaned_data.get('email_phone')
                 password = form.cleaned_data.get('password')
                 dbl.log('вью  '+str(email)+str(password))
-                user = authenticate(email_or_phone=email, password=password)
+                user = authenticate(email=email, password=password )
                 dbl.log('вью юзер '+str(user))
                 if user is not None:
                     dbl.log('вью юзер не ноль '+str(user)+str())

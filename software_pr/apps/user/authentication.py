@@ -6,9 +6,9 @@ import dbl
 
 class Email_PhoneAuthBackend:
 
-    def authenticate(self, request, email_or_phone=None, password=None):
+    def authenticate(self, request, email=None, password=None):
         try:
-            user = CustomUser.objects.get(Q(email=email_or_phone) | Q(phone=email_or_phone))
+            user = CustomUser.objects.get(Q(email=email) | Q(phone=email))
             pwd_valid = user.check_password(password)
             if pwd_valid:       
                 return user
